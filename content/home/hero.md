@@ -6,6 +6,6 @@ ctaText: "Book an Assessment"
 ctaHref: "https://wa.me/27670721908"
 secondaryCtaText: "View Our Services"
 secondaryCtaHref: "/services"
-image: "/uploads/team-group.jpg"
+image: "/uploads/team-group.png"
 imageAlt: "The Sintha Physiotherapy team of health professionals"
 ---

@@ -70,6 +70,10 @@ const siteSettings = defineCollection({
     addressLine2: z.string(),
     hours: z.string(),
     hoursNote: z.string(),
+    facebookUrl: z.string(),
+    instagramUrl: z.string(),
+    googleBusinessUrl: z.string(),
+    legalName: z.string(),
   }),
 });
 

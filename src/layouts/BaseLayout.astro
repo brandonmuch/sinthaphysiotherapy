@@ -2,6 +2,8 @@
 import Header from "../components/global/Header.astro";
 import Footer from "../components/global/Footer.astro";
 import SkipLink from "../components/global/SkipLink.astro";
+import WhatsAppButton from "../components/global/WhatsAppButton.astro";
+import { getEntry } from "astro:content";
 import "../styles/tokens.css";
 import "../styles/base.css";
 import "../styles/global.css";
@@ -9,9 +11,44 @@ import "../styles/global.css";
 interface Props {
   title: string;
   description: string;
+  image?: string;
 }
 
-const { title, description } = Astro.props;
+const { title, description, image = "/uploads/team-group.png" } = Astro.props;
+
+const settingsEntry = await getEntry("siteSettings", "main");
+const settings = settingsEntry?.data;
+
+const pageTitle = `${title} | Sintha Physiotherapy`;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const ogImageURL = new URL(image, Astro.site);
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "MedicalClinic",
+  name: settings?.wordmark ?? "Sintha Physiotherapy",
+  legalName: settings?.legalName,
+  description:
+    "Specialised physiotherapy for children and adults in Fourways, Johannesburg — respiratory, paediatric, neurological and postoperative rehabilitation.",
+  medicalSpecialty: "PhysicalTherapy",
+  url: Astro.site?.toString(),
+  telephone: settings ? `+${settings.whatsapp}` : undefined,
+  email: settings?.email,
+  address: settings
+    ? {
+        "@type": "PostalAddress",
+        streetAddress: `${settings.addressLine1}, ${settings.addressLine2}`,
+        addressLocality: "Fourways, Johannesburg",
+        addressRegion: "Gauteng",
+        postalCode: "2055",
+        addressCountry: "ZA",
+      }
+    : undefined,
+  areaServed: ["Fourways", "Sandton", "Johannesburg"],
+  sameAs: settings
+    ? [settings.facebookUrl, settings.instagramUrl, settings.googleBusinessUrl].filter(Boolean)
+    : [],
+};
 ---
 
 <!doctype html>
@@ -20,14 +57,30 @@ const { title, description } = Astro.props;
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="canonical" href={canonicalURL} />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap"
       rel="stylesheet"
     />
-    <title>{title} | Sintha Physiotherapy</title>
+    <title>{pageTitle}</title>
     <meta name="description" content={description} />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Sintha Physiotherapy" />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:image" content={ogImageURL} />
+    <meta property="og:locale" content="en_ZA" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={pageTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageURL} />
+
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
 
     <script is:inline>
       // Set before paint so no-JS visitors never see a permanently-hidden [data-reveal] section.
@@ -41,6 +94,7 @@ const { title, description } = Astro.props;
       <slot />
     </main>
     <Footer />
+    <WhatsAppButton />
     <script src="../scripts/motion.ts"></script>
   </body>
 </html>

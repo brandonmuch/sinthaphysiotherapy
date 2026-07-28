@@ -194,6 +194,10 @@ collections:
               - { label: "Address line 2", name: "addressLine2", widget: "string" }
               - { label: "Hours", name: "hours", widget: "string" }
               - { label: "Hours note", name: "hoursNote", widget: "string" }
+              - { label: "Facebook URL", name: "facebookUrl", widget: "string" }
+              - { label: "Instagram URL", name: "instagramUrl", widget: "string" }
+              - { label: "Google Business Profile URL", name: "googleBusinessUrl", widget: "string" }
+              - { label: "Registered legal name", name: "legalName", widget: "string", hint: "Used in structured data / fine print, e.g. \"Wezi Nyimba Physiotherapists Inc\"" }
 
       - name: "affiliated-professionals"
         label: "Affiliated professionals"
