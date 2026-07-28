@@ -1,0 +1,140 @@
+---
+import { getEntry } from "astro:content";
+import { icons } from "../../lib/icons";
+
+const settingsEntry = await getEntry("siteSettings", "main");
+const settings = settingsEntry?.data;
+const wordmark = settings?.wordmark ?? "Sintha Physiotherapy";
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <div class="container site-footer__inner">
+    <div class="site-footer__brand">
+      <p class="wordmark">{wordmark}</p>
+      <p class="tagline">Empower movement. Enhance life.</p>
+    </div>
+
+    <div class="site-footer__contact">
+      <p>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" set:html={icons["map-pin"]} />
+        {settings?.addressLine1}, {settings?.addressLine2}
+      </p>
+      <p>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" set:html={icons.phone} />
+        <a href={`tel:${settings?.phone.replace(/\s+/g, "")}`}>{settings?.phone}</a>
+      </p>
+      <p>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" set:html={icons.mail} />
+        <a href={`mailto:${settings?.email}`}>{settings?.email}</a>
+      </p>
+      <p>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" set:html={icons.clock} />
+        {settings?.hours} &middot; {settings?.hoursNote}
+      </p>
+    </div>
+
+    <nav aria-label="Footer">
+      <ul class="site-footer__links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/services">Services</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+        <li><a href="/insights">Blog</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <div class="container site-footer__bottom">
+    <p>&copy; {year} {wordmark}. All rights reserved.</p>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    background: var(--plum-900);
+    color: var(--white);
+    padding-top: var(--space-7);
+  }
+
+  .site-footer__inner {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+    padding-bottom: var(--space-6);
+  }
+
+  .site-footer__brand .wordmark {
+    font-family: var(--font-display);
+    font-size: var(--text-xl);
+    font-weight: 500;
+  }
+
+  .site-footer__brand .tagline {
+    color: var(--terracotta);
+    margin-top: var(--space-2);
+    font-size: var(--text-sm);
+  }
+
+  .site-footer__contact {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+    font-size: var(--text-sm);
+    color: #d8c9de;
+  }
+
+  .site-footer__contact p {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-2);
+  }
+
+  .site-footer__contact svg {
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .site-footer__contact a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .site-footer__contact a:hover,
+  .site-footer__contact a:focus-visible {
+    color: var(--terracotta);
+  }
+
+  .site-footer__links {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+
+  .site-footer__links a {
+    color: #d8c9de;
+    text-decoration: none;
+    font-size: var(--text-sm);
+  }
+
+  .site-footer__links a:hover,
+  .site-footer__links a:focus-visible {
+    color: var(--terracotta);
+  }
+
+  .site-footer__bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    padding-block: var(--space-4);
+    font-size: var(--text-xs);
+    color: #d8c9de;
+  }
+
+  @media (min-width: 768px) {
+    .site-footer__inner {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+</style>

@@ -1,0 +1,23 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Hero from "../components/home/Hero.astro";
+import Intro from "../components/home/Intro.astro";
+import Pillars from "../components/home/Pillars.astro";
+import ServiceSnapshot from "../components/home/ServiceSnapshot.astro";
+import CtaBanner from "../components/home/CtaBanner.astro";
+import FaqAccordion from "../components/home/FaqAccordion.astro";
+import BlogTeaser from "../components/home/BlogTeaser.astro";
+---
+
+<BaseLayout
+  title="Home"
+  description="Specialised physiotherapy for children and adults in Fourways, Johannesburg. Respiratory, paediatric, neurological and postoperative rehabilitation at Sintha Physiotherapy."
+>
+  <Hero />
+  <Intro />
+  <Pillars />
+  <ServiceSnapshot />
+  <CtaBanner />
+  <FaqAccordion />
+  <BlogTeaser />
+</BaseLayout>

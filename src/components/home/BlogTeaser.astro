@@ -1,0 +1,39 @@
+---
+import { getEntry } from "astro:content";
+
+const entry = await getEntry("home", "blog-teaser");
+const data = entry!.data as {
+  heading: string;
+  buttonText: string;
+  buttonHref: string;
+};
+---
+
+<section class="section blog-teaser">
+  <div class="container blog-teaser__inner" data-reveal>
+    <h2>{data.heading}</h2>
+    <a href={data.buttonHref} class="btn btn--ghost">{data.buttonText}</a>
+  </div>
+</section>
+
+<style>
+  .blog-teaser__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-4);
+  }
+
+  .blog-teaser__inner h2 {
+    font-size: var(--text-2xl);
+    max-width: 28ch;
+  }
+
+  @media (min-width: 768px) {
+    .blog-teaser__inner {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+</style>

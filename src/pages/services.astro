@@ -1,0 +1,74 @@
+---
+import { getCollection, getEntry } from "astro:content";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ServiceRow from "../components/services/ServiceRow.astro";
+
+const settingsEntry = await getEntry("siteSettings", "main");
+const whatsapp = settingsEntry?.data.whatsapp ?? "27670721908";
+
+const services = (await getCollection("services")).sort((a, b) => a.data.order - b.data.order);
+
+const images: Record<string, { src: string; alt: string }> = {
+  "advanced-respiratory-care": { src: "/uploads/patient-elderly-recovery.jpg", alt: "Healthcare professional supporting a patient recovering in hospital" },
+  "ventilator-weaning": { src: "/uploads/patient-teen-treatment.jpg", alt: "Patient resting peacefully during treatment" },
+  "cardiac-rehab": { src: "/uploads/patient-balance-exercise.jpg", alt: "Patient concentrating during a balance and strength exercise" },
+  "paediatric-respiratory-support": { src: "/uploads/patient-child-breathing.jpg", alt: "Child using a colourful breathing device during physiotherapy" },
+  "home-visits": { src: "/uploads/physio-home-visit.jpg", alt: "Physiotherapist assisting a patient with exercises at home" },
+  "neuro-vestibular-rehab": { src: "/uploads/patient-walking-clinic.jpg", alt: "Patient walking gently in the clinic during a rehab session" },
+  "renal-metabolic-care": { src: "/uploads/portrait-woman-c.jpg", alt: "Portrait of a patient" },
+  "postoperative-recovery": { src: "/uploads/patient-mat-woman.jpg", alt: "Patient resting on a therapy mat in a modern physiotherapy studio" },
+};
+---
+
+<BaseLayout
+  title="Services"
+  description="Physiotherapy that moves you forward: respiratory care, cardiac and neurological rehab, paediatric support, home visits and postoperative recovery at Sintha Physiotherapy."
+>
+  <section class="section section--plum services-hero">
+    <div class="container">
+      <p class="eyebrow">Our Services</p>
+      <h1>Physiotherapy that moves you forward</h1>
+      <p class="services-hero__sub">Where recovery begins with a breath and ends in strength.</p>
+    </div>
+  </section>
+
+  <section class="section services-list">
+    <div class="container">
+      {
+        services.map((service) => (
+          <ServiceRow
+            id={service.id}
+            title={service.data.title}
+            icon={service.data.icon}
+            summary={service.data.summary}
+            body={service.data.body}
+            whatsappMessage={service.data.whatsappMessage}
+            whatsapp={whatsapp}
+            image={images[service.id]?.src ?? "/uploads/physio-tools-mat.jpg"}
+            imageAlt={images[service.id]?.alt ?? service.data.title}
+          />
+        ))
+      }
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .services-hero h1 {
+    margin-top: var(--space-3);
+    font-size: var(--text-3xl);
+    max-width: 20ch;
+  }
+
+  .services-hero__sub {
+    margin-top: var(--space-3);
+    color: #d8c9de;
+    max-width: 46ch;
+  }
+
+  @media (min-width: 768px) {
+    .services-hero h1 {
+      font-size: var(--text-4xl);
+    }
+  }
+</style>

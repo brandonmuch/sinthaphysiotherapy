@@ -1,0 +1,113 @@
+---
+import { getEntry } from "astro:content";
+import { icons, defaultIconKey } from "../../lib/icons";
+
+const entry = await getEntry("home", "pillars");
+const data = entry!.data as {
+  heading: string;
+  items: Array<{ title: string; description: string; icon: string }>;
+};
+
+const [featured, ...rest] = data.items;
+---
+
+<section class="section section--wash pillars">
+  <div class="container">
+    <h2 class="pillars__heading" data-reveal>{data.heading}</h2>
+
+    <div class="pillars__grid">
+      <div class="pillar pillar--featured card" data-reveal>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" set:html={icons[featured.icon] ?? icons[defaultIconKey]} />
+        <div>
+          <h3>{featured.title}</h3>
+          <p>{featured.description}</p>
+        </div>
+      </div>
+
+      {
+        rest.map((item, i) => (
+          <div class="pillar card" data-reveal style={`transition-delay: ${(i + 1) * 80}ms`}>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" set:html={icons[item.icon] ?? icons[defaultIconKey]} />
+            <h3>{item.title}</h3>
+            <p>{item.description}</p>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .pillars__heading {
+    font-size: var(--text-3xl);
+    max-width: 32ch;
+    margin-bottom: var(--space-6);
+  }
+
+  .pillars__grid {
+    display: grid;
+    gap: var(--space-5);
+  }
+
+  .pillar {
+    padding: var(--space-5);
+  }
+
+  .pillar svg {
+    width: 32px;
+    height: 32px;
+    color: var(--terracotta-text);
+  }
+
+  .pillar h3 {
+    margin-top: var(--space-4);
+    font-size: var(--text-lg);
+    color: var(--plum-900);
+  }
+
+  .pillar p {
+    margin-top: var(--space-2);
+    color: var(--stone);
+  }
+
+  .pillar--featured {
+    background: var(--plum-900);
+    color: var(--white);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+  }
+
+  .pillar--featured svg {
+    color: var(--terracotta);
+  }
+
+  .pillar--featured h3 {
+    color: var(--white);
+  }
+
+  .pillar--featured p {
+    color: #d8c9de;
+    max-width: 60ch;
+  }
+
+  @media (min-width: 640px) {
+    .pillars__grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .pillar--featured {
+      grid-column: 1 / -1;
+      flex-direction: row;
+      align-items: center;
+      gap: var(--space-6);
+      padding: var(--space-6);
+    }
+
+    .pillar--featured svg {
+      width: 40px;
+      height: 40px;
+      flex-shrink: 0;
+    }
+  }
+</style>

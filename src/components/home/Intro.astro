@@ -1,0 +1,62 @@
+---
+import { getEntry } from "astro:content";
+import { toParagraphs } from "../../lib/renderText";
+
+const entry = await getEntry("home", "intro");
+const data = entry!.data as {
+  heading: string;
+  body: string;
+  image: string;
+  imageAlt: string;
+};
+
+const paragraphs = toParagraphs(data.body);
+---
+
+<section class="section intro" id="about">
+  <div class="container intro__grid">
+    <div class="intro__text" data-reveal>
+      <h2>{data.heading}</h2>
+      {paragraphs.map((p) => <p>{p}</p>)}
+    </div>
+    <div class="intro__media" data-reveal>
+      <img src={data.image} alt={data.imageAlt} loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<style>
+  .intro__grid {
+    display: grid;
+    gap: var(--space-6);
+    align-items: center;
+  }
+
+  .intro__text h2 {
+    font-size: var(--text-3xl);
+  }
+
+  .intro__text p {
+    margin-top: var(--space-4);
+    color: var(--stone);
+    max-width: 56ch;
+  }
+
+  .intro__text p:first-of-type {
+    margin-top: var(--space-5);
+  }
+
+  .intro__media img {
+    border-radius: var(--radius-lg);
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+  }
+
+  @media (min-width: 900px) {
+    .intro__grid {
+      grid-template-columns: 3fr 2fr;
+      gap: var(--space-8);
+    }
+  }
+</style>

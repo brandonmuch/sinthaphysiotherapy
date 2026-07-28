@@ -1,0 +1,85 @@
+---
+import ReadMoreReveal from "./ReadMoreReveal.astro";
+import { icons, defaultIconKey } from "../../lib/icons";
+
+interface Props {
+  id: string;
+  title: string;
+  icon: string;
+  summary: string;
+  body: string;
+  whatsappMessage: string;
+  whatsapp: string;
+  image: string;
+  imageAlt: string;
+  reversed?: boolean;
+}
+
+const { id, title, icon, summary, body, whatsappMessage, whatsapp, image, imageAlt, reversed } = Astro.props;
+const askHref = `https://wa.me/${whatsapp}?text=${encodeURIComponent(whatsappMessage)}`;
+---
+
+<article class:list={["service-row", { "service-row--reversed": reversed }]} id={id} data-reveal>
+  <div class="service-row__media">
+    <img src={image} alt={imageAlt} loading="lazy" />
+  </div>
+  <div class="service-row__content">
+    <svg class="service-row__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" set:html={icons[icon] ?? icons[defaultIconKey]} />
+    <h2>{title}</h2>
+    <ReadMoreReveal summary={summary} body={body} id={id} />
+    <a href={askHref} target="_blank" rel="noopener" class="btn btn--primary service-row__cta">Ask a Physio</a>
+  </div>
+</article>
+
+<style>
+  .service-row {
+    display: grid;
+    gap: var(--space-5);
+    padding-block: var(--space-7);
+    border-bottom: 1px solid var(--hairline);
+  }
+
+  .service-row:first-child {
+    padding-top: 0;
+  }
+
+  .service-row__media img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: var(--radius-lg);
+  }
+
+  .service-row__icon {
+    width: 32px;
+    height: 32px;
+    color: var(--terracotta-text);
+  }
+
+  .service-row__content h2 {
+    margin-top: var(--space-3);
+    font-size: var(--text-2xl);
+    color: var(--plum-900);
+  }
+
+  .service-row__content p {
+    color: var(--stone);
+    max-width: 60ch;
+  }
+
+  .service-row__cta {
+    margin-top: var(--space-5);
+  }
+
+  @media (min-width: 860px) {
+    .service-row {
+      grid-template-columns: 5fr 7fr;
+      align-items: center;
+      gap: var(--space-7);
+    }
+
+    .service-row--reversed .service-row__media {
+      order: 2;
+    }
+  }
+</style>
