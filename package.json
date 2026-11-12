@@ -4,11 +4,14 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
-    "build": "next build",
+    "build": "opennextjs-cloudflare build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "deploy": "wrangler deploy",
+    "preview": "opennextjs-cloudflare build && wrangler dev"
   },
   "dependencies": {
+    "@opennextjs/cloudflare": "^1.20.17",
     "clsx": "^2.1.1",
     "framer-motion": "^11.15.0",
     "gsap": "^3.12.5",
