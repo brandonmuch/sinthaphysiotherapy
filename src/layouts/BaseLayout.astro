@@ -1,100 +1,49 @@
 ---
-import Header from "../components/global/Header.astro";
-import Footer from "../components/global/Footer.astro";
-import SkipLink from "../components/global/SkipLink.astro";
-import WhatsAppButton from "../components/global/WhatsAppButton.astro";
-import { getEntry } from "astro:content";
-import "../styles/tokens.css";
-import "../styles/base.css";
-import "../styles/global.css";
+import '../styles/global.css';
+import CustomCursor from '../components/CustomCursor.astro';
 
-interface Props {
+export interface Props {
   title: string;
-  description: string;
-  image?: string;
+  description?: string;
 }
 
-const { title, description, image = "/uploads/team-group.png" } = Astro.props;
-
-const settingsEntry = await getEntry("siteSettings", "main");
-const settings = settingsEntry?.data;
-
-const pageTitle = `${title} | Sintha Physiotherapy`;
-const canonicalURL = new URL(Astro.url.pathname, Astro.site);
-const ogImageURL = new URL(image, Astro.site);
-
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@type": "MedicalClinic",
-  name: settings?.wordmark ?? "Sintha Physiotherapy",
-  legalName: settings?.legalName,
-  description:
-    "Specialised physiotherapy for children and adults in Fourways, Johannesburg — respiratory, paediatric, neurological and postoperative rehabilitation.",
-  medicalSpecialty: "PhysicalTherapy",
-  url: Astro.site?.toString(),
-  telephone: settings ? `+${settings.whatsapp}` : undefined,
-  email: settings?.email,
-  address: settings
-    ? {
-        "@type": "PostalAddress",
-        streetAddress: `${settings.addressLine1}, ${settings.addressLine2}`,
-        addressLocality: "Fourways, Johannesburg",
-        addressRegion: "Gauteng",
-        postalCode: "2055",
-        addressCountry: "ZA",
-      }
-    : undefined,
-  areaServed: ["Fourways", "Sandton", "Johannesburg"],
-  sameAs: settings
-    ? [settings.facebookUrl, settings.instagramUrl, settings.googleBusinessUrl].filter(Boolean)
-    : [],
-};
+const { title, description = "Premium physiotherapy in Fourways, Johannesburg." } = Astro.props;
 ---
 
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="canonical" href={canonicalURL} />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap"
-      rel="stylesheet"
-    />
-    <title>{pageTitle}</title>
-    <meta name="description" content={description} />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{title} | Sintha Physiotherapy</title>
+  <meta name="description" content={description} />
+  
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href={Astro.url} />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body class="relative overflow-x-hidden">
+  
+  <div class="noise-overlay"></div>
+  <CustomCursor />
+  
+  <!-- Cookie Banner -->
+  <div id="cookie-banner" class="fixed bottom-8 left-1/2 -translate-x-1/2 bg-obsidian-soft border border-white/10 p-6 rounded-2xl shadow-2xl z-[10000] hidden flex-col md:flex-row items-center gap-6 max-w-2xl w-[90%]">
+    <p class="text-sm text-cream/70">We use cookies to analyse traffic and optimise your experience. Read our <a href="/privacy" class="underline text-lilac">Privacy Policy</a>.</p>
+    <div class="flex gap-4 shrink-0">
+      <button id="cookie-reject" class="text-sm text-cream/50 hover:text-cream">Reject</button>
+      <button id="cookie-accept" class="text-sm px-5 py-2 bg-lilac text-obsidian rounded-full font-medium">Accept</button>
+    </div>
+  </div>
 
-    <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="Sintha Physiotherapy" />
-    <meta property="og:title" content={pageTitle} />
-    <meta property="og:description" content={description} />
-    <meta property="og:url" content={canonicalURL} />
-    <meta property="og:image" content={ogImageURL} />
-    <meta property="og:locale" content="en_ZA" />
+  <slot />
 
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content={pageTitle} />
-    <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content={ogImageURL} />
-
-    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
-
-    <script is:inline>
-      // Set before paint so no-JS visitors never see a permanently-hidden [data-reveal] section.
-      document.documentElement.classList.add("js");
-    </script>
-  </head>
-  <body>
-    <SkipLink />
-    <Header />
-    <main id="main">
-      <slot />
-    </main>
-    <Footer />
-    <WhatsAppButton />
-    <script src="../scripts/motion.ts"></script>
-  </body>
+  <!-- THIS IS THE CORRECT WAY TO IMPORT THE SCRIPT IN ASTRO -->
+  <script>
+    import '../scripts/motion.js';
+  </script>
+</body>
 </html>
