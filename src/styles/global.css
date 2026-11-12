@@ -1,157 +1,53 @@
-.eyebrow {
-  font-family: var(--font-body);
-  font-size: var(--text-sm);
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--terracotta-text);
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Cormorant Garamond';
+  src: url('/fonts/CormorantGaramond-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-display: swap;
 }
 
-.section--plum .eyebrow {
-  color: #e8b7a0;
+@font-face {
+  font-family: 'Manrope';
+  src: url('/fonts/Manrope-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-display: swap;
 }
 
-.section {
-  padding-block: var(--space-8);
-}
-
-.section--plum {
-  background: var(--plum-900);
-  color: var(--white);
-}
-
-.section--wash {
-  background: var(--cream);
-}
-
-.section-heading {
-  margin-bottom: var(--space-6);
-}
-
-.section-heading h2 {
-  font-size: var(--text-3xl);
-}
-
-.section-heading p {
-  margin-top: var(--space-3);
-  font-size: var(--text-md);
-  color: var(--stone);
-  max-width: 46ch;
-}
-
-.section--plum .section-heading p {
-  color: #d8c9de;
-}
-
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: var(--space-2);
-  white-space: nowrap;
-  padding: 0.75rem 1.5rem;
-  min-height: 48px;
-  min-width: 48px;
-  border-radius: var(--radius-btn);
-  border: none;
-  font-family: inherit;
-  font-weight: 600;
-  font-size: 1rem;
-  line-height: 1.2;
-  text-decoration: none;
-  cursor: pointer;
-  transition: transform var(--motion-fast) var(--motion-ease), background-color var(--motion-fast) var(--motion-ease);
-}
-
-.btn-group {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.btn-group .btn {
-  width: 100%;
-}
-
-@media (min-width: 640px) {
-  .btn-group {
-    flex-direction: row;
-    gap: 14px;
+@layer base {
+  html {
+    @apply bg-obsidian text-cream font-sans antialiased;
   }
 
-  .btn-group .btn {
-    width: auto;
+  ::selection {
+    @apply bg-lilac text-obsidian;
   }
+
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: #0C0C0D; }
+  ::-webkit-scrollbar-thumb { background: #333; border-radius: 3px; }
 }
 
-.btn:hover,
-.btn:focus-visible {
-  transform: translateY(-2px);
-}
-
-.btn--primary {
-  background: var(--terracotta);
-  color: var(--white);
-}
-
-.btn--primary:hover,
-.btn--primary:focus-visible {
-  background: var(--terracotta-text);
-}
-
-.btn--secondary {
-  background: transparent;
-  color: var(--white);
-  border: 1px solid rgba(255, 255, 255, 0.4);
-}
-
-.btn--secondary:hover,
-.btn--secondary:focus-visible {
-  border-color: var(--white);
-  background: rgba(255, 255, 255, 0.12);
-}
-
-.btn--ghost {
-  background: transparent;
-  color: var(--plum-900);
-  border: 1px solid var(--hairline);
-}
-
-.btn--ghost:hover,
-.btn--ghost:focus-visible {
-  border-color: var(--terracotta-text);
-  color: var(--terracotta-text);
-}
-
-.card {
-  background: var(--white);
-  border: 1px solid var(--hairline);
-  border-radius: var(--radius-md);
-  transition: transform var(--motion-base) var(--motion-ease), box-shadow var(--motion-base) var(--motion-ease);
-}
-
-.card:hover,
-.card:focus-within {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 32px -12px rgba(42, 27, 61, 0.22);
-}
-
-.grid {
-  display: grid;
-  gap: var(--space-5);
-}
-
-@media (min-width: 640px) {
-  .grid--2 {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+@layer components {
+  .text-balance { text-wrap: balance; }
+  
+  .noise-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    pointer-events: none;
+    opacity: 0.05;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
   }
-}
 
-@media (min-width: 768px) {
-  .grid--3 {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-8 py-4 bg-ember text-obsidian font-medium rounded-full text-sm tracking-wide transition-transform duration-300 hover:scale-105 active:scale-95;
   }
-  .grid--4 {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+
+  .image-cinematic {
+    @apply w-full h-full object-cover mix-blend-lighten brightness-90 contrast-110;
   }
 }

@@ -1,23 +1,22 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
-import Hero from "../components/home/Hero.astro";
-import Intro from "../components/home/Intro.astro";
-import Pillars from "../components/home/Pillars.astro";
-import ServiceSnapshot from "../components/home/ServiceSnapshot.astro";
-import CtaBanner from "../components/home/CtaBanner.astro";
-import FaqAccordion from "../components/home/FaqAccordion.astro";
-import BlogTeaser from "../components/home/BlogTeaser.astro";
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Nav from '../components/Nav.astro';
+import Hero from '../components/Hero.astro';
+import Philosophy from '../components/Philosophy.astro';
+import Services from '../components/Services.astro';
+import Practitioners from '../components/Practitioners.astro';
+import Testimonials from '../components/Testimonials.astro';
+import Footer from '../components/Footer.astro';
 ---
 
-<BaseLayout
-  title="Home"
-  description="Specialised physiotherapy for children and adults in Fourways, Johannesburg. Respiratory, paediatric, neurological and postoperative rehabilitation at Sintha Physiotherapy."
->
-  <Hero />
-  <Intro />
-  <Pillars />
-  <ServiceSnapshot />
-  <CtaBanner />
-  <FaqAccordion />
-  <BlogTeaser />
+<BaseLayout title="Premium Physiotherapy">
+  <Nav />
+  <main>
+    <Hero />
+    <Philosophy />
+    <Services />
+    <Practitioners />
+    <Testimonials />
+    <Footer />
+  </main>
 </BaseLayout>
