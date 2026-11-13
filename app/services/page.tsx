@@ -88,11 +88,22 @@ const SERVICES = [
 ];
 
 
+const GALLERY_LABELS: Record<string, string> = {
+  'advanced-respiratory-care': 'Advanced respiratory care',
+  'ventilator-weaning': 'Ventilator weaning',
+  'cardiac-cardiovascular-rehabilitation': 'Cardiac rehabilitation',
+  'paediatric-respiratory-support': 'Paediatric respiratory support',
+  'home-visits': 'Home visits',
+  'neurological-vestibular-rehabilitation': 'Neurological & vestibular care',
+  'renal-metabolic-care': 'Renal & metabolic care',
+  'postoperative-recovery': 'Postoperative recovery',
+};
+
 const GALLERY_ITEMS = SERVICES.map(service => ({
   image: service.image,
-  text: service.title,
+  text: GALLERY_LABELS[service.id] ?? service.title,
   alt: service.alt,
-  description: service.paragraphs.join(' '),
+  description: `${service.title}. ${service.paragraphs.join(' ')}`,
 }));
 export default function ServicesPage() {
   return (
