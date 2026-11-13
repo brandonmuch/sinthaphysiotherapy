@@ -444,3 +444,13 @@ input[type="button"]:disabled {
     height: 208px;
   }
 }
+
+
+/* The base heading colour is aubergine sitewide. Keep the hero's copy white
+   over the dark PatternWaves background. */
+.sintha-hero h1,
+.sintha-hero h1 span,
+.sintha-hero h2,
+.sintha-hero p {
+  color: #FFFFFF;
+}
