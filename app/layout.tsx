@@ -28,6 +28,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" className={openSans.variable}>
       <body className="font-sans antialiased">
         <SplashCursor
+          style={{}}
           rainbow
           size={0.5}
           force={0.3}
