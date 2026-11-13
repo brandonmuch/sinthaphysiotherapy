@@ -48,11 +48,11 @@ export function Nav() {
             <SpecularButton
               size="sm"
               radius={999}
-              tint="#F3EBF7"
-              tintOpacity={0.72}
-              textColor="#30133E"
-              lineColor="#8B6A9A"
-              baseColor="#F3EBF7"
+              tint="#DBC1E8"
+              tintOpacity={0.12}
+              textColor="#FFFFFF"
+              lineColor="#DBC1E8"
+              baseColor="#30133E"
               intensity={0.72}
               idleIntensity={0.16}
               shineSize={10}
@@ -145,6 +145,7 @@ export function Nav() {
               showArrow
               imageShape="rounded"
               activeIndex={activeIndex}
+              onItemClick={() => setOpen(false)}
               ariaLabel="Main navigation"
               intro
             />

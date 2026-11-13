@@ -15,18 +15,6 @@ const PRACTITIONERS = [
     specialties: 'Trauma and Critical Care, Post Trauma Rehab, Paediatrics',
     biography: 'A passionate physio and movement motivator! With a degree from the University of Pretoria and 8 years of hands-on experience in trauma and critical care (for both little ones and grown-ups), Posheletso brings calm, confidence, and care to every session. She’s all about personalised treatment plans that get people moving better and feeling stronger. Now, she’s expanding her focus into musculoskeletal rehab, home-based care, and preventative treatments – helping people live their best lives, right where they are. She also possesses advanced skills in dry needling and kinesiology taping.',
   },
-  {
-    name: 'Pumelela Noah',
-    qualifications: ['BSc Physiotherapy (UCT)'],
-    specialties: 'Neuro Rehab, Trauma and ICU Rehab',
-    biography: 'Where expertise meets heart! With a solid background in human anatomy, biomechanics, and rehab techniques, Pumelela brings a rare blend of clinical know-how and genuine care to every patient she treats. Whether it’s complex neurological cases, trauma recovery, or age-related conditions, she’s seen it all –and handled it with confidence and compassion. She’s not just skilled, she’s a great listener too, working closely with patients to create personalised plans that actually work. Her passion? Helping people get back to doing what they love and living life to the fullest.',
-  },
-  {
-    name: 'Keisha May',
-    qualifications: ['BSc Physiotherapy (Wits)', 'MSc Public Health Candidate (Wits)'],
-    specialties: 'Orthopaedics, Cardiothoracic Rehab',
-    biography: 'Keshia is your go-to for all things, movement and recovery, with nearly 9 years of clinical know-how and a passion for helping people feel strong and capable again. Whether she’s easing post-op pain, guiding someone through a cardiac rehab journey, or helping manage long-term aches and niggles, Keshia blends hands-on therapy, education, and science-backed movement to get results. She’s big on empowering her patients, because recovery is a team sport, and she’s right there cheering you on every step of the way.',
-  },
 ];
 
 const AFFILIATED_PROFESSIONALS = [
@@ -40,7 +28,7 @@ export default function AboutPage() {
     <div className="bg-white pb-28 pt-32 text-[#29262D]">
       <div className="mx-auto max-w-7xl px-6 md:px-10">
         <FadeIn>
-          <section className="grid items-center gap-10 border-b border-[#30133E]/10 pb-16 md:grid-cols-[0.95fr_1.05fr] md:gap-16 md:pb-20">
+          <section className="grid items-center gap-10 overflow-hidden rounded-[32px] bg-[#F3EBF7] p-6 md:grid-cols-[0.95fr_1.05fr] md:gap-16 md:p-10">
             <div>
               <p className="mb-5 text-xs font-semibold tracking-[0.14em] text-[#8B6A9A]">About Sintha</p>
               <h1 className="max-w-2xl text-5xl font-semibold leading-[1.04] tracking-[-0.05em] text-[#30133E] md:text-7xl">
@@ -63,7 +51,7 @@ export default function AboutPage() {
           </section>
         </FadeIn>
 
-        <section className="grid items-center gap-10 py-16 md:grid-cols-[0.9fr_1.1fr] md:gap-16 md:py-24">
+        <section className="mt-10 grid items-center gap-10 overflow-hidden rounded-[32px] bg-white py-8 md:grid-cols-[0.9fr_1.1fr] md:gap-16 md:py-12">
           <FadeIn>
             <div className="relative aspect-[4/5] overflow-hidden rounded-[28px] bg-[#F3EBF7]">
               <Image
@@ -98,13 +86,13 @@ export default function AboutPage() {
           </FadeIn>
         </section>
 
-        <section className="border-t border-[#30133E]/10 pt-16 md:pt-20">
+        <section className="mt-10 rounded-[32px] bg-[#30133E] px-6 py-16 text-white md:px-10 md:py-20">
           <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
             <div>
-              <p className="mb-4 text-xs font-semibold tracking-[0.14em] text-[#8B6A9A]">The practitioners</p>
-              <h2 className="text-4xl font-semibold tracking-[-0.04em] text-[#30133E] md:text-5xl">The people behind your care.</h2>
+              <p className="mb-4 text-xs font-semibold tracking-[0.14em] text-white">The practitioners</p>
+              <h2 className="text-4xl font-semibold tracking-[-0.04em] text-white md:text-5xl">The people behind your care.</h2>
             </div>
-            <p className="copy-justified max-w-xl text-sm leading-7 text-[#29262D]/75">
+            <p className="copy-justified max-w-xl text-sm leading-7 text-white/90">
               Our clinicians bring experience across specialist physiotherapy services, with care shaped around each person’s needs and goals.
             </p>
           </div>
@@ -112,7 +100,7 @@ export default function AboutPage() {
           <div className="mt-10 grid gap-5 md:grid-cols-2">
             {PRACTITIONERS.map((person, index) => (
               <FadeIn key={person.name} delay={index * 0.06}>
-                <article className="about-feature-card h-full rounded-[24px] border border-[#30133E]/[0.08] bg-[#FAF7FC] p-7 md:p-9">
+                <article className="about-feature-card h-full rounded-[24px] border border-[#30133E]/[0.08] bg-[#F3EBF7] p-7 md:p-9">
                   <div className="flex items-start justify-between gap-4">
                     <div>
                       <p className="text-xs font-semibold tracking-[0.14em] text-[#8B6A9A]">0{index + 1}</p>
@@ -143,7 +131,7 @@ export default function AboutPage() {
           </div>
           <div className="mt-9 grid gap-5 md:grid-cols-3">
             {AFFILIATED_PROFESSIONALS.map(professional => (
-              <article key={professional.name} className="rounded-[22px] border border-[#30133E]/10 bg-white p-7 shadow-[0_14px_38px_-32px_rgba(48,19,62,0.6)]">
+              <article key={professional.name} className="rounded-[22px] bg-[#F3EBF7] p-7 shadow-[0_14px_38px_-32px_rgba(48,19,62,0.6)]">
                 <h3 className="text-xl font-semibold text-[#30133E]">{professional.name}</h3>
                 <p className="mt-2 text-sm font-medium text-[#6B4B78]">{professional.role}</p>
                 <p className="mt-4 text-sm leading-6 text-[#29262D]/75">{professional.location}</p>
@@ -158,11 +146,11 @@ export default function AboutPage() {
         <section className="mt-20 overflow-hidden rounded-[28px] bg-[#30133E] px-8 py-12 text-white md:mt-24 md:px-12 md:py-16">
           <div className="flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
             <div className="max-w-3xl">
-              <p className="mb-4 text-xs font-semibold tracking-[0.14em] text-[#DBC1E8]">Move forward with confidence</p>
+              <p className="mb-4 text-xs font-semibold tracking-[0.14em] text-white">Move forward with confidence</p>
               <h2 className="text-3xl font-semibold leading-tight tracking-[-0.04em] text-white md:text-5xl">
                 Your health, healing and well-being matter.
               </h2>
-              <p className="mt-5 max-w-2xl text-base leading-8 text-white/75">
+              <p className="mt-5 max-w-2xl text-base leading-8 text-white">
                 Our team is here to support your next step.
               </p>
             </div>

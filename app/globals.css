@@ -226,7 +226,7 @@ input[type="button"]:disabled {
   gap: 8px 20px;
   padding-top: 14px;
   border-top: 1px solid rgba(255, 255, 255, 0.16);
-  color: rgba(255, 255, 255, 0.62);
+  color: #FFFFFF;
   font-size: 12px;
 }
 

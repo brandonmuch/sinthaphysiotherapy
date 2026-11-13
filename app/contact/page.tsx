@@ -42,11 +42,11 @@ export default function ContactPage() {
               <SpecularButton
                 size="md"
                 radius={999}
-                tint="#F3EBF7"
-                tintOpacity={0.8}
-                textColor="#30133E"
-                lineColor="#8B6A9A"
-                baseColor="#F3EBF7"
+                tint="#DBC1E8"
+                tintOpacity={0.12}
+                textColor="#FFFFFF"
+                lineColor="#DBC1E8"
+                baseColor="#30133E"
                 intensity={0.72}
                 idleIntensity={0.14}
                 shineSize={10}
@@ -82,7 +82,7 @@ export default function ContactPage() {
         </section>
 
         <section className="mt-16 grid gap-5 md:grid-cols-2">
-          <article className="contact-card rounded-[26px] border border-[#30133E]/10 bg-[#F8F4FA] p-8 md:p-10">
+          <article className="contact-card rounded-[26px] border border-[#30133E]/10 bg-[#F3EBF7] p-8 md:p-10">
             <p className="text-xs font-semibold tracking-[0.14em] text-[#8B6A9A]">Fastest way to book</p>
             <h2 className="mt-4 text-3xl font-semibold tracking-[-0.035em] text-[#30133E]">Message us on WhatsApp.</h2>
             <p className="copy-justified mt-4 max-w-lg text-base leading-7 text-[#29262D]/80">
@@ -111,7 +111,7 @@ export default function ContactPage() {
             </SpecularButton>
           </article>
 
-          <article className="contact-card rounded-[26px] border border-[#30133E]/10 bg-white p-8 shadow-[0_16px_44px_-38px_rgba(48,19,62,0.55)] md:p-10">
+          <article className="contact-card rounded-[26px] border border-[#30133E]/10 bg-[#F3EBF7] p-8 shadow-[0_16px_44px_-38px_rgba(48,19,62,0.55)] md:p-10">
             <p className="text-xs font-semibold tracking-[0.14em] text-[#8B6A9A]">Prefer to call?</p>
             <h2 className="mt-4 text-3xl font-semibold tracking-[-0.035em] text-[#30133E]">Speak to our team.</h2>
             <p className="copy-justified mt-4 max-w-lg text-base leading-7 text-[#29262D]/80">
@@ -173,11 +173,11 @@ export default function ContactPage() {
         </section>
 
         <section className="mt-16 rounded-[28px] bg-[#30133E] px-8 py-12 text-center md:px-12 md:py-16">
-          <p className="text-xs font-semibold tracking-[0.14em] text-[#DBC1E8]">A little reassurance</p>
+          <p className="text-xs font-semibold tracking-[0.14em] text-white">A little reassurance</p>
           <blockquote className="mx-auto mt-4 max-w-4xl text-3xl font-semibold leading-tight tracking-[-0.035em] text-white md:text-5xl">
             “Compassion in every breath, care in every movement.”
           </blockquote>
-          <p className="mx-auto mt-5 max-w-xl text-sm leading-7 text-white/75">
+          <p className="mx-auto mt-5 max-w-xl text-sm leading-7 text-white">
             We’re here to help you take the next step towards feeling stronger and moving with confidence.
           </p>
           <div className="mt-8">

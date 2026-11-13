@@ -17,14 +17,14 @@ export function Footer() {
                 className="object-contain object-left"
               />
             </Link>
-            <p className="max-w-sm text-sm leading-7 text-white/70">
+            <p className="max-w-sm text-sm leading-7 text-white">
               Personalised rehabilitation and specialised respiratory care for children and adults.
             </p>
           </div>
 
           <div>
             <p className="mb-5 text-xs font-semibold tracking-[0.08em] text-[#DBC1E8]">Explore</p>
-            <ul className="space-y-3 text-sm text-white/75">
+            <ul className="space-y-3 text-sm text-white">
               <li><Link href="/" className="transition hover:text-[#DBC1E8]">Home</Link></li>
               <li><Link href="/about" className="transition hover:text-[#DBC1E8]">About us</Link></li>
               <li><Link href="/services" className="transition hover:text-[#DBC1E8]">Services</Link></li>
@@ -34,7 +34,7 @@ export function Footer() {
 
           <div>
             <p className="mb-5 text-xs font-semibold tracking-[0.2em] text-[#DBC1E8]">Get in touch</p>
-            <ul className="space-y-3 text-sm text-white/75">
+            <ul className="space-y-3 text-sm text-white">
               <li><a href="tel:+27670721908" className="hover:text-[#DBC1E8]">067 072 1908</a></li>
               <li><a href="mailto:info@sinthaphysiotherapy.co.za" className="break-words hover:text-[#DBC1E8]">info@sinthaphysiotherapy.co.za</a></li>
               <li>Life Fourways Hospital, Suite C28B</li>
@@ -64,7 +64,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="flex flex-col gap-3 border-t border-white/15 pt-7 text-xs text-white/50 md:flex-row md:items-center md:justify-between">
+        <div className="flex flex-col gap-3 border-t border-white/15 pt-7 text-xs text-white md:flex-row md:items-center md:justify-between">
           <p>© {new Date().getFullYear()} Sintha Physiotherapy. All rights reserved.</p>
           <p>Wezi Nyimba Physiotherapists Inc.</p>
         </div>

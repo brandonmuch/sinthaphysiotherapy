@@ -60,7 +60,7 @@ export default function StrongAtEveryAgePage() {
           <p>Remember: it’s never too late to start moving, healing, and thriving — because strength has no age limit.</p>
         </div>
 
-        <div className="mt-14 rounded-[26px] border border-[#30133E]/10 bg-[#F8F4FA] p-8 md:p-10">
+        <div className="mt-14 rounded-[26px] border border-[#30133E]/10 bg-[#F3EBF7] p-8 md:p-10">
           <h2 className="text-2xl font-semibold text-[#30133E]">Ready to keep moving?</h2>
           <p className="mt-3 leading-7 text-[#29262D]/80">Speak to our team about physiotherapy support for yourself or someone you care about.</p>
           <SpecularButton
