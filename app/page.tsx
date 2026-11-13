@@ -133,7 +133,7 @@ export default function Home() {
             flowDirection="down"
             opacity={0.7}
             mouseInteraction
-            mouseStrength={0.7}
+            mouseStrength={0.38}
             clickSwirl
             className="absolute inset-0"
             style={{ position: 'absolute', inset: 0 }}
@@ -170,7 +170,7 @@ export default function Home() {
             ))}
           </div>
           <div className="mt-12">
-            <SpecularButton size="md" radius={999} tint="#DBC1E8" tintOpacity={0.12} textColor="#FFFFFF" lineColor="#DBC1E8" baseColor="#30133E" intensity={0.82} idleIntensity={0.16} shineSize={10} shineFade={34} thickness={1.1} glow={0.3} followMouse href="/about">
+            <SpecularButton size="md" radius={999} tint="#DBC1E8" tintOpacity={0.12} textColor="#30133E" lineColor="#FFFFFF" baseColor="#F3EBF7" intensity={0.78} idleIntensity={0.2} shineSize={10} shineFade={34} thickness={1.1} glow={0.3} followMouse href="/about">
               Who we are <span aria-hidden="true">↗</span>
             </SpecularButton>
           </div>
