@@ -18,6 +18,7 @@ const ITEMS = [
     label: 'Explore',
     description: 'Learn more about the clinic and its approach.',
     links: [
+      { label: 'Home', href: '/' },
       { label: 'About Sintha', href: '/about' },
       { label: 'All services', href: '/services' },
       { label: 'Journal', href: '/blog' }
@@ -54,7 +55,7 @@ const NAV_STYLE = {
   '--cn-cta-ink': '#FFFFFF',
   '--cn-cta-shadow': 'inset 0 1px 0 rgba(255,255,255,0.18), 0 6px 14px -8px rgba(48,19,62,0.38)',
   '--cn-cta-hover': 'brightness(1.08)'
-} as CSSProperties;
+} as unknown as CSSProperties;
 
 export function Nav() {
   return (
