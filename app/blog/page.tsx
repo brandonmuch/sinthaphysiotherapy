@@ -94,7 +94,7 @@ export default function BlogPage() {
                   fill
                   unoptimized
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  className="blog-card-image object-contain p-3"
+                  className="blog-card-image object-cover object-center"
                 />
               </ArticleLink>
               <div className="flex flex-1 flex-col p-7 md:p-8">
