@@ -34,7 +34,7 @@ export default function AboutPage() {
               <h1 className="max-w-2xl text-5xl font-semibold leading-[1.04] tracking-[-0.05em] text-[#30133E] md:text-7xl">
                 Meet our team of expert physiotherapists
               </h1>
-              <p className="copy-justified mt-7 max-w-xl text-base leading-8 text-[#29262D]/85 md:text-lg">
+              <p className="copy-justified mt-6 max-w-xl text-[15px] leading-[1.75] text-[#29262D]/85 md:text-base">
                 We are dedicated to providing comprehensive, compassionate care. We believe in treating the whole person, not just the condition, empowering you to move better and live better through evidence-based practice.
               </p>
             </div>
@@ -46,7 +46,7 @@ export default function AboutPage() {
                   fill
                   priority
                   sizes="(max-width: 768px) 100vw, 50vw"
-                  className="object-cover object-[68%_center]"
+                  className="object-cover object-[76%_center]"
                 />
               </div>
             </SinthaCard>
