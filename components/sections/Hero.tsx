@@ -17,6 +17,18 @@ export function Hero() {
           interactive
           cursorSize={50}
           cursorStrength={0.6}
+          pattern=""
+          wave={{}}
+          spacing={{}}
+          markSize={{}}
+          depth={{}}
+          light={{}}
+          shine={{}}
+          contrast={{}}
+          speed={{}}
+          scale={{}}
+          direction={{}}
+          style={{}}
         />
       </div>
 
