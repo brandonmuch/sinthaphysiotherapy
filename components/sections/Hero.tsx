@@ -1,6 +1,5 @@
 'use client';
 
-import Link from 'next/link';
 import { motion, useReducedMotion } from 'framer-motion';
 import SpecularButton from '@/components/ui/SpecularButton';
 import PatternWaves from '@/components/ui/PatternWaves';
