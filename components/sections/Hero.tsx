@@ -1,6 +1,7 @@
 'use client';
 
 import { motion, useReducedMotion } from 'framer-motion';
+import { useRouter } from 'next/navigation';
 import SpecularButton from '@/components/ui/SpecularButton';
 import PatternWaves from '@/components/ui/PatternWaves';
 
@@ -8,6 +9,7 @@ const BOOKING_LINK = 'https://wa.me/27670721908?text=Hello%20Sintha%20Physiother
 
 export function Hero() {
   const reduceMotion = useReducedMotion();
+  const router = useRouter();
 
   return (
     <section className="relative isolate flex min-h-[100svh] items-center justify-center overflow-hidden bg-[#30133E] px-6 pb-20 pt-32 text-center text-white">
@@ -88,7 +90,7 @@ export function Hero() {
             glow={0.3}
             followMouse
             proximity={180}
-            onClick={() => window.location.assign('/services')}
+            onClick={() => router.push('/services')}
           >
             Explore services <span aria-hidden="true">↗</span>
           </SpecularButton>
