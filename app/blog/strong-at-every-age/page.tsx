@@ -19,7 +19,7 @@ export default function StrongAtEveryAgePage() {
         <h1 className="mt-5 text-4xl font-semibold leading-[1.06] tracking-[-0.045em] text-[#30133E] md:text-6xl">
           Strong at Every Age: How Physiotherapy Helps Our Golden Crew
         </h1>
-        <p className="mt-8 text-xl leading-8 text-[#29262D]/85">
+        <p className="mt-8 max-w-[68ch] text-[17px] leading-[1.85] text-[#29262D]/85 md:text-lg">
           Growing older is a gift. More time for laughter, more stories to share, and more wisdom to pass on. But with age also come changes in our bodies, and sometimes those changes make life feel smaller than it should.
         </p>
 
@@ -34,7 +34,7 @@ export default function StrongAtEveryAgePage() {
           />
         </figure>
 
-        <div className="prose prose-lg copy-justified mt-10 max-w-none prose-headings:font-semibold prose-headings:tracking-tight prose-headings:text-[#30133E] prose-p:leading-8 prose-p:text-[#29262D]/85 prose-li:leading-8 prose-li:text-[#30133E]/80">
+        <div className="blog-article-copy mt-10">
           <p>Here’s a fact that might surprise you: after the age of 65, 1 in 3 older adults experience a fall each year. Falls are the leading cause of injury in older people, and many never regain their full independence afterwards. Scary? Yes. But here’s the good news: physiotherapy can reduce fall risk by up to 40% That’s nearly half!</p>
 
           <h2>How Physiotherapy Can Help</h2>
@@ -62,7 +62,7 @@ export default function StrongAtEveryAgePage() {
 
         <div className="mt-14 rounded-[26px] border border-[#30133E]/10 bg-[#F3EBF7] p-8 md:p-10">
           <h2 className="text-2xl font-semibold text-[#30133E]">Ready to keep moving?</h2>
-          <p className="mt-3 leading-7 text-[#29262D]/80">Speak to our team about physiotherapy support for yourself or someone you care about.</p>
+          <p className="mt-3 text-[15px] leading-7 text-[#29262D]/80">Speak to our team about physiotherapy support for yourself or someone you care about.</p>
           <SpecularButton
             className="mt-7"
             size="md"
