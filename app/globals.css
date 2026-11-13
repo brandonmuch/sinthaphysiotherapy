@@ -418,16 +418,16 @@ input[type="button"]:disabled {
 .sintha-footer-logo #sintha-lungs {
   transform-box: fill-box;
   transform-origin: center center;
-  animation: sintha-footer-breath 3.8s cubic-bezier(0.45, 0, 0.55, 1) infinite;
+  animation: sintha-footer-breath 3.6s cubic-bezier(0.45, 0, 0.55, 1) infinite;
   will-change: transform;
 }
 
 @keyframes sintha-footer-breath {
   0%, 100% {
-    transform: scale(1, 1);
+    transform: scale(1, 1) translateY(0);
   }
   50% {
-    transform: scale(1.075, 1.06);
+    transform: scale(1.16, 1.12) translateY(-2px);
   }
 }
 
@@ -443,4 +443,13 @@ input[type="button"]:disabled {
     width: min(282px, 100%);
     height: 208px;
   }
+}
+
+
+/* Keep the dark hero typography white despite the global aubergine heading rule. */
+.sintha-hero h1,
+.sintha-hero h1 span,
+.sintha-hero h2,
+.sintha-hero p {
+  color: #FFFFFF;
 }
