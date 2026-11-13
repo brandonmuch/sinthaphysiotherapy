@@ -249,7 +249,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="bg-white px-6 py-20 md:py-28">
+      <section className="bg-[#F3EBF7] px-6 py-20 md:py-28">
         <div className="mx-auto max-w-7xl">
           <h2 className="text-4xl font-semibold tracking-[-0.04em] md:text-5xl">Frequently asked questions</h2>
           <div className="mt-10 border-t border-[#30133E]/20">
