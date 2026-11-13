@@ -46,7 +46,7 @@ export default function AboutPage() {
                   fill
                   priority
                   sizes="(max-width: 768px) 100vw, 50vw"
-                  className="object-cover object-center"
+                  className="object-cover object-[68%_center]"
                 />
               </div>
             </SinthaCard>
