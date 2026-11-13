@@ -202,3 +202,12 @@
   container-type: size;
   will-change: transform, opacity;
 }
+
+
+.flowing-menu__part-group {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  width: max-content;
+  height: 100%;
+}
