@@ -1,38 +1,34 @@
 'use client';
+
 import Link from 'next/link';
 import Image from 'next/image';
-import { useEffect, useState } from 'react';
 
 export function Nav() {
-  const [scrolled, setScrolled] = useState(false);
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 40);
-    window.addEventListener('scroll', onScroll);
-    return () => window.removeEventListener('scroll', onScroll);
-  }, []);
-
   return (
-    <header className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${scrolled ? 'bg-white/90 backdrop-blur-md py-4 shadow-sm' : 'bg-transparent py-6'}`}>
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-[#30133E]/5 bg-white/95 py-3 shadow-sm shadow-[#30133E]/5 backdrop-blur-md">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 md:px-10">
-        
-        {/* UPDATED TO USE YOUR SVG LOGO */}
-        <Link href="/" className="relative w-56 h-10 md:w-64 md:h-12">
-          <Image 
-            src="/images/logo-long-dark.svg" 
-            alt="Sintha Physiotherapy" 
-            fill 
-            className="object-contain object-left" 
+        <Link href="/" aria-label="Sintha Physiotherapy home" className="relative h-12 w-52 md:h-14 md:w-60">
+          <Image
+            src="/images/logo-long-dark.svg"
+            alt="Sintha Physiotherapy"
+            fill
             priority
+            sizes="240px"
+            className="object-contain object-left"
           />
         </Link>
 
         <nav className="hidden items-center gap-8 text-xs font-semibold uppercase tracking-[0.15em] text-[#30133E] md:flex">
-          <Link href="/" className="hover:text-black transition-colors">Home</Link>
-          <Link href="/about" className="hover:text-black transition-colors">About</Link>
-          <Link href="/services" className="hover:text-black transition-colors">Services</Link>
-          <Link href="/blog" className="hover:text-black transition-colors">Blog</Link>
-          <Link href="/contact" className="bg-[#30133E] text-white px-6 py-3 rounded-full hover:bg-black transition-colors">Book Now</Link>
+          <Link href="/" className="transition-colors hover:text-[#8B6A9A]">Home</Link>
+          <Link href="/about" className="transition-colors hover:text-[#8B6A9A]">About</Link>
+          <Link href="/services" className="transition-colors hover:text-[#8B6A9A]">Services</Link>
+          <Link href="/blog" className="transition-colors hover:text-[#8B6A9A]">Journal</Link>
+          <Link href="/contact" className="rounded-full bg-[#30133E] px-6 py-3 text-white transition-colors hover:bg-[#4B255F]">Book now</Link>
         </nav>
+
+        <Link href="/contact" className="inline-flex min-h-11 items-center rounded-full bg-[#30133E] px-5 py-3 text-xs font-semibold uppercase tracking-[0.12em] text-white transition-colors hover:bg-[#4B255F] md:hidden">
+          Book now
+        </Link>
       </div>
     </header>
   );

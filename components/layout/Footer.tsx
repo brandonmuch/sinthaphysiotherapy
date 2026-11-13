@@ -3,60 +3,52 @@ import Image from 'next/image';
 
 export function Footer() {
   return (
-    <footer className="bg-purple text-white pt-24 pb-12 relative overflow-hidden">
-      <div className="mx-auto max-w-7xl px-6 md:px-10 relative z-10">
-        <div className="grid gap-12 md:grid-cols-4 mb-16">
-          
+    <footer className="relative overflow-hidden bg-[#30133E] pb-10 pt-20 text-white">
+      <div className="relative z-10 mx-auto max-w-7xl px-6 md:px-10">
+        <div className="mb-14 grid gap-12 md:grid-cols-4">
           <div className="md:col-span-2">
-            {/* YOUR EXACT FOOTER LOGO */}
-            <Link href="/" className="relative block w-64 h-32 mb-6">
-              <Image 
-                src="/images/Sintha Physiotherapy Logo Text White.png" 
-                alt="Sintha Physiotherapy" 
-                fill 
-                className="object-contain object-left" 
+            <Link href="/" className="relative mb-6 block h-24 w-64" aria-label="Sintha Physiotherapy home">
+              <Image
+                src="/images/logo-stacked-light.png"
+                alt="Sintha Physiotherapy"
+                fill
+                sizes="256px"
+                className="object-contain object-left"
               />
             </Link>
-            <p className="max-w-sm text-sm text-lilac/80 leading-relaxed">
-              Sintha Physiotherapy is a specialised physiotherapy practice. We offer comprehensive rehabilitation and specialised respiratory care to help you move and breathe better.
+            <p className="max-w-sm text-sm leading-7 text-white/70">
+              Personalised rehabilitation and specialised respiratory care for children and adults.
             </p>
           </div>
 
           <div>
-            <p className="text-lilac font-semibold uppercase tracking-widest text-xs mb-4">Explore</p>
-            <ul className="space-y-3 text-sm text-white/80">
-              <li><Link href="/" className="hover:text-lilac">Home</Link></li>
-              <li><Link href="/about" className="hover:text-lilac">About Us</Link></li>
-              <li><Link href="/services" className="hover:text-lilac">Services</Link></li>
-              <li><Link href="/blog" className="hover:text-lilac">Blog</Link></li>
+            <p className="mb-5 text-xs font-semibold uppercase tracking-[0.2em] text-[#DBC1E8]">Explore</p>
+            <ul className="space-y-3 text-sm text-white/75">
+              <li><Link href="/" className="transition hover:text-[#DBC1E8]">Home</Link></li>
+              <li><Link href="/about" className="transition hover:text-[#DBC1E8]">About us</Link></li>
+              <li><Link href="/services" className="transition hover:text-[#DBC1E8]">Services</Link></li>
+              <li><Link href="/blog" className="transition hover:text-[#DBC1E8]">Journal</Link></li>
             </ul>
           </div>
 
           <div>
-            <p className="text-lilac font-semibold uppercase tracking-widest text-xs mb-4">Contact</p>
-            <ul className="space-y-3 text-sm text-white/80">
-              <li>info@sinthaphysiotherapy.co.za</li>
-              <li>+27 (0) 10 000 0000</li>
-              <li>Mon–Sat, by appointment</li>
+            <p className="mb-5 text-xs font-semibold uppercase tracking-[0.2em] text-[#DBC1E8]">Get in touch</p>
+            <ul className="space-y-3 text-sm text-white/75">
+              <li><a href="tel:+27670721908" className="hover:text-[#DBC1E8]">067 072 1908</a></li>
+              <li><a href="mailto:info@sinthaphysiotherapy.co.za" className="break-words hover:text-[#DBC1E8]">info@sinthaphysiotherapy.co.za</a></li>
+              <li>Life Fourways Hospital, Suite C28B</li>
+              <li>Fourways, Johannesburg</li>
+              <li>Mon–Sun, by appointment</li>
             </ul>
+            <Link href="/contact" className="mt-5 inline-flex text-sm font-semibold text-[#DBC1E8] underline-offset-4 hover:underline">
+              Booking information ↗
+            </Link>
           </div>
         </div>
 
-        <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-white/50">
+        <div className="flex flex-col gap-3 border-t border-white/15 pt-7 text-xs text-white/50 md:flex-row md:items-center md:justify-between">
           <p>© {new Date().getFullYear()} Sintha Physiotherapy. All rights reserved.</p>
           <p>Wezi Nyimba Physiotherapists Inc.</p>
-        </div>
-      </div>
-
-      {/* THE BREATHING LUNGS - YOUR EXACT FILENAME */}
-      <div className="absolute right-0 bottom-0 opacity-10 pointer-events-none w-[400px] h-[400px] translate-x-1/4 translate-y-1/4">
-        <div className="relative w-full h-full animate-breathe">
-           <Image 
-             src="/images/lungs-white.png" 
-             alt="Breathing Lungs" 
-             fill 
-             className="object-contain" 
-           />
         </div>
       </div>
     </footer>
