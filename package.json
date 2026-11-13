@@ -7,8 +7,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "deploy": "wrangler deploy",
-    "preview": "opennextjs-cloudflare build && wrangler dev"
+    "deploy": "opennextjs-cloudflare build && opennextjs-cloudflare deploy",
+    "preview": "opennextjs-cloudflare build && opennextjs-cloudflare preview",
+    "build:cloudflare": "opennextjs-cloudflare build"
   },
   "dependencies": {
     "clsx": "^2.1.1",
