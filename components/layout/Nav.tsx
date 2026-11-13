@@ -1,35 +1,85 @@
 'use client';
 
+import type { CSSProperties } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
+import CardNav from '@/components/ui/CardNav';
+
+const ITEMS = [
+  {
+    label: 'Care',
+    description: 'Specialised physiotherapy for children and adults.',
+    links: [
+      { label: 'Respiratory care', href: '/services#advanced-respiratory-care' },
+      { label: 'Paediatric care', href: '/services#paediatric-respiratory-support' },
+      { label: 'Rehabilitation', href: '/services#neurological-vestibular-rehabilitation' }
+    ]
+  },
+  {
+    label: 'Explore',
+    description: 'Learn more about the clinic and its approach.',
+    links: [
+      { label: 'About Sintha', href: '/about' },
+      { label: 'All services', href: '/services' },
+      { label: 'Journal', href: '/blog' }
+    ]
+  },
+  {
+    label: 'Get in touch',
+    description: 'Appointments and enquiries.',
+    links: [
+      { label: 'Contact the team', href: '/contact' },
+      { label: 'Call 067 072 1908', href: 'tel:+27670721908' },
+      { label: 'WhatsApp', href: 'https://wa.me/27670721908' }
+    ]
+  }
+];
+
+const NAV_STYLE = {
+  '--cn-bar': '68px',
+  '--cn-inset': '8px',
+  '--cn-gap': '8px',
+  '--cn-radius': '20px',
+  '--cn-logo': '34px',
+  '--cn-shadow': '0 18px 44px -34px rgba(48, 19, 62, 0.58), 0 4px 12px -8px rgba(48, 19, 62, 0.22)',
+  '--cn-panel': 'rgba(255, 255, 255, 0.92)',
+  '--cn-edge': 'rgba(48, 19, 62, 0.09)',
+  '--cn-highlight': 'rgba(255, 255, 255, 0.9)',
+  '--cn-text': '#30133E',
+  '--cn-muted': 'rgba(48, 19, 62, 0.62)',
+  '--cn-hover': 'rgba(48, 19, 62, 0.045)',
+  '--cn-ring': 'rgba(139, 106, 154, 0.65)',
+  '--cn-tile': 'linear-gradient(180deg, #FFFFFF 0%, #F8F4FA 100%)',
+  '--cn-tile-rim': 'inset 0 0 0 1px rgba(48, 19, 62, 0.06), inset 0 1px 0 rgba(255,255,255,0.95), 0 4px 10px -5px rgba(48,19,62,0.14)',
+  '--cn-cta': 'linear-gradient(180deg, #4D2B5B 0%, #30133E 100%)',
+  '--cn-cta-ink': '#FFFFFF',
+  '--cn-cta-shadow': 'inset 0 1px 0 rgba(255,255,255,0.18), 0 6px 14px -8px rgba(48,19,62,0.38)',
+  '--cn-cta-hover': 'brightness(1.08)'
+} as CSSProperties;
 
 export function Nav() {
   return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b border-[#30133E]/5 bg-white/95 py-3 shadow-sm shadow-[#30133E]/5 backdrop-blur-md">
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 md:px-10">
-        <Link href="/" aria-label="Sintha Physiotherapy home" className="relative h-12 w-52 md:h-14 md:w-60">
-          <Image
-            src="/images/logo-long-dark.svg"
-            alt="Sintha Physiotherapy"
-            fill
-            priority
-            sizes="240px"
-            className="object-contain object-left"
-          />
-        </Link>
-
-        <nav className="hidden items-center gap-8 text-xs font-semibold uppercase tracking-[0.15em] text-[#30133E] md:flex">
-          <Link href="/" className="transition-colors hover:text-[#8B6A9A]">Home</Link>
-          <Link href="/about" className="transition-colors hover:text-[#8B6A9A]">About</Link>
-          <Link href="/services" className="transition-colors hover:text-[#8B6A9A]">Services</Link>
-          <Link href="/blog" className="transition-colors hover:text-[#8B6A9A]">Journal</Link>
-          <Link href="/contact" className="rounded-full bg-[#30133E] px-6 py-3 text-white transition-colors hover:bg-[#4B255F]">Book now</Link>
-        </nav>
-
-        <Link href="/contact" className="inline-flex min-h-11 items-center rounded-full bg-[#30133E] px-5 py-3 text-xs font-semibold uppercase tracking-[0.12em] text-white transition-colors hover:bg-[#4B255F] md:hidden">
-          Book now
-        </Link>
-      </div>
-    </header>
+    <div className="sintha-nav-shell">
+      <CardNav
+        logo="/images/logo-long-dark.svg"
+        logoAlt="Sintha Physiotherapy"
+        logoHref="/"
+        items={ITEMS}
+        cta={{
+          label: 'Book an assessment',
+          href: 'https://wa.me/27670721908?text=Hello%20Sintha%20Physiotherapy%2C%20I%20would%20like%20to%20book%20an%20assessment.'
+        }}
+        theme="light"
+        surface="glass"
+        maxWidth={1200}
+        cardHeight={148}
+        openOn="click"
+        cardEffect="rise"
+        accentColor="#30133E"
+        linkComponent={Link}
+        ariaLabel="Main navigation"
+        className="sintha-card-nav"
+        style={NAV_STYLE}
+      />
+    </div>
   );
 }
