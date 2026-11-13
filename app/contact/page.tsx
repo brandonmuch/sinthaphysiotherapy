@@ -118,7 +118,7 @@ export default function ContactPage() {
 
           <SinthaCard className="h-full" backgroundColor="#F3EBF7">
             <article className="contact-card rounded-[26px] border border-[#30133E]/10 bg-[#F3EBF7] p-8 shadow-[0_16px_44px_-38px_rgba(48,19,62,0.55)] md:p-10">
-            <h2 className="mt-4 text-3xl font-semibold tracking-[-0.035em] text-[#30133E]">Speak to our team.</h2>
+            <h2 className="text-3xl font-semibold tracking-[-0.035em] text-[#30133E]">Speak to our team.</h2>
             <p className="copy-justified mt-4 max-w-lg text-base leading-7 text-[#29262D]/80">
               Call us directly to enquire about availability or the right service for your needs.
             </p>
@@ -157,7 +157,7 @@ export default function ContactPage() {
 
             <SinthaCard className="h-full" backgroundColor="#F8F4FA" borderRadius={26}>
               <article className="h-full rounded-[26px] border border-[#30133E]/10 bg-[#F8F4FA] p-7 md:p-8">
-              <h2 className="mt-4 text-2xl font-semibold text-[#30133E]">Hours.</h2>
+              <h2 className="text-2xl font-semibold text-[#30133E]">Hours.</h2>
               <p className="mt-4 text-sm leading-7 text-[#29262D]/85">
                 Monday to Sunday<br />
                 Closed Wednesday afternoons after 12:00
