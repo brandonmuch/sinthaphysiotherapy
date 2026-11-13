@@ -17,7 +17,7 @@ export function StatsStrip() {
             <p className="display text-6xl text-charcoal">
               <CountUp to={s.to} suffix={s.suffix} />
             </p>
-            <p className="mt-3 text-xs uppercase tracking-[0.25em] text-charcoal/50">{s.label}</p>
+            <p className="mt-3 text-xs tracking-[0.1em] text-charcoal/50">{s.label}</p>
           </div>
         ))}
       </div>
