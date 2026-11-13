@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   title: 'Sintha Physiotherapy | Wezi Nyimba Physiotherapists Inc.',
   description: 'Physiotherapy for children and adults in Fourways, Johannesburg. Personalised rehabilitation and respiratory care.',
   metadataBase: new URL('https://www.sinthaphysiotherapy.co.za'),
-  alternates: { canonical: '/' },
+  alternates: { canonical: './' },
   robots: { index: true, follow: true },
   icons: {
     icon: '/favicon.png',
