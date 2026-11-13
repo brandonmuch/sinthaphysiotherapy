@@ -30,7 +30,7 @@ export default function StrongAtEveryAgePage() {
             fill
             priority
             sizes="(max-width: 768px) 100vw, 896px"
-            className="object-contain p-4"
+            className="object-cover object-center"
           />
         </figure>
 
