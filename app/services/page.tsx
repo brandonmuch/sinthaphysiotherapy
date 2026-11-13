@@ -1,6 +1,8 @@
 import Image from 'next/image';
 import SpecularButton from '@/components/ui/SpecularButton';
 import FluxLines from '@/components/ui/FluxLines';
+import CircularGallery from '@/components/ui/CircularGallery';
+import SinthaCard from '@/components/ui/SinthaCard';
 
 const SERVICES = [
   {
@@ -85,6 +87,13 @@ const SERVICES = [
   },
 ];
 
+
+const GALLERY_ITEMS = SERVICES.map(service => ({
+  image: service.image,
+  text: service.title,
+  alt: service.alt,
+  description: service.paragraphs.join(' '),
+}));
 export default function ServicesPage() {
   return (
     <div className="bg-white pb-28 pt-32 text-[#29262D]">
@@ -98,84 +107,72 @@ export default function ServicesPage() {
           </p>
         </header>
 
-        <section className="relative isolate mt-14 -mx-6 overflow-hidden bg-[#30133E] px-6 py-12 md:-mx-10 md:px-10 md:py-16">
-          <div className="pointer-events-none absolute inset-0 z-0" aria-hidden="true">
-            <FluxLines
-              colors={['#DBC1E8', '#8B6A9A', '#FFFFFF']}
-              speed={0.32}
-              scale={1.55}
-              turbulence={0.9}
-              fluidity={0.1}
-              glow={2}
-              rimWidth={0.2}
-              lineWidth={1}
-              flowDirection="down"
-              opacity={0.68}
-              mouseInteraction
-              mouseStrength={0.65}
-              clickSwirl
-              className="absolute inset-0"
-              style={{ position: 'absolute', inset: 0 }}
-            />
-            <div className="absolute inset-0 bg-[#30133E]/48" />
-          </div>
-          <div className="relative z-10 mx-auto max-w-7xl">
-        <div className="grid gap-7 sm:grid-cols-2 lg:grid-cols-3">
-          {SERVICES.map((service, index) => (
-            <article
-              id={service.id}
-              key={service.id}
-              className="service-card flex h-full flex-col overflow-hidden rounded-[24px] border border-[#30133E]/[0.06] bg-[#EDE3F4] shadow-[0_12px_34px_-28px_rgba(48,19,62,0.55)]"
-            >
-              <div className={`relative ${'imageFrame' in service ? service.imageFrame : 'aspect-[4/5]'} overflow-hidden bg-[#E8D8F0]`}>
-                <Image
-                  src={service.image}
-                  alt={service.alt}
-                  fill
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  className="service-card-image object-cover object-[center_22%]"
+        <SinthaCard
+          className="mt-14 -mx-6 md:-mx-10"
+          backgroundColor="#30133E"
+          borderRadius={28}
+        >
+          <section className="relative isolate overflow-hidden rounded-[28px] bg-[#30133E] px-6 py-12 md:px-10 md:py-16">
+            <div className="pointer-events-none absolute inset-0 z-0" aria-hidden="true">
+              <FluxLines
+                colors={['#DBC1E8', '#8B6A9A', '#FFFFFF']}
+                speed={0.32}
+                scale={1.55}
+                turbulence={0.9}
+                fluidity={0.1}
+                glow={2}
+                rimWidth={0.2}
+                lineWidth={1}
+                flowDirection="down"
+                opacity={0.68}
+                mouseInteraction
+                mouseStrength={0.65}
+                clickSwirl
+                className="absolute inset-0"
+                style={{ position: 'absolute', inset: 0 }}
+              />
+              <div className="absolute inset-0 bg-[#30133E]/48" />
+            </div>
+
+            <div className="relative z-10 mx-auto max-w-7xl">
+              <div className="mx-auto max-w-3xl text-center">
+                <p className="text-xs font-semibold tracking-[0.14em] text-[#DBC1E8]">Find the right support</p>
+                <h2 className="mt-4 text-3xl font-semibold leading-tight tracking-[-0.04em] text-white md:text-5xl">
+                  Explore our services.
+                </h2>
+                <p className="mx-auto mt-5 max-w-2xl text-sm leading-7 text-white/90 md:text-base">
+                  Move through the gallery to discover the different ways we support recovery. Select any service card to open its image and read more about the care it includes.
+                </p>
+                <p className="mt-4 text-xs font-semibold tracking-[0.08em] text-white/75">
+                  Drag or scroll to explore · Select a card to open · Press Escape to close
+                </p>
+              </div>
+
+              <div className="relative mt-8 h-[460px] w-full overflow-hidden rounded-[24px] md:h-[600px]">
+                <CircularGallery
+                  items={GALLERY_ITEMS}
+                  bend={3}
+                  textColor="#FFFFFF"
+                  borderRadius={0.05}
+                  font={'600 24px "Open Sans"'}
+                  itemSize={0.82}
+                  itemAspect={0.82}
+                  gap={0.24}
+                  scrollSpeed={1.55}
+                  scrollEase={0.05}
+                  wave={0.72}
+                  fadeEdges={0.12}
+                  shadow={0.24}
+                  grayscale={false}
+                  showTitles
+                  snap
+                  openOnClick
+                  intro
                 />
               </div>
-              <div className="flex flex-1 flex-col p-8">
-                <p className="text-xs font-semibold tracking-[0.12em] text-[#8B6A9A]">
-                  {String(index + 1).padStart(2, '0')}
-                </p>
-                <h2 className="mt-3 text-xl font-semibold leading-tight tracking-[-0.025em] md:text-2xl">
-                  {service.title}
-                </h2>
-                <div className="copy-justified mt-5 space-y-4 text-sm leading-7 text-[#29262D]/85">
-                  {service.paragraphs.map((paragraph) => (
-                    <p key={paragraph}>{paragraph}</p>
-                  ))}
-                </div>
-                <div className="mt-8">
-                  <SpecularButton
-                    className="self-start"
-                    size="sm"
-                    radius={999}
-                    tint="#DBC1E8"
-                    tintOpacity={0.12}
-                    textColor="#FFFFFF"
-                    lineColor="#DBC1E8"
-                    baseColor="#30133E"
-                    intensity={0.72}
-                    idleIntensity={0.14}
-                    shineSize={10}
-                    shineFade={34}
-                    thickness={1.1}
-                    glow={0.22}
-                    followMouse
-                    href="/contact"
-                  >
-                    Ask a physio <span aria-hidden="true">↗</span>
-                  </SpecularButton>
-                </div>
-              </div>
-            </article>
-          ))}
-        </div>
-          </div>
-        </section>
+            </div>
+          </section>
+        </SinthaCard>
 
         <section className="mt-24 grid items-center gap-10 rounded-[28px] bg-[#F8F4FA] p-5 md:grid-cols-[0.95fr_1.05fr] md:gap-14 md:p-8">
           <div className="relative overflow-hidden rounded-[22px] bg-white">
