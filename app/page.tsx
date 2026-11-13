@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Hero } from '@/components/sections/Hero';
 import { HomeServicesGallery } from '@/components/sections/HomeServicesGallery';
+import SpecularButton from '@/components/ui/SpecularButton';
 
 const PILLARS = [
   {
@@ -86,17 +87,31 @@ const FAQS = [
 
 export default function Home() {
   return (
-    <div className="bg-[#F3EBF7] text-[#30133E]">
+    <div className="bg-white text-[#29262D]">
       <Hero />
 
-      <section className="bg-[#F3EBF7] px-6 py-16 md:py-24">
-        <div className="mx-auto max-w-5xl">
-          <p className="copy-justified text-base leading-8 text-[#30133E]/85 md:text-xl md:leading-[1.75]">
-            We take a holistic, whole-person approach to your health, healing, and well-being. While we’re known for our expert care in respiratory physiotherapy, our services go way beyond just helping you breathe easier.
-          </p>
-          <p className="copy-justified mt-5 text-base leading-8 text-[#30133E]/85 md:text-xl md:leading-[1.75]">
-            Whether you’re bouncing back after surgery, navigating life after a stroke, caring for a little one with health challenges, or adjusting to the natural changes that come with age, we’re here for you. From neurological to vestibular conditions, or simply feeling a bit weaker than usual, our experienced team is ready to support and empower you every step of the way. With tailored physiotherapy plans designed just for you, we’ll help you move with more confidence, breathe with ease, and get back to doing the things you love.
-          </p>
+      <section className="bg-white px-6 py-16 md:py-24">
+        <div className="mx-auto grid max-w-7xl items-center gap-10 md:grid-cols-[0.9fr_1.1fr] md:gap-16">
+          <div className="relative aspect-[4/3] overflow-hidden rounded-[28px] bg-[#F3EBF7]">
+            <Image
+              src="/uploads/patient-grandfather-grandson.jpg"
+              alt="A grandfather and grandson playing together on a couch"
+              fill
+              sizes="(max-width: 768px) 100vw, 44vw"
+              className="object-contain"
+            />
+          </div>
+          <div className="max-w-3xl">
+            <p className="mb-5 text-xs font-semibold tracking-[0.14em] text-[#8B6A9A]">Our approach</p>
+            <div className="copy-justified space-y-5 text-base leading-8 text-[#29262D]/85 md:text-lg md:leading-[1.75]">
+              <p>
+                We take a holistic, whole-person approach to your health, healing, and well-being. While we’re known for our expert care in respiratory physiotherapy, our services go way beyond just helping you breathe easier.
+              </p>
+              <p>
+                Whether you’re bouncing back after surgery, navigating life after a stroke, caring for a little one with health challenges, or adjusting to the natural changes that come with age, we’re here for you. From neurological to vestibular conditions, or simply feeling a bit weaker than usual, our experienced team is ready to support and empower you every step of the way. With tailored physiotherapy plans designed just for you, we’ll help you move with more confidence, breathe with ease, and get back to doing the things you love.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -115,39 +130,73 @@ export default function Home() {
                     alt={pillar.alt}
                     fill
                     sizes="(max-width: 768px) 100vw, 33vw"
-                    className="home-pillar-image object-cover"
+                    className="home-pillar-image object-cover object-[center_24%]"
                   />
                 </div>
                 <div className="px-6 pb-7 pt-6 md:px-7">
                 <p className="text-xs font-semibold tracking-[0.12em] text-[#8B6A9A]">{pillar.number.padStart(2, '0')}</p>
                 <h3 className="mt-3 text-lg font-semibold tracking-[-0.02em] md:text-xl">{pillar.title}</h3>
-                <p className="copy-justified mt-4 text-sm leading-7 text-[#30133E]/75">{pillar.description}</p>
+                <p className="copy-justified mt-4 text-sm leading-7 text-[#29262D]/75">{pillar.description}</p>
                 </div>
               </article>
             ))}
           </div>
           <div className="mt-12">
-            <Link href="/about" className="inline-flex items-center gap-2 text-sm font-semibold text-[#5B3C69] underline-offset-4 hover:underline">
-              Who We Are <span aria-hidden="true">↗</span>
-            </Link>
+            <SpecularButton size="md" radius={999} tint="#F3EBF7" tintOpacity={0.7} textColor="#30133E" lineColor="#8B6A9A" baseColor="#F3EBF7" intensity={0.72} idleIntensity={0.14} shineSize={10} shineFade={34} thickness={1.1} glow={0.22} followMouse href="/about">
+              Who we are <span aria-hidden="true">↗</span>
+            </SpecularButton>
           </div>
         </div>
       </section>
 
-      <section className="bg-[#F3EBF7] px-6 py-20 md:py-28">
+      <section className="bg-white px-6 py-16 md:py-24">
+        <div className="mx-auto grid max-w-7xl items-center gap-10 md:grid-cols-[1fr_1.05fr] md:gap-16">
+          <div>
+            <p className="mb-4 text-xs font-semibold tracking-[0.14em] text-[#8B6A9A]">Our approach</p>
+            <h2 className="max-w-2xl text-4xl font-semibold leading-[1.08] tracking-[-0.04em] text-[#30133E] md:text-5xl">
+              Care that sees the whole person.
+            </h2>
+            <p className="copy-justified mt-6 max-w-xl text-base leading-8 text-[#29262D]/85 md:text-lg">
+              We believe in meeting each patient where they are, physically, emotionally, and functionally. Our approach is holistic, hands-on, and person-centred.
+            </p>
+            <blockquote className="mt-8 border-l-2 border-[#8B6A9A] pl-6">
+              <p className="text-2xl font-semibold leading-snug tracking-[-0.025em] text-[#30133E] md:text-3xl">
+                “Compassion in every breath, care in every movement.”
+              </p>
+            </blockquote>
+            <div className="mt-8">
+              <SpecularButton size="md" radius={999} tint="#F3EBF7" tintOpacity={0.72} textColor="#30133E" lineColor="#8B6A9A" baseColor="#F3EBF7" intensity={0.72} idleIntensity={0.14} shineSize={10} shineFade={34} thickness={1.1} glow={0.22} followMouse href="/about">
+                Meet our team <span aria-hidden="true">↗</span>
+              </SpecularButton>
+            </div>
+          </div>
+          <div className="relative overflow-hidden rounded-[28px] bg-[#F3EBF7]">
+            <Image
+              src="/uploads/patient-meditating-outdoors.jpg"
+              alt="A woman taking a peaceful moment outdoors among soft lilac flowers"
+              width={800}
+              height={533}
+              sizes="(max-width: 768px) 100vw, 52vw"
+              className="h-auto w-full object-cover"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-white px-6 py-20 md:py-28">
         <div className="mx-auto max-w-7xl">
           <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
             <div className="max-w-3xl">
               <h2 className="text-4xl font-semibold leading-[1.06] tracking-[-0.045em] md:text-5xl">
                 Our Services
               </h2>
-              <p className="copy-justified mt-6 text-base leading-8 text-[#30133E]/70 md:text-lg">
+              <p className="copy-justified mt-6 text-base leading-8 text-[#29262D]/75 md:text-lg">
                 Our services support children and adults through hospital-based care, recovery, rehabilitation and ongoing support at home.
               </p>
             </div>
-            <Link href="/services" className="inline-flex shrink-0 items-center gap-2 text-sm font-semibold text-[#30133E] underline-offset-4 hover:underline">
-              View our Services Today <span aria-hidden="true">↗</span>
-            </Link>
+            <SpecularButton size="md" radius={999} tint="#F3EBF7" tintOpacity={0.72} textColor="#30133E" lineColor="#8B6A9A" baseColor="#F3EBF7" intensity={0.72} idleIntensity={0.14} shineSize={10} shineFade={34} thickness={1.1} glow={0.22} followMouse href="/services">
+              View our services <span aria-hidden="true">↗</span>
+            </SpecularButton>
           </div>
 
           <div className="mt-12">
@@ -164,7 +213,7 @@ export default function Home() {
                 <span className="pt-1 text-sm tabular-nums text-[#8B6A9A]">0{index + 1}</span>
                 <span>
                   <span className="block text-base font-semibold tracking-[-0.015em]">{service.title}</span>
-                  <span className="copy-justified mt-3 block max-w-2xl text-sm leading-7 text-[#30133E]/70">{service.description}</span>
+                  <span className="copy-justified mt-3 block max-w-2xl text-sm leading-7 text-[#29262D]/75">{service.description}</span>
                 </span>
                 <span className="hidden text-xl text-[#8B6A9A] transition-transform duration-200 ease-out group-hover:translate-x-1 sm:block">↗</span>
               </Link>
@@ -183,7 +232,7 @@ export default function Home() {
                   <span>{faq.question}</span>
                   <span className="text-2xl font-light text-[#8B6A9A] transition-transform group-open:rotate-45">+</span>
                 </summary>
-                <p className="copy-justified max-w-3xl pt-5 pr-8 text-base leading-8 text-[#30133E]/70">{faq.answer}</p>
+                <p className="copy-justified max-w-3xl pt-5 pr-8 text-base leading-8 text-[#29262D]/75">{faq.answer}</p>
               </details>
             ))}
           </div>
@@ -195,9 +244,9 @@ export default function Home() {
           <h2 className="max-w-4xl text-balance text-4xl font-semibold leading-[1.04] tracking-[-0.05em] md:text-6xl">
             Your recovery, your pace, our care
           </h2>
-          <Link href="/contact" className="inline-flex min-h-14 shrink-0 items-center justify-center rounded-full bg-[#DBC1E8] px-8 py-4 text-sm font-semibold text-[#30133E] transition hover:bg-white">
-            Contact us today <span aria-hidden="true" className="ml-3 text-lg">↗</span>
-          </Link>
+          <SpecularButton size="lg" radius={999} tint="#DBC1E8" tintOpacity={0.16} textColor="#FFFFFF" lineColor="#DBC1E8" baseColor="#3D2548" intensity={0.82} idleIntensity={0.18} shineSize={10} shineFade={34} thickness={1.1} glow={0.34} followMouse href="/contact">
+            Contact us today <span aria-hidden="true">↗</span>
+          </SpecularButton>
         </div>
       </section>
     </div>

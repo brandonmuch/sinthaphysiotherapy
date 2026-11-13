@@ -1,86 +1,162 @@
 'use client';
 
-import type { CSSProperties } from 'react';
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
-import CardNav from '@/components/ui/CardNav';
+import { usePathname } from 'next/navigation';
+import FlowingMenu from '@/components/ui/FlowingMenu';
+import SpecularButton from '@/components/ui/SpecularButton';
 
-const ITEMS = [
-  {
-    label: 'Care',
-    description: 'Specialised physiotherapy for children and adults.',
-    links: [
-      { label: 'Respiratory care', href: '/services#advanced-respiratory-care' },
-      { label: 'Paediatric care', href: '/services#paediatric-respiratory-support' },
-      { label: 'Rehabilitation', href: '/services#neurological-vestibular-rehabilitation' }
-    ]
-  },
-  {
-    label: 'Explore',
-    description: 'Learn more about the clinic and its approach.',
-    links: [
-      { label: 'Home', href: '/' },
-      { label: 'About Sintha', href: '/about' },
-      { label: 'All services', href: '/services' },
-      { label: 'Blog', href: '/blog' }
-    ]
-  },
-  {
-    label: 'Get in touch',
-    description: 'Appointments and enquiries.',
-    links: [
-      { label: 'Contact the team', href: '/contact' },
-      { label: 'Call 067 072 1908', href: 'tel:+27670721908' },
-      { label: 'WhatsApp', href: 'https://wa.me/27670721908' }
-    ]
-  }
+const MENU_ITEMS = [
+  { text: 'Home', link: '/', image: '/uploads/physio-tools-mat.jpg', marquee: 'Move with confidence' },
+  { text: 'About us', link: '/about', image: '/uploads/patient-grandfather-grandson.jpg', marquee: 'Care for the whole person' },
+  { text: 'Our services', link: '/services', image: '/uploads/patient-elderly-recovery.jpg', marquee: 'Support at every stage' },
+  { text: 'Blog', link: '/blog', image: '/images/224639_4dc100e8d2e945a79919dc279d08b41a~mv2.jpeg', marquee: 'Guidance and insights' },
+  { text: 'Contact', link: '/contact', image: '/uploads/physio-home-visit.jpg', marquee: 'Let’s take the next step' },
 ];
 
-const NAV_STYLE = {
-  '--cn-bar': '68px',
-  '--cn-inset': '8px',
-  '--cn-gap': '8px',
-  '--cn-radius': '20px',
-  '--cn-logo': '34px',
-  '--cn-shadow': '0 18px 44px -34px rgba(48, 19, 62, 0.58), 0 4px 12px -8px rgba(48, 19, 62, 0.22)',
-  '--cn-panel': 'rgba(255, 255, 255, 0.92)',
-  '--cn-edge': 'rgba(48, 19, 62, 0.09)',
-  '--cn-highlight': 'rgba(255, 255, 255, 0.9)',
-  '--cn-text': '#30133E',
-  '--cn-muted': 'rgba(48, 19, 62, 0.62)',
-  '--cn-hover': 'rgba(48, 19, 62, 0.045)',
-  '--cn-ring': 'rgba(139, 106, 154, 0.65)',
-  '--cn-tile': 'linear-gradient(180deg, #F8F2FB 0%, #EEE3F3 100%)',
-  '--cn-tile-rim': 'inset 0 0 0 1px rgba(139, 106, 154, 0.2), inset 0 1px 0 rgba(255,255,255,0.96), 0 8px 18px -12px rgba(48,19,62,0.28)',
-  '--cn-cta': 'linear-gradient(180deg, #4D2B5B 0%, #30133E 100%)',
-  '--cn-cta-ink': '#FFFFFF',
-  '--cn-cta-shadow': 'inset 0 1px 0 rgba(255,255,255,0.18), 0 6px 14px -8px rgba(48,19,62,0.38)',
-  '--cn-cta-hover': 'brightness(1.08)'
-} as unknown as CSSProperties;
+const BOOKING_LINK =
+  'https://wa.me/27670721908?text=Hello%20Sintha%20Physiotherapy%2C%20I%20would%20like%20to%20book%20an%20assessment.';
 
 export function Nav() {
+  const [open, setOpen] = useState(false);
+  const pathname = usePathname();
+  const activeIndex = Math.max(0, MENU_ITEMS.findIndex(item => item.link === pathname));
+
+  useEffect(() => {
+    if (!open) return;
+    const previous = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') setOpen(false);
+    };
+    window.addEventListener('keydown', closeOnEscape);
+    return () => {
+      document.body.style.overflow = previous;
+      window.removeEventListener('keydown', closeOnEscape);
+    };
+  }, [open]);
+
   return (
-    <div className="sintha-nav-shell">
-      <CardNav
-        logo="/images/logo-long-dark.svg"
-        logoAlt="Sintha Physiotherapy"
-        logoHref="/"
-        items={ITEMS}
-        cta={{
-          label: 'Book an assessment',
-          href: 'https://wa.me/27670721908?text=Hello%20Sintha%20Physiotherapy%2C%20I%20would%20like%20to%20book%20an%20assessment.'
-        }}
-        theme="light"
-        surface="glass"
-        maxWidth={1200}
-        cardHeight={148}
-        openOn="click"
-        cardEffect="rise"
-        accentColor="#30133E"
-        linkComponent={Link}
-        ariaLabel="Main navigation"
-        className="sintha-card-nav"
-        style={NAV_STYLE}
-      />
-    </div>
+    <>
+      <div className="sintha-nav-shell">
+        <div className="sintha-nav-bar">
+          <Link href="/" className="sintha-nav-logo" aria-label="Sintha Physiotherapy home">
+            <img src="/images/logo-long-dark.svg" alt="Sintha Physiotherapy" />
+          </Link>
+
+          <div className="sintha-nav-actions">
+            <SpecularButton
+              size="sm"
+              radius={999}
+              tint="#F3EBF7"
+              tintOpacity={0.72}
+              textColor="#30133E"
+              lineColor="#8B6A9A"
+              baseColor="#F3EBF7"
+              intensity={0.72}
+              idleIntensity={0.16}
+              shineSize={10}
+              shineFade={34}
+              thickness={1.1}
+              glow={0.24}
+              followMouse
+              proximity={150}
+              onClick={() => setOpen(true)}
+              aria-expanded={open}
+              aria-controls="sintha-fullscreen-menu"
+            >
+              Menu <span aria-hidden="true">☰</span>
+            </SpecularButton>
+
+            <SpecularButton
+              size="sm"
+              radius={999}
+              tint="#DBC1E8"
+              tintOpacity={0.16}
+              textColor="#FFFFFF"
+              lineColor="#DBC1E8"
+              baseColor="#30133E"
+              intensity={0.82}
+              idleIntensity={0.18}
+              shineSize={10}
+              shineFade={34}
+              thickness={1.1}
+              glow={0.3}
+              followMouse
+              proximity={180}
+              href={BOOKING_LINK}
+              external
+            >
+              Book an assessment <span aria-hidden="true">↗</span>
+            </SpecularButton>
+          </div>
+        </div>
+      </div>
+
+      {open && (
+        <div
+          id="sintha-fullscreen-menu"
+          className="sintha-menu-overlay"
+          role="dialog"
+          aria-modal="true"
+          aria-label="Main navigation"
+        >
+          <div className="sintha-menu-topbar">
+            <Link href="/" onClick={() => setOpen(false)} className="sintha-menu-logo" aria-label="Sintha Physiotherapy home">
+              <img src="/images/logo-long-dark.svg" alt="Sintha Physiotherapy" />
+            </Link>
+            <SpecularButton
+              size="sm"
+              radius={999}
+              tint="#FFFFFF"
+              tintOpacity={0.08}
+              textColor="#FFFFFF"
+              lineColor="#DBC1E8"
+              baseColor="#30133E"
+              intensity={0.8}
+              idleIntensity={0.18}
+              shineSize={10}
+              shineFade={34}
+              thickness={1.1}
+              glow={0.28}
+              followMouse
+              proximity={160}
+              onClick={() => setOpen(false)}
+            >
+              Close <span aria-hidden="true">×</span>
+            </SpecularButton>
+          </div>
+
+          <div className="sintha-menu-flow">
+            <FlowingMenu
+              items={MENU_ITEMS}
+              speed={60}
+              stretch={0.6}
+              magnet={0.25}
+              followCursor={0.4}
+              textColor="#FFFFFF"
+              bgColor="#30133E"
+              marqueeBgColor="#FFFFFF"
+              marqueeTextColor="#30133E"
+              borderColor="rgba(255,255,255,0.18)"
+              dimInactive
+              align="left"
+              showIndex
+              showArrow
+              imageShape="rounded"
+              activeIndex={activeIndex}
+              ariaLabel="Main navigation"
+              intro
+            />
+          </div>
+
+          <div className="sintha-menu-bottom">
+            <span>Sintha Physiotherapy</span>
+            <span>Fourways, Johannesburg</span>
+            <a href="tel:+27670721908">067 072 1908</a>
+          </div>
+        </div>
+      )}
+    </>
   );
 }

@@ -5,33 +5,38 @@ import AccordionGallery from '@/components/ui/AccordionGallery';
 const ITEMS = [
   {
     image: '/uploads/patient-elderly-recovery.jpg',
-    label: 'Respiratory Care',
+    label: 'Respiratory care',
     link: '/services#advanced-respiratory-care',
-    alt: 'An older patient receiving respiratory support from a physiotherapist',
+    alt: 'An older woman receiving respiratory support from a physiotherapist',
+    position: 'center 28%',
   },
   {
-    image: '/images/service-paediatric.jpg',
-    label: 'Paediatric Care',
+    image: '/uploads/patient-child-breathing.jpg',
+    label: 'Paediatric care',
     link: '/services#paediatric-respiratory-support',
-    alt: 'A child using a respiratory breathing device',
+    alt: 'A child using a breathing support device',
+    position: 'center 20%',
   },
   {
     image: '/uploads/patient-balance-exercise.jpg',
-    label: 'Cardiac Rehabilitation',
+    label: 'Cardiac rehabilitation',
     link: '/services#cardiac-cardiovascular-rehabilitation',
-    alt: 'A patient completing a guided rehabilitation exercise with a physiotherapist',
+    alt: 'A patient practising a guided balance exercise with a physiotherapist',
+    position: 'center 18%',
   },
   {
     image: '/uploads/patient-walking-clinic.jpg',
-    label: 'Neurological Rehab',
+    label: 'Neurological rehabilitation',
     link: '/services#neurological-vestibular-rehabilitation',
     alt: 'A patient practising walking in a physiotherapy clinic',
+    position: 'center 18%',
   },
   {
     image: '/uploads/physio-home-visit.jpg',
-    label: 'Home Visits',
+    label: 'Home visits',
     link: '/services#home-visits',
-    alt: 'A physiotherapist supporting an older patient with an exercise at home',
+    alt: 'A physiotherapist supporting a patient with a home exercise',
+    position: 'center 24%',
   },
 ];
 
@@ -44,10 +49,11 @@ export function HomeServicesGallery() {
       trigger="hover"
       height={440}
       gap={8}
-      radius={18}
+      radius={22}
       accentColor="#DBC1E8"
       overlayColor="#30133E"
       textColor="#FFFFFF"
+      grayscale={false}
     />
   );
 }

@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import SpecularButton from '@/components/ui/SpecularButton';
 
 const ARTICLES = [
   {
@@ -72,7 +73,7 @@ function ArticleLink({
 
 export default function BlogPage() {
   return (
-    <div className="min-h-screen bg-[#F3EBF7] pb-24 pt-36">
+    <div className="min-h-screen bg-white pb-24 pt-32">
       <div className="mx-auto max-w-7xl px-6 md:px-10">
         <h1 className="max-w-4xl text-5xl font-semibold leading-[1.05] tracking-[-0.05em] text-[#30133E] md:text-7xl">
           Blog
@@ -93,7 +94,7 @@ export default function BlogPage() {
                   fill
                   unoptimized
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  className="blog-card-image object-cover"
+                  className="blog-card-image object-contain p-3"
                 />
               </ArticleLink>
               <div className="flex flex-1 flex-col p-7 md:p-8">
@@ -104,7 +105,7 @@ export default function BlogPage() {
                 {article.subtitle && (
                   <p className="mt-2 text-sm font-medium leading-6 text-[#6B4B78]">{article.subtitle}</p>
                 )}
-                <p className="copy-justified mt-4 flex-1 text-sm leading-7 text-[#30133E]/70">{article.description}</p>
+                <p className="copy-justified mt-4 flex-1 text-sm leading-7 text-[#29262D]/80">{article.description}</p>
                 <ArticleLink
                   href={article.href}
                   external={article.external}
@@ -122,9 +123,9 @@ export default function BlogPage() {
             <h2 className="max-w-3xl text-3xl font-semibold leading-tight tracking-[-0.035em] md:text-5xl">
               Have a question about your recovery?
             </h2>
-            <Link href="/contact" className="inline-flex min-h-14 shrink-0 items-center justify-center rounded-full bg-[#DBC1E8] px-8 py-4 text-sm font-semibold text-[#30133E] transition hover:bg-white">
-              Speak to our team <span aria-hidden="true" className="ml-3 text-lg">↗</span>
-            </Link>
+            <SpecularButton size="md" radius={999} tint="#DBC1E8" tintOpacity={0.16} textColor="#FFFFFF" lineColor="#DBC1E8" baseColor="#3D2548" intensity={0.82} idleIntensity={0.18} shineSize={10} shineFade={34} thickness={1.1} glow={0.34} followMouse href="/contact">
+              Speak to our team <span aria-hidden="true">↗</span>
+            </SpecularButton>
           </div>
         </div>
       </div>

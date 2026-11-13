@@ -269,6 +269,7 @@ function SplashCursor({
   intro = true,
   contained = false,
   theme = 'dark',
+  adaptive = true,
   zIndex = 50,
   className = '',
   style
@@ -293,11 +294,36 @@ function SplashCursor({
     quality: QUALITY[quality] ? quality : 'high',
     clickSplash,
     contained,
-    light: theme === 'light'
+    light: theme === 'light',
+    adaptive
   };
   const settingsRef = useRef(settings);
   settingsRef.current = settings;
   const introRef = useRef(intro);
+  const surfaceLightRef = useRef(true);
+
+  const updateSurfaceTone = (clientX, clientY) => {
+    if (!settingsRef.current.adaptive) return;
+    let element = document.elementFromPoint(clientX, clientY);
+    while (element) {
+      const background = getComputedStyle(element).backgroundColor;
+      const match = background.match(/rgba?\(([^)]+)\)/i);
+      if (match) {
+        const channels = match[1].split(',').map(value => Number.parseFloat(value.trim()));
+        const alpha = channels.length > 3 ? channels[3] : 1;
+        if (channels.length >= 3 && alpha > 0.72) {
+          const linear = channels.slice(0, 3).map(value => {
+            const channel = clamp(value / 255, 0, 1);
+            return channel <= 0.04045 ? channel / 12.92 : ((channel + 0.055) / 1.055) ** 2.4;
+          });
+          surfaceLightRef.current = 0.2126 * linear[0] + 0.7152 * linear[1] + 0.0722 * linear[2] > 0.38;
+          return;
+        }
+      }
+      element = element.parentElement;
+    }
+    surfaceLightRef.current = true;
+  };
 
   useEffect(() => {
     const parent = rootRef.current?.parentElement;
@@ -620,7 +646,9 @@ function SplashCursor({
       const s = settingsRef.current;
       const phase = (((offset + (now / 1000) * s.colorSpeed * 0.6) % 1) + 1) % 1;
       if (s.rainbow) return hsv(phase, 1, 1);
-      const palette = s.palette;
+      const palette = s.adaptive
+        ? [parseColor(surfaceLightRef.current ? '#30133E' : '#DBC1E8')]
+        : s.palette;
       if (palette.length === 1) return palette[0];
       const position = phase * palette.length;
       const from = palette[Math.floor(position) % palette.length];
@@ -635,7 +663,7 @@ function SplashCursor({
     };
 
     const inkFor = (color, amount) =>
-      color.map(channel => (settingsRef.current.light ? 1 - channel : channel) * amount);
+      color.map(channel => (settingsRef.current.light && !settingsRef.current.adaptive ? 1 - channel : channel) * amount);
 
     const flush = (pointer, dt, now) => {
       const s = settingsRef.current;
@@ -903,6 +931,7 @@ function SplashCursor({
     };
 
     const track = (id, clientX, clientY) => {
+      updateSurfaceTone(clientX, clientY);
       const point = locate(clientX, clientY);
       let pointer = pointers.get(id);
       if (!point) {

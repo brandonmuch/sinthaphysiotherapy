@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
-
+import Link from 'next/link';
 import './SpecularButton.css';
 
 const PAD = 24;
@@ -188,6 +188,10 @@ const SpecularButton = ({
   autoAnimate = false,
   disabled = false,
   onClick,
+  href,
+  external = false,
+  target,
+  rel,
   className = '',
   type = 'button',
   style,
@@ -429,12 +433,18 @@ const SpecularButton = ({
     wakeRef.current?.();
   });
 
+  const Component = href ? (external ? 'a' : Link) : 'button';
+
   return (
-    <button
+    <Component
       ref={buttonRef}
-      type={type}
-      disabled={disabled}
-      onClick={onClick}
+      href={href}
+      target={external ? (target || '_blank') : undefined}
+      rel={external ? (rel || 'noreferrer') : undefined}
+      type={href ? undefined : type}
+      disabled={href ? undefined : disabled}
+      aria-disabled={href && disabled ? true : undefined}
+      onClick={disabled && href ? event => event.preventDefault() : onClick}
       className={`specular-button specular-button--${size}${className ? ` ${className}` : ''}`}
       style={{
         '--sb-radius': `${radius}px`,
@@ -448,7 +458,7 @@ const SpecularButton = ({
     >
       <canvas ref={canvasRef} className="specular-button__light" aria-hidden="true" />
       <span className="specular-button__label">{children}</span>
-    </button>
+    </Component>
   );
 };
 
