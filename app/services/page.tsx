@@ -87,40 +87,65 @@ export default function ServicesPage() {
   return (
     <div className="bg-[#F3EBF7] pb-28 pt-36 text-[#30133E]">
       <div className="mx-auto max-w-7xl px-6 md:px-10">
-        <h1 className="max-w-4xl text-5xl font-semibold leading-[1.05] tracking-[-0.05em] md:text-7xl">Our Services</h1>
+        <header className="max-w-4xl">
+          <h1 className="text-5xl font-semibold leading-[1.05] tracking-[-0.05em] md:text-7xl">
+            Our services
+          </h1>
+          <p className="copy-justified mt-7 max-w-3xl text-lg leading-8 text-[#30133E]/75">
+            We offer a comprehensive range of specialised physiotherapy services designed to meet your unique needs, from ICU to home visits.
+          </p>
+        </header>
 
-        <div className="mt-12 border-t border-[#30133E]/20">
+        <div className="mt-14 grid gap-7 sm:grid-cols-2 lg:grid-cols-3">
           {SERVICES.map((service, index) => (
-            <article id={service.id} key={service.title} className="scroll-mt-32 grid gap-8 border-b border-[#30133E]/20 py-10 md:grid-cols-[64px_0.85fr_1.15fr] md:gap-10 md:py-14">
-              <p className="pt-1 text-sm tabular-nums text-[#8B6A9A]">0{index + 1}</p>
-              <div>
-                <div className="relative aspect-[5/4] overflow-hidden rounded-[1.2rem] bg-[#E8D8F0]">
-                  <Image
-                    src={service.image}
-                    alt={service.alt}
-                    fill
-                    sizes="(max-width: 768px) 100vw, 35vw"
-                    className="object-cover"
-                  />
-                </div>
-                <Link href="/contact" className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-[#6B4B78] underline-offset-4 hover:underline">
-                  Ask a Physio <span aria-hidden="true">↗</span>
-                </Link>
+            <article
+              id={service.id}
+              key={service.id}
+              className="service-card flex h-full flex-col overflow-hidden rounded-[1.4rem] border border-[#30133E]/[0.08] bg-white shadow-[0_12px_34px_-28px_rgba(48,19,62,0.55)]"
+            >
+              <div className="relative aspect-[5/4] overflow-hidden bg-[#E8D8F0]">
+                <Image
+                  src={service.image}
+                  alt={service.alt}
+                  fill
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  className="service-card-image object-cover"
+                />
               </div>
-              <div>
-                <h2 className="text-2xl font-semibold leading-tight tracking-[-0.03em] md:text-3xl">{service.title}</h2>
-                <div className="copy-justified mt-5 space-y-4 text-base leading-8 text-[#30133E]/75">
-                  {service.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+              <div className="flex flex-1 flex-col p-7">
+                <p className="text-xs font-semibold tracking-[0.12em] text-[#8B6A9A]">
+                  {String(index + 1).padStart(2, '0')}
+                </p>
+                <h2 className="mt-3 text-xl font-semibold leading-tight tracking-[-0.025em] md:text-2xl">
+                  {service.title}
+                </h2>
+                <div className="copy-justified mt-5 space-y-4 text-sm leading-7 text-[#30133E]/75">
+                  {service.paragraphs.map((paragraph) => (
+                    <p key={paragraph}>{paragraph}</p>
+                  ))}
                 </div>
+                <Link
+                  href="/contact"
+                  className="mt-7 inline-flex min-h-11 items-center gap-2 self-start border-b border-[#30133E]/35 pb-1 text-sm font-semibold text-[#30133E] transition-colors hover:border-[#8B6A9A] hover:text-[#6B4B78]"
+                >
+                  Ask a physio <span aria-hidden="true">↗</span>
+                </Link>
               </div>
             </article>
           ))}
         </div>
 
-        <section className="mt-24 bg-[#30133E] px-8 py-12 text-white md:px-12 md:py-16">
-          <h2 className="max-w-3xl text-4xl font-semibold leading-tight tracking-[-0.04em] md:text-6xl">Physiotherapy that moves you forward.</h2>
-          <p className="mt-5 max-w-2xl text-base leading-8 text-white/75">Where recovery begins with a breath and ends in strength.</p>
-          <Link href="/contact" className="mt-8 inline-flex min-h-14 items-center rounded-full bg-[#DBC1E8] px-8 py-4 text-sm font-semibold text-[#30133E] transition hover:bg-white">
+        <section className="mt-24 rounded-[1.5rem] bg-[#30133E] px-8 py-12 text-white md:px-12 md:py-16">
+          <h2 className="max-w-3xl text-4xl font-semibold leading-tight tracking-[-0.04em] md:text-6xl">
+            Physiotherapy that moves you forward.
+          </h2>
+          <p className="copy-justified mt-5 max-w-2xl text-base leading-8 text-white/75">
+            Where recovery begins with a breath and ends in strength.
+          </p>
+          <Link
+            href="/contact"
+            className="mt-8 inline-flex min-h-14 items-center rounded-full bg-[#DBC1E8] px-8 py-4 text-sm font-semibold text-[#30133E] transition-colors hover:bg-white"
+          >
             Book an assessment <span aria-hidden="true" className="ml-3">↗</span>
           </Link>
         </section>
