@@ -102,6 +102,98 @@ input[type="button"]:disabled {
   --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
 }
 
+
+/* Editorial typography for long-form blog articles */
+.blog-article-copy {
+  max-width: 68ch;
+  margin-right: auto;
+  margin-left: auto;
+  color: #29262D;
+  font-family: var(--font-open-sans), sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.85;
+  text-align: left;
+  overflow-wrap: break-word;
+}
+
+.blog-article-copy > * + * {
+  margin-top: 1.15em;
+}
+
+.blog-article-copy p {
+  margin-top: 1.15em;
+  color: #45404A;
+  font-size: 1rem;
+  line-height: 1.85;
+  text-align: left;
+}
+
+.blog-article-copy h2 {
+  margin-top: 2.35em;
+  margin-bottom: 0.65em;
+  color: #30133E;
+  font-family: var(--font-open-sans), sans-serif !important;
+  font-size: clamp(1.35rem, 2.5vw, 1.7rem);
+  font-weight: 650;
+  letter-spacing: -0.035em;
+  line-height: 1.25;
+}
+
+.blog-article-copy h3 {
+  margin-top: 1.8em;
+  margin-bottom: 0.5em;
+  color: #30133E;
+  font-family: var(--font-open-sans), sans-serif !important;
+  font-size: 1.15rem;
+  font-weight: 650;
+  line-height: 1.35;
+}
+
+.blog-article-copy ul,
+.blog-article-copy ol {
+  margin-top: 1em;
+  padding-left: 1.5rem;
+  color: #45404A;
+}
+
+.blog-article-copy ul { list-style: disc; }
+.blog-article-copy ol { list-style: decimal; }
+
+.blog-article-copy li {
+  margin-top: 0.45em;
+  padding-left: 0.25rem;
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+.blog-article-copy li::marker {
+  color: #8B6A9A;
+}
+
+.blog-article-copy strong {
+  color: #30133E;
+  font-weight: 650;
+}
+
+.blog-article-copy blockquote {
+  margin: 2em 0;
+  border-left: 3px solid #8B6A9A;
+  border-radius: 0 14px 14px 0;
+  background: #F3EBF7;
+  padding: 1.2rem 1.4rem;
+  color: #30133E;
+  font-size: 1.05rem;
+  font-style: italic;
+  line-height: 1.75;
+}
+
+@media (min-width: 768px) {
+  .blog-article-copy { font-size: 17px; }
+  .blog-article-copy p,
+  .blog-article-copy li { font-size: 1.02rem; }
+}
+
 .copy-justified {
   text-align: justify;
   text-justify: inter-word;
