@@ -15,3 +15,36 @@ body {
   animation: breathe 4s ease-in-out infinite;
   transform-origin: center;
 }
+
+:root {
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.copy-justified {
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
+}
+
+.sintha-nav-shell {
+  position: fixed;
+  top: max(12px, env(safe-area-inset-top));
+  right: 0;
+  left: 0;
+  z-index: 50;
+  width: 100%;
+  padding: 0 18px;
+  pointer-events: none;
+}
+
+.sintha-nav-shell > .card-nav {
+  pointer-events: auto;
+}
+
+@media (max-width: 640px) {
+  .sintha-nav-shell {
+    padding-right: 12px;
+    padding-left: 12px;
+  }
+}
