@@ -78,3 +78,26 @@ body {
     transition: none;
   }
 }
+
+
+.home-pillar-image,
+.blog-card-image {
+  transition: transform 500ms var(--ease-out);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .home-pillar-card:hover .home-pillar-image {
+    transform: scale(1.04);
+  }
+
+  .blog-card:hover .blog-card-image {
+    transform: scale(1.035);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-pillar-image,
+  .blog-card-image {
+    transition: none;
+  }
+}
