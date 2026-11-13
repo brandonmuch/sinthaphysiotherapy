@@ -19,7 +19,7 @@ export default function ContactPage() {
               Tell us what support you need and our team will help you take the next step. All sessions are by appointment.
             </p>
             <p className="mt-6 max-w-xl rounded-2xl border border-[#6B4B78]/25 bg-[#F3EBF7] px-5 py-4 text-sm leading-6 text-[#29262D]">
-              Please use WhatsApp or phone for appointment arrangements only. Do not send medical details, reports or photographs through these channels. If you need to share clinical information, ask the practice for its approved secure method.
+              Use WhatsApp or phone to enquire about appointments. The practice team will speak with you directly about your needs, booking and next steps, including any consent forms needed before treatment. Please avoid sending medical reports or sensitive health details in your first message. The team can guide you if further information is needed.
             </p>
             <div className="mt-9 flex flex-wrap gap-3">
               <SpecularButton
