@@ -1,61 +1,59 @@
 'use client';
-import { useEffect, useRef } from 'react';
-import { SmartImage } from '@/components/ui/SmartImage';
-import { gsap } from '@/lib/gsap';
-
-const CYCLES = [
-  'Respiratory Physiotherapy',
-  'Paediatric Care',
-  'Neurological Rehabilitation',
-  'Home Visits',
-];
+import Link from 'next/link';
+import { motion } from 'framer-motion';
+import PatternWaves from '@/components/ui/PatternWaves'; 
 
 export function Hero() {
-  const cycleRef = useRef<HTMLSpanElement>(null);
-
-  useEffect(() => {
-    if (!cycleRef.current) return;
-    const el = cycleRef.current;
-    let i = 0;
-    const tl = gsap.timeline({ repeat: -1 });
-    
-    CYCLES.forEach((word) => {
-      tl.to(el, { duration: 0.4, text: { value: word, delimiter: '' }, ease: 'none' })
-        .to(el, { duration: 0.6, text: { value: word, delimiter: '' } })
-        .to(el, { duration: 0.4, text: { value: '', delimiter: '' } }, '+=2');
-    });
-    
-    // THE FIX IS HERE:
-    return () => {
-      tl.kill();
-    };
-  }, []);
-
   return (
-    <section className="relative flex min-h-screen items-center overflow-hidden bg-[#F5F0EA] pt-32">
+    <section className="relative w-full h-screen min-h-[700px] overflow-hidden bg-[#30133E]">
+      
+      {/* 1. THE INTERACTIVE BACKGROUND */}
       <div className="absolute inset-0 z-0">
-        <SmartImage src="/images/team-physio-a.jpg" alt="Sintha physiotherapist" priority className="opacity-90" />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#F5F0EA] via-[#F5F0EA]/80 to-transparent" />
+        <PatternWaves
+          preset="silk"
+          color="#DBC1E8"           // Lilac waves
+          backgroundColor="#30133E" // Deep purple background
+          fade="edges"
+          interactive
+          cursorSize={50}
+          cursorStrength={0.6}
+        />
       </div>
-      <div className="relative z-10 mx-auto w-full max-w-7xl px-6 md:px-10">
-        <div className="max-w-2xl">
-          <p className="text-xs uppercase tracking-[0.3em] text-[#C4826A] mb-6">
-            Fourways · Johannesburg
+
+      {/* 2. CENTERED TYPOGRAPHY OVERLAY */}
+      <div className="relative z-10 flex flex-col items-center justify-center h-full px-6 text-center">
+        
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, ease: [0.21, 0.47, 0.32, 0.98] }}
+          className="max-w-4xl mx-auto"
+        >
+          {/* Eyebrow Text - Highly tracked for editorial feel */}
+          <p className="text-xs md:text-sm font-semibold uppercase tracking-[0.4em] text-[#DBC1E8] mb-6">
+            Wezi Nyimba Physiotherapists Inc.
           </p>
-          <h1 className="text-6xl md:text-8xl font-serif text-[#2A2724] leading-[0.95]">
-            Empower<br />Movement.<br />
-            <em className="font-light">Enhance Life.</em>
+
+          {/* Main Headline - Huge, tight line-height, high contrast */}
+          <h1 className="text-6xl md:text-8xl lg:text-[7.5rem] font-bold text-white leading-[0.95] tracking-tighter mb-8">
+            Empower<br/>Movement.<br/>
+            <span className="italic font-light text-[#DBC1E8]">Enhance Life.</span>
           </h1>
-          <p className="mt-8 max-w-lg text-lg text-[#2A2724]/70 font-light">
-            Specialised physiotherapy for children and adults, delivered with editorial care.
+
+          {/* Subheadline - Light, readable, max-width for perfect line breaks */}
+          <p className="text-lg md:text-xl text-white/80 max-w-2xl mx-auto mb-12 leading-relaxed font-light">
+            Sintha Physiotherapy is a specialised physiotherapy practice. We offer comprehensive rehabilitation and specialised respiratory care.
           </p>
-          <p className="mt-4 text-sm uppercase tracking-[0.3em] text-[#C4826A]">
-            <span ref={cycleRef} className="font-medium">Respiratory Physiotherapy</span>
-          </p>
-          <div className="mt-10 flex flex-wrap items-center gap-4">
-            <a href="#contact" className="inline-block bg-[#2A2724] text-[#F5F0EA] px-8 py-4 rounded-full text-xs tracking-widest uppercase hover:bg-[#C4826A] transition-colors">Book an Assessment</a>
-          </div>
-        </div>
+
+          {/* CTA Button - High contrast against the dark background */}
+          <Link 
+            href="/contact" 
+            className="inline-flex items-center justify-center bg-[#DBC1E8] text-[#30133E] px-10 py-5 rounded-full font-bold uppercase tracking-widest text-sm hover:bg-white transition-colors duration-300"
+          >
+            Book a Consultation
+          </Link>
+        </motion.div>
+
       </div>
     </section>
   );
