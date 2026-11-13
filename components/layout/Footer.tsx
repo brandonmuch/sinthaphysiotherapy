@@ -1,6 +1,6 @@
 import Link from 'next/link';
-import Image from 'next/image';
 import SpecularButton from '@/components/ui/SpecularButton';
+import { FooterLogo } from '@/components/layout/FooterLogo';
 
 export function Footer() {
   return (
@@ -8,14 +8,8 @@ export function Footer() {
       <div className="relative z-10 mx-auto max-w-7xl px-6 md:px-10">
         <div className="mb-14 grid gap-12 md:grid-cols-4">
           <div className="md:col-span-2">
-            <Link href="/" className="relative mb-6 block h-[210px] w-[282px] max-w-full" aria-label="Sintha Physiotherapy home">
-              <Image
-                src="/images/sintha-full-logo.svg"
-                alt="Sintha Physiotherapy, Wezi Nyimba Physiotherapists Inc."
-                fill
-                sizes="282px"
-                className="object-contain object-left"
-              />
+            <Link href="/" className="relative mb-6 block w-[282px] max-w-full" aria-label="Sintha Physiotherapy home">
+              <FooterLogo />
             </Link>
             <p className="max-w-sm text-sm leading-7 text-white">
               Personalised rehabilitation and specialised respiratory care for children and adults.
