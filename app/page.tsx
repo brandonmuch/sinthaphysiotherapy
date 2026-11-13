@@ -1,115 +1,189 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { Hero } from '@/components/sections/Hero';
+import { HomeServicesGallery } from '@/components/sections/HomeServicesGallery';
 
 const PILLARS = [
   {
-    title: 'Comprehensive rehabilitation',
-    description: 'Personalised rehabilitation to restore strength, mobility and confidence after injury, illness or surgery.',
+    number: '1',
+    title: 'COMPREHENSIVE REHABILITATION',
+    description: 'From bouncing back after surgery to navigating life post-stroke or managing neurological conditions, we’re with you every step of the way. Our personalised rehab plans are built to ease pain, restore movement, and boost strength, so you can feel confident in your body again.',
+    image: '/images/u2428486467_Close-up_of_physiotherapy_tools_on_a_mat_or_woode_4cdd9653-899b-4c2e-8f1d-45ca.jpeg',
+    alt: 'A close-up of physiotherapy tools on an exercise mat',
+  },
+  {
+    number: '2',
+    title: 'SPECIALISED RESPIRATORY SUPPORT',
+    description: 'Struggling to catch your breath? With evidence-based respiratory physiotherapy, we help you breathe easier, manage chronic lung conditions, and recover from post-op or acute respiratory issues, one deep breath at a time.',
     image: '/images/u2428486467_Young_Coloured_South_African_woman_seated_calmly__1b852e40-efdd-48c9-9676-4899.jpeg',
-    alt: 'A patient practising calm, supported breathing during physiotherapy',
+    alt: 'A woman seated calmly in a quiet setting',
   },
   {
-    title: 'Specialised respiratory support',
-    description: 'Evidence-based respiratory physiotherapy for children and adults, including complex and post-hospital care.',
+    number: '3',
+    title: 'HOLISTIC WELLNESS',
+    description: 'Physiotherapy isn’t just for when things go wrong — it’s also about helping life go right. Whether you’re managing the natural effects of ageing or bouncing back from general weakness, we’re here to help you move well, stay strong, and enjoy a better quality of life.',
     image: '/images/u2428486467_Middle-aged_Black_South_African_man_in_everyday_a_e9d82078-f7f4-4b7b-8b07-6d8b.jpeg',
-    alt: 'A physiotherapist standing alongside an older adult in a rehabilitation setting',
-  },
-  {
-    title: 'Whole-person wellness',
-    description: 'Care that looks beyond a diagnosis and supports people to stay active, independent and connected to everyday life.',
-    image: '/uploads/patient-grandfather-grandson.jpg',
-    alt: 'A grandfather sharing time with his grandson',
+    alt: 'A middle-aged man in a physiotherapy setting',
   },
 ];
 
 const SERVICES = [
-  { title: 'Respiratory care', image: '/uploads/patient-elderly-recovery.jpg', alt: 'An older patient receiving respiratory care from a physiotherapist' },
-  { title: 'Paediatric care', image: '/images/service-paediatric.jpg', alt: 'A child using a respiratory therapy device' },
-  { title: 'ICU & post-hospital care', image: '/uploads/patient-physio-session-a.jpg', alt: 'A physiotherapist supporting an older patient during walking practice' },
-  { title: 'Neurological rehabilitation', image: '/uploads/patient-walking-clinic.jpg', alt: 'A patient walking during a physiotherapy session' },
+  {
+    title: 'INPATIENT & OUTPATIENT PHYSIOTHERAPY',
+    href: '/services',
+    description: 'Personalised rehab plans for both hospital-based and outpatient clients — helping you recover from a wide range of physical conditions with expert, hands-on support.',
+  },
+  {
+    title: 'PAEDIATRIC PHYSIOTHERAPY & RESPIRATORY CARE',
+    href: '/services#paediatric-respiratory-support',
+    description: 'Gentle, child-centred therapy focused on respiratory support because little lungs and growing bodies deserve specialised care.',
+  },
+  {
+    title: 'ICU & POST-HOSPITAL REHABILITATION',
+    href: '/services#advanced-respiratory-care',
+    description: 'Recovering after a critical illness? We’re here to help. From breathing support to rebuilding strength, we guide your journey back to independence.',
+  },
+  {
+    title: 'POSTOPERATIVE RECOVERY',
+    href: '/services#postoperative-recovery',
+    description: 'Heal stronger, faster. Our targeted physiotherapy helps reduce complications, ease pain, and restore mobility after surgery, getting you back on your feet, safely.',
+  },
+  {
+    title: 'NEUROLOGICAL & VESTIBULAR REHABILITATION',
+    href: '/services#neurological-vestibular-rehabilitation',
+    description: 'Support for stroke, Parkinson’s, balance issues, and more. Our customised rehab plans help retrain your brain and body to move with greater control and confidence.',
+  },
+  {
+    title: 'CHRONIC ILLNESS & FRAILTY MANAGEMENT',
+    href: '/services#renal-metabolic-care',
+    description: 'Gentle, goal-based therapy for those living with long-term conditions or age-related challenges, helping you stay strong, steady, and independent.',
+  },
+  {
+    title: 'HOME VISITS',
+    href: '/services#home-visits',
+    description: 'Can’t come to us? We’ll come to you. Enjoy expert physiotherapy in the comfort of your home, perfect for ongoing care or mobility challenges.',
+  },
+];
+
+const FAQS = [
+  {
+    question: 'Do I need a referral to see a physiotherapist?',
+    answer: 'No referral is needed. Physiotherapists are first-line practitioners. You can book directly, or we also accept referrals from GPs and specialists.',
+  },
+  {
+    question: 'How many sessions will I need?',
+    answer: 'It depends on your condition. A tailored plan will be created after assessment.',
+  },
+  {
+    question: 'Do you charge medical aid rates?',
+    answer: 'Yes. In-hospital: We will bill your medical aid directly. In-room: Pay via EFT/cash, claim back with our statement.',
+  },
+  {
+    question: 'How can I book an appointment?',
+    answer: 'Via WhatsApp, phone call, or our online booking form.',
+  },
 ];
 
 export default function Home() {
   return (
-    <div className="bg-lilac-light">
+    <div className="bg-[#F3EBF7] text-[#30133E]">
       <Hero />
 
-      <section className="bg-white py-20 md:py-28">
-        <div className="mx-auto max-w-7xl px-6 md:px-10">
-          <div className="mb-14 max-w-3xl">
-            <p className="mb-4 text-xs font-semibold uppercase tracking-[0.25em] text-[#6B4B78]">A more personal approach</p>
-            <h2 className="text-4xl font-semibold leading-tight tracking-tight text-[#30133E] md:text-5xl">
-              Expert care, shaped around you.
-            </h2>
-            <p className="mt-6 max-w-2xl text-base leading-8 text-[#30133E]/70 md:text-lg">
-              At Sintha Physiotherapy, we take a holistic approach to health, healing and wellbeing. Whether you are recovering after surgery, navigating life after a stroke or seeking support for your child, our team is here to help.
-            </p>
-          </div>
+      <section className="bg-white px-6 py-20 md:py-28">
+        <div className="mx-auto max-w-7xl">
+          <h2 className="max-w-5xl text-balance text-4xl font-semibold leading-[1.06] tracking-[-0.045em] md:text-6xl">
+            Let’s get you living life to the fullest — one step, stretch, and breath at a time.
+          </h2>
 
-          <div className="grid gap-7 md:grid-cols-3">
-            {PILLARS.map((pillar, index) => (
-              <article key={pillar.title} className="group overflow-hidden rounded-[1.6rem] bg-[#F7F2FA]">
-                <div className="relative aspect-[5/4] overflow-hidden">
+          <div className="mt-14 grid gap-10 md:grid-cols-3 md:gap-8">
+            {PILLARS.map((pillar) => (
+              <article key={pillar.number} className="group">
+                <div className="relative aspect-[5/4] overflow-hidden rounded-[1.35rem] bg-[#E9DDF0]">
                   <Image
                     src={pillar.image}
                     alt={pillar.alt}
                     fill
                     sizes="(max-width: 768px) 100vw, 33vw"
-                    className="object-cover transition-transform duration-700 group-hover:scale-[1.04]"
+                    className="object-cover transition-transform duration-700 group-hover:scale-[1.035]"
                   />
                 </div>
-                <div className="p-7 md:p-8">
-                  <p className="mb-4 text-xs font-semibold uppercase tracking-[0.18em] text-[#8B6A9A]">0{index + 1}</p>
-                  <h3 className="text-xl font-semibold text-[#30133E]">{pillar.title}</h3>
-                  <p className="mt-4 text-sm leading-7 text-[#30133E]/70">{pillar.description}</p>
-                </div>
+                <p className="mt-7 text-xs font-semibold tracking-[0.2em] text-[#8B6A9A]">{pillar.number.padStart(2, '0')}</p>
+                <h3 className="mt-3 text-lg font-semibold tracking-[-0.02em] md:text-xl">{pillar.title}</h3>
+                <p className="mt-4 text-sm leading-7 text-[#30133E]/75">{pillar.description}</p>
               </article>
             ))}
+          </div>
+          <div className="mt-12">
+            <Link href="/about" className="inline-flex items-center gap-2 text-sm font-semibold text-[#5B3C69] underline-offset-4 hover:underline">
+              Who We Are <span aria-hidden="true">↗</span>
+            </Link>
           </div>
         </div>
       </section>
 
-      <section className="bg-[#F3EBF7] py-20 md:py-28">
-        <div className="mx-auto max-w-7xl px-6 md:px-10">
-          <div className="mb-12 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
-            <div>
-              <p className="mb-4 text-xs font-semibold uppercase tracking-[0.25em] text-[#6B4B78]">How we can help</p>
-              <h2 className="text-4xl font-semibold tracking-tight text-[#30133E] md:text-5xl">Specialist care for every stage.</h2>
+      <section className="bg-[#F3EBF7] px-6 py-20 md:py-28">
+        <div className="mx-auto max-w-7xl">
+          <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+            <div className="max-w-3xl">
+              <h2 className="text-4xl font-semibold leading-[1.06] tracking-[-0.045em] md:text-5xl">
+                Our Services
+              </h2>
+              <p className="mt-6 text-base leading-8 text-[#30133E]/70 md:text-lg">
+                Our services support children and adults through hospital-based care, recovery, rehabilitation and ongoing support at home.
+              </p>
             </div>
-            <Link href="/services" className="inline-flex items-center gap-2 text-sm font-semibold text-[#30133E] transition hover:gap-3">
-              View all services <span aria-hidden="true">↗</span>
+            <Link href="/services" className="inline-flex shrink-0 items-center gap-2 text-sm font-semibold text-[#30133E] underline-offset-4 hover:underline">
+              View our Services Today <span aria-hidden="true">↗</span>
             </Link>
           </div>
 
-          <div className="grid grid-cols-2 gap-4 md:grid-cols-4 md:gap-6">
-            {SERVICES.map((service) => (
-              <Link key={service.title} href="/services" className="group relative min-h-64 overflow-hidden rounded-2xl bg-[#30133E] md:min-h-80">
-                <Image
-                  src={service.image}
-                  alt={service.alt}
-                  fill
-                  sizes="(max-width: 768px) 50vw, 25vw"
-                  className="object-cover transition-transform duration-700 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#1D0D27]/85 via-[#1D0D27]/10 to-transparent transition group-hover:from-[#1D0D27]/95" />
-                <h3 className="absolute inset-x-4 bottom-5 text-lg font-semibold leading-snug text-white md:inset-x-6 md:bottom-7 md:text-xl">{service.title}</h3>
+          <div className="mt-12">
+            <HomeServicesGallery />
+          </div>
+
+          <div className="mt-16 grid gap-x-12 border-t border-[#30133E]/20 md:grid-cols-2">
+            {SERVICES.map((service, index) => (
+              <Link
+                href={service.href}
+                key={service.title}
+                className="group grid gap-3 border-b border-[#30133E]/20 py-7 transition-colors hover:bg-white/45 sm:grid-cols-[48px_1fr_24px] sm:gap-5 sm:px-4"
+              >
+                <span className="pt-1 text-sm tabular-nums text-[#8B6A9A]">0{index + 1}</span>
+                <span>
+                  <span className="block text-base font-semibold tracking-[-0.015em]">{service.title}</span>
+                  <span className="mt-3 block max-w-2xl text-sm leading-7 text-[#30133E]/70">{service.description}</span>
+                </span>
+                <span className="hidden text-xl text-[#8B6A9A] transition-transform group-hover:translate-x-1 sm:block">↗</span>
               </Link>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="relative overflow-hidden bg-[#30133E] px-6 py-20 text-center text-white md:py-28">
-        <div className="pointer-events-none absolute -right-28 -top-40 h-96 w-96 rounded-full bg-[#DBC1E8]/10 blur-3xl" />
-        <div className="relative mx-auto max-w-3xl">
-          <p className="mb-5 text-xs font-semibold uppercase tracking-[0.25em] text-[#DBC1E8]">Your recovery, your pace</p>
-          <h2 className="text-4xl font-semibold leading-tight tracking-tight md:text-6xl">Ready to take the next step?</h2>
-          <p className="mx-auto mt-6 max-w-2xl text-base leading-8 text-white/75 md:text-lg">
-            Speak to our team about the right physiotherapy support for you or your family.
-          </p>
-          <Link href="/contact" className="mt-9 inline-flex min-h-14 items-center justify-center rounded-full bg-[#DBC1E8] px-9 py-4 text-sm font-semibold text-[#30133E] transition hover:-translate-y-0.5 hover:bg-white">
-            Book an assessment <span aria-hidden="true" className="ml-3 text-lg">↗</span>
+      <section className="bg-white px-6 py-20 md:py-28">
+        <div className="mx-auto max-w-7xl">
+          <h2 className="text-4xl font-semibold tracking-[-0.04em] md:text-5xl">Frequently asked questions</h2>
+          <div className="mt-10 border-t border-[#30133E]/20">
+            {FAQS.map((faq, index) => (
+              <details key={faq.question} className="group border-b border-[#30133E]/20 py-6">
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-6 text-lg font-semibold tracking-[-0.02em] marker:hidden">
+                  <span>{faq.question}</span>
+                  <span className="text-2xl font-light text-[#8B6A9A] transition-transform group-open:rotate-45">+</span>
+                </summary>
+                <p className="max-w-3xl pt-5 pr-8 text-base leading-8 text-[#30133E]/70">{faq.answer}</p>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-[#30133E] px-6 py-20 text-white md:py-28">
+        <div className="mx-auto flex max-w-7xl flex-col gap-10 md:flex-row md:items-end md:justify-between">
+          <h2 className="max-w-4xl text-balance text-4xl font-semibold leading-[1.04] tracking-[-0.05em] md:text-6xl">
+            YOUR RECOVERY, YOUR PACE, OUR CARE
+          </h2>
+          <Link href="/contact" className="inline-flex min-h-14 shrink-0 items-center justify-center rounded-full bg-[#DBC1E8] px-8 py-4 text-sm font-semibold text-[#30133E] transition hover:bg-white">
+            Contact Us Today <span aria-hidden="true" className="ml-3 text-lg">↗</span>
           </Link>
         </div>
       </section>

@@ -3,6 +3,7 @@ import localFont from 'next/font/local';
 import './globals.css';
 import '@/components/ui/PatternWaves.css';
 import '@/components/ui/SplashCursor.css';
+import '@/components/ui/AccordionGallery.css';
 import { Nav } from '@/components/layout/Nav';
 import { Footer } from '@/components/layout/Footer';
 import SplashCursor from '@/components/ui/SplashCursor';
