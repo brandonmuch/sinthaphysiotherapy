@@ -141,7 +141,7 @@ export function Nav() {
               borderColor="rgba(255,255,255,0.18)"
               dimInactive
               align="left"
-              showIndex
+              showIndex={false}
               showArrow
               imageShape="rounded"
               activeIndex={activeIndex}

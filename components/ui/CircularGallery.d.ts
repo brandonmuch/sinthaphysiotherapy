@@ -27,6 +27,7 @@ export interface CircularGalleryProps extends Omit<HTMLAttributes<HTMLDivElement
   snap?: boolean;
   autoScroll?: number;
   openOnClick?: boolean;
+  activeIndex?: number;
   intro?: boolean;
   onItemClick?: (item: CircularGalleryItem, index: number) => void;
   onActiveChange?: (index: number) => void;
