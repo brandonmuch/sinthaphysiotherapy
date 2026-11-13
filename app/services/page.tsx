@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import SpecularButton from '@/components/ui/SpecularButton';
 import FluxLines from '@/components/ui/FluxLines';
-import CircularGallery from '@/components/ui/CircularGallery';
+import ServicesGallery from '@/components/sections/ServicesGallery';
 import SinthaCard from '@/components/ui/SinthaCard';
 
 const SERVICES = [
@@ -102,8 +102,9 @@ const GALLERY_LABELS: Record<string, string> = {
 const GALLERY_ITEMS = SERVICES.map(service => ({
   image: service.image,
   text: GALLERY_LABELS[service.id] ?? service.title,
+  title: service.title,
   alt: service.alt,
-  description: `${service.title}. ${service.paragraphs.join(' ')}`,
+  paragraphs: service.paragraphs,
 }));
 export default function ServicesPage() {
   return (
@@ -131,13 +132,13 @@ export default function ServicesPage() {
                 scale={1.55}
                 turbulence={0.9}
                 fluidity={0.1}
-                glow={2}
+                glow={1.1}
                 rimWidth={0.2}
                 lineWidth={1}
                 flowDirection="down"
-                opacity={0.68}
+                opacity={0.52}
                 mouseInteraction
-                mouseStrength={0.65}
+                mouseStrength={0.32}
                 clickSwirl
                 className="absolute inset-0"
                 style={{ position: 'absolute', inset: 0 }}
@@ -147,40 +148,15 @@ export default function ServicesPage() {
 
             <div className="relative z-10 mx-auto max-w-7xl">
               <div className="mx-auto max-w-3xl text-center">
-                <p className="text-xs font-semibold tracking-[0.14em] text-[#DBC1E8]">Find the right support</p>
                 <h2 className="mt-4 text-3xl font-semibold leading-tight tracking-[-0.04em] text-white md:text-5xl">
                   Explore our services.
                 </h2>
                 <p className="mx-auto mt-5 max-w-2xl text-sm leading-7 text-white/90 md:text-base">
-                  Move through the gallery to discover the different ways we support recovery. Select any service card to open its image and read more about the care it includes.
-                </p>
-                <p className="mt-4 text-xs font-semibold tracking-[0.08em] text-white/75">
-                  Drag or scroll to explore · Select a card to open · Press Escape to close
+Explore the services below. Choose a card, then select “View service” to read the full details.
                 </p>
               </div>
 
-              <div className="relative mt-8 h-[460px] w-full overflow-hidden rounded-[24px] md:h-[600px]">
-                <CircularGallery
-                  items={GALLERY_ITEMS}
-                  bend={3}
-                  textColor="#FFFFFF"
-                  borderRadius={0.05}
-                  font={'600 24px "Open Sans"'}
-                  itemSize={0.82}
-                  itemAspect={0.82}
-                  gap={0.24}
-                  scrollSpeed={1.55}
-                  scrollEase={0.05}
-                  wave={0.72}
-                  fadeEdges={0.12}
-                  shadow={0.24}
-                  grayscale={false}
-                  showTitles
-                  snap
-                  openOnClick
-                  intro
-                />
-              </div>
+              <ServicesGallery items={GALLERY_ITEMS} />
             </div>
           </section>
         </SinthaCard>
@@ -199,7 +175,6 @@ export default function ServicesPage() {
             </div>
           </SinthaCard>
           <div className="px-2 py-5 md:px-4">
-            <p className="mb-4 text-xs font-semibold tracking-[0.14em] text-[#8B6A9A]">A whole-person approach</p>
             <h2 className="max-w-3xl text-3xl font-semibold leading-tight tracking-[-0.04em] text-[#30133E] md:text-5xl">
               Physiotherapy that moves you forward.
             </h2>
