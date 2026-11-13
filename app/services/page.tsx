@@ -2,41 +2,73 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 const SERVICES = [
-  { title: 'Advanced Respiratory Care', img: 'u2428486467_An_elderly_Black_South_African_woman_sitting_upr_81c8ea83-7a42-4501-b2a0-04b1c71b4a4d.jpeg', desc: 'Specialised care for complex respiratory conditions, including ventilator weaning and secretion clearance.' },
-  { title: 'Cardiac & Cardiovascular Rehab', img: 'u2428486467_A_dark-skinned_Black_male_patient_in_his_40s_wal_803dcd76-8c8a-4b48-8408-264a252e4b35.jpeg', desc: 'Guided exercise and education to help you recover from cardiac events and improve heart health.' },
-  { title: 'ICU & Post-Hospital Rehab', img: 'u2428486467_A_physiotherapist_working_with_an_elderly_patie_94f5f3b6-1f7e-4c3b-8e8c-4b3b1e2e8d4c.jpeg', desc: 'Critical care physiotherapy and rehabilitation to restore function after severe illness or surgery.' },
-  { title: 'Paediatric Physiotherapy', img: 'u2428486467_Coloured_South_African_boy_around_6_years_old_sea_5c03f6ad-f7f3-443d-ab2b-245d.jpeg', desc: 'Gentle, effective therapy for children from infancy through adolescence, supporting development and function.' },
-  { title: 'Neurological Rehab', img: 'u2428486467_A_dark-skinned_Black_female_patient_in_her_50s_s_3b1a9c4f-9a1b-4b1a-9c1a-1a9c1b1a9c1a.jpeg', desc: 'Specialised therapy for stroke, MS, Parkinson\'s, and other neurological conditions to improve balance and gait.' },
-  { title: 'Home Visits', img: 'u2428486467_A_physiotherapist_visiting_a_patient_at_their_h_8a1b2c3d-4e5f-6a7b-8c9d-0e1f2a3b4c5d.jpeg', desc: 'Bringing expert physiotherapy to the comfort of your own home for those who cannot travel.' },
+  {
+    title: 'Advanced Respiratory Care',
+    img: '/uploads/patient-elderly-recovery.jpg',
+    desc: 'Specialised support for complex respiratory conditions, including airway clearance, breathing exercises and recovery after ventilation.',
+  },
+  {
+    title: 'Cardiac & Cardiovascular Rehab',
+    img: '/uploads/patient-balance-exercise.jpg',
+    desc: 'Guided exercise and education to help rebuild endurance, improve function and support recovery after cardiac events.',
+  },
+  {
+    title: 'ICU & Post-Hospital Rehab',
+    img: '/uploads/patient-physio-session-a.jpg',
+    desc: 'Compassionate rehabilitation after critical illness or surgery, with a focus on restoring strength, mobility and independence.',
+  },
+  {
+    title: 'Paediatric Physiotherapy',
+    img: '/images/service-paediatric.jpg',
+    desc: 'Gentle, child-centred respiratory and movement support for infants, children and teenagers.',
+  },
+  {
+    title: 'Neurological Rehab',
+    img: '/uploads/patient-walking-clinic.jpg',
+    desc: 'Personalised therapy for stroke, neurological conditions, balance difficulties and gait retraining.',
+  },
+  {
+    title: 'Home Visits',
+    img: '/uploads/physio-home-visit.jpg',
+    desc: 'Professional physiotherapy in the comfort of home for people who need continued support or have difficulty travelling.',
+  },
 ];
 
 export default function ServicesPage() {
   return (
-    <div className="bg-lilac-light pt-32 pb-24">
+    <div className="bg-[#F3EBF7] pb-24 pt-36">
       <div className="mx-auto max-w-7xl px-6 md:px-10">
-        <div className="max-w-3xl mb-16">
-          <h1 className="text-5xl md:text-6xl font-bold text-purple mb-6">Our Services</h1>
-          <p className="text-lg text-purple/80 leading-relaxed">
-            We offer a comprehensive range of specialised physiotherapy services designed to meet your unique needs, from ICU to home visits.
+        <div className="mb-16 max-w-3xl">
+          <p className="mb-5 text-xs font-semibold uppercase tracking-[0.25em] text-[#6B4B78]">How we can help</p>
+          <h1 className="text-5xl font-semibold leading-tight tracking-tight text-[#30133E] md:text-6xl">Our services</h1>
+          <p className="mt-6 text-lg leading-8 text-[#30133E]/75">
+            We offer specialised physiotherapy for children and adults, from respiratory support and rehabilitation to home-based care.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {SERVICES.map((service, i) => (
-            <div key={i} className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow flex flex-col">
-              <div className="relative h-64">
-                {/* YOUR EXACT FILENAMES */}
-                <Image src={`/images/${service.img}`} alt={service.title} fill className="object-cover" />
+        <div className="grid gap-7 md:grid-cols-2 lg:grid-cols-3">
+          {SERVICES.map((service) => (
+            <article key={service.title} className="group overflow-hidden rounded-[1.6rem] bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-xl hover:shadow-[#30133E]/10">
+              <div className="relative aspect-[5/4] overflow-hidden bg-[#E8D8F0]">
+                <Image src={service.img} alt={service.title} fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover transition-transform duration-700 group-hover:scale-105" />
               </div>
-              <div className="p-8 flex-1 flex flex-col">
-                <h2 className="text-2xl font-bold text-purple mb-3">{service.title}</h2>
-                <p className="text-purple/70 leading-relaxed flex-1">{service.desc}</p>
-                <Link href="/contact" className="inline-block mt-6 text-sm font-semibold text-purple hover:text-black">
-                  Book Service →
+              <div className="p-7">
+                <h2 className="text-xl font-semibold text-[#30133E]">{service.title}</h2>
+                <p className="mt-4 text-sm leading-7 text-[#30133E]/70">{service.desc}</p>
+                <Link href="/contact" className="mt-7 inline-flex items-center gap-2 text-sm font-semibold text-[#6B4B78] transition group-hover:gap-3">
+                  Enquire about this service <span aria-hidden="true">↗</span>
                 </Link>
               </div>
-            </div>
+            </article>
           ))}
+        </div>
+
+        <div className="mt-16 rounded-[1.75rem] bg-[#30133E] px-8 py-12 text-center text-white md:px-12">
+          <h2 className="text-3xl font-semibold md:text-4xl">Not sure where to start?</h2>
+          <p className="mx-auto mt-4 max-w-2xl leading-7 text-white/70">Speak to our team and we’ll help you find the right support.</p>
+          <Link href="/contact" className="mt-8 inline-flex min-h-14 items-center rounded-full bg-[#DBC1E8] px-8 py-4 text-sm font-semibold text-[#30133E] transition hover:bg-white">
+            Make an enquiry <span aria-hidden="true" className="ml-3 text-lg">↗</span>
+          </Link>
         </div>
       </div>
     </div>
