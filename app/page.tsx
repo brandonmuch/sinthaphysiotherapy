@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { Hero } from '@/components/sections/Hero';
+import { HomeServicesGallery } from '@/components/sections/HomeServicesGallery';
 
 const PILLARS = [
   {
@@ -29,30 +30,37 @@ const PILLARS = [
 const SERVICES = [
   {
     title: 'INPATIENT & OUTPATIENT PHYSIOTHERAPY',
+    href: '/services',
     description: 'Personalised rehab plans for both hospital-based and outpatient clients — helping you recover from a wide range of physical conditions with expert, hands-on support.',
   },
   {
     title: 'PAEDIATRIC PHYSIOTHERAPY & RESPIRATORY CARE',
+    href: '/services#paediatric-respiratory-support',
     description: 'Gentle, child-centred therapy focused on respiratory support because little lungs and growing bodies deserve specialised care.',
   },
   {
     title: 'ICU & POST-HOSPITAL REHABILITATION',
+    href: '/services#advanced-respiratory-care',
     description: 'Recovering after a critical illness? We’re here to help. From breathing support to rebuilding strength, we guide your journey back to independence.',
   },
   {
     title: 'POSTOPERATIVE RECOVERY',
+    href: '/services#postoperative-recovery',
     description: 'Heal stronger, faster. Our targeted physiotherapy helps reduce complications, ease pain, and restore mobility after surgery, getting you back on your feet, safely.',
   },
   {
     title: 'NEUROLOGICAL & VESTIBULAR REHABILITATION',
+    href: '/services#neurological-vestibular-rehabilitation',
     description: 'Support for stroke, Parkinson’s, balance issues, and more. Our customised rehab plans help retrain your brain and body to move with greater control and confidence.',
   },
   {
     title: 'CHRONIC ILLNESS & FRAILTY MANAGEMENT',
+    href: '/services#renal-metabolic-care',
     description: 'Gentle, goal-based therapy for those living with long-term conditions or age-related challenges, helping you stay strong, steady, and independent.',
   },
   {
     title: 'HOME VISITS',
+    href: '/services#home-visits',
     description: 'Can’t come to us? We’ll come to you. Enjoy expert physiotherapy in the comfort of your home, perfect for ongoing care or mobility challenges.',
   },
 ];
@@ -114,33 +122,31 @@ export default function Home() {
       </section>
 
       <section className="bg-[#F3EBF7] px-6 py-20 md:py-28">
-        <div className="mx-auto grid max-w-7xl gap-14 lg:grid-cols-[0.75fr_1.25fr] lg:gap-20">
-          <div className="lg:sticky lg:top-28 lg:self-start">
-            <h2 className="text-4xl font-semibold leading-[1.06] tracking-[-0.045em] md:text-5xl">
-              QUICK SERVICE SNAPSHOT
-            </h2>
-            <p className="mt-6 max-w-md text-base leading-8 text-[#30133E]/70">
-              Our services support children and adults through hospital-based care, recovery, rehabilitation and ongoing support at home.
-            </p>
-            <Link href="/services" className="mt-8 inline-flex items-center gap-2 rounded-full bg-[#30133E] px-7 py-4 text-sm font-semibold text-white transition hover:bg-[#4B255F]">
+        <div className="mx-auto max-w-7xl">
+          <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+            <div className="max-w-3xl">
+              <h2 className="text-4xl font-semibold leading-[1.06] tracking-[-0.045em] md:text-5xl">
+                Our Services
+              </h2>
+              <p className="mt-6 text-base leading-8 text-[#30133E]/70 md:text-lg">
+                Our services support children and adults through hospital-based care, recovery, rehabilitation and ongoing support at home.
+              </p>
+            </div>
+            <Link href="/services" className="inline-flex shrink-0 items-center gap-2 text-sm font-semibold text-[#30133E] underline-offset-4 hover:underline">
               View our Services Today <span aria-hidden="true">↗</span>
             </Link>
-
-            <ul className="mt-10 space-y-3 border-t border-[#30133E]/15 pt-7 text-sm font-medium text-[#30133E]/75">
-              <li>Inpatient & outpatient care</li>
-              <li>Paediatric respiratory therapy</li>
-              <li>ICU and post-ICU rehabilitation</li>
-              <li>Postoperative recovery</li>
-              <li>Home visits</li>
-            </ul>
           </div>
 
-          <div className="border-t border-[#30133E]/20">
+          <div className="mt-12">
+            <HomeServicesGallery />
+          </div>
+
+          <div className="mt-16 grid gap-x-12 border-t border-[#30133E]/20 md:grid-cols-2">
             {SERVICES.map((service, index) => (
               <Link
-                href="/services"
+                href={service.href}
                 key={service.title}
-                className="group grid gap-3 border-b border-[#30133E]/20 py-7 transition-colors hover:bg-white/45 sm:grid-cols-[64px_1fr_32px] sm:gap-6 sm:px-4"
+                className="group grid gap-3 border-b border-[#30133E]/20 py-7 transition-colors hover:bg-white/45 sm:grid-cols-[48px_1fr_24px] sm:gap-5 sm:px-4"
               >
                 <span className="pt-1 text-sm tabular-nums text-[#8B6A9A]">0{index + 1}</span>
                 <span>
