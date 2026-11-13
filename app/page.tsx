@@ -106,8 +106,8 @@ export default function Home() {
             </div>
           </SinthaCard>
           <div className="max-w-3xl">
-            <p className="mb-5 text-xs font-semibold tracking-[0.14em] text-[#6B4B78]">Our approach</p>
-            <div className="copy-justified space-y-5 text-base leading-8 text-[#29262D]/85 md:text-lg md:leading-[1.75]">
+            <h2 className="mb-4 text-3xl font-semibold leading-tight tracking-[-0.04em] text-[#30133E] md:text-4xl">Our approach</h2>
+            <div className="copy-justified max-w-xl space-y-4 text-[15px] leading-[1.75] text-[#29262D]/85 md:text-base">
               <p>
                 We take a holistic, whole-person approach to your health, healing, and well-being. While we’re known for our expert care in respiratory physiotherapy, our services go way beyond just helping you breathe easier.
               </p>
@@ -179,11 +179,10 @@ export default function Home() {
       <section className="bg-white px-6 py-16 md:py-24">
         <div className="mx-auto grid max-w-7xl items-center gap-10 md:grid-cols-[1fr_1.05fr] md:gap-16">
           <div>
-            <p className="mb-4 text-xs font-semibold tracking-[0.14em] text-[#6B4B78]">Our approach</p>
             <h2 className="max-w-2xl text-4xl font-semibold leading-[1.08] tracking-[-0.04em] text-[#30133E] md:text-5xl">
               Care that sees the whole person.
             </h2>
-            <p className="copy-justified mt-6 max-w-xl text-base leading-8 text-[#29262D]/85 md:text-lg">
+            <p className="copy-justified mt-5 max-w-xl text-[15px] leading-[1.75] text-[#29262D]/85 md:text-base">
               We believe in meeting each patient where they are, physically, emotionally, and functionally. Our approach is holistic, hands-on, and person-centred.
             </p>
             <blockquote className="mt-8 border-l-2 border-[#8B6A9A] pl-6">
@@ -249,7 +248,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="bg-white px-6 py-20 md:py-28">
+      <section className="bg-[#F3EBF7] px-6 py-20 md:py-28">
         <div className="mx-auto max-w-7xl">
           <h2 className="text-4xl font-semibold tracking-[-0.04em] md:text-5xl">Frequently asked questions</h2>
           <div className="mt-10 border-t border-[#30133E]/20">
