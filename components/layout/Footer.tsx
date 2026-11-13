@@ -8,8 +8,14 @@ export function Footer() {
         <div className="grid gap-12 md:grid-cols-4 mb-16">
           
           <div className="md:col-span-2">
-            <Link href="/" className="relative block w-56 h-32 mb-6">
-              <Image src="/images/logo-stacked-light.png" alt="Sintha Physiotherapy" fill className="object-contain object-left" />
+            {/* YOUR EXACT FOOTER LOGO */}
+            <Link href="/" className="relative block w-64 h-32 mb-6">
+              <Image 
+                src="/images/Sintha Physiotherapy Logo Text White.png" 
+                alt="Sintha Physiotherapy" 
+                fill 
+                className="object-contain object-left" 
+              />
             </Link>
             <p className="max-w-sm text-sm text-lilac/80 leading-relaxed">
               Sintha Physiotherapy is a specialised physiotherapy practice. We offer comprehensive rehabilitation and specialised respiratory care to help you move and breathe better.
@@ -42,10 +48,15 @@ export function Footer() {
         </div>
       </div>
 
-      {/* THE BREATHING LUNGS */}
+      {/* THE BREATHING LUNGS - YOUR EXACT FILENAME */}
       <div className="absolute right-0 bottom-0 opacity-10 pointer-events-none w-[400px] h-[400px] translate-x-1/4 translate-y-1/4">
         <div className="relative w-full h-full animate-breathe">
-           <Image src="/images/icon-lungs-light.png" alt="Breathing Lungs" fill className="object-contain" />
+           <Image 
+             src="/images/lungs-white.png" 
+             alt="Breathing Lungs" 
+             fill 
+             className="object-contain" 
+           />
         </div>
       </div>
     </footer>

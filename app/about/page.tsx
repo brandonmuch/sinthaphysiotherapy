@@ -19,15 +19,21 @@ export default function AboutPage() {
             </p>
           </div>
           <div className="relative h-[500px] rounded-3xl overflow-hidden shadow-xl">
-            <Image src="/images/clinic-interior.jpg" alt="Sintha Physiotherapy Clinic" fill className="object-cover" />
+            {/* Assuming this is your clinic or team image */}
+            <Image src="/images/hero-couple.png" alt="Sintha Physiotherapy" fill className="object-cover" />
           </div>
         </div>
 
         <div className="grid md:grid-cols-2 gap-12">
-          {/* Wezi */}
+          {/* Wezi - EXACT FILENAME */}
           <div className="bg-white rounded-3xl overflow-hidden shadow-sm">
             <div className="relative h-[400px]">
-              <Image src="/images/team-wezi.jpg" alt="Wezi Nyimba" fill className="object-cover" />
+              <Image 
+                src="/images/u2428486467_Young_Black_South_African_physiotherapist_in_blac_0d9af168-9b9a-4f23-a9e1-819a.jpeg" 
+                alt="Wezi Nyimba" 
+                fill 
+                className="object-cover" 
+              />
             </div>
             <div className="p-8">
               <h3 className="text-3xl font-bold text-purple mb-2">Wezi Nyimba</h3>
@@ -38,10 +44,15 @@ export default function AboutPage() {
             </div>
           </div>
 
-          {/* Posheletso */}
+          {/* Posheletso - EXACT FILENAME */}
           <div className="bg-white rounded-3xl overflow-hidden shadow-sm">
             <div className="relative h-[400px]">
-              <Image src="/images/team-posheletso.jpg" alt="Posheletso Kekana" fill className="object-cover" />
+              <Image 
+                src="/images/u2428486467_dark-skinned_Black_female_physiotherapist_providi_e35efe3e-2122-4fa6-b294-a042.jpeg" 
+                alt="Posheletso Kekana" 
+                fill 
+                className="object-cover" 
+              />
             </div>
             <div className="p-8">
               <h3 className="text-3xl font-bold text-purple mb-2">Posheletso Kekana</h3>

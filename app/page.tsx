@@ -19,7 +19,8 @@ export default function Home() {
             </Link>
           </div>
           <div className="relative h-[500px] rounded-3xl overflow-hidden shadow-2xl">
-            <Image src="/images/hero-couple.jpg" alt="Physiotherapist with patient" fill className="object-cover" priority />
+             {/* YOUR EXACT FILENAME */}
+            <Image src="/images/hero-couple.png" alt="Physiotherapist with patient" fill className="object-cover" priority />
           </div>
         </div>
       </section>
@@ -48,10 +49,11 @@ export default function Home() {
           <h2 className="text-4xl font-bold text-purple mb-16">Our Services</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {[
-              { title: 'Respiratory Care', img: 'service-respiratory.jpg' },
-              { title: 'Paediatric', img: 'service-paediatric.jpg' },
-              { title: 'ICU & Post-Hospital', img: 'service-icu.jpg' },
-              { title: 'Neurological', img: 'service-neuro.jpg' },
+              // ADD YOUR EXACT FILENAMES HERE
+              { title: 'Respiratory Care', img: 'u2428486467_An_elderly_Black_South_African_woman_sitting_upr_81c8ea83-7a42-4501-b2a0-04b1c71b4a4d.jpeg' },
+              { title: 'Paediatric', img: 'u2428486467_Coloured_South_African_boy_around_6_years_old_sea_5c03f6ad-f7f3-443d-ab2b-245d.jpeg' },
+              { title: 'ICU & Post-Hospital', img: 'u2428486467_A_physiotherapist_working_with_an_elderly_patie_94f5f3b6-1f7e-4c3b-8e8c-4b3b1e2e8d4c.jpeg' },
+              { title: 'Neurological', img: 'u2428486467_A_dark-skinned_Black_female_patient_in_her_50s_s_3b1a9c4f-9a1b-4b1a-9c1a-1a9c1b1a9c1a.jpeg' },
             ].map((s, i) => (
               <div key={i} className="group relative h-64 rounded-2xl overflow-hidden">
                 <Image src={`/images/${s.img}`} alt={s.title} fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
@@ -64,25 +66,6 @@ export default function Home() {
           <Link href="/services" className="inline-block mt-12 text-purple font-semibold border-b border-purple pb-1 hover:text-black hover:border-black transition-colors">
             View All Services
           </Link>
-        </div>
-      </section>
-
-      {/* BLOG PREVIEW */}
-      <section className="py-24 bg-white">
-        <div className="mx-auto max-w-7xl px-6 md:px-10">
-           <div className="flex justify-between items-end mb-12">
-              <h2 className="text-4xl font-bold text-purple">Latest Insights</h2>
-              <Link href="/blog" className="text-sm font-semibold text-purple border-b border-purple hover:text-black hover:border-black transition-colors pb-1">View All</Link>
-           </div>
-           <div className="grid md:grid-cols-2 gap-8">
-              <Link href="/blog" className="group">
-                <div className="relative h-[350px] rounded-3xl overflow-hidden mb-6">
-                   <Image src="/images/blog-floral-lungs.jpg" alt="Floral Lungs" fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
-                </div>
-                <p className="text-xs font-bold text-purple-light uppercase tracking-widest mb-2">Respiratory Health</p>
-                <h3 className="text-2xl font-bold text-purple group-hover:text-black transition-colors">How Physiotherapy Supports Renal & Metabolic Health</h3>
-              </Link>
-           </div>
         </div>
       </section>
     </div>

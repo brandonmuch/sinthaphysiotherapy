@@ -14,10 +14,18 @@ export function Nav() {
   return (
     <header className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${scrolled ? 'bg-white/90 backdrop-blur-md py-4 shadow-sm' : 'bg-transparent py-6'}`}>
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 md:px-10">
-        <Link href="/" className="relative w-56 h-12">
-          <Image src="/images/logo-long-dark.png" alt="Sintha Physiotherapy" fill className="object-contain object-left" />
+        
+        {/* YOUR EXACT LOGO FILENAME */}
+        <Link href="/" className="relative w-64 h-12">
+          <Image 
+            src="/images/Sintha Physiotherapy Logo Landscape Purple.png" 
+            alt="Sintha Physiotherapy" 
+            fill 
+            className="object-contain object-left" 
+          />
         </Link>
-        <nav className="hidden items-center gap-8 text-xs font-semibold uppercase tracking-[0.15em] md:flex">
+
+        <nav className="hidden items-center gap-8 text-xs font-semibold uppercase tracking-[0.15em] text-purple md:flex">
           <Link href="/" className="hover:text-black transition-colors">Home</Link>
           <Link href="/about" className="hover:text-black transition-colors">About</Link>
           <Link href="/services" className="hover:text-black transition-colors">Services</Link>

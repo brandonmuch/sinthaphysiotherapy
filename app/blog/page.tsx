@@ -8,7 +8,7 @@ export default function BlogPage() {
         <h1 className="text-5xl md:text-6xl font-bold text-purple mb-16">Journal & Insights</h1>
         
         <div className="space-y-16">
-          {/* Main Article */}
+          {/* Main Article - YOUR EXACT FILENAME */}
           <article className="bg-white rounded-3xl overflow-hidden shadow-sm group">
             <div className="relative h-[400px] w-full">
               <Image src="/images/blog-floral-lungs.jpg" alt="Floral Lungs Illustration" fill className="object-cover" />
@@ -27,7 +27,7 @@ export default function BlogPage() {
             </div>
           </article>
 
-          {/* Secondary Article / Educational Snippet */}
+          {/* Secondary Article - YOUR EXACT FILENAME */}
           <article className="bg-white rounded-3xl overflow-hidden shadow-sm grid md:grid-cols-2 group">
             <div className="relative h-[300px] md:h-auto">
               <Image src="/images/respiratory-chart.jpg" alt="Signs of Respiratory Distress" fill className="object-cover" />
