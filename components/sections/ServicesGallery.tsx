@@ -28,7 +28,7 @@ export default function ServicesGallery({ items }: { items: ServiceGalleryItem[]
           bend={2.5}
           textColor="#FFFFFF"
           borderRadius={0.065}
-          font={'600 23px "Open Sans"'}
+          font={'600 23px sans-serif'}
           itemSize={0.78}
           itemAspect={0.82}
           gap={0.24}
