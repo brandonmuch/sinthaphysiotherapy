@@ -108,7 +108,7 @@ export default function Home() {
 
           <div className="mt-14 grid gap-10 md:grid-cols-3 md:gap-8">
             {PILLARS.map((pillar) => (
-              <article key={pillar.number} className="home-pillar-card group overflow-hidden rounded-[1.5rem] border border-[#30133E]/[0.07] bg-[#F8F3FA]">
+              <article key={pillar.number} className="home-pillar-card group overflow-hidden rounded-[1.5rem] border border-[#8B6A9A]/20 bg-[#F3EBF7] shadow-[0_10px_30px_-24px_rgba(48,19,62,0.42)]">
                 <div className="relative aspect-[5/4] overflow-hidden bg-[#E9DDF0]">
                   <Image
                     src={pillar.image}
