@@ -1,6 +1,10 @@
 import type { ButtonHTMLAttributes, CSSProperties, ReactElement, ReactNode } from 'react';
 
 export interface SpecularButtonProps extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'size'> {
+  href?: string;
+  external?: boolean;
+  target?: string;
+  rel?: string;
   children?: ReactNode;
   size?: 'sm' | 'md' | 'lg';
   radius?: number;

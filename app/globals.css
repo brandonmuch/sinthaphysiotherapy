@@ -2,9 +2,87 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  background: #FFFFFF;
+}
+
 body {
-  background-color: #F3EBF7;
+  background-color: #FFFFFF;
+  color: #29262D;
+}
+
+h1,
+h2,
+h3,
+h4 {
   color: #30133E;
+}
+
+button,
+input,
+textarea,
+select {
+  border-radius: 16px;
+}
+
+input,
+textarea,
+select {
+  border-color: rgba(48, 19, 62, 0.18);
+  color: #29262D;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: 2px solid rgba(139, 106, 154, 0.35);
+  outline-offset: 2px;
+}
+
+button:not(.specular-button),
+input[type="submit"],
+input[type="button"] {
+  border: 1px solid rgba(219, 193, 232, 0.72);
+  border-radius: 999px;
+  background: linear-gradient(180deg, #4D2B5B 0%, #30133E 100%);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.16), 0 8px 18px -12px rgba(48, 19, 62, 0.6);
+  color: #FFFFFF;
+  font-weight: 600;
+  transition: filter 180ms ease, transform 140ms ease-out;
+}
+
+button:not(.specular-button):hover,
+input[type="submit"]:hover,
+input[type="button"]:hover {
+  filter: brightness(1.08);
+}
+
+button:not(.specular-button):active,
+input[type="submit"]:active,
+input[type="button"]:active {
+  transform: scale(0.98);
+}
+
+button:not(.specular-button):focus-visible,
+input[type="submit"]:focus-visible,
+input[type="button"]:focus-visible {
+  outline: 2px solid #8B6A9A;
+  outline-offset: 3px;
+}
+
+button:not(.specular-button):disabled,
+input[type="submit"]:disabled,
+input[type="button"]:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  button:not(.specular-button),
+  input[type="submit"],
+  input[type="button"] {
+    transition: none;
+  }
 }
 
 @keyframes breathe {
@@ -29,7 +107,7 @@ body {
 
 .sintha-nav-shell {
   position: fixed;
-  top: max(12px, env(safe-area-inset-top));
+  top: max(14px, env(safe-area-inset-top));
   right: 0;
   left: 0;
   z-index: 50;
@@ -38,14 +116,208 @@ body {
   pointer-events: none;
 }
 
-.sintha-nav-shell > .card-nav {
+.sintha-nav-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  width: min(100%, 1200px);
+  min-height: 72px;
+  margin: 0 auto;
+  padding: 8px 12px 8px 22px;
+  border: 1px solid rgba(48, 19, 62, 0.08);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 18px 44px -34px rgba(48, 19, 62, 0.58), 0 4px 12px -8px rgba(48, 19, 62, 0.22);
+  -webkit-backdrop-filter: blur(18px) saturate(1.5);
+  backdrop-filter: blur(18px) saturate(1.5);
   pointer-events: auto;
+}
+
+.sintha-nav-logo {
+  display: inline-flex;
+  flex: 0 1 auto;
+  align-items: center;
+  min-width: 0;
+}
+
+.sintha-nav-logo img {
+  display: block;
+  width: clamp(148px, 18vw, 218px);
+  max-width: 100%;
+  height: auto;
+}
+
+.sintha-nav-actions {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.sintha-nav-actions .specular-button {
+  flex: 0 0 auto;
+  white-space: nowrap;
+}
+
+.sintha-menu-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  min-height: 100svh;
+  padding: max(16px, env(safe-area-inset-top)) clamp(18px, 4vw, 52px) max(14px, env(safe-area-inset-bottom));
+  overflow: hidden;
+  background: #30133E;
+  color: #FFFFFF;
+  animation: sintha-menu-in 260ms ease-out both;
+}
+
+.sintha-menu-topbar {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  min-height: 68px;
+  padding-bottom: 8px;
+}
+
+.sintha-menu-logo {
+  display: inline-flex;
+  align-items: center;
+  max-width: min(58vw, 230px);
+}
+
+.sintha-menu-logo img {
+  display: block;
+  width: 100%;
+  height: auto;
+  filter: brightness(0) invert(1);
+}
+
+.sintha-menu-flow {
+  flex: 1 1 auto;
+  min-height: 0;
+  padding: 8px 0;
+}
+
+.sintha-menu-flow .flowing-menu {
+  height: 100%;
+  background: transparent !important;
+}
+
+.sintha-menu-flow .flowing-menu__label {
+  font-weight: 500;
+}
+
+.sintha-menu-flow .flowing-menu__image {
+  border-radius: 18px;
+}
+
+.sintha-menu-bottom {
+  display: flex;
+  flex: 0 0 auto;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px 20px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.16);
+  color: rgba(255, 255, 255, 0.62);
+  font-size: 12px;
+}
+
+.sintha-menu-bottom a {
+  color: #DBC1E8;
+  text-decoration: none;
+}
+
+@keyframes sintha-menu-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.home-pillar-card,
+.blog-card,
+.service-card,
+.contact-card,
+.about-feature-card {
+  border-radius: 24px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sintha-menu-overlay {
+    animation: none;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 900px) {
+  .sintha-nav-shell {
+    padding-right: 12px;
+    padding-left: 12px;
+  }
+
+  .sintha-nav-bar {
+    min-height: 66px;
+    gap: 10px;
+    padding: 7px 9px 7px 18px;
+  }
+
+  .sintha-nav-logo {
+    flex: 0 1 auto;
+    max-width: 150px;
+  }
+
+  .sintha-nav-logo img {
+    width: clamp(124px, 15vw, 150px);
+    max-height: 36px;
+    object-fit: contain;
+  }
+
+  .sintha-nav-actions {
+    flex: 0 0 auto;
+    gap: 6px;
+  }
+
+  .sintha-nav-actions .specular-button--sm {
+    padding: 9px 12px;
+    font-size: 0.74rem;
+  }
 }
 
 @media (max-width: 640px) {
   .sintha-nav-shell {
-    padding-right: 12px;
-    padding-left: 12px;
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+
+  .sintha-nav-bar {
+    min-height: 64px;
+    padding: 7px 8px 7px 16px;
+  }
+
+  .sintha-nav-logo img {
+    width: clamp(120px, 34vw, 158px);
+  }
+
+  .sintha-nav-actions {
+    gap: 6px;
+  }
+
+  .sintha-nav-actions .specular-button--sm {
+    padding: 10px 13px;
+    font-size: 0.75rem;
+  }
+
+  .sintha-nav-actions .specular-button--sm:last-child {
+    display: none;
+  }
+
+  .sintha-menu-bottom {
+    font-size: 11px;
   }
 }
 

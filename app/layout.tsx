@@ -22,6 +22,11 @@ const openSans = localFont({
 export const metadata: Metadata = {
   title: 'Sintha Physiotherapy | Wezi Nyimba Physiotherapists Inc.',
   description: 'Specialised physiotherapy for children and adults in Fourways, Johannesburg. Personalised rehabilitation and respiratory care.',
+  icons: {
+    icon: '/favicon.png',
+    shortcut: '/favicon.png',
+    apple: '/favicon.png',
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -31,7 +36,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <SplashCursor
           style={{}}
           rainbow={false}
-          colors={['#30133E', '#8B6A9A', '#DBC1E8']}
+          adaptive
+          colors={['#30133E', '#DBC1E8']}
           colorSpeed={0.35}
           size={0.5}
           force={0.3}

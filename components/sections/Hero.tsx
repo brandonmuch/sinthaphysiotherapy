@@ -39,16 +39,16 @@ export function Hero() {
         transition={{ duration: 0.7, ease: [0.23, 1, 0.32, 1] }}
         className="relative z-10 mx-auto w-full max-w-5xl"
       >
-        <h1 className="text-balance text-[clamp(3.1rem,8.5vw,7.5rem)] font-semibold leading-[0.96] tracking-[-0.065em]">
+        <h1 className="text-balance text-[clamp(2.55rem,6.5vw,5.9rem)] font-semibold leading-[0.98] tracking-[-0.055em]">
           Empower Movement.
-          <span className="mt-3 block font-semibold tracking-[-0.055em] text-[#dbc1e8]">Enhance Life.</span>
+          <span className="mt-2 block font-semibold tracking-[-0.05em] text-white">Enhance Life.</span>
         </h1>
 
-        <h2 className="mx-auto mt-8 max-w-3xl text-balance text-xl font-medium tracking-[-0.025em] text-white sm:text-2xl md:text-[1.8rem]">
+        <h2 className="mx-auto mt-7 max-w-4xl text-balance text-[13px] font-medium tracking-[-0.01em] text-white sm:whitespace-nowrap sm:text-base md:text-lg">
           Specialised Physiotherapy for Children and Adults
         </h2>
 
-        <p className="mx-auto mt-5 max-w-3xl text-pretty text-base leading-8 text-white/90 md:text-lg">
+        <p className="mx-auto mt-4 max-w-4xl text-pretty text-xs leading-6 text-white sm:whitespace-nowrap sm:text-sm md:text-base">
           At Sintha Physiotherapy, we’re all about helping you feel good and move even better!
         </p>
 

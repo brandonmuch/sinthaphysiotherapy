@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import Link from 'next/link';
+import SpecularButton from '@/components/ui/SpecularButton';
 
 const SERVICES = [
   {
@@ -85,13 +85,13 @@ const SERVICES = [
 
 export default function ServicesPage() {
   return (
-    <div className="bg-[#F3EBF7] pb-28 pt-36 text-[#30133E]">
+    <div className="bg-white pb-28 pt-32 text-[#29262D]">
       <div className="mx-auto max-w-7xl px-6 md:px-10">
         <header className="max-w-4xl">
           <h1 className="text-5xl font-semibold leading-[1.05] tracking-[-0.05em] md:text-7xl">
             Our services
           </h1>
-          <p className="copy-justified mt-7 max-w-3xl text-lg leading-8 text-[#30133E]/75">
+          <p className="copy-justified mt-7 max-w-3xl text-lg leading-8 text-[#29262D]/85">
             We offer a comprehensive range of specialised physiotherapy services designed to meet your unique needs, from ICU to home visits.
           </p>
         </header>
@@ -101,15 +101,15 @@ export default function ServicesPage() {
             <article
               id={service.id}
               key={service.id}
-              className="service-card flex h-full flex-col overflow-hidden rounded-[1.4rem] border border-[#30133E]/[0.08] bg-white shadow-[0_12px_34px_-28px_rgba(48,19,62,0.55)]"
+              className="service-card flex h-full flex-col overflow-hidden rounded-[24px] border border-[#30133E]/[0.08] bg-white shadow-[0_12px_34px_-28px_rgba(48,19,62,0.55)]"
             >
-              <div className="relative aspect-[5/4] overflow-hidden bg-[#E8D8F0]">
+              <div className="relative aspect-[4/5] overflow-hidden bg-[#E8D8F0]">
                 <Image
                   src={service.image}
                   alt={service.alt}
                   fill
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  className="service-card-image object-cover"
+                  className="service-card-image object-cover object-[center_22%]"
                 />
               </div>
               <div className="flex flex-1 flex-col p-7">
@@ -119,35 +119,61 @@ export default function ServicesPage() {
                 <h2 className="mt-3 text-xl font-semibold leading-tight tracking-[-0.025em] md:text-2xl">
                   {service.title}
                 </h2>
-                <div className="copy-justified mt-5 space-y-4 text-sm leading-7 text-[#30133E]/75">
+                <div className="copy-justified mt-5 space-y-4 text-sm leading-7 text-[#29262D]/85">
                   {service.paragraphs.map((paragraph) => (
                     <p key={paragraph}>{paragraph}</p>
                   ))}
                 </div>
-                <Link
+                <SpecularButton
+                  className="mt-7 self-start"
+                  size="sm"
+                  radius={999}
+                  tint="#F3EBF7"
+                  tintOpacity={0.8}
+                  textColor="#30133E"
+                  lineColor="#8B6A9A"
+                  baseColor="#F3EBF7"
+                  intensity={0.72}
+                  idleIntensity={0.14}
+                  shineSize={10}
+                  shineFade={34}
+                  thickness={1.1}
+                  glow={0.22}
+                  followMouse
                   href="/contact"
-                  className="mt-7 inline-flex min-h-11 items-center gap-2 self-start border-b border-[#30133E]/35 pb-1 text-sm font-semibold text-[#30133E] transition-colors hover:border-[#8B6A9A] hover:text-[#6B4B78]"
                 >
                   Ask a physio <span aria-hidden="true">↗</span>
-                </Link>
+                </SpecularButton>
               </div>
             </article>
           ))}
         </div>
 
-        <section className="mt-24 rounded-[1.5rem] bg-[#30133E] px-8 py-12 text-white md:px-12 md:py-16">
-          <h2 className="max-w-3xl text-4xl font-semibold leading-tight tracking-[-0.04em] md:text-6xl">
-            Physiotherapy that moves you forward.
-          </h2>
-          <p className="copy-justified mt-5 max-w-2xl text-base leading-8 text-white/75">
-            Where recovery begins with a breath and ends in strength.
-          </p>
-          <Link
-            href="/contact"
-            className="mt-8 inline-flex min-h-14 items-center rounded-full bg-[#DBC1E8] px-8 py-4 text-sm font-semibold text-[#30133E] transition-colors hover:bg-white"
-          >
-            Book an assessment <span aria-hidden="true" className="ml-3">↗</span>
-          </Link>
+        <section className="mt-24 grid items-center gap-10 rounded-[28px] bg-[#F8F4FA] p-5 md:grid-cols-[0.95fr_1.05fr] md:gap-14 md:p-8">
+          <div className="relative overflow-hidden rounded-[22px] bg-white">
+            <Image
+              src="/uploads/patient-meditating-outdoors.jpg"
+              alt="A woman taking a peaceful moment outdoors among soft lilac flowers"
+              width={800}
+              height={533}
+              sizes="(max-width: 768px) 100vw, 42vw"
+              className="h-auto w-full object-cover"
+            />
+          </div>
+          <div className="px-2 py-5 md:px-4">
+            <p className="mb-4 text-xs font-semibold tracking-[0.14em] text-[#8B6A9A]">A whole-person approach</p>
+            <h2 className="max-w-3xl text-3xl font-semibold leading-tight tracking-[-0.04em] text-[#30133E] md:text-5xl">
+              Physiotherapy that moves you forward.
+            </h2>
+            <p className="copy-justified mt-5 max-w-2xl text-base leading-8 text-[#29262D]/80">
+              Where recovery begins with a breath and ends in strength.
+            </p>
+            <div className="mt-8">
+              <SpecularButton size="md" radius={999} tint="#DBC1E8" tintOpacity={0.16} textColor="#FFFFFF" lineColor="#DBC1E8" baseColor="#30133E" intensity={0.82} idleIntensity={0.18} shineSize={10} shineFade={34} thickness={1.1} glow={0.3} followMouse href="/contact">
+                Book an assessment <span aria-hidden="true">↗</span>
+              </SpecularButton>
+            </div>
+          </div>
         </section>
       </div>
     </div>

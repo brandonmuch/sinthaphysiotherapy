@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
+import SpecularButton from '@/components/ui/SpecularButton';
 
 const ARTICLE = {
   slug: 'strong-at-every-age',
@@ -45,13 +46,13 @@ export default async function BlogArticlePage({
   if (slug !== ARTICLE.slug) notFound();
 
   return (
-    <article className="min-h-screen bg-white pb-24 pt-32 text-[#30133E] md:pt-40">
+    <article className="min-h-screen bg-white pb-24 pt-32 text-[#29262D] md:pt-40">
       <div className="mx-auto max-w-4xl px-6 md:px-10">
         <Link
           href="/blog"
           className="inline-flex items-center gap-2 text-sm font-medium text-[#6B4B78] transition-colors hover:text-[#30133E]"
         >
-          <span aria-hidden="true">←</span> Back to journal
+          <span aria-hidden="true">←</span> Back to blog
         </Link>
 
         <header className="mt-10">
@@ -61,7 +62,7 @@ export default async function BlogArticlePage({
           <h1 className="mt-5 text-balance text-4xl font-semibold leading-[1.08] tracking-[-0.045em] md:text-6xl">
             {ARTICLE.title}
           </h1>
-          <p className="mt-6 max-w-3xl text-lg leading-8 text-[#30133E]/75">
+          <p className="mt-6 max-w-3xl text-lg leading-8 text-[#29262D]/85">
             {ARTICLE.intro}
           </p>
         </header>
@@ -73,11 +74,11 @@ export default async function BlogArticlePage({
             fill
             priority
             sizes="(max-width: 768px) 100vw, 896px"
-            className="object-cover"
+            className="object-contain p-4"
           />
         </figure>
 
-        <div className="mx-auto mt-12 max-w-3xl space-y-8 text-base leading-8 text-[#30133E]/80 md:text-lg">
+        <div className="mx-auto mt-12 max-w-3xl space-y-8 text-base leading-8 text-[#29262D]/85 md:text-lg">
           <p>
             Here’s a fact that might surprise you: after the age of 65, 1 in 3 older
             adults experience a fall each year. Falls are the leading cause of injury
@@ -154,12 +155,26 @@ export default async function BlogArticlePage({
           <p className="mt-3 max-w-2xl leading-7 text-[#30133E]/75">
             Speak with the Sintha team about your needs and the support available.
           </p>
-          <Link
+          <SpecularButton
+            className="mt-6"
+            size="md"
+            radius={999}
+            tint="#DBC1E8"
+            tintOpacity={0.16}
+            textColor="#FFFFFF"
+            lineColor="#DBC1E8"
+            baseColor="#30133E"
+            intensity={0.82}
+            idleIntensity={0.18}
+            shineSize={10}
+            shineFade={34}
+            thickness={1.1}
+            glow={0.32}
+            followMouse
             href="/contact"
-            className="mt-6 inline-flex min-h-12 items-center justify-center rounded-full bg-[#30133E] px-7 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#4B255F]"
           >
-            Contact our team <span aria-hidden="true" className="ml-3">↗</span>
-          </Link>
+            Contact our team <span aria-hidden="true">↗</span>
+          </SpecularButton>
         </div>
       </div>
     </article>
