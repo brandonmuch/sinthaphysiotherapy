@@ -175,16 +175,18 @@ export default function ServicesPage() {
         </SinthaCard>
 
         <section className="mt-24 grid items-center gap-10 rounded-[28px] bg-[#F8F4FA] p-5 md:grid-cols-[0.95fr_1.05fr] md:gap-14 md:p-8">
-          <div className="relative overflow-hidden rounded-[22px] bg-white">
-            <Image
-              src="/uploads/patient-meditating-outdoors.jpg"
-              alt="A woman taking a peaceful moment outdoors among soft lilac flowers"
-              width={800}
-              height={533}
-              sizes="(max-width: 768px) 100vw, 42vw"
-              className="h-auto w-full object-cover"
-            />
-          </div>
+          <SinthaCard className="h-full" backgroundColor="#FFFFFF" borderRadius={22}>
+            <div className="relative overflow-hidden rounded-[22px] bg-white">
+              <Image
+                src="/uploads/patient-meditating-outdoors.jpg"
+                alt="A woman taking a peaceful moment outdoors among soft lilac flowers"
+                width={800}
+                height={533}
+                sizes="(max-width: 768px) 100vw, 42vw"
+                className="h-auto w-full object-cover"
+              />
+            </div>
+          </SinthaCard>
           <div className="px-2 py-5 md:px-4">
             <p className="mb-4 text-xs font-semibold tracking-[0.14em] text-[#8B6A9A]">A whole-person approach</p>
             <h2 className="max-w-3xl text-3xl font-semibold leading-tight tracking-[-0.04em] text-[#30133E] md:text-5xl">
