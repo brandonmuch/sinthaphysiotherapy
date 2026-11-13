@@ -19,6 +19,7 @@ const ARROW = 'flowing-menu__arrow';
 const BAND = 'flowing-menu__band';
 const TRACK = 'flowing-menu__track';
 const PART = 'flowing-menu__part';
+const PART_GROUP = 'flowing-menu__part-group';
 const PART_TEXT = 'flowing-menu__part-text';
 const IMAGE = 'flowing-menu__image';
 const FLOAT = 'flowing-menu__float';
@@ -605,9 +606,16 @@ function FlowingMenu({
                   }}
                 >
                   {Array.from({ length: copies[index] ?? 3 }, (_, copy) => (
-                    <div className={PART} key={copy}>
-                      <span className={PART_TEXT}>{item.marquee ?? item.text}</span>
-                      {item.image && <span className={IMAGE} style={{ backgroundImage: `url(${item.image})` }} />}
+                    <div className={PART_GROUP} key={copy}>
+                      {items.map((_, teaserIndex) => {
+                        const featured = items[(index + teaserIndex) % items.length];
+                        return (
+                          <div className={PART} key={`${copy}-${teaserIndex}`}>
+                            <span className={PART_TEXT}>{featured.marquee ?? featured.text}</span>
+                            {featured.image && <span className={IMAGE} style={{ backgroundImage: `url(${featured.image})` }} />}
+                          </div>
+                        );
+                      })}
                     </div>
                   ))}
                 </div>
@@ -641,9 +649,16 @@ function FlowingMenu({
                 >
                   {item &&
                     Array.from({ length: copies[slots[slot]] ?? 3 }, (_, copy) => (
-                      <div className={PART} key={copy}>
-                        <span className={PART_TEXT}>{item.marquee ?? item.text}</span>
-                        {item.image && <span className={IMAGE} style={{ backgroundImage: `url(${item.image})` }} />}
+                      <div className={PART_GROUP} key={copy}>
+                        {items.map((_, teaserIndex) => {
+                          const featured = items[(slots[slot] + teaserIndex) % items.length];
+                          return (
+                            <div className={PART} key={`${copy}-${teaserIndex}`}>
+                              <span className={PART_TEXT}>{featured.marquee ?? featured.text}</span>
+                              {featured.image && <span className={IMAGE} style={{ backgroundImage: `url(${featured.image})` }} />}
+                            </div>
+                          );
+                        })}
                       </div>
                     ))}
                 </div>
