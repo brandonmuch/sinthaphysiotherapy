@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { Hero } from '@/components/sections/Hero';
 import { HomeServicesGallery } from '@/components/sections/HomeServicesGallery';
 import SpecularButton from '@/components/ui/SpecularButton';
+import FluxLines from '@/components/ui/FluxLines';
 
 const PILLARS = [
   {
@@ -115,34 +116,56 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="bg-white px-6 py-20 md:py-28">
-        <div className="mx-auto max-w-7xl">
-          <h2 className="max-w-5xl text-balance text-4xl font-semibold leading-[1.06] tracking-[-0.045em] md:text-6xl">
+      <section className="relative isolate overflow-hidden bg-[#30133E] px-6 py-20 md:py-28">
+        <div className="pointer-events-none absolute inset-0 z-0" aria-hidden="true">
+          <FluxLines
+            colors={['#DBC1E8', '#8B6A9A', '#FFFFFF']}
+            speed={0.34}
+            scale={1.55}
+            turbulence={0.9}
+            fluidity={0.1}
+            glow={2}
+            rimWidth={0.2}
+            lineWidth={1}
+            flowDirection="down"
+            opacity={0.7}
+            mouseInteraction
+            mouseStrength={0.7}
+            clickSwirl
+            className="absolute inset-0"
+            style={{ position: 'absolute', inset: 0 }}
+          />
+          <div className="absolute inset-0 bg-[#30133E]/42" />
+          <div className="absolute inset-x-0 top-0 h-36 bg-gradient-to-b from-[#30133E]/65 to-transparent" />
+          <div className="absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-[#30133E]/65 to-transparent" />
+        </div>
+        <div className="relative z-10 mx-auto max-w-7xl">
+          <p className="mb-5 text-xs font-semibold tracking-[0.14em] text-white">A whole-person approach</p>
+          <h2 className="max-w-5xl text-balance text-4xl font-semibold leading-[1.06] tracking-[-0.045em] text-white md:text-6xl">
             Let’s get you living life to the fullest — one step, stretch, and breath at a time.
           </h2>
-
-          <div className="mt-14 grid gap-10 md:grid-cols-3 md:gap-8">
+          <div className="mt-14 grid gap-7 md:grid-cols-3 md:gap-6">
             {PILLARS.map((pillar) => (
-              <article key={pillar.number} className="home-pillar-card group overflow-hidden rounded-[1.5rem] border border-[#8B6A9A]/20 bg-[#F3EBF7] shadow-[0_10px_30px_-24px_rgba(48,19,62,0.42)]">
-                <div className="relative aspect-[5/4] overflow-hidden bg-[#E9DDF0]">
+              <article key={pillar.number} className="home-pillar-card group flex h-full flex-col overflow-hidden rounded-[28px] bg-[#F3EBF7] shadow-[0_18px_54px_-32px_rgba(12,5,18,0.7)]">
+                <div className="relative aspect-square overflow-hidden bg-[#E9DDF0]">
                   <Image
                     src={pillar.image}
                     alt={pillar.alt}
                     fill
                     sizes="(max-width: 768px) 100vw, 33vw"
-                    className="home-pillar-image object-cover object-[center_24%]"
+                    className="home-pillar-image object-cover object-center"
                   />
                 </div>
-                <div className="px-6 pb-7 pt-6 md:px-7">
-                <p className="text-xs font-semibold tracking-[0.12em] text-[#8B6A9A]">{pillar.number.padStart(2, '0')}</p>
-                <h3 className="mt-3 text-lg font-semibold tracking-[-0.02em] md:text-xl">{pillar.title}</h3>
-                <p className="copy-justified mt-4 text-sm leading-7 text-[#29262D]/75">{pillar.description}</p>
+                <div className="flex flex-1 flex-col px-6 pb-7 pt-6 md:px-7">
+                  <p className="text-xs font-semibold tracking-[0.12em] text-[#6B4B78]">{pillar.number.padStart(2, '0')}</p>
+                  <h3 className="mt-3 text-xl font-semibold tracking-[-0.02em] text-[#30133E]">{pillar.title}</h3>
+                  <p className="copy-justified mt-4 flex-1 text-sm leading-7 text-[#29262D]/85">{pillar.description}</p>
                 </div>
               </article>
             ))}
           </div>
           <div className="mt-12">
-            <SpecularButton size="md" radius={999} tint="#F3EBF7" tintOpacity={0.7} textColor="#30133E" lineColor="#8B6A9A" baseColor="#F3EBF7" intensity={0.72} idleIntensity={0.14} shineSize={10} shineFade={34} thickness={1.1} glow={0.22} followMouse href="/about">
+            <SpecularButton size="md" radius={999} tint="#DBC1E8" tintOpacity={0.12} textColor="#FFFFFF" lineColor="#DBC1E8" baseColor="#30133E" intensity={0.82} idleIntensity={0.16} shineSize={10} shineFade={34} thickness={1.1} glow={0.3} followMouse href="/about">
               Who we are <span aria-hidden="true">↗</span>
             </SpecularButton>
           </div>
@@ -165,7 +188,7 @@ export default function Home() {
               </p>
             </blockquote>
             <div className="mt-8">
-              <SpecularButton size="md" radius={999} tint="#F3EBF7" tintOpacity={0.72} textColor="#30133E" lineColor="#8B6A9A" baseColor="#F3EBF7" intensity={0.72} idleIntensity={0.14} shineSize={10} shineFade={34} thickness={1.1} glow={0.22} followMouse href="/about">
+              <SpecularButton size="md" radius={999} tint="#DBC1E8" tintOpacity={0.12} textColor="#FFFFFF" lineColor="#DBC1E8" baseColor="#30133E" intensity={0.72} idleIntensity={0.14} shineSize={10} shineFade={34} thickness={1.1} glow={0.22} followMouse href="/about">
                 Meet our team <span aria-hidden="true">↗</span>
               </SpecularButton>
             </div>
@@ -194,7 +217,7 @@ export default function Home() {
                 Our services support children and adults through hospital-based care, recovery, rehabilitation and ongoing support at home.
               </p>
             </div>
-            <SpecularButton size="md" radius={999} tint="#F3EBF7" tintOpacity={0.72} textColor="#30133E" lineColor="#8B6A9A" baseColor="#F3EBF7" intensity={0.72} idleIntensity={0.14} shineSize={10} shineFade={34} thickness={1.1} glow={0.22} followMouse href="/services">
+            <SpecularButton size="md" radius={999} tint="#DBC1E8" tintOpacity={0.12} textColor="#FFFFFF" lineColor="#DBC1E8" baseColor="#30133E" intensity={0.72} idleIntensity={0.14} shineSize={10} shineFade={34} thickness={1.1} glow={0.22} followMouse href="/services">
               View our services <span aria-hidden="true">↗</span>
             </SpecularButton>
           </div>
@@ -241,7 +264,7 @@ export default function Home() {
 
       <section className="bg-[#30133E] px-6 py-20 text-white md:py-28">
         <div className="mx-auto flex max-w-7xl flex-col gap-10 md:flex-row md:items-end md:justify-between">
-          <h2 className="max-w-4xl text-balance text-4xl font-semibold leading-[1.04] tracking-[-0.05em] md:text-6xl">
+          <h2 className="max-w-4xl text-balance text-4xl font-semibold leading-[1.04] tracking-[-0.05em] text-white md:text-6xl">
             Your recovery, your pace, our care
           </h2>
           <SpecularButton size="lg" radius={999} tint="#DBC1E8" tintOpacity={0.16} textColor="#FFFFFF" lineColor="#DBC1E8" baseColor="#3D2548" intensity={0.82} idleIntensity={0.18} shineSize={10} shineFade={34} thickness={1.1} glow={0.34} followMouse href="/contact">

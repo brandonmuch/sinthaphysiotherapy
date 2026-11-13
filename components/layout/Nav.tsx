@@ -145,6 +145,7 @@ export function Nav() {
               showArrow
               imageShape="rounded"
               activeIndex={activeIndex}
+              onItemClick={() => setOpen(false)}
               ariaLabel="Main navigation"
               intro
             />

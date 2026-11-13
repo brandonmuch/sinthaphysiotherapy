@@ -101,7 +101,7 @@ export default function ServicesPage() {
             <article
               id={service.id}
               key={service.id}
-              className="service-card flex h-full flex-col overflow-hidden rounded-[24px] border border-[#30133E]/[0.08] bg-white shadow-[0_12px_34px_-28px_rgba(48,19,62,0.55)]"
+              className="service-card flex h-full flex-col overflow-hidden rounded-[24px] border border-[#30133E]/[0.06] bg-[#F3EBF7] shadow-[0_12px_34px_-28px_rgba(48,19,62,0.55)]"
             >
               <div className="relative aspect-[4/5] overflow-hidden bg-[#E8D8F0]">
                 <Image
@@ -128,11 +128,11 @@ export default function ServicesPage() {
                   className="mt-7 self-start"
                   size="sm"
                   radius={999}
-                  tint="#F3EBF7"
-                  tintOpacity={0.8}
-                  textColor="#30133E"
-                  lineColor="#8B6A9A"
-                  baseColor="#F3EBF7"
+                  tint="#DBC1E8"
+                  tintOpacity={0.12}
+                  textColor="#FFFFFF"
+                  lineColor="#DBC1E8"
+                  baseColor="#30133E"
                   intensity={0.72}
                   idleIntensity={0.14}
                   shineSize={10}

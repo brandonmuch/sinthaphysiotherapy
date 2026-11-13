@@ -81,7 +81,7 @@ export default function BlogPage() {
 
         <div className="mt-14 grid gap-7 sm:grid-cols-2 lg:grid-cols-3">
           {ARTICLES.map((article) => (
-            <article key={article.title} className="group flex h-full flex-col overflow-hidden rounded-[1.5rem] border border-[#30133E]/[0.07] bg-white shadow-[0_12px_32px_-28px_rgba(48,19,62,0.55)] blog-card">
+            <article key={article.title} className="group flex h-full flex-col overflow-hidden rounded-[1.5rem] border border-[#30133E]/[0.07] bg-[#F3EBF7] shadow-[0_12px_32px_-28px_rgba(48,19,62,0.55)] blog-card">
               <ArticleLink
                 href={article.href}
                 external={article.external}
@@ -120,7 +120,7 @@ export default function BlogPage() {
 
         <div className="mt-20 rounded-[1.75rem] bg-[#30133E] px-8 py-12 text-white md:px-12 md:py-16">
           <div className="flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
-            <h2 className="max-w-3xl text-3xl font-semibold leading-tight tracking-[-0.035em] md:text-5xl">
+            <h2 className="max-w-3xl text-3xl font-semibold leading-tight tracking-[-0.035em] text-white md:text-5xl">
               Have a question about your recovery?
             </h2>
             <SpecularButton size="md" radius={999} tint="#DBC1E8" tintOpacity={0.16} textColor="#FFFFFF" lineColor="#DBC1E8" baseColor="#3D2548" intensity={0.82} idleIntensity={0.18} shineSize={10} shineFade={34} thickness={1.1} glow={0.34} followMouse href="/contact">
