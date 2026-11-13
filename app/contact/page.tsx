@@ -25,7 +25,7 @@ export default function ContactPage() {
           </section>
 
           <section className="rounded-[1.75rem] bg-white p-8 md:p-10">
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#8B6A9A]">Prefer to call?</p>
+            <p className="text-xs font-semibold tracking-[0.2em] text-[#8B6A9A]">Prefer to call?</p>
             <h2 className="mt-5 text-3xl font-semibold text-[#30133E]">Speak to our team.</h2>
             <p className="copy-justified mt-4 leading-7 text-[#30133E]/70">Call us directly to enquire about availability or the right service for your needs.</p>
             <a href="tel:+27670721908" className="mt-8 inline-flex min-h-14 items-center rounded-full border border-[#30133E]/20 px-7 py-4 text-sm font-semibold text-[#30133E] transition hover:border-[#30133E] hover:bg-[#F3EBF7]">
