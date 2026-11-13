@@ -106,7 +106,7 @@ export default function Home() {
             </div>
           </SinthaCard>
           <div className="max-w-3xl">
-            <p className="mb-5 text-xs font-semibold tracking-[0.14em] text-[#8B6A9A]">Our approach</p>
+            <p className="mb-5 text-xs font-semibold tracking-[0.14em] text-[#6B4B78]">Our approach</p>
             <div className="copy-justified space-y-5 text-base leading-8 text-[#29262D]/85 md:text-lg md:leading-[1.75]">
               <p>
                 We take a holistic, whole-person approach to your health, healing, and well-being. While we’re known for our expert care in respiratory physiotherapy, our services go way beyond just helping you breathe easier.
@@ -179,7 +179,7 @@ export default function Home() {
       <section className="bg-white px-6 py-16 md:py-24">
         <div className="mx-auto grid max-w-7xl items-center gap-10 md:grid-cols-[1fr_1.05fr] md:gap-16">
           <div>
-            <p className="mb-4 text-xs font-semibold tracking-[0.14em] text-[#8B6A9A]">Our approach</p>
+            <p className="mb-4 text-xs font-semibold tracking-[0.14em] text-[#6B4B78]">Our approach</p>
             <h2 className="max-w-2xl text-4xl font-semibold leading-[1.08] tracking-[-0.04em] text-[#30133E] md:text-5xl">
               Care that sees the whole person.
             </h2>
@@ -237,12 +237,12 @@ export default function Home() {
                 key={service.title}
                 className="home-service-link group grid gap-3 border-b border-[#30133E]/20 py-7 sm:grid-cols-[48px_1fr_24px] sm:gap-5 sm:px-4"
               >
-                <span className="pt-1 text-sm tabular-nums text-[#8B6A9A]">0{index + 1}</span>
+                <span className="pt-1 text-sm tabular-nums text-[#6B4B78]">0{index + 1}</span>
                 <span>
                   <span className="block text-base font-semibold tracking-[-0.015em]">{service.title}</span>
                   <span className="copy-justified mt-3 block max-w-2xl text-sm leading-7 text-[#29262D]/75">{service.description}</span>
                 </span>
-                <span className="hidden text-xl text-[#8B6A9A] transition-transform duration-200 ease-out group-hover:translate-x-1 sm:block">↗</span>
+                <span className="hidden text-xl text-[#6B4B78] transition-transform duration-200 ease-out group-hover:translate-x-1 sm:block">↗</span>
               </Link>
             ))}
           </div>
@@ -257,7 +257,7 @@ export default function Home() {
               <details key={faq.question} className="group border-b border-[#30133E]/20 py-6">
                 <summary className="flex cursor-pointer list-none items-center justify-between gap-6 text-lg font-semibold tracking-[-0.02em] marker:hidden">
                   <span>{faq.question}</span>
-                  <span className="text-2xl font-light text-[#8B6A9A] transition-transform group-open:rotate-45">+</span>
+                  <span className="text-2xl font-light text-[#6B4B78] transition-transform group-open:rotate-45">+</span>
                 </summary>
                 <p className="copy-justified max-w-3xl pt-5 pr-8 text-base leading-8 text-[#29262D]/75">{faq.answer}</p>
               </details>

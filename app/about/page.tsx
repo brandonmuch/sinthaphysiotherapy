@@ -31,7 +31,7 @@ export default function AboutPage() {
         <FadeIn>
           <section className="grid items-center gap-10 overflow-hidden rounded-[32px] bg-[#F3EBF7] p-6 md:grid-cols-[0.95fr_1.05fr] md:gap-16 md:p-10">
             <div>
-              <p className="mb-5 text-xs font-semibold tracking-[0.14em] text-[#8B6A9A]">About Sintha</p>
+              <p className="mb-5 text-xs font-semibold tracking-[0.14em] text-[#6B4B78]">About Sintha</p>
               <h1 className="max-w-2xl text-5xl font-semibold leading-[1.04] tracking-[-0.05em] text-[#30133E] md:text-7xl">
                 Meet our team of expert physiotherapists
               </h1>
@@ -70,7 +70,7 @@ export default function AboutPage() {
           </FadeIn>
           <FadeIn delay={0.08}>
             <div>
-              <p className="mb-5 text-xs font-semibold tracking-[0.14em] text-[#8B6A9A]">Our team philosophy</p>
+              <p className="mb-5 text-xs font-semibold tracking-[0.14em] text-[#6B4B78]">Our team philosophy</p>
               <h2 className="max-w-2xl text-4xl font-semibold leading-[1.08] tracking-[-0.04em] text-[#30133E] md:text-5xl">
                 Care that sees the whole person.
               </h2>
@@ -128,7 +128,7 @@ export default function AboutPage() {
 
         <section className="mt-20 border-t border-[#30133E]/10 pt-16 md:mt-24 md:pt-20">
           <div className="max-w-3xl">
-            <p className="mb-4 text-xs font-semibold tracking-[0.14em] text-[#8B6A9A]">Our wider network</p>
+            <p className="mb-4 text-xs font-semibold tracking-[0.14em] text-[#6B4B78]">Our wider network</p>
             <h2 className="text-4xl font-semibold tracking-[-0.04em] text-[#30133E] md:text-5xl">Affiliated professionals</h2>
             <p className="copy-justified mt-5 text-base leading-8 text-[#29262D]/80">
               We work alongside affiliated medical professionals to support coordinated care.

@@ -76,7 +76,7 @@ export default async function BlogArticlePage({
         </Link>
 
         <header className="mt-10">
-          <p className="text-xs font-semibold tracking-[0.14em] text-[#8B6A9A]">
+          <p className="text-xs font-semibold tracking-[0.14em] text-[#6B4B78]">
             {article.category}
           </p>
           <h1 className="mt-5 text-balance text-4xl font-semibold leading-[1.08] tracking-[-0.045em] text-[#30133E] md:text-6xl">

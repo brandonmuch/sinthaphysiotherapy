@@ -21,7 +21,10 @@ const openSans = localFont({
 
 export const metadata: Metadata = {
   title: 'Sintha Physiotherapy | Wezi Nyimba Physiotherapists Inc.',
-  description: 'Specialised physiotherapy for children and adults in Fourways, Johannesburg. Personalised rehabilitation and respiratory care.',
+  description: 'Physiotherapy for children and adults in Fourways, Johannesburg. Personalised rehabilitation and respiratory care.',
+  metadataBase: new URL('https://www.sinthaphysiotherapy.co.za'),
+  alternates: { canonical: './' },
+  robots: { index: true, follow: true },
   icons: {
     icon: '/favicon.png',
     shortcut: '/favicon.png',
@@ -38,19 +41,20 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           rainbow={false}
           adaptive
           colors={['#1F0A29', '#DBC1E8']}
-          colorSpeed={0.35}
-          size={0.7}
-          force={0.58}
-          swirl={3.5}
-          trail={0.9}
-          clickSplash
-          intensity={1.05}
-          glow={0.22}
+          colorSpeed={0.25}
+          size={0.55}
+          force={0.32}
+          swirl={2.2}
+          trail={0.65}
+          clickSplash={false}
+          intensity={0.62}
+          glow={0.12}
           quality="medium"
           zIndex={40}
         />
+        <a className="skip-link" href="#main-content">Skip to content</a>
         <Nav />
-        <main>{children}</main>
+        <main id="main-content" tabIndex={-1}>{children}</main>
         <Footer />
       </body>
     </html>
