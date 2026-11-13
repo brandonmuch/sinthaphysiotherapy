@@ -83,7 +83,7 @@ const FAQS = [
   },
   {
     question: 'How can I book an appointment?',
-    answer: 'Via WhatsApp, phone call, or our online booking form.',
+    answer: 'Send us a WhatsApp message or call the practice. Our team will speak with you directly to arrange an appointment and explain the next steps.',
   },
 ];
 
