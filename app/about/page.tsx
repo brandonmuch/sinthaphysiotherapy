@@ -38,7 +38,7 @@ export default function AboutPage() {
                 We are dedicated to providing comprehensive, compassionate care. We believe in treating the whole person, not just the condition, empowering you to move better and live better through evidence-based practice.
               </p>
             </div>
-            <div className="relative aspect-[5/4] overflow-hidden rounded-[28px] bg-[#F3EBF7]">
+            <div className="relative aspect-[3/2] overflow-hidden rounded-[28px] bg-[#F3EBF7]">
               <Image
                 src="/uploads/patient-grandfather-grandson.jpg"
                 alt="A grandfather and grandson spending time together at home"
@@ -53,7 +53,7 @@ export default function AboutPage() {
 
         <section className="mt-10 grid items-center gap-10 overflow-hidden rounded-[32px] bg-white py-8 md:grid-cols-[0.9fr_1.1fr] md:gap-16 md:py-12">
           <FadeIn>
-            <div className="relative aspect-[4/5] overflow-hidden rounded-[28px] bg-[#F3EBF7]">
+            <div className="relative aspect-[3/2] overflow-hidden rounded-[28px] bg-[#F3EBF7]">
               <Image
                 src="/uploads/patient-physio-session-a.jpg"
                 alt="A physiotherapist supporting an older woman during a walking exercise"
@@ -103,10 +103,8 @@ export default function AboutPage() {
                 <article className="about-feature-card h-full rounded-[24px] border border-[#30133E]/[0.08] bg-[#F3EBF7] p-7 md:p-9">
                   <div className="flex items-start justify-between gap-4">
                     <div>
-                      <p className="text-xs font-semibold tracking-[0.14em] text-[#8B6A9A]">0{index + 1}</p>
-                      <h3 className="mt-3 text-2xl font-semibold tracking-[-0.03em] text-[#30133E] md:text-3xl">{person.name}</h3>
+                      <h3 className="text-2xl font-semibold tracking-[-0.03em] text-[#30133E] md:text-3xl">{person.name}</h3>
                     </div>
-                    <span className="mt-1 grid h-10 w-10 shrink-0 place-items-center rounded-full bg-[#EADFF0] text-lg text-[#6B4B78]" aria-hidden="true">✳</span>
                   </div>
                   <div className="mt-5 space-y-1 text-sm leading-6 text-[#29262D]/75">
                     {person.qualifications.map(item => <p key={item}>{item}</p>)}

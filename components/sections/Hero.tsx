@@ -39,7 +39,7 @@ export function Hero() {
         transition={{ duration: 0.7, ease: [0.23, 1, 0.32, 1] }}
         className="relative z-10 mx-auto w-full max-w-5xl"
       >
-        <h1 className="text-balance text-[clamp(2.55rem,6.5vw,5.9rem)] font-semibold leading-[0.98] tracking-[-0.055em]">
+        <h1 className="text-balance text-[clamp(2.55rem,6.5vw,5.9rem)] font-semibold leading-[0.98] tracking-[-0.055em] text-white">
           Empower Movement.
           <span className="mt-2 block font-semibold tracking-[-0.05em] text-white">Enhance Life.</span>
         </h1>

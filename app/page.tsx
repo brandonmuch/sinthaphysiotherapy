@@ -93,13 +93,13 @@ export default function Home() {
 
       <section className="bg-white px-6 py-16 md:py-24">
         <div className="mx-auto grid max-w-7xl items-center gap-10 md:grid-cols-[0.9fr_1.1fr] md:gap-16">
-          <div className="relative aspect-[16/9] overflow-hidden rounded-[28px] bg-[#F3EBF7]">
+          <div className="relative aspect-[3/2] overflow-hidden rounded-[28px] bg-[#F3EBF7]">
             <Image
               src="/uploads/patient-grandfather-grandson.jpg"
               alt="A grandfather and grandson playing together on a couch"
               fill
               sizes="(max-width: 768px) 100vw, 44vw"
-              className="object-contain"
+              className="object-cover object-center"
             />
           </div>
           <div className="max-w-3xl">

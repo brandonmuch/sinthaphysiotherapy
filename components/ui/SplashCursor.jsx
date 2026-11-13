@@ -647,7 +647,7 @@ function SplashCursor({
       const phase = (((offset + (now / 1000) * s.colorSpeed * 0.6) % 1) + 1) % 1;
       if (s.rainbow) return hsv(phase, 1, 1);
       const palette = s.adaptive
-        ? [parseColor(surfaceLightRef.current ? '#30133E' : '#DBC1E8')]
+        ? [parseColor(surfaceLightRef.current ? '#1F0A29' : '#DBC1E8')]
         : s.palette;
       if (palette.length === 1) return palette[0];
       const position = phase * palette.length;

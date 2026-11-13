@@ -23,14 +23,14 @@ export default function StrongAtEveryAgePage() {
           Growing older is a gift. More time for laughter, more stories to share, and more wisdom to pass on. But with age also come changes in our bodies, and sometimes those changes make life feel smaller than it should.
         </p>
 
-        <figure className="relative mt-10 aspect-[16/9] overflow-hidden rounded-[26px] bg-[#F3EBF7]">
+        <figure className="relative mt-10 aspect-[3/4] overflow-hidden rounded-[26px] bg-[#F3EBF7]">
           <Image
             src="/images/224639_f1933d0923ba40f6a7bffa90ac58da04~mv2.jpeg"
             alt="Pink stethoscope adorned with vibrant yellow roses against a purple background"
             fill
             priority
             sizes="(max-width: 768px) 100vw, 896px"
-            className="object-contain p-4"
+            className="object-cover object-center"
           />
         </figure>
 

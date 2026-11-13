@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import SpecularButton from '@/components/ui/SpecularButton';
+import FluxLines from '@/components/ui/FluxLines';
 
 const SERVICES = [
   {
@@ -75,6 +76,7 @@ const SERVICES = [
     title: 'Postoperative recovery (all surgeries)',
     id: 'postoperative-recovery',
     image: '/uploads/patient-physio-session-a.jpg',
+    imageFrame: 'aspect-[3/2]',
     alt: 'A patient practising supported walking after illness or surgery',
     paragraphs: [
       'After surgery, early mobilisation and targeted physiotherapy reduce complications like blood clots, pneumonia, and prolonged immobility.',
@@ -96,14 +98,36 @@ export default function ServicesPage() {
           </p>
         </header>
 
-        <div className="mt-14 grid gap-7 sm:grid-cols-2 lg:grid-cols-3">
+        <section className="relative isolate mt-14 -mx-6 overflow-hidden bg-[#30133E] px-6 py-12 md:-mx-10 md:px-10 md:py-16">
+          <div className="pointer-events-none absolute inset-0 z-0" aria-hidden="true">
+            <FluxLines
+              colors={['#DBC1E8', '#8B6A9A', '#FFFFFF']}
+              speed={0.32}
+              scale={1.55}
+              turbulence={0.9}
+              fluidity={0.1}
+              glow={2}
+              rimWidth={0.2}
+              lineWidth={1}
+              flowDirection="down"
+              opacity={0.68}
+              mouseInteraction
+              mouseStrength={0.65}
+              clickSwirl
+              className="absolute inset-0"
+              style={{ position: 'absolute', inset: 0 }}
+            />
+            <div className="absolute inset-0 bg-[#30133E]/48" />
+          </div>
+          <div className="relative z-10 mx-auto max-w-7xl">
+        <div className="grid gap-7 sm:grid-cols-2 lg:grid-cols-3">
           {SERVICES.map((service, index) => (
             <article
               id={service.id}
               key={service.id}
               className="service-card flex h-full flex-col overflow-hidden rounded-[24px] border border-[#30133E]/[0.06] bg-[#F3EBF7] shadow-[0_12px_34px_-28px_rgba(48,19,62,0.55)]"
             >
-              <div className="relative aspect-[4/5] overflow-hidden bg-[#E8D8F0]">
+              <div className={`relative ${'imageFrame' in service ? service.imageFrame : 'aspect-[4/5]'} overflow-hidden bg-[#E8D8F0]`}>
                 <Image
                   src={service.image}
                   alt={service.alt}
@@ -112,7 +136,7 @@ export default function ServicesPage() {
                   className="service-card-image object-cover object-[center_22%]"
                 />
               </div>
-              <div className="flex flex-1 flex-col p-7">
+              <div className="flex flex-1 flex-col p-8">
                 <p className="text-xs font-semibold tracking-[0.12em] text-[#8B6A9A]">
                   {String(index + 1).padStart(2, '0')}
                 </p>
@@ -124,8 +148,9 @@ export default function ServicesPage() {
                     <p key={paragraph}>{paragraph}</p>
                   ))}
                 </div>
-                <SpecularButton
-                  className="mt-7 self-start"
+                <div className="mt-auto pt-12">
+                  <SpecularButton
+                    className="self-start"
                   size="sm"
                   radius={999}
                   tint="#DBC1E8"
@@ -143,11 +168,14 @@ export default function ServicesPage() {
                   href="/contact"
                 >
                   Ask a physio <span aria-hidden="true">↗</span>
-                </SpecularButton>
+                  </SpecularButton>
+                </div>
               </div>
             </article>
           ))}
         </div>
+          </div>
+        </section>
 
         <section className="mt-24 grid items-center gap-10 rounded-[28px] bg-[#F8F4FA] p-5 md:grid-cols-[0.95fr_1.05fr] md:gap-14 md:p-8">
           <div className="relative overflow-hidden rounded-[22px] bg-white">

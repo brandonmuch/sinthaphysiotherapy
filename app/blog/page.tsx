@@ -9,8 +9,8 @@ const ARTICLES = [
     image: '/images/224639_4dc100e8d2e945a79919dc279d08b41a~mv2.jpeg',
     alt: 'Existing Sintha Physiotherapy renal and metabolic care article image',
     description: 'Explore how physiotherapy supports recovery and strength alongside renal and metabolic care.',
-    href: 'https://www.sinthaphysiotherapy.co.za/post/renal-metabolic-care-where-recovery-begins-and-builds-into-strength',
-    external: true,
+    href: '/blog/renal-metabolic-care',
+    external: false,
   },
   {
     title: 'Strong at Every Age: How Physiotherapy Helps Our Golden Crew',
@@ -28,8 +28,8 @@ const ARTICLES = [
     image: '/images/224639_153886ad0cdc4784891ee393e60f23d4~mv2.jpeg',
     alt: 'Illustrated guide to signs of respiratory distress in infants',
     description: 'Understand respiratory syncytial virus (RSV) and the signs parents should know about in babies and young children.',
-    href: 'https://www.sinthaphysiotherapy.co.za/post/recognising-rsv',
-    external: true,
+    href: '/blog/recognising-rsv',
+    external: false,
   },
   {
     title: 'Strong Women, Strong Lungs',
@@ -38,8 +38,8 @@ const ARTICLES = [
     image: '/images/224639_5b990c24f553474c837d37d995e1b759~mv2.jpeg',
     alt: 'Existing Sintha Physiotherapy Strong Women, Strong Lungs article image',
     description: 'Explore the role of breathing and physiotherapy in supporting recovery and lung health.',
-    href: 'https://www.sinthaphysiotherapy.co.za/post/strong-women-strong-lungs',
-    external: true,
+    href: '/blog/strong-women-strong-lungs',
+    external: false,
   },
 ];
 
@@ -94,7 +94,7 @@ export default function BlogPage() {
                   fill
                   unoptimized
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  className="blog-card-image object-contain p-3"
+                  className="blog-card-image object-cover object-center"
                 />
               </ArticleLink>
               <div className="flex flex-1 flex-col p-7 md:p-8">

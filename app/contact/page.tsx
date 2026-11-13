@@ -62,19 +62,18 @@ export default function ContactPage() {
             </div>
           </div>
 
-          <div className="relative mx-auto w-full max-w-[480px] overflow-hidden rounded-[28px] bg-[#F3EBF7]">
+          <div className="relative mx-auto aspect-[2/3] w-full max-w-[480px] overflow-hidden rounded-[28px] bg-[#F3EBF7]">
             <Image
               src="/uploads/patient-elderly-recovery.jpg"
               alt="A physiotherapist supporting an older patient during respiratory care"
-              width={632}
-              height={948}
+              fill
               priority
               sizes="(max-width: 1024px) 100vw, 42vw"
-              className="h-auto w-full object-contain"
+              className="object-cover object-center"
             />
-            <div className="absolute bottom-5 left-5 right-5 rounded-[18px] bg-white/92 p-5 shadow-lg backdrop-blur">
-              <p className="text-xs font-semibold tracking-[0.1em] text-[#8B6A9A]">Sintha Physiotherapy</p>
-              <p className="mt-2 text-lg font-semibold leading-snug text-[#30133E]">
+            <div className="absolute bottom-5 left-5 right-5 rounded-[18px] bg-[#30133E]/95 p-5 text-white shadow-lg backdrop-blur-md">
+              <p className="text-xs font-semibold tracking-[0.1em] text-white">Sintha Physiotherapy</p>
+              <p className="mt-2 text-lg font-semibold leading-snug text-white">
                 Personalised care for children and adults.
               </p>
             </div>

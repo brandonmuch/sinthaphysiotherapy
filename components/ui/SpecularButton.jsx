@@ -452,6 +452,7 @@ const SpecularButton = ({
         '--sb-tint-opacity': tintOpacity,
         '--sb-blur': `${blur}px`,
         '--sb-text-color': textColor,
+        '--sb-base-color': baseColor,
         ...style
       }}
       {...rest}

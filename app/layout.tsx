@@ -37,14 +37,15 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           style={{}}
           rainbow={false}
           adaptive
-          colors={['#30133E', '#DBC1E8']}
+          colors={['#1F0A29', '#DBC1E8']}
           colorSpeed={0.35}
-          size={0.5}
-          force={0.3}
-          swirl={3}
-          trail={0.6}
+          size={0.7}
+          force={0.58}
+          swirl={3.5}
+          trail={0.9}
           clickSplash
-          intensity={0.65}
+          intensity={1.05}
+          glow={0.22}
           quality="medium"
           zIndex={40}
         />
