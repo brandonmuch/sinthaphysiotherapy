@@ -3,33 +3,72 @@ import Link from 'next/link';
 
 const ARTICLES = [
   {
-    title: 'How Physiotherapy Supports Renal & Metabolic Health',
-    category: 'Whole-person care',
-    image: '/images/224639_4dc100e8d2e945a79919dc279d08b41a~mv2.jpeg',
-    alt: 'Illustration of lungs and flowers representing whole-person health',
-    description: 'Discover how targeted physiotherapy can support people managing renal and metabolic conditions, from maintaining muscle strength to improving cardiovascular fitness.',
-    action: 'Ask our team a question',
-    href: '/contact',
-  },
-  {
-    title: 'Recognising the Signs of Respiratory Distress in Children',
-    category: 'Paediatric respiratory care',
-    image: '/images/224639_153886ad0cdc4784891ee393e60f23d4~mv2.jpeg',
-    alt: 'Illustrated guide to signs of respiratory distress in infants',
-    description: 'Early intervention matters. Learn about warning signs such as flared nostrils, rib retractions, noisy breathing and changes in alertness.',
-    action: 'Contact our team',
-    href: '/contact',
+    title: 'Renal & Metabolic Care: Where Recovery Begins and Builds Into Strength',
+    category: '29 November 2025 · 2 min read',
+    image: 'https://static.wixstatic.com/media/224639_7f08ec929cc14567a7df828b2cb05aab~mv2.jpg',
+    alt: 'Smiling woman featured in the Renal and Metabolic Care article',
+    description: 'Let’s be honest, living with kidney failure, diabetes, or metabolic disorders can make your body feel like it’s running on low battery every single day. Fatigue, swelling and unsteady legs can be a lot to carry. That’s where physiotherapy steps in, gently and purposefully.',
+    href: 'https://www.sinthaphysiotherapy.co.za/post/renal-metabolic-care-where-recovery-begins-and-builds-into-strength',
+    external: true,
   },
   {
     title: 'Strong at Every Age: How Physiotherapy Helps Our Golden Crew',
-    category: 'Geriatrics · 15 October 2025',
-    image: '/images/224639_f1933d0923ba40f6a7bffa90ac58da04~mv2.jpeg',
-    alt: 'Pink stethoscope adorned with yellow roses against a purple background',
-    description: 'Growing older is a gift. Physiotherapy can help older adults stay strong, steady and independent, so they can keep enjoying the moments that make life full.',
-    action: 'Read article',
+    category: '15 October 2025 · 2 min read',
+    image: 'https://static.wixstatic.com/media/224639_4846fca15aec4b688dc5b48515df98c4~mv2.jpg',
+    alt: 'Featured image for Strong at Every Age',
+    description: 'Growing older is a gift. More time for laughter, more stories to share, and more wisdom to pass on. But with age also come changes in our bodies, and sometimes those changes make life feel smaller than it should.',
     href: '/blog/strong-at-every-age',
+    external: false,
+  },
+  {
+    title: 'Recognising RSV',
+    subtitle: 'What Every Parent Should Know',
+    category: '11 August 2025 · 2 min read',
+    image: 'https://static.wixstatic.com/media/224639_49db6e7c7e2d447497079d921068c45d~mv2.jpg',
+    alt: 'Featured image for Recognising RSV',
+    description: 'Respiratory Syncytial Virus (RSV) is one of the most common respiratory infections affecting babies and young children. Learn what every parent should know.',
+    href: 'https://www.sinthaphysiotherapy.co.za/post/recognising-rsv',
+    external: true,
+  },
+  {
+    title: 'Strong Women, Strong Lungs',
+    subtitle: 'Breathing for Recovery with Sintha Physiotherapy',
+    category: '3 August 2025 · 1 min read',
+    image: 'https://static.wixstatic.com/media/224639_5b990c24f553474c837d37d995e1b759~mv2.jpg',
+    alt: 'Featured image for Strong Women, Strong Lungs',
+    description: 'Celebrating National Women’s Month through the power of breath and the role of physiotherapy in recovery.',
+    href: 'https://www.sinthaphysiotherapy.co.za/post/strong-women-strong-lungs',
+    external: true,
   },
 ];
+
+function ArticleLink({
+  href,
+  external,
+  children,
+  className,
+  ariaLabel,
+}: {
+  href: string;
+  external: boolean;
+  children: React.ReactNode;
+  className?: string;
+  ariaLabel?: string;
+}) {
+  if (external) {
+    return (
+      <a href={href} target="_blank" rel="noreferrer" aria-label={ariaLabel} className={className}>
+        {children}
+      </a>
+    );
+  }
+
+  return (
+    <Link href={href} aria-label={ariaLabel} className={className}>
+      {children}
+    </Link>
+  );
+}
 
 export default function BlogPage() {
   return (
@@ -40,26 +79,39 @@ export default function BlogPage() {
         </h1>
 
         <div className="mt-14 grid gap-7 sm:grid-cols-2 lg:grid-cols-3">
-          {ARTICLES.map((article, index) => (
+          {ARTICLES.map((article) => (
             <article key={article.title} className="group flex h-full flex-col overflow-hidden rounded-[1.5rem] border border-[#30133E]/[0.07] bg-white shadow-[0_12px_32px_-28px_rgba(48,19,62,0.55)] blog-card">
-              <Link href={article.href} aria-label={article.title} className="relative block aspect-[4/3] overflow-hidden bg-[#E8D8F0]">
+              <ArticleLink
+                href={article.href}
+                external={article.external}
+                ariaLabel={article.title}
+                className="relative block aspect-[4/3] overflow-hidden bg-[#E8D8F0]"
+              >
                 <Image
                   src={article.image}
                   alt={article.alt}
                   fill
+                  unoptimized
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   className="blog-card-image object-cover"
                 />
-              </Link>
+              </ArticleLink>
               <div className="flex flex-1 flex-col p-7 md:p-8">
                 <p className="text-xs font-semibold tracking-[0.08em] text-[#8B6A9A]">{article.category}</p>
                 <h2 className="mt-4 text-2xl font-semibold leading-tight tracking-[-0.03em] text-[#30133E] md:text-[1.7rem]">
                   {article.title}
                 </h2>
+                {article.subtitle && (
+                  <p className="mt-2 text-sm font-medium leading-6 text-[#6B4B78]">{article.subtitle}</p>
+                )}
                 <p className="copy-justified mt-4 flex-1 text-sm leading-7 text-[#30133E]/70">{article.description}</p>
-                <Link href={article.href} className="mt-8 inline-flex items-center gap-2 border-b border-[#30133E]/30 pb-2 text-sm font-semibold text-[#30133E] transition-colors hover:border-[#6B4B78] hover:text-[#6B4B78]">
-                  {article.action} <span aria-hidden="true">↗</span>
-                </Link>
+                <ArticleLink
+                  href={article.href}
+                  external={article.external}
+                  className="mt-8 inline-flex items-center gap-2 border-b border-[#30133E]/30 pb-2 text-sm font-semibold text-[#30133E] transition-colors hover:border-[#6B4B78] hover:text-[#6B4B78]"
+                >
+                  Read article <span aria-hidden="true">↗</span>
+                </ArticleLink>
               </div>
             </article>
           ))}
