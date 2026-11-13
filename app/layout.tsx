@@ -30,13 +30,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="font-sans antialiased">
         <SplashCursor
           style={{}}
-          rainbow
+          rainbow={false}
+          colors={['#30133E', '#8B6A9A', '#DBC1E8']}
+          colorSpeed={0.35}
           size={0.5}
           force={0.3}
           swirl={3}
           trail={0.6}
           clickSplash
-          colorSpeed={0.55}
           intensity={0.65}
           quality="medium"
           zIndex={40}
