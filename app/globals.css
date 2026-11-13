@@ -48,3 +48,33 @@ body {
     padding-left: 12px;
   }
 }
+
+
+.home-pillar-card,
+.blog-card {
+  transition: transform 180ms var(--ease-out);
+}
+
+.home-service-link {
+  transition: transform 180ms var(--ease-out), background-color 180ms ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .home-pillar-card:hover,
+  .blog-card:hover {
+    transform: translateY(-3px);
+  }
+
+  .home-service-link:hover {
+    transform: translateX(3px);
+    background-color: rgba(255, 255, 255, 0.46);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-pillar-card,
+  .blog-card,
+  .home-service-link {
+    transition: none;
+  }
+}
