@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 const SERVICES = [
   {
-    title: 'ADVANCED RESPIRATORY CARE (VENTILATED PATIENTS)',
+    title: 'Advanced respiratory care (ventilated patients)',
     id: 'advanced-respiratory-care',
     image: '/uploads/patient-elderly-recovery.jpg',
     alt: 'Respiratory care for an older patient',
@@ -13,7 +13,7 @@ const SERVICES = [
     ],
   },
   {
-    title: 'REINTRODUCTION OF ACTIVE BREATHING FOR VENTILATOR WEANING',
+    title: 'Reintroduction of active breathing for ventilator weaning',
     id: 'ventilator-weaning',
     image: '/uploads/patient-teen-treatment.jpg',
     alt: 'A patient receiving respiratory support',
@@ -22,7 +22,7 @@ const SERVICES = [
     ],
   },
   {
-    title: 'CARDIAC & CARDIOVASCULAR REHABILITATION',
+    title: 'Cardiac & cardiovascular rehabilitation',
     id: 'cardiac-cardiovascular-rehabilitation',
     image: '/uploads/patient-balance-exercise.jpg',
     alt: 'A patient working through a guided rehabilitation exercise',
@@ -32,7 +32,7 @@ const SERVICES = [
     ],
   },
   {
-    title: 'PAEDIATRIC RESPIRATORY SUPPORT',
+    title: 'Paediatric respiratory support',
     id: 'paediatric-respiratory-support',
     image: '/images/service-paediatric.jpg',
     alt: 'A child using a colourful respiratory breathing device',
@@ -42,7 +42,7 @@ const SERVICES = [
     ],
   },
   {
-    title: 'HOME VISITS',
+    title: 'Home visits',
     id: 'home-visits',
     image: '/uploads/physio-home-visit.jpg',
     alt: 'A home physiotherapy visit',
@@ -52,7 +52,7 @@ const SERVICES = [
     ],
   },
   {
-    title: 'NEUROLOGICAL & VESTIBULAR REHABILITATION',
+    title: 'Neurological & vestibular rehabilitation',
     id: 'neurological-vestibular-rehabilitation',
     image: '/uploads/patient-walking-clinic.jpg',
     alt: 'A patient practising walking during rehabilitation',
@@ -62,7 +62,7 @@ const SERVICES = [
     ],
   },
   {
-    title: 'RENAL & METABOLIC CARE',
+    title: 'Renal & metabolic care',
     id: 'renal-metabolic-care',
     image: '/images/u2428486467_realistic_image_of_a_plus-size_dark-skinned_India_3fb3a474-4aaf-4b02-bf3d-294e.jpeg',
     alt: 'A patient portrait used to represent whole-person care',
@@ -72,7 +72,7 @@ const SERVICES = [
     ],
   },
   {
-    title: 'POSTOPERATIVE RECOVERY (ALL SURGERIES)',
+    title: 'Postoperative recovery (all surgeries)',
     id: 'postoperative-recovery',
     image: '/uploads/patient-physio-session-a.jpg',
     alt: 'A patient practising supported walking after illness or surgery',
@@ -121,7 +121,7 @@ export default function ServicesPage() {
           <h2 className="max-w-3xl text-4xl font-semibold leading-tight tracking-[-0.04em] md:text-6xl">Physiotherapy that moves you forward.</h2>
           <p className="mt-5 max-w-2xl text-base leading-8 text-white/75">Where recovery begins with a breath and ends in strength.</p>
           <Link href="/contact" className="mt-8 inline-flex min-h-14 items-center rounded-full bg-[#DBC1E8] px-8 py-4 text-sm font-semibold text-[#30133E] transition hover:bg-white">
-            Book an Assessment <span aria-hidden="true" className="ml-3">↗</span>
+            Book an assessment <span aria-hidden="true" className="ml-3">↗</span>
           </Link>
         </section>
       </div>
