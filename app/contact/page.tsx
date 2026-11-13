@@ -85,7 +85,7 @@ export default function ContactPage() {
 
         <section className="mt-16 grid gap-5 md:grid-cols-2">
           <SinthaCard className="h-full" backgroundColor="#F3EBF7">
-            <article className="contact-card rounded-[26px] border border-[#30133E]/10 bg-[#F3EBF7] p-8 md:p-10">
+            <article className="contact-card h-full rounded-[26px] border border-[#30133E]/10 bg-[#F3EBF7] p-8 md:p-10">
             <p className="text-xs font-semibold tracking-[0.14em] text-[#8B6A9A]">Fastest way to book</p>
             <h2 className="mt-4 text-3xl font-semibold tracking-[-0.035em] text-[#30133E]">Message us on WhatsApp.</h2>
             <p className="copy-justified mt-4 max-w-lg text-base leading-7 text-[#29262D]/80">
@@ -137,7 +137,7 @@ export default function ContactPage() {
         <section className="mt-16 grid items-stretch gap-7 lg:grid-cols-[1fr_0.9fr]">
           <div className="grid gap-5 sm:grid-cols-2">
             <SinthaCard className="h-full" backgroundColor="#FFFFFF" borderRadius={26}>
-              <article className="rounded-[26px] border border-[#30133E]/10 bg-white p-7 md:p-8">
+              <article className="h-full rounded-[26px] border border-[#30133E]/10 bg-white p-7 md:p-8">
               <p className="text-xs font-semibold tracking-[0.14em] text-[#8B6A9A]">Visit us</p>
               <h2 className="mt-4 text-2xl font-semibold text-[#30133E]">Find us.</h2>
               <p className="mt-4 text-sm leading-7 text-[#29262D]/85">
@@ -157,7 +157,7 @@ export default function ContactPage() {
             </SinthaCard>
 
             <SinthaCard className="h-full" backgroundColor="#F8F4FA" borderRadius={26}>
-              <article className="rounded-[26px] border border-[#30133E]/10 bg-[#F8F4FA] p-7 md:p-8">
+              <article className="h-full rounded-[26px] border border-[#30133E]/10 bg-[#F8F4FA] p-7 md:p-8">
               <p className="text-xs font-semibold tracking-[0.14em] text-[#8B6A9A]">Opening times</p>
               <h2 className="mt-4 text-2xl font-semibold text-[#30133E]">Hours.</h2>
               <p className="mt-4 text-sm leading-7 text-[#29262D]/85">
