@@ -36,7 +36,7 @@ export function Footer() {
               <li>Mon–Sun, by appointment</li>
             </ul>
             <SpecularButton
-              className="mt-6"
+              className="mt-8"
               size="sm"
               radius={999}
               tint="#DBC1E8"
