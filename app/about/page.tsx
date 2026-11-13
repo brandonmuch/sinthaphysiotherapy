@@ -137,7 +137,7 @@ export default function AboutPage() {
           <div className="mt-9 grid gap-5 md:grid-cols-3">
             {AFFILIATED_PROFESSIONALS.map(professional => (
               <SinthaCard key={professional.name} className="h-full" backgroundColor="#F3EBF7" borderRadius={22}>
-                <article className="rounded-[22px] bg-[#F3EBF7] p-7 shadow-[0_14px_38px_-32px_rgba(48,19,62,0.6)]">
+                <article className="h-full rounded-[22px] bg-[#F3EBF7] p-7 shadow-[0_14px_38px_-32px_rgba(48,19,62,0.6)]">
                 <h3 className="text-xl font-semibold text-[#30133E]">{professional.name}</h3>
                 <p className="mt-2 text-sm font-medium text-[#6B4B78]">{professional.role}</p>
                 <p className="mt-4 text-sm leading-6 text-[#29262D]/75">{professional.location}</p>
