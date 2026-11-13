@@ -4,6 +4,7 @@ import Link from 'next/link';
 const SERVICES = [
   {
     title: 'ADVANCED RESPIRATORY CARE (VENTILATED PATIENTS)',
+    id: 'advanced-respiratory-care',
     image: '/uploads/patient-elderly-recovery.jpg',
     alt: 'Respiratory care for an older patient',
     paragraphs: [
@@ -13,6 +14,7 @@ const SERVICES = [
   },
   {
     title: 'REINTRODUCTION OF ACTIVE BREATHING FOR VENTILATOR WEANING',
+    id: 'ventilator-weaning',
     image: '/uploads/patient-teen-treatment.jpg',
     alt: 'A patient receiving respiratory support',
     paragraphs: [
@@ -21,6 +23,7 @@ const SERVICES = [
   },
   {
     title: 'CARDIAC & CARDIOVASCULAR REHABILITATION',
+    id: 'cardiac-cardiovascular-rehabilitation',
     image: '/uploads/patient-balance-exercise.jpg',
     alt: 'A patient working through a guided rehabilitation exercise',
     paragraphs: [
@@ -30,6 +33,7 @@ const SERVICES = [
   },
   {
     title: 'PAEDIATRIC RESPIRATORY SUPPORT',
+    id: 'paediatric-respiratory-support',
     image: '/images/service-paediatric.jpg',
     alt: 'A child using a colourful respiratory breathing device',
     paragraphs: [
@@ -39,6 +43,7 @@ const SERVICES = [
   },
   {
     title: 'HOME VISITS',
+    id: 'home-visits',
     image: '/uploads/physio-home-visit.jpg',
     alt: 'A home physiotherapy visit',
     paragraphs: [
@@ -48,6 +53,7 @@ const SERVICES = [
   },
   {
     title: 'NEUROLOGICAL & VESTIBULAR REHABILITATION',
+    id: 'neurological-vestibular-rehabilitation',
     image: '/uploads/patient-walking-clinic.jpg',
     alt: 'A patient practising walking during rehabilitation',
     paragraphs: [
@@ -57,6 +63,7 @@ const SERVICES = [
   },
   {
     title: 'RENAL & METABOLIC CARE',
+    id: 'renal-metabolic-care',
     image: '/images/u2428486467_realistic_image_of_a_plus-size_dark-skinned_India_3fb3a474-4aaf-4b02-bf3d-294e.jpeg',
     alt: 'A patient portrait used to represent whole-person care',
     paragraphs: [
@@ -66,6 +73,7 @@ const SERVICES = [
   },
   {
     title: 'POSTOPERATIVE RECOVERY (ALL SURGERIES)',
+    id: 'postoperative-recovery',
     image: '/uploads/patient-physio-session-a.jpg',
     alt: 'A patient practising supported walking after illness or surgery',
     paragraphs: [
@@ -83,7 +91,7 @@ export default function ServicesPage() {
 
         <div className="mt-12 border-t border-[#30133E]/20">
           {SERVICES.map((service, index) => (
-            <article key={service.title} className="grid gap-8 border-b border-[#30133E]/20 py-10 md:grid-cols-[64px_0.85fr_1.15fr] md:gap-10 md:py-14">
+            <article id={service.id} key={service.title} className="scroll-mt-32 grid gap-8 border-b border-[#30133E]/20 py-10 md:grid-cols-[64px_0.85fr_1.15fr] md:gap-10 md:py-14">
               <p className="pt-1 text-sm tabular-nums text-[#8B6A9A]">0{index + 1}</p>
               <div>
                 <div className="relative aspect-[5/4] overflow-hidden rounded-[1.2rem] bg-[#E8D8F0]">
