@@ -48,7 +48,7 @@ export default function BlogPage() {
                   alt={article.alt}
                   fill
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  className="object-cover transition-transform duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] group-hover:scale-[1.035]"
+                  className="blog-card-image object-cover"
                 />
               </Link>
               <div className="flex flex-1 flex-col p-7 md:p-8">
