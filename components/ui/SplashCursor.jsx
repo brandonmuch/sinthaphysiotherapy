@@ -1,7 +1,6 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
-import './SplashCursor.css';
 
 const QUALITY = {
   low: { sim: 64, dye: 512, iterations: 10 },
