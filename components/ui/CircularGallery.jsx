@@ -232,6 +232,7 @@ const CircularGallery = ({
   snap = true,
   autoScroll = 0,
   openOnClick = true,
+  activeIndex: controlledActiveIndex,
   intro = true,
   onItemClick,
   onActiveChange,
@@ -247,7 +248,7 @@ const CircularGallery = ({
   const buttonsRef = useRef([]);
   const engineRef = useRef(null);
   const fontRef = useRef(font);
-  const [active, setActive] = useState(0);
+  const [active, setActive] = useState(Number.isInteger(controlledActiveIndex) ? controlledActiveIndex : 0);
   const [open, setOpen] = useState(false);
   const list = Array.isArray(items) && items.length ? items : DEFAULT_ITEMS;
   const settings = {
@@ -906,17 +907,7 @@ const CircularGallery = ({
       setPointer(null);
     };
 
-    const onWheel = event => {
-      const unit = event.deltaMode === 1 ? 16 : event.deltaMode === 2 ? view.height : 1;
-      const delta = Math.abs(event.deltaX) > Math.abs(event.deltaY) ? event.deltaX : event.deltaY;
-      if (!delta) return;
-      event.preventDefault();
-      state.target += delta * unit * (settingsRef.current.scrollSpeed / 2);
-      state.lastInput = performance.now();
-      clearTimeout(snapTimer);
-      snapTimer = setTimeout(snapNow, 140);
-      wake();
-    };
+
 
     const onKeyDown = event => {
       const s = settingsRef.current;
@@ -982,7 +973,6 @@ const CircularGallery = ({
     container.addEventListener('pointerup', onPointerUp);
     container.addEventListener('pointercancel', onPointerCancel);
     container.addEventListener('pointerleave', onPointerLeave);
-    container.addEventListener('wheel', onWheel, { passive: false });
     container.addEventListener('keydown', onKeyDown);
     container.addEventListener('focusin', onFocusIn);
     container.addEventListener('focusout', onFocusOut);
@@ -1020,7 +1010,6 @@ const CircularGallery = ({
       container.removeEventListener('pointerup', onPointerUp);
       container.removeEventListener('pointercancel', onPointerCancel);
       container.removeEventListener('pointerleave', onPointerLeave);
-      container.removeEventListener('wheel', onWheel);
       container.removeEventListener('keydown', onKeyDown);
       container.removeEventListener('focusin', onFocusIn);
       container.removeEventListener('focusout', onFocusOut);
@@ -1037,6 +1026,10 @@ const CircularGallery = ({
       gl.getExtension('WEBGL_lose_context')?.loseContext();
     };
   }, []);
+
+  useEffect(() => {
+    if (Number.isInteger(controlledActiveIndex)) engineRef.current?.focus(controlledActiveIndex);
+  }, [controlledActiveIndex]);
 
   useEffect(() => {
     engineRef.current?.wake();
