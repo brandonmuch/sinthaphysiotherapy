@@ -66,12 +66,12 @@ export function Treatments() {
             >
               <div className="flex h-full flex-col justify-between">
                 <div>
-                  <p className="font-mono text-xs uppercase tracking-[0.3em] text-terracotta">{s.tag}</p>
+                  <p className="font-mono text-xs tracking-[0.1em] text-terracotta">{s.tag}</p>
                   <h3 className="display mt-6 text-4xl md:text-5xl">{s.title}</h3>
                   <p className="mt-4 max-w-xs text-sm text-cream/60">{s.desc}</p>
                 </div>
                 <div className="mt-8 flex items-center justify-between">
-                  <span className="text-xs uppercase tracking-[0.25em] text-cream/40">Learn more</span>
+                  <span className="text-xs tracking-[0.1em] text-cream/40">Learn more</span>
                   <span className="text-2xl">→</span>
                 </div>
               </div>
