@@ -7,7 +7,7 @@ export function ShimmerButton({
   const Inner = (
     <span
       className={cn(
-        'relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-charcoal px-6 py-3 text-xs uppercase tracking-[0.2em] text-cream',
+        'relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-charcoal px-6 py-3 text-xs tracking-[0.08em] text-cream',
         className,
       )}
     >

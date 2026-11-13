@@ -4,25 +4,25 @@ import { FadeIn } from '@/components/ui/FadeIn';
 
 const PRACTITIONERS = [
   {
-    name: 'WEZI NYIMBA',
+    name: 'Wezi Nyimba',
     qualifications: ['BSc Physiotherapy (UCT)', 'MSc Physiotherapy Candidate (Wits)'],
     specialties: 'Respiratory, Paediatrics, ICU Rehab, Geriatrics',
     biography: 'Meet Wezi, a powerhouse of calm in the chaos of coughs, wheezes, and tricky recoveries. With over 8 years of experience, she brings expert care to both little lungs and older chests, specialising in complex respiratory conditions like RSV, pneumonia, and asthma. From tiny tots in paediatric ICU to frail seniors needing a gentler touch, Wezi’s all about restoring breath, mobility, and quality of life. Her secret? A holistic, heart-centred approach that treats the person, not just the condition.',
   },
   {
-    name: 'POSHELETSO KEKANA',
+    name: 'Posheletso Kekana',
     qualifications: ['BSc Physiotherapy (UP)', 'MSc Physiotherapy Candidate (Wits)'],
     specialties: 'Trauma and Critical Care, Post Trauma Rehab, Paediatrics',
     biography: 'A passionate physio and movement motivator! With a degree from the University of Pretoria and 8 years of hands-on experience in trauma and critical care (for both little ones and grown-ups), Posheletso brings calm, confidence, and care to every session. She’s all about personalised treatment plans that get people moving better and feeling stronger. Now, she’s expanding her focus into musculoskeletal rehab, home-based care, and preventative treatments – helping people live their best lives, right where they are. She also possesses advanced skills in dry needling and kinesiology taping.',
   },
   {
-    name: 'PUMELELA NOAH',
+    name: 'Pumelela Noah',
     qualifications: ['BSc Physiotherapy (UCT)'],
     specialties: 'Neuro Rehab, Trauma and ICU Rehab',
     biography: 'Where expertise meets heart! With a solid background in human anatomy, biomechanics, and rehab techniques, Pumelela brings a rare blend of clinical know-how and genuine care to every patient she treats. Whether it’s complex neurological cases, trauma recovery, or age-related conditions, she’s seen it all –and handled it with confidence and compassion. She’s not just skilled, she’s a great listener too, working closely with patients to create personalised plans that actually work. Her passion? Helping people get back to doing what they love and living life to the fullest.',
   },
   {
-    name: 'KEISHA MAY',
+    name: 'Keisha May',
     qualifications: ['BSc Physiotherapy (Wits)', 'MSc Public Health Candidate (Wits)'],
     specialties: 'Orthopaedics, Cardiothoracic Rehab',
     biography: 'Keshia is your go-to for all things, movement and recovery, with nearly 9 years of clinical know-how and a passion for helping people feel strong and capable again. Whether she’s easing post-op pain, guiding someone through a cardiac rehab journey, or helping manage long-term aches and niggles, Keshia blends hands-on therapy, education, and science-backed movement to get results. She’s big on empowering her patients, because recovery is a team sport, and she’s right there cheering you on every step of the way.',
@@ -59,7 +59,7 @@ export default function AboutPage() {
             <h1 className="max-w-3xl text-5xl font-semibold leading-[1.04] tracking-[-0.05em] md:text-7xl">
               Meet our team of expert physiotherapists
             </h1>
-            <div className="space-y-5 text-base leading-8 text-[#30133E]/75 md:text-lg">
+            <div className="copy-justified space-y-5 text-base leading-8 text-[#30133E]/75 md:text-lg">
               <p>We believe in meeting each patient where they are, physically, emotionally, and functionally. Breathing is not just a mechanical act; it’s deeply connected to how we move, feel, and heal. Our approach is holistic, hands-on, and person-centred, with a strong emphasis on early intervention, education, and empowering patients to take an active role in their recovery.</p>
               <p>We are dedicated to providing comprehensive, compassionate care. We believe in treating the whole person, not just the condition, empowering you to move better and live better through evidence-based practice.</p>
               <p>Our team brings a wealth of experience across critical care, paediatrics, respiratory, and trauma rehabilitation.</p>
@@ -77,9 +77,9 @@ export default function AboutPage() {
                   <div className="mt-5 space-y-1 text-sm leading-6 text-[#30133E]/70">
                     {person.qualifications.map(item => <p key={item}>{item}</p>)}
                   </div>
-                  <p className="mt-5 text-xs font-semibold uppercase leading-6 tracking-[0.12em] text-[#6B4B78]">Specialties: {person.specialties}</p>
+                  <p className="mt-5 text-xs font-semibold leading-6 tracking-[0.08em] text-[#6B4B78]">Specialties: {person.specialties}</p>
                 </div>
-                <p className="max-w-3xl text-lg leading-8 text-[#30133E]/80">{person.biography}</p>
+                <p className="copy-justified max-w-3xl text-lg leading-8 text-[#30133E]/80">{person.biography}</p>
               </article>
             </FadeIn>
           ))}
@@ -101,7 +101,7 @@ export default function AboutPage() {
 
         <section className="mt-24 bg-[#30133E] px-8 py-12 text-white md:px-12 md:py-16">
           <h2 className="max-w-4xl text-3xl font-semibold leading-tight tracking-[-0.04em] md:text-5xl">
-            COMPASSION IN EVERY BREATH, CARE IN EVERY MOVEMENT
+            Compassion in every breath, care in every movement
           </h2>
           <p className="mt-5 max-w-2xl leading-8 text-white/75">
             Our team is here to support your health, healing and well-being.

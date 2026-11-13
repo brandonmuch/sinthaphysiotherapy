@@ -10,10 +10,10 @@ export default function StrongAtEveryAgePage() {
     <article className="min-h-screen bg-[#F3EBF7] pb-24 pt-36">
       <div className="mx-auto max-w-3xl px-6 md:px-10">
         <Link href="/blog" className="inline-flex items-center gap-2 text-sm font-semibold text-[#6B4B78] hover:underline">
-          <span aria-hidden="true">←</span> Back to Journal
+          <span aria-hidden="true">←</span> Back to blog
         </Link>
 
-        <p className="mt-10 text-xs font-semibold uppercase tracking-[0.2em] text-[#8B6A9A]">Geriatrics · 15 October 2025 · 2 min read</p>
+        <p className="mt-10 text-xs font-semibold tracking-[0.08em] text-[#8B6A9A]">Geriatrics · 15 October 2025 · 2 min read</p>
         <h1 className="mt-5 text-4xl font-semibold leading-[1.06] tracking-[-0.045em] text-[#30133E] md:text-6xl">
           Strong at Every Age: How Physiotherapy Helps Our Golden Crew
         </h1>
@@ -21,7 +21,7 @@ export default function StrongAtEveryAgePage() {
           Growing older is a gift. More time for laughter, more stories to share, and more wisdom to pass on. But with age also come changes in our bodies, and sometimes those changes make life feel smaller than it should.
         </p>
 
-        <div className="prose prose-lg mt-10 max-w-none prose-headings:font-semibold prose-headings:tracking-tight prose-headings:text-[#30133E] prose-p:leading-8 prose-p:text-[#30133E]/80 prose-li:leading-8 prose-li:text-[#30133E]/80">
+        <div className="prose prose-lg copy-justified mt-10 max-w-none prose-headings:font-semibold prose-headings:tracking-tight prose-headings:text-[#30133E] prose-p:leading-8 prose-p:text-[#30133E]/80 prose-li:leading-8 prose-li:text-[#30133E]/80">
           <p>Here’s a fact that might surprise you: after the age of 65, 1 in 3 older adults experience a fall each year. Falls are the leading cause of injury in older people, and many never regain their full independence afterwards. Scary? Yes. But here’s the good news: physiotherapy can reduce fall risk by up to 40% That’s nearly half!</p>
 
           <h2>How Physiotherapy Can Help</h2>

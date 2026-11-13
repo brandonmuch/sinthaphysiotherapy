@@ -5,29 +5,29 @@ export default function ContactPage() {
     <div className="min-h-screen bg-[#F3EBF7] px-6 pb-24 pt-36">
       <div className="mx-auto max-w-6xl">
         <div className="max-w-3xl">
-          <p className="mb-5 text-xs font-semibold uppercase tracking-[0.25em] text-[#6B4B78]">Appointments & enquiries</p>
+          <p className="mb-5 text-xs font-semibold tracking-[0.08em] text-[#6B4B78]">Appointments & enquiries</p>
           <h1 className="text-5xl font-semibold leading-[1.05] tracking-tight text-[#30133E] md:text-7xl">
             Let’s get you moving.
           </h1>
-          <p className="mt-7 max-w-2xl text-lg leading-8 text-[#30133E]/75">
+          <p className="copy-justified mt-7 max-w-2xl text-lg leading-8 text-[#30133E]/75">
             Tell us what support you need and our team will help you take the next step. All sessions are by appointment.
           </p>
         </div>
 
         <div className="mt-14 grid gap-6 md:grid-cols-2">
           <section className="rounded-[1.75rem] bg-[#30133E] p-8 text-white md:p-10">
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#DBC1E8]">Fastest way to book</p>
+            <p className="text-xs font-semibold tracking-[0.08em] text-[#DBC1E8]">Fastest way to book</p>
             <h2 className="mt-5 text-3xl font-semibold">Message us on WhatsApp.</h2>
-            <p className="mt-4 leading-7 text-white/75">Send a message with a little about the type of physiotherapy support you are looking for.</p>
+            <p className="copy-justified mt-4 leading-7 text-white/75">Send a message with a little about the type of physiotherapy support you are looking for.</p>
             <a href={WHATSAPP_LINK} target="_blank" rel="noreferrer" className="mt-8 inline-flex min-h-14 items-center rounded-full bg-[#DBC1E8] px-7 py-4 text-sm font-semibold text-[#30133E] transition hover:bg-white">
               Start a WhatsApp chat <span aria-hidden="true" className="ml-3 text-lg">↗</span>
             </a>
           </section>
 
           <section className="rounded-[1.75rem] bg-white p-8 md:p-10">
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#8B6A9A]">Prefer to call?</p>
+            <p className="text-xs font-semibold tracking-[0.2em] text-[#8B6A9A]">Prefer to call?</p>
             <h2 className="mt-5 text-3xl font-semibold text-[#30133E]">Speak to our team.</h2>
-            <p className="mt-4 leading-7 text-[#30133E]/70">Call us directly to enquire about availability or the right service for your needs.</p>
+            <p className="copy-justified mt-4 leading-7 text-[#30133E]/70">Call us directly to enquire about availability or the right service for your needs.</p>
             <a href="tel:+27670721908" className="mt-8 inline-flex min-h-14 items-center rounded-full border border-[#30133E]/20 px-7 py-4 text-sm font-semibold text-[#30133E] transition hover:border-[#30133E] hover:bg-[#F3EBF7]">
               067 072 1908
             </a>

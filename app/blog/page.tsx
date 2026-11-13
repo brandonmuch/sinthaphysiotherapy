@@ -36,27 +36,27 @@ export default function BlogPage() {
     <div className="min-h-screen bg-[#F3EBF7] pb-24 pt-36">
       <div className="mx-auto max-w-7xl px-6 md:px-10">
         <h1 className="max-w-4xl text-5xl font-semibold leading-[1.05] tracking-[-0.05em] text-[#30133E] md:text-7xl">
-          Journal & insights
+          Blog
         </h1>
 
         <div className="mt-14 grid gap-7 sm:grid-cols-2 lg:grid-cols-3">
           {ARTICLES.map((article, index) => (
-            <article key={article.title} className="group flex h-full flex-col overflow-hidden rounded-[1.5rem] bg-white">
+            <article key={article.title} className="group flex h-full flex-col overflow-hidden rounded-[1.5rem] border border-[#30133E]/[0.07] bg-white shadow-[0_12px_32px_-28px_rgba(48,19,62,0.55)] blog-card">
               <Link href={article.href} aria-label={article.title} className="relative block aspect-[4/3] overflow-hidden bg-[#E8D8F0]">
                 <Image
                   src={article.image}
                   alt={article.alt}
                   fill
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  className="object-cover transition-transform duration-700 group-hover:scale-[1.04]"
+                  className="blog-card-image object-cover"
                 />
               </Link>
               <div className="flex flex-1 flex-col p-7 md:p-8">
-                <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#8B6A9A]">{article.category}</p>
+                <p className="text-xs font-semibold tracking-[0.08em] text-[#8B6A9A]">{article.category}</p>
                 <h2 className="mt-4 text-2xl font-semibold leading-tight tracking-[-0.03em] text-[#30133E] md:text-[1.7rem]">
                   {article.title}
                 </h2>
-                <p className="mt-4 flex-1 text-sm leading-7 text-[#30133E]/70">{article.description}</p>
+                <p className="copy-justified mt-4 flex-1 text-sm leading-7 text-[#30133E]/70">{article.description}</p>
                 <Link href={article.href} className="mt-8 inline-flex items-center gap-2 border-b border-[#30133E]/30 pb-2 text-sm font-semibold text-[#30133E] transition-colors hover:border-[#6B4B78] hover:text-[#6B4B78]">
                   {article.action} <span aria-hidden="true">↗</span>
                 </Link>

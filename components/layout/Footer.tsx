@@ -22,17 +22,17 @@ export function Footer() {
           </div>
 
           <div>
-            <p className="mb-5 text-xs font-semibold uppercase tracking-[0.2em] text-[#DBC1E8]">Explore</p>
+            <p className="mb-5 text-xs font-semibold tracking-[0.08em] text-[#DBC1E8]">Explore</p>
             <ul className="space-y-3 text-sm text-white/75">
               <li><Link href="/" className="transition hover:text-[#DBC1E8]">Home</Link></li>
               <li><Link href="/about" className="transition hover:text-[#DBC1E8]">About us</Link></li>
               <li><Link href="/services" className="transition hover:text-[#DBC1E8]">Services</Link></li>
-              <li><Link href="/blog" className="transition hover:text-[#DBC1E8]">Journal</Link></li>
+              <li><Link href="/blog" className="transition hover:text-[#DBC1E8]">Blog</Link></li>
             </ul>
           </div>
 
           <div>
-            <p className="mb-5 text-xs font-semibold uppercase tracking-[0.2em] text-[#DBC1E8]">Get in touch</p>
+            <p className="mb-5 text-xs font-semibold tracking-[0.2em] text-[#DBC1E8]">Get in touch</p>
             <ul className="space-y-3 text-sm text-white/75">
               <li><a href="tel:+27670721908" className="hover:text-[#DBC1E8]">067 072 1908</a></li>
               <li><a href="mailto:info@sinthaphysiotherapy.co.za" className="break-words hover:text-[#DBC1E8]">info@sinthaphysiotherapy.co.za</a></li>
