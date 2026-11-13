@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { Hero } from '@/components/sections/Hero';
 import { HomeServicesGallery } from '@/components/sections/HomeServicesGallery';
 import SpecularButton from '@/components/ui/SpecularButton';
+import SinthaCard from '@/components/ui/SinthaCard';
 import FluxLines from '@/components/ui/FluxLines';
 
 const PILLARS = [
@@ -146,7 +147,8 @@ export default function Home() {
           </h2>
           <div className="mt-14 grid gap-7 md:grid-cols-3 md:gap-6">
             {PILLARS.map((pillar) => (
-              <article key={pillar.number} className="home-pillar-card group flex h-full flex-col overflow-hidden rounded-[28px] bg-[#F3EBF7] shadow-[0_18px_54px_-32px_rgba(12,5,18,0.7)]">
+              <SinthaCard key={pillar.number} className="h-full" backgroundColor="#F3EBF7">
+                <article className="home-pillar-card group flex h-full flex-col overflow-hidden rounded-[28px] bg-[#F3EBF7] shadow-[0_18px_54px_-32px_rgba(12,5,18,0.7)]">
                 <div className="relative aspect-square overflow-hidden bg-[#E9DDF0]">
                   <Image
                     src={pillar.image}
@@ -161,7 +163,8 @@ export default function Home() {
                   <h3 className="mt-3 text-xl font-semibold tracking-[-0.02em] text-[#30133E]">{pillar.title}</h3>
                   <p className="copy-justified mt-4 flex-1 text-sm leading-7 text-[#29262D]/85">{pillar.description}</p>
                 </div>
-              </article>
+                </article>
+              </SinthaCard>
             ))}
           </div>
           <div className="mt-12">
