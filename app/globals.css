@@ -2,23 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  html {
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
-  body {
-    background: var(--cream);
-    color: var(--charcoal);
-    font-family: var(--font-inter), system-ui, sans-serif;
-    overflow-x: hidden;
-  }
-  ::selection {
-    background: var(--terracotta);
-    color: var(--cream);
-  }
-}
-
 :root {
   --cream: #F5F0EA;
   --terracotta: #C4826A;
@@ -26,49 +9,7 @@
   --charcoal: #2A2724;
 }
 
-@layer components {
-  .cta-primary {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.75rem;
-    padding: 1.125rem 2rem;
-    background: var(--charcoal);
-    color: var(--cream);
-    font-size: 0.75rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    font-weight: 500;
-    border-radius: 9999px;
-    transition: background 300ms, transform 300ms;
-  }
-  .cta-primary:hover { background: var(--terracotta); }
-
-  .section-label {
-    font-size: 0.6875rem;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    color: var(--terracotta);
-    font-weight: 500;
-  }
-
-  .display {
-    font-family: var(--font-fraunces), Georgia, serif;
-    font-weight: 300;
-    letter-spacing: -0.03em;
-    line-height: 0.95;
-  }
-
-  .hairline {
-    height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(42,39,36,0.15), transparent);
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
+body {
+  background-color: var(--cream);
+  color: var(--charcoal);
 }
