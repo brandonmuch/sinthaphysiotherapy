@@ -115,7 +115,7 @@ export default function Home() {
                     alt={pillar.alt}
                     fill
                     sizes="(max-width: 768px) 100vw, 33vw"
-                    className="object-cover transition-transform duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] group-hover:scale-[1.04]"
+                    className="home-pillar-image object-cover"
                   />
                 </div>
                 <div className="px-6 pb-7 pt-6 md:px-7">
