@@ -1,0 +1,215 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "public/uploads"
+public_folder: "/uploads"
+
+site_url: https://sinthaphysiotherapy.co.za
+display_url: https://sinthaphysiotherapy.co.za
+
+collections:
+  - name: "home"
+    label: "Home page"
+    files:
+      - name: "hero"
+        label: "Hero"
+        file: "content/home/hero.md"
+        fields:
+          - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+          - { label: "Headline", name: "headline", widget: "string" }
+          - { label: "Subheadline", name: "subheadline", widget: "text" }
+          - { label: "Primary CTA text", name: "ctaText", widget: "string", default: "Book an Assessment" }
+          - { label: "Primary CTA link (WhatsApp)", name: "ctaHref", widget: "string" }
+          - { label: "Secondary CTA text", name: "secondaryCtaText", widget: "string" }
+          - { label: "Secondary CTA link", name: "secondaryCtaHref", widget: "string" }
+          - { label: "Background image", name: "image", widget: "image" }
+          - { label: "Image alt text", name: "imageAlt", widget: "string" }
+
+      - name: "intro"
+        label: "Who we are (intro)"
+        file: "content/home/intro.md"
+        fields:
+          - { label: "Heading", name: "heading", widget: "string" }
+          - { label: "Body", name: "body", widget: "text" }
+          - { label: "Image", name: "image", widget: "image" }
+          - { label: "Image alt text", name: "imageAlt", widget: "string" }
+
+      - name: "pillars"
+        label: "Pillars (Who We Are)"
+        file: "content/home/pillars.md"
+        fields:
+          - { label: "Heading", name: "heading", widget: "string" }
+          - label: "Pillars"
+            name: "items"
+            widget: "list"
+            min: 3
+            max: 3
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+              - { label: "Icon", name: "icon", widget: "string", hint: "shield-check, wind, or sparkles" }
+
+      - name: "service-snapshot"
+        label: "Service snapshot"
+        file: "content/home/service-snapshot.md"
+        fields:
+          - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+          - { label: "Heading", name: "heading", widget: "string" }
+          - { label: "Description", name: "description", widget: "text" }
+          - label: "Cards"
+            name: "cards"
+            widget: "list"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+              - { label: "Icon", name: "icon", widget: "string" }
+
+      - name: "faq"
+        label: "FAQ"
+        file: "content/home/faq.md"
+        fields:
+          - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+          - { label: "Heading", name: "heading", widget: "string" }
+          - label: "Questions"
+            name: "items"
+            widget: "list"
+            fields:
+              - { label: "Question", name: "question", widget: "string" }
+              - { label: "Answer", name: "answer", widget: "text" }
+
+      - name: "cta"
+        label: "Mid-page call to action"
+        file: "content/home/cta.md"
+        fields:
+          - { label: "Heading", name: "heading", widget: "string" }
+          - { label: "Button text", name: "buttonText", widget: "string", default: "Book an Assessment" }
+          - { label: "Button link (WhatsApp)", name: "buttonHref", widget: "string" }
+          - { label: "Background image", name: "image", widget: "image" }
+          - { label: "Image alt text", name: "imageAlt", widget: "string" }
+
+      - name: "blog-teaser"
+        label: "Blog teaser"
+        file: "content/home/blog-teaser.md"
+        fields:
+          - { label: "Heading", name: "heading", widget: "string" }
+          - { label: "Button text", name: "buttonText", widget: "string" }
+          - { label: "Button link", name: "buttonHref", widget: "string" }
+
+  - name: "about"
+    label: "About page"
+    files:
+      - name: "philosophy"
+        label: "Team philosophy"
+        file: "content/about/philosophy.md"
+        fields:
+          - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+          - { label: "Heading", name: "heading", widget: "string" }
+          - { label: "Body", name: "body", widget: "text" }
+          - { label: "Closing line", name: "closingLine", widget: "string" }
+          - { label: "Image", name: "image", widget: "image" }
+          - { label: "Image alt text", name: "imageAlt", widget: "string" }
+
+      - name: "team-intro"
+        label: "Team section heading"
+        file: "content/about/team-intro.md"
+        fields:
+          - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+          - { label: "Heading", name: "heading", widget: "string" }
+
+      - name: "affiliated-intro"
+        label: "Affiliated professionals heading"
+        file: "content/about/affiliated-intro.md"
+        fields:
+          - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+          - { label: "Heading", name: "heading", widget: "string" }
+          - { label: "Description", name: "description", widget: "text" }
+
+  - name: "services"
+    label: "Services"
+    folder: "content/services"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Icon", name: "icon", widget: "string" }
+      - { label: "Nav order", name: "order", widget: "number" }
+      - { label: "Teaser summary", name: "summary", widget: "text" }
+      - { label: "Full description", name: "body", widget: "text" }
+      - { label: "WhatsApp pre-filled message", name: "whatsappMessage", widget: "string" }
+
+  - name: "team"
+    label: "Team"
+    folder: "content/team"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Name", name: "name", widget: "string" }
+      - { label: "Display order", name: "order", widget: "number" }
+      - { label: "Credentials", name: "credentials", widget: "list" }
+      - { label: "Specialties", name: "specialties", widget: "list" }
+      - { label: "Photo", name: "photo", widget: "image" }
+      - { label: "Bio", name: "bio", widget: "text" }
+
+  - name: "insights"
+    label: "Insights / Blog"
+    folder: "content/insights"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - label: "Category"
+        name: "category"
+        widget: "select"
+        options:
+          - "Respiratory"
+          - "Paediatrics"
+          - "Geriatrics"
+          - "Neuro Rehab"
+          - "Postoperative Recovery"
+          - "Cardiac Rehab"
+          - "General Wellness"
+      - { label: "Publish date", name: "date", widget: "datetime" }
+      - { label: "Excerpt", name: "excerpt", widget: "text" }
+      - { label: "Featured image", name: "image", widget: "image" }
+      - { label: "Show as featured article?", name: "featured", widget: "boolean", default: false }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "site-data"
+    label: "Global data"
+    files:
+      - name: "site-settings"
+        label: "Site settings"
+        file: "content/data/site-settings.yml"
+        fields:
+          - label: "Settings"
+            name: "settings"
+            widget: "object"
+            fields:
+              - { label: "Wordmark", name: "wordmark", widget: "string" }
+              - { label: "Phone", name: "phone", widget: "string" }
+              - { label: "WhatsApp number (digits only, with country code)", name: "whatsapp", widget: "string" }
+              - { label: "Email", name: "email", widget: "string" }
+              - { label: "Address line 1", name: "addressLine1", widget: "string" }
+              - { label: "Address line 2", name: "addressLine2", widget: "string" }
+              - { label: "Hours", name: "hours", widget: "string" }
+              - { label: "Hours note", name: "hoursNote", widget: "string" }
+              - { label: "Facebook URL", name: "facebookUrl", widget: "string" }
+              - { label: "Instagram URL", name: "instagramUrl", widget: "string" }
+              - { label: "Google Business Profile URL", name: "googleBusinessUrl", widget: "string" }
+              - { label: "Registered legal name", name: "legalName", widget: "string", hint: "Used in structured data / fine print, e.g. \"Wezi Nyimba Physiotherapists Inc\"" }
+
+      - name: "affiliated-professionals"
+        label: "Affiliated professionals"
+        file: "content/data/affiliated-professionals.yml"
+        fields:
+          - label: "Professionals"
+            name: "professionals"
+            widget: "list"
+            fields:
+              - { label: "ID (unique, no spaces)", name: "id", widget: "string" }
+              - { label: "Display order", name: "order", widget: "number" }
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "Specialty", name: "specialty", widget: "string" }
+              - { label: "Location", name: "location", widget: "string" }
+              - { label: "Phone", name: "phone", widget: "string" }

@@ -1,30 +1,24 @@
 import type { Metadata } from 'next';
-import { Fraunces, Inter } from 'next/font/google';
-import { SmoothScroll } from '@/components/providers/SmoothScroll';
-import { CustomCursor } from '@/components/providers/CustomCursor';
-import { Nav } from '@/components/layout/Nav';
-import { Footer } from '@/components/layout/Footer';
 import './globals.css';
-
-const fraunces = Fraunces({ subsets: ['latin'], variable: '--font-fraunces', weight: ['300', '400', '500'], style: ['normal', 'italic'] });
-const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 
 export const metadata: Metadata = {
   title: 'Sintha Physiotherapy — Specialised Physiotherapy, Fourways Johannesburg',
-  description: 'HPCSA-registered specialised physiotherapy for children and adults. Respiratory, paediatric, neurological, and home-based care from Fourways, Johannesburg.',
+  description: 'HPCSA-registered specialised physiotherapy for children and adults.',
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${fraunces.variable} ${inter.variable}`}>
-      <body>
-        <SmoothScroll>
-          <CustomCursor />
-          <Nav />
-          <main>{children}</main>
-          <Footer />
-        </SmoothScroll>
-      </body>
+    <html lang="en">
+      <head>
+        {/* Load fonts directly via standard link tags */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link 
+          href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..500;1,9..144,300..500&family=Inter:wght@300..700&display=swap" 
+          rel="stylesheet" 
+        />
+      </head>
+      <body>{children}</body>
     </html>
   );
 }
