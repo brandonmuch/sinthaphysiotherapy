@@ -89,6 +89,17 @@ export default function Home() {
     <div className="bg-[#F3EBF7] text-[#30133E]">
       <Hero />
 
+      <section className="bg-[#F3EBF7] px-6 py-16 md:py-24">
+        <div className="mx-auto max-w-5xl">
+          <p className="copy-justified text-base leading-8 text-[#30133E]/85 md:text-xl md:leading-[1.75]">
+            We take a holistic, whole-person approach to your health, healing, and well-being. While we’re known for our expert care in respiratory physiotherapy, our services go way beyond just helping you breathe easier.
+          </p>
+          <p className="copy-justified mt-5 text-base leading-8 text-[#30133E]/85 md:text-xl md:leading-[1.75]">
+            Whether you’re bouncing back after surgery, navigating life after a stroke, caring for a little one with health challenges, or adjusting to the natural changes that come with age, we’re here for you. From neurological to vestibular conditions, or simply feeling a bit weaker than usual, our experienced team is ready to support and empower you every step of the way. With tailored physiotherapy plans designed just for you, we’ll help you move with more confidence, breathe with ease, and get back to doing the things you love.
+          </p>
+        </div>
+      </section>
+
       <section className="bg-white px-6 py-20 md:py-28">
         <div className="mx-auto max-w-7xl">
           <h2 className="max-w-5xl text-balance text-4xl font-semibold leading-[1.06] tracking-[-0.045em] md:text-6xl">
@@ -109,7 +120,7 @@ export default function Home() {
                 </div>
                 <p className="mt-7 text-xs font-semibold tracking-[0.2em] text-[#8B6A9A]">{pillar.number.padStart(2, '0')}</p>
                 <h3 className="mt-3 text-lg font-semibold tracking-[-0.02em] md:text-xl">{pillar.title}</h3>
-                <p className="mt-4 text-sm leading-7 text-[#30133E]/75">{pillar.description}</p>
+                <p className="copy-justified mt-4 text-sm leading-7 text-[#30133E]/75">{pillar.description}</p>
               </article>
             ))}
           </div>
@@ -128,7 +139,7 @@ export default function Home() {
               <h2 className="text-4xl font-semibold leading-[1.06] tracking-[-0.045em] md:text-5xl">
                 Our Services
               </h2>
-              <p className="mt-6 text-base leading-8 text-[#30133E]/70 md:text-lg">
+              <p className="copy-justified mt-6 text-base leading-8 text-[#30133E]/70 md:text-lg">
                 Our services support children and adults through hospital-based care, recovery, rehabilitation and ongoing support at home.
               </p>
             </div>
@@ -151,9 +162,9 @@ export default function Home() {
                 <span className="pt-1 text-sm tabular-nums text-[#8B6A9A]">0{index + 1}</span>
                 <span>
                   <span className="block text-base font-semibold tracking-[-0.015em]">{service.title}</span>
-                  <span className="mt-3 block max-w-2xl text-sm leading-7 text-[#30133E]/70">{service.description}</span>
+                  <span className="copy-justified mt-3 block max-w-2xl text-sm leading-7 text-[#30133E]/70">{service.description}</span>
                 </span>
-                <span className="hidden text-xl text-[#8B6A9A] transition-transform group-hover:translate-x-1 sm:block">↗</span>
+                <span className="hidden text-xl text-[#8B6A9A] transition-transform duration-200 ease-out group-hover:translate-x-1 sm:block">↗</span>
               </Link>
             ))}
           </div>
@@ -170,7 +181,7 @@ export default function Home() {
                   <span>{faq.question}</span>
                   <span className="text-2xl font-light text-[#8B6A9A] transition-transform group-open:rotate-45">+</span>
                 </summary>
-                <p className="max-w-3xl pt-5 pr-8 text-base leading-8 text-[#30133E]/70">{faq.answer}</p>
+                <p className="copy-justified max-w-3xl pt-5 pr-8 text-base leading-8 text-[#30133E]/70">{faq.answer}</p>
               </details>
             ))}
           </div>
