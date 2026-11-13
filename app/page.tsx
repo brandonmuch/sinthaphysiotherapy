@@ -143,7 +143,6 @@ export default function Home() {
           <div className="absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-[#30133E]/65 to-transparent" />
         </div>
         <div className="relative z-10 mx-auto max-w-7xl">
-          <p className="mb-5 text-xs font-semibold tracking-[0.14em] text-white">A whole-person approach</p>
           <h2 className="max-w-5xl text-balance text-4xl font-semibold leading-[1.06] tracking-[-0.045em] text-white md:text-6xl">
             Let’s get you living life to the fullest — one step, stretch, and breath at a time.
           </h2>
