@@ -17,7 +17,7 @@ export function Footer() {
           </div>
 
           <div>
-            <p className="mb-5 text-xs font-semibold tracking-[0.08em] text-white">Explore</p>
+            <h2 className="mb-5 text-sm font-semibold text-white">Explore</h2>
             <ul className="space-y-3 text-sm text-white">
               <li><Link href="/" className="transition hover:text-white">Home</Link></li>
               <li><Link href="/about" className="transition hover:text-white">About us</Link></li>
@@ -27,7 +27,7 @@ export function Footer() {
           </div>
 
           <div>
-            <p className="mb-5 text-xs font-semibold tracking-[0.2em] text-white">Get in touch</p>
+            <h2 className="mb-5 text-sm font-semibold text-white">Get in touch</h2>
             <ul className="space-y-3 text-sm text-white">
               <li><a href="tel:+27670721908" className="hover:text-white">067 072 1908</a></li>
               <li><a href="mailto:info@sinthaphysiotherapy.co.za" className="break-words hover:text-white">info@sinthaphysiotherapy.co.za</a></li>
@@ -35,26 +35,27 @@ export function Footer() {
               <li>Fourways, Johannesburg</li>
               <li>Mon–Sun, by appointment</li>
             </ul>
-            <SpecularButton
-              className="mt-8"
-              size="sm"
-              radius={999}
-              tint="#DBC1E8"
-              tintOpacity={0.14}
-              textColor="#FFFFFF"
-              lineColor="#DBC1E8"
-              baseColor="#3D2548"
-              intensity={0.78}
-              idleIntensity={0.16}
-              shineSize={10}
-              shineFade={34}
-              thickness={1.1}
-              glow={0.26}
-              followMouse
-              href="/contact"
-            >
-              Booking information <span aria-hidden="true">↗</span>
-            </SpecularButton>
+            <div className="mt-12 flex">
+              <SpecularButton
+                size="sm"
+                radius={999}
+                tint="#DBC1E8"
+                tintOpacity={0.14}
+                textColor="#FFFFFF"
+                lineColor="#DBC1E8"
+                baseColor="#3D2548"
+                intensity={0.78}
+                idleIntensity={0.16}
+                shineSize={10}
+                shineFade={34}
+                thickness={1.1}
+                glow={0.26}
+                followMouse
+                href="/contact"
+              >
+                Booking information <span aria-hidden="true">↗</span>
+              </SpecularButton>
+            </div>
           </div>
         </div>
 

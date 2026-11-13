@@ -11,7 +11,6 @@ export default function ContactPage() {
       <div className="mx-auto max-w-7xl">
         <section className="grid items-center gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
           <div>
-            <p className="mb-5 text-xs font-semibold tracking-[0.14em] text-[#6B4B78]">Appointments and enquiries</p>
             <h1 className="max-w-2xl text-5xl font-semibold leading-[1.04] tracking-[-0.05em] text-[#30133E] md:text-7xl">
               Let’s get you moving.
             </h1>
@@ -19,7 +18,7 @@ export default function ContactPage() {
               Tell us what support you need and our team will help you take the next step. All sessions are by appointment.
             </p>
             <p className="mt-6 max-w-xl rounded-2xl border border-[#6B4B78]/25 bg-[#F3EBF7] px-5 py-4 text-sm leading-6 text-[#29262D]">
-              Please use WhatsApp or phone for appointment arrangements only. Do not send medical details, reports or photographs through these channels. If you need to share clinical information, ask the practice for its approved secure method.
+              Contact us on WhatsApp or phone to enquire about an appointment. Our team will speak with you directly, discuss your needs and explain the next steps, including any consent forms to complete before treatment.
             </p>
             <div className="mt-9 flex flex-wrap gap-3">
               <SpecularButton
@@ -89,8 +88,7 @@ export default function ContactPage() {
         <section className="mt-16 grid gap-5 md:grid-cols-2">
           <SinthaCard className="h-full" backgroundColor="#F3EBF7">
             <article className="contact-card h-full rounded-[26px] border border-[#30133E]/10 bg-[#F3EBF7] p-8 md:p-10">
-            <p className="text-xs font-semibold tracking-[0.14em] text-[#6B4B78]">Fastest way to book</p>
-            <h2 className="mt-4 text-3xl font-semibold tracking-[-0.035em] text-[#30133E]">Message us on WhatsApp.</h2>
+            <h2 className="text-3xl font-semibold tracking-[-0.035em] text-[#30133E]">Message us on WhatsApp.</h2>
             <p className="copy-justified mt-4 max-w-lg text-base leading-7 text-[#29262D]/80">
               Send a message with a little about the type of physiotherapy support you are looking for.
             </p>
@@ -120,8 +118,7 @@ export default function ContactPage() {
 
           <SinthaCard className="h-full" backgroundColor="#F3EBF7">
             <article className="contact-card rounded-[26px] border border-[#30133E]/10 bg-[#F3EBF7] p-8 shadow-[0_16px_44px_-38px_rgba(48,19,62,0.55)] md:p-10">
-            <p className="text-xs font-semibold tracking-[0.14em] text-[#6B4B78]">Prefer to call?</p>
-            <h2 className="mt-4 text-3xl font-semibold tracking-[-0.035em] text-[#30133E]">Speak to our team.</h2>
+            <h2 className="text-3xl font-semibold tracking-[-0.035em] text-[#30133E]">Speak to our team.</h2>
             <p className="copy-justified mt-4 max-w-lg text-base leading-7 text-[#29262D]/80">
               Call us directly to enquire about availability or the right service for your needs.
             </p>
@@ -141,8 +138,7 @@ export default function ContactPage() {
           <div className="grid gap-5 sm:grid-cols-2">
             <SinthaCard className="h-full" backgroundColor="#FFFFFF" borderRadius={26}>
               <article className="h-full rounded-[26px] border border-[#30133E]/10 bg-white p-7 md:p-8">
-              <p className="text-xs font-semibold tracking-[0.14em] text-[#6B4B78]">Visit us</p>
-              <h2 className="mt-4 text-2xl font-semibold text-[#30133E]">Find us.</h2>
+              <h2 className="text-2xl font-semibold text-[#30133E]">Find us.</h2>
               <p className="mt-4 text-sm leading-7 text-[#29262D]/85">
                 Life Fourways Hospital, Suite C28B<br />
                 Corner Cedar Avenue and Cedar Road<br />
@@ -161,8 +157,7 @@ export default function ContactPage() {
 
             <SinthaCard className="h-full" backgroundColor="#F8F4FA" borderRadius={26}>
               <article className="h-full rounded-[26px] border border-[#30133E]/10 bg-[#F8F4FA] p-7 md:p-8">
-              <p className="text-xs font-semibold tracking-[0.14em] text-[#6B4B78]">Opening times</p>
-              <h2 className="mt-4 text-2xl font-semibold text-[#30133E]">Hours.</h2>
+              <h2 className="text-2xl font-semibold text-[#30133E]">Hours.</h2>
               <p className="mt-4 text-sm leading-7 text-[#29262D]/85">
                 Monday to Sunday<br />
                 Closed Wednesday afternoons after 12:00
@@ -188,8 +183,7 @@ export default function ContactPage() {
         </section>
 
         <section className="mt-16 rounded-[28px] bg-[#30133E] px-8 py-12 text-center md:px-12 md:py-16">
-          <p className="text-xs font-semibold tracking-[0.14em] text-white">A little reassurance</p>
-          <blockquote className="mx-auto mt-4 max-w-4xl text-3xl font-semibold leading-tight tracking-[-0.035em] text-white md:text-5xl">
+          <blockquote className="mx-auto max-w-4xl text-3xl font-semibold leading-tight tracking-[-0.035em] text-white md:text-5xl">
             “Compassion in every breath, care in every movement.”
           </blockquote>
           <p className="mx-auto mt-5 max-w-xl text-sm leading-7 text-white">

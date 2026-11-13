@@ -120,7 +120,7 @@ export default function ServicesPage() {
         </header>
 
         <SinthaCard
-          className="mt-14 -mx-6 md:-mx-10"
+          className="mt-8 -mx-6 md:-mx-10"
           backgroundColor="#30133E"
           borderRadius={28}
         >
@@ -151,8 +151,8 @@ export default function ServicesPage() {
                 <h2 className="mt-4 text-3xl font-semibold leading-tight tracking-[-0.04em] text-white md:text-5xl">
                   Explore our services.
                 </h2>
-                <p className="mx-auto mt-5 max-w-2xl text-sm leading-7 text-white/90 md:text-base">
-Explore the services below. Choose a card, then select “View service” to read the full details.
+                <p className="mx-auto mt-3 max-w-2xl text-sm leading-7 text-white/90 md:text-base">
+Select a card or use the arrows to explore each service and its details.
                 </p>
               </div>
 
