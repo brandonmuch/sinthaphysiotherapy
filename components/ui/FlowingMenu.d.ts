@@ -1,4 +1,4 @@
-import type { CSSProperties, MouseEvent } from 'react';
+import type { CSSProperties, MouseEvent, ReactElement } from 'react';
 
 export interface FlowingMenuItem {
   text: string;
@@ -42,6 +42,6 @@ export interface FlowingMenuProps {
   style?: CSSProperties;
 }
 
-declare function FlowingMenu(props: FlowingMenuProps): JSX.Element;
+declare function FlowingMenu(props: FlowingMenuProps): ReactElement;
 
 export default FlowingMenu;
