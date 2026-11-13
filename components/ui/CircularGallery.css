@@ -118,3 +118,26 @@
   outline: 2px solid #FFFFFF;
   outline-offset: 3px;
 }
+
+
+.circular-gallery-caption {
+  width: min(90%, 42rem);
+}
+
+.circular-gallery-caption-text {
+  max-height: 112px;
+  overflow-y: auto;
+  padding: 16px 20px;
+  border: 1px solid #DBC1E8;
+  border-radius: 18px;
+  background: #F3EBF7;
+  color: #30133E;
+  box-shadow: 0 12px 32px rgba(12, 5, 18, 0.24);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.6;
+  opacity: 1;
+  text-align: left;
+  scrollbar-width: thin;
+  scrollbar-color: #8B6A9A transparent;
+}
