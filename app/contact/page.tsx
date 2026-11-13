@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import SpecularButton from '@/components/ui/SpecularButton';
+import SinthaCard from '@/components/ui/SinthaCard';
 
 const WHATSAPP_LINK =
   'https://wa.me/27670721908?text=Hello%20Sintha%20Physiotherapy%2C%20I%20would%20like%20to%20make%20a%20booking.';
@@ -62,7 +63,8 @@ export default function ContactPage() {
             </div>
           </div>
 
-          <div className="relative mx-auto aspect-[2/3] w-full max-w-[480px] overflow-hidden rounded-[28px] bg-[#F3EBF7]">
+          <SinthaCard className="mx-auto w-full max-w-[480px]" backgroundColor="#F3EBF7" borderRadius={28}>
+            <div className="relative aspect-[2/3] w-full overflow-hidden rounded-[28px] bg-[#F3EBF7]">
             <Image
               src="/uploads/patient-elderly-recovery.jpg"
               alt="A physiotherapist supporting an older patient during respiratory care"
@@ -77,11 +79,13 @@ export default function ContactPage() {
                 Personalised care for children and adults.
               </p>
             </div>
-          </div>
+            </div>
+          </SinthaCard>
         </section>
 
         <section className="mt-16 grid gap-5 md:grid-cols-2">
-          <article className="contact-card rounded-[26px] border border-[#30133E]/10 bg-[#F3EBF7] p-8 md:p-10">
+          <SinthaCard className="h-full" backgroundColor="#F3EBF7">
+            <article className="contact-card h-full rounded-[26px] border border-[#30133E]/10 bg-[#F3EBF7] p-8 md:p-10">
             <p className="text-xs font-semibold tracking-[0.14em] text-[#8B6A9A]">Fastest way to book</p>
             <h2 className="mt-4 text-3xl font-semibold tracking-[-0.035em] text-[#30133E]">Message us on WhatsApp.</h2>
             <p className="copy-justified mt-4 max-w-lg text-base leading-7 text-[#29262D]/80">
@@ -108,9 +112,11 @@ export default function ContactPage() {
             >
               Start a WhatsApp chat <span aria-hidden="true">↗</span>
             </SpecularButton>
-          </article>
+            </article>
+          </SinthaCard>
 
-          <article className="contact-card rounded-[26px] border border-[#30133E]/10 bg-[#F3EBF7] p-8 shadow-[0_16px_44px_-38px_rgba(48,19,62,0.55)] md:p-10">
+          <SinthaCard className="h-full" backgroundColor="#F3EBF7">
+            <article className="contact-card rounded-[26px] border border-[#30133E]/10 bg-[#F3EBF7] p-8 shadow-[0_16px_44px_-38px_rgba(48,19,62,0.55)] md:p-10">
             <p className="text-xs font-semibold tracking-[0.14em] text-[#8B6A9A]">Prefer to call?</p>
             <h2 className="mt-4 text-3xl font-semibold tracking-[-0.035em] text-[#30133E]">Speak to our team.</h2>
             <p className="copy-justified mt-4 max-w-lg text-base leading-7 text-[#29262D]/80">
@@ -124,12 +130,14 @@ export default function ContactPage() {
                 info@sinthaphysiotherapy.co.za
               </a>
             </div>
-          </article>
+            </article>
+          </SinthaCard>
         </section>
 
         <section className="mt-16 grid items-stretch gap-7 lg:grid-cols-[1fr_0.9fr]">
           <div className="grid gap-5 sm:grid-cols-2">
-            <article className="rounded-[26px] border border-[#30133E]/10 bg-white p-7 md:p-8">
+            <SinthaCard className="h-full" backgroundColor="#FFFFFF" borderRadius={26}>
+              <article className="h-full rounded-[26px] border border-[#30133E]/10 bg-white p-7 md:p-8">
               <p className="text-xs font-semibold tracking-[0.14em] text-[#8B6A9A]">Visit us</p>
               <h2 className="mt-4 text-2xl font-semibold text-[#30133E]">Find us.</h2>
               <p className="mt-4 text-sm leading-7 text-[#29262D]/85">
@@ -145,9 +153,11 @@ export default function ContactPage() {
               >
                 Get directions ↗
               </a>
-            </article>
+              </article>
+            </SinthaCard>
 
-            <article className="rounded-[26px] border border-[#30133E]/10 bg-[#F8F4FA] p-7 md:p-8">
+            <SinthaCard className="h-full" backgroundColor="#F8F4FA" borderRadius={26}>
+              <article className="h-full rounded-[26px] border border-[#30133E]/10 bg-[#F8F4FA] p-7 md:p-8">
               <p className="text-xs font-semibold tracking-[0.14em] text-[#8B6A9A]">Opening times</p>
               <h2 className="mt-4 text-2xl font-semibold text-[#30133E]">Hours.</h2>
               <p className="mt-4 text-sm leading-7 text-[#29262D]/85">
@@ -157,10 +167,12 @@ export default function ContactPage() {
               <p className="mt-4 text-xs leading-6 text-[#29262D]/65">
                 Walk-ins are subject to availability. Contact us to arrange an appointment.
               </p>
-            </article>
+              </article>
+            </SinthaCard>
           </div>
 
-          <div className="relative min-h-[320px] overflow-hidden rounded-[26px] bg-[#F3EBF7]">
+          <SinthaCard className="min-h-[320px]" backgroundColor="#F3EBF7" borderRadius={26}>
+            <div className="relative min-h-[320px] overflow-hidden rounded-[26px] bg-[#F3EBF7]">
             <Image
               src="/images/224639_bfef82a022b94247bd1bc81fcd55f488~mv2.jpeg"
               alt="A calm, welcoming reception area"
@@ -168,7 +180,8 @@ export default function ContactPage() {
               sizes="(max-width: 1024px) 100vw, 42vw"
               className="object-cover object-[center_50%]"
             />
-          </div>
+            </div>
+          </SinthaCard>
         </section>
 
         <section className="mt-16 rounded-[28px] bg-[#30133E] px-8 py-12 text-center md:px-12 md:py-16">

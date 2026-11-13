@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import { FadeIn } from '@/components/ui/FadeIn';
 import SpecularButton from '@/components/ui/SpecularButton';
+import SinthaCard from '@/components/ui/SinthaCard';
 
 const PRACTITIONERS = [
   {
@@ -38,30 +39,34 @@ export default function AboutPage() {
                 We are dedicated to providing comprehensive, compassionate care. We believe in treating the whole person, not just the condition, empowering you to move better and live better through evidence-based practice.
               </p>
             </div>
-            <div className="relative aspect-[3/2] overflow-hidden rounded-[28px] bg-[#F3EBF7]">
-              <Image
-                src="/uploads/patient-grandfather-grandson.jpg"
-                alt="A grandfather and grandson spending time together at home"
-                fill
-                priority
-                sizes="(max-width: 768px) 100vw, 50vw"
-                className="object-cover object-[center_38%]"
-              />
-            </div>
+            <SinthaCard className="h-full" backgroundColor="#F3EBF7" borderRadius={28}>
+              <div className="relative aspect-[3/2] overflow-hidden rounded-[28px] bg-[#F3EBF7]">
+                <Image
+                  src="/uploads/patient-grandfather-grandson.jpg"
+                  alt="A grandfather and grandson spending time together at home"
+                  fill
+                  priority
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="object-cover object-[center_38%]"
+                />
+              </div>
+            </SinthaCard>
           </section>
         </FadeIn>
 
         <section className="mt-10 grid items-center gap-10 overflow-hidden rounded-[32px] bg-white py-8 md:grid-cols-[0.9fr_1.1fr] md:gap-16 md:py-12">
           <FadeIn>
-            <div className="relative aspect-[3/2] overflow-hidden rounded-[28px] bg-[#F3EBF7]">
-              <Image
-                src="/uploads/patient-physio-session-a.jpg"
-                alt="A physiotherapist supporting an older woman during a walking exercise"
-                fill
-                sizes="(max-width: 768px) 100vw, 42vw"
-                className="object-cover object-[center_22%]"
-              />
-            </div>
+            <SinthaCard className="h-full" backgroundColor="#F3EBF7" borderRadius={28}>
+              <div className="relative aspect-[3/2] overflow-hidden rounded-[28px] bg-[#F3EBF7]">
+                <Image
+                  src="/uploads/patient-physio-session-a.jpg"
+                  alt="A physiotherapist supporting an older woman during a walking exercise"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 42vw"
+                  className="object-cover object-[center_22%]"
+                />
+              </div>
+            </SinthaCard>
           </FadeIn>
           <FadeIn delay={0.08}>
             <div>
@@ -100,7 +105,8 @@ export default function AboutPage() {
           <div className="mt-10 grid gap-5 md:grid-cols-2">
             {PRACTITIONERS.map((person, index) => (
               <FadeIn key={person.name} delay={index * 0.06}>
-                <article className="about-feature-card h-full rounded-[24px] border border-[#30133E]/[0.08] bg-[#F3EBF7] p-7 md:p-9">
+                <SinthaCard className="h-full" backgroundColor="#F3EBF7">
+                  <article className="about-feature-card h-full rounded-[24px] border border-[#30133E]/[0.08] bg-[#F3EBF7] p-7 md:p-9">
                   <div className="flex items-start justify-between gap-4">
                     <div>
                       <h3 className="text-2xl font-semibold tracking-[-0.03em] text-[#30133E] md:text-3xl">{person.name}</h3>
@@ -113,7 +119,8 @@ export default function AboutPage() {
                     {person.specialties}
                   </p>
                   <p className="copy-justified mt-5 text-sm leading-7 text-[#29262D]/85">{person.biography}</p>
-                </article>
+                  </article>
+                </SinthaCard>
               </FadeIn>
             ))}
           </div>
@@ -129,14 +136,16 @@ export default function AboutPage() {
           </div>
           <div className="mt-9 grid gap-5 md:grid-cols-3">
             {AFFILIATED_PROFESSIONALS.map(professional => (
-              <article key={professional.name} className="rounded-[22px] bg-[#F3EBF7] p-7 shadow-[0_14px_38px_-32px_rgba(48,19,62,0.6)]">
+              <SinthaCard key={professional.name} className="h-full" backgroundColor="#F3EBF7" borderRadius={22}>
+                <article className="h-full rounded-[22px] bg-[#F3EBF7] p-7 shadow-[0_14px_38px_-32px_rgba(48,19,62,0.6)]">
                 <h3 className="text-xl font-semibold text-[#30133E]">{professional.name}</h3>
                 <p className="mt-2 text-sm font-medium text-[#6B4B78]">{professional.role}</p>
                 <p className="mt-4 text-sm leading-6 text-[#29262D]/75">{professional.location}</p>
                 <a href={`tel:${professional.phone.replaceAll(' ', '')}`} className="mt-4 inline-flex text-sm font-semibold text-[#30133E] underline decoration-[#8B6A9A]/60 underline-offset-4 hover:text-[#6B4B78]">
                   {professional.phone}
                 </a>
-              </article>
+                </article>
+              </SinthaCard>
             ))}
           </div>
         </section>

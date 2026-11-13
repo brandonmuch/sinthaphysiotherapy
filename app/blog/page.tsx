@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import SpecularButton from '@/components/ui/SpecularButton';
+import SinthaCard from '@/components/ui/SinthaCard';
 
 const ARTICLES = [
   {
@@ -81,7 +82,8 @@ export default function BlogPage() {
 
         <div className="mt-14 grid gap-7 sm:grid-cols-2 lg:grid-cols-3">
           {ARTICLES.map((article) => (
-            <article key={article.title} className="group flex h-full flex-col overflow-hidden rounded-[1.5rem] border border-[#30133E]/[0.07] bg-[#F3EBF7] shadow-[0_12px_32px_-28px_rgba(48,19,62,0.55)] blog-card">
+            <SinthaCard key={article.title} className="h-full" backgroundColor="#F3EBF7" borderRadius={24}>
+              <article className="group flex h-full flex-col overflow-hidden rounded-[1.5rem] border border-[#30133E]/[0.07] bg-[#F3EBF7] shadow-[0_12px_32px_-28px_rgba(48,19,62,0.55)] blog-card">
               <ArticleLink
                 href={article.href}
                 external={article.external}
@@ -114,7 +116,8 @@ export default function BlogPage() {
                   Read article <span aria-hidden="true">↗</span>
                 </ArticleLink>
               </div>
-            </article>
+              </article>
+            </SinthaCard>
           ))}
         </div>
 
