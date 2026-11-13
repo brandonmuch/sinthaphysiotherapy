@@ -18,6 +18,9 @@ export default function ContactPage() {
             <p className="copy-justified mt-7 max-w-xl text-base leading-8 text-[#29262D]/85 md:text-lg">
               Tell us what support you need and our team will help you take the next step. All sessions are by appointment.
             </p>
+            <p className="mt-6 max-w-xl rounded-2xl border border-[#6B4B78]/25 bg-[#F3EBF7] px-5 py-4 text-sm leading-6 text-[#29262D]">
+              Please use WhatsApp or phone for appointment arrangements only. Do not send medical details, reports or photographs through these channels. If you need to share clinical information, ask the practice for its approved secure method.
+            </p>
             <div className="mt-9 flex flex-wrap gap-3">
               <SpecularButton
                 size="md"
