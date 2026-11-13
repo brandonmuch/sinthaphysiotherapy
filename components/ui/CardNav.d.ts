@@ -1,4 +1,4 @@
-import type { CSSProperties, ElementType, ReactElement, ReactMouseEvent, ReactNode } from 'react';
+import type { CSSProperties, ElementType, ReactElement, MouseEvent, ReactNode } from 'react';
 
 export interface CardNavLink {
   label: string;
@@ -15,7 +15,7 @@ export interface CardNavItem {
 export interface CardNavCta {
   label: string;
   href?: string;
-  onClick?: (event: ReactMouseEvent<HTMLElement>) => void;
+  onClick?: (event: MouseEvent<HTMLElement>) => void;
 }
 export interface CardNavProps {
   logo?: string | ReactNode;
