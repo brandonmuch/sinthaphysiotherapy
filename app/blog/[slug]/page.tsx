@@ -9,6 +9,7 @@ const ARTICLES = [
     title: 'Renal & Metabolic Care: Where Recovery Begins and Builds Into Strength',
     category: 'Renal and metabolic care',
     image: '/images/224639_4dc100e8d2e945a79919dc279d08b41a~mv2.jpeg',
+    imageFrame: 'aspect-[2/3]',
     alt: 'Illustration of a person with floral lungs, representing whole-person respiratory and metabolic health',
     intro: 'Explore how physiotherapy supports recovery and strength alongside renal and metabolic care.',
   },
@@ -18,6 +19,7 @@ const ARTICLES = [
     subtitle: 'What Every Parent Should Know',
     category: 'Paediatric respiratory care',
     image: '/images/224639_153886ad0cdc4784891ee393e60f23d4~mv2.jpeg',
+    imageFrame: 'aspect-[2/3]',
     alt: 'Illustrated guide to signs of respiratory distress in infants',
     intro: 'Understand respiratory syncytial virus (RSV) and the signs parents should know about in babies and young children.',
   },
@@ -27,6 +29,7 @@ const ARTICLES = [
     subtitle: 'Breathing for Recovery with Sintha Physiotherapy',
     category: 'Respiratory physiotherapy',
     image: '/images/224639_5b990c24f553474c837d37d995e1b759~mv2.jpeg',
+    imageFrame: 'aspect-[16/9]',
     alt: 'Existing Sintha Physiotherapy Strong Women, Strong Lungs article image',
     intro: 'Explore the role of breathing and physiotherapy in supporting recovery and lung health.',
   },
@@ -89,7 +92,7 @@ export default async function BlogArticlePage({
           </p>
         </header>
 
-        <figure className="relative mt-10 aspect-[16/9] overflow-hidden rounded-[28px] bg-[#F3EBF7]">
+        <figure className={`relative mt-10 ${article.imageFrame} overflow-hidden rounded-[28px] bg-[#F3EBF7]`}>
           <Image
             src={article.image}
             alt={article.alt}
@@ -101,11 +104,11 @@ export default async function BlogArticlePage({
         </figure>
 
         <section className="mt-12 rounded-[28px] bg-[#F3EBF7] p-7 md:p-10">
-          <p className="text-sm leading-7 text-[#29262D]/85">
-            This article has been moved to the new Sintha Physiotherapy website. The original full article text is not available in the migration files, so this page currently preserves its published title, image and archive introduction.
+          <p className="text-base leading-8 text-[#29262D]/85">
+            Every person’s experience is different. If this topic raises questions about your own health or recovery, speak with a healthcare professional who understands your medical history.
           </p>
-          <p className="mt-4 text-sm leading-7 text-[#29262D]/85">
-            For guidance related to your own health or recovery, speak with a qualified healthcare professional about your individual needs.
+          <p className="mt-4 text-base leading-8 text-[#29262D]/85">
+            The Sintha team can help you explore whether physiotherapy support is appropriate for your needs and what a personalised plan may involve.
           </p>
         </section>
 
