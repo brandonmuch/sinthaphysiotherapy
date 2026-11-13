@@ -35,7 +35,7 @@ export function Footer() {
               <li>Fourways, Johannesburg</li>
               <li>Mon–Sun, by appointment</li>
             </ul>
-            <div className="mt-10">
+            <div className="mt-12 flex">
               <SpecularButton
                 size="sm"
                 radius={999}
