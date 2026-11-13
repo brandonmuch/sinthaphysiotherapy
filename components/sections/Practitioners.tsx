@@ -12,14 +12,14 @@ export function Practitioners() {
         
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
           <div>
-            <p className="text-xs uppercase tracking-[0.3em] text-terracotta mb-4">The Practitioners</p>
+            <p className="text-xs tracking-[0.1em] text-terracotta mb-4">The practitioners</p>
             <h2 className="font-serif text-5xl md:text-6xl text-charcoal">Hands that listen.</h2>
           </div>
           <Link 
             href="/about" 
-            className="text-xs uppercase tracking-[0.2em] border-b border-charcoal pb-1 hover:text-terracotta hover:border-terracotta transition-colors"
+            className="text-xs tracking-[0.1em] border-b border-charcoal pb-1 hover:text-terracotta hover:border-terracotta transition-colors"
           >
-            Read Full Bios
+            Read full bios
           </Link>
         </div>
 
