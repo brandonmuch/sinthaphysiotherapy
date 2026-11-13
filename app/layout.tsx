@@ -45,6 +45,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           trail={0.9}
           clickSplash
           intensity={1.05}
+          glow={0.22}
           quality="medium"
           zIndex={40}
         />
