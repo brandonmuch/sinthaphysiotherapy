@@ -92,14 +92,14 @@ export default async function BlogArticlePage({
           </p>
         </header>
 
-        <figure className={`relative mt-10 ${article.imageFrame} overflow-hidden rounded-[28px] bg-[#F3EBF7]`}>
+        <figure className="relative mx-auto mt-10 aspect-[16/9] max-h-[420px] w-full max-w-3xl overflow-hidden rounded-[28px] bg-[#F3EBF7]">
           <Image
             src={article.image}
             alt={article.alt}
             fill
             priority
             sizes="(max-width: 768px) 100vw, 896px"
-            className="object-cover object-center"
+            className="object-contain object-center"
           />
         </figure>
 
