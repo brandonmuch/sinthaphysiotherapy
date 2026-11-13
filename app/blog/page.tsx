@@ -100,7 +100,7 @@ export default function BlogPage() {
                 />
               </ArticleLink>
               <div className="flex flex-1 flex-col p-7 md:p-8">
-                <p className="text-xs font-semibold tracking-[0.08em] text-[#8B6A9A]">{article.category}</p>
+                <p className="text-xs font-semibold tracking-[0.08em] text-[#6B4B78]">{article.category}</p>
                 <h2 className="mt-4 text-2xl font-semibold leading-tight tracking-[-0.03em] text-[#30133E] md:text-[1.7rem]">
                   {article.title}
                 </h2>
