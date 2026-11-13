@@ -38,7 +38,7 @@ export default function AboutPage() {
                 We are dedicated to providing comprehensive, compassionate care. We believe in treating the whole person, not just the condition, empowering you to move better and live better through evidence-based practice.
               </p>
             </div>
-            <div className="relative aspect-[5/4] overflow-hidden rounded-[28px] bg-[#F3EBF7]">
+            <div className="relative aspect-[3/2] overflow-hidden rounded-[28px] bg-[#F3EBF7]">
               <Image
                 src="/uploads/patient-grandfather-grandson.jpg"
                 alt="A grandfather and grandson spending time together at home"
@@ -53,7 +53,7 @@ export default function AboutPage() {
 
         <section className="mt-10 grid items-center gap-10 overflow-hidden rounded-[32px] bg-white py-8 md:grid-cols-[0.9fr_1.1fr] md:gap-16 md:py-12">
           <FadeIn>
-            <div className="relative aspect-[4/5] overflow-hidden rounded-[28px] bg-[#F3EBF7]">
+            <div className="relative aspect-[3/2] overflow-hidden rounded-[28px] bg-[#F3EBF7]">
               <Image
                 src="/uploads/patient-physio-session-a.jpg"
                 alt="A physiotherapist supporting an older woman during a walking exercise"
