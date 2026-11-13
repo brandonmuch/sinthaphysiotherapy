@@ -31,7 +31,6 @@ export default function AboutPage() {
         <FadeIn>
           <section className="grid items-center gap-10 overflow-hidden rounded-[32px] bg-[#F3EBF7] p-6 md:grid-cols-[0.95fr_1.05fr] md:gap-16 md:p-10">
             <div>
-              <p className="mb-5 text-xs font-semibold tracking-[0.14em] text-[#6B4B78]">About Sintha</p>
               <h1 className="max-w-2xl text-5xl font-semibold leading-[1.04] tracking-[-0.05em] text-[#30133E] md:text-7xl">
                 Meet our team of expert physiotherapists
               </h1>
@@ -40,14 +39,14 @@ export default function AboutPage() {
               </p>
             </div>
             <SinthaCard className="h-full" backgroundColor="#F3EBF7" borderRadius={28}>
-              <div className="relative aspect-[3/2] overflow-hidden rounded-[28px] bg-[#F3EBF7]">
+              <div className="relative aspect-[4/5] overflow-hidden rounded-[28px] bg-[#F3EBF7]">
                 <Image
-                  src="/uploads/patient-grandfather-grandson.jpg"
-                  alt="A grandfather and grandson spending time together at home"
+                  src="/uploads/patient-teen-treatment.jpg"
+                  alt="A young woman resting while receiving respiratory support"
                   fill
                   priority
                   sizes="(max-width: 768px) 100vw, 50vw"
-                  className="object-cover object-[center_38%]"
+                  className="object-cover object-[center_24%]"
                 />
               </div>
             </SinthaCard>
@@ -70,7 +69,6 @@ export default function AboutPage() {
           </FadeIn>
           <FadeIn delay={0.08}>
             <div>
-              <p className="mb-5 text-xs font-semibold tracking-[0.14em] text-[#6B4B78]">Our team philosophy</p>
               <h2 className="max-w-2xl text-4xl font-semibold leading-[1.08] tracking-[-0.04em] text-[#30133E] md:text-5xl">
                 Care that sees the whole person.
               </h2>
@@ -92,15 +90,12 @@ export default function AboutPage() {
         </section>
 
         <section className="mt-10 rounded-[32px] bg-[#30133E] px-6 py-16 text-white md:px-10 md:py-20">
-          <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
-            <div>
-              <p className="mb-4 text-xs font-semibold tracking-[0.14em] text-white">The practitioners</p>
-              <h2 className="text-4xl font-semibold tracking-[-0.04em] text-white md:text-5xl">The people behind your care.</h2>
-            </div>
-            <p className="copy-justified max-w-xl text-sm leading-7 text-white/90">
+          <header className="max-w-3xl">
+            <h2 className="text-4xl font-semibold tracking-[-0.04em] text-white md:text-5xl">The people behind your care.</h2>
+            <p className="copy-justified mt-4 max-w-3xl text-[15px] leading-[1.75] text-white/90 md:text-base">
               Our clinicians bring experience across specialist physiotherapy services, with care shaped around each person’s needs and goals.
             </p>
-          </div>
+          </header>
 
           <div className="mt-10 grid gap-5 md:grid-cols-2">
             {PRACTITIONERS.map((person, index) => (
@@ -128,7 +123,6 @@ export default function AboutPage() {
 
         <section className="mt-20 border-t border-[#30133E]/10 pt-16 md:mt-24 md:pt-20">
           <div className="max-w-3xl">
-            <p className="mb-4 text-xs font-semibold tracking-[0.14em] text-[#6B4B78]">Our wider network</p>
             <h2 className="text-4xl font-semibold tracking-[-0.04em] text-[#30133E] md:text-5xl">Affiliated professionals</h2>
             <p className="copy-justified mt-5 text-base leading-8 text-[#29262D]/80">
               We work alongside affiliated medical professionals to support coordinated care.
@@ -153,7 +147,6 @@ export default function AboutPage() {
         <section className="mt-20 overflow-hidden rounded-[28px] bg-[#30133E] px-8 py-12 text-white md:mt-24 md:px-12 md:py-16">
           <div className="flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
             <div className="max-w-3xl">
-              <p className="mb-4 text-xs font-semibold tracking-[0.14em] text-white">Move forward with confidence</p>
               <h2 className="text-3xl font-semibold leading-tight tracking-[-0.04em] text-white md:text-5xl">
                 Your health, healing and well-being matter.
               </h2>
