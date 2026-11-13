@@ -94,15 +94,17 @@ export default function Home() {
 
       <section className="bg-white px-6 py-16 md:py-24">
         <div className="mx-auto grid max-w-7xl items-center gap-10 md:grid-cols-[0.9fr_1.1fr] md:gap-16">
-          <div className="relative aspect-[3/2] overflow-hidden rounded-[28px] bg-[#F3EBF7]">
-            <Image
-              src="/uploads/patient-grandfather-grandson.jpg"
-              alt="A grandfather and grandson playing together on a couch"
-              fill
-              sizes="(max-width: 768px) 100vw, 44vw"
-              className="object-cover object-center"
-            />
-          </div>
+          <SinthaCard className="h-full" backgroundColor="#F3EBF7" borderRadius={28}>
+            <div className="relative aspect-[3/2] overflow-hidden rounded-[28px] bg-[#F3EBF7]">
+              <Image
+                src="/uploads/patient-grandfather-grandson.jpg"
+                alt="A grandfather and grandson playing together on a couch"
+                fill
+                sizes="(max-width: 768px) 100vw, 44vw"
+                className="object-cover object-center"
+              />
+            </div>
+          </SinthaCard>
           <div className="max-w-3xl">
             <p className="mb-5 text-xs font-semibold tracking-[0.14em] text-[#8B6A9A]">Our approach</p>
             <div className="copy-justified space-y-5 text-base leading-8 text-[#29262D]/85 md:text-lg md:leading-[1.75]">
