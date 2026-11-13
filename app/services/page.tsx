@@ -109,7 +109,7 @@ export default function ServicesPage() {
               </div>
               <div>
                 <h2 className="text-2xl font-semibold leading-tight tracking-[-0.03em] md:text-3xl">{service.title}</h2>
-                <div className="mt-5 space-y-4 text-base leading-8 text-[#30133E]/75">
+                <div className="copy-justified mt-5 space-y-4 text-base leading-8 text-[#30133E]/75">
                   {service.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
                 </div>
               </div>
