@@ -39,14 +39,14 @@ export default function AboutPage() {
               </p>
             </div>
             <SinthaCard className="h-full" backgroundColor="#F3EBF7" borderRadius={28}>
-              <div className="relative aspect-[4/5] overflow-hidden rounded-[28px] bg-[#F3EBF7]">
+              <div className="relative aspect-[3/2] overflow-hidden rounded-[28px] bg-[#F3EBF7]">
                 <Image
-                  src="/uploads/patient-teen-treatment.jpg"
-                  alt="A young woman resting while receiving respiratory support"
+                  src="/images/u2428486467_Young_Black_South_African_woman_in_activewear_wal_bb274feb-bb84-4439-ba94-fa2f.jpeg"
+                  alt="A young woman in activewear at a physiotherapy clinic"
                   fill
                   priority
                   sizes="(max-width: 768px) 100vw, 50vw"
-                  className="object-cover object-[center_24%]"
+                  className="object-cover object-center"
                 />
               </div>
             </SinthaCard>
