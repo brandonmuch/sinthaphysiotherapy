@@ -1,44 +1,59 @@
-export default function AboutPage() {
-  const TEAM = [
-    {
-      name: 'Wezi Nyimba',
-      role: 'Respiratory, Paediatrics, ICU Rehab',
-      bio: 'Wezi brings a wealth of experience in advanced respiratory care, paediatric physiotherapy, and critical care rehabilitation. She is dedicated to helping patients regain their independence and breathe easier, utilizing evidence-based techniques tailored to each individual.',
-    },
-    {
-      name: 'Posheletso Kekana',
-      role: 'Trauma, Critical Care, Paediatrics',
-      bio: 'Posheletso specialises in trauma and critical care, guiding patients through their most vulnerable moments with compassionate, expert care. Her paediatric focus ensures that the youngest patients receive gentle, effective treatment for optimal development.',
-    },
-  ];
+import Image from 'next/image';
 
+export default function AboutPage() {
   return (
-    <main className="min-h-screen bg-cream pt-32 pb-24">
-      <div className="mx-auto max-w-6xl px-6 md:px-10">
+    <div className="bg-lilac-light pt-32 pb-24">
+      <div className="mx-auto max-w-7xl px-6 md:px-10">
         
-        {/* Page Header */}
-        <div className="max-w-3xl mb-20">
-          <h1 className="font-serif text-5xl md:text-7xl text-charcoal mb-6">Meet Our Team</h1>
-          <h2 className="text-sm font-semibold uppercase tracking-[0.2em] text-terracotta mb-4">Team Philosophy</h2>
-          <p className="text-xl md:text-2xl text-charcoal/80 leading-relaxed font-light">
-            We are a team of expert physiotherapists dedicated to providing comprehensive, compassionate care. We believe in treating the whole person, not just the condition, empowering you to move better and live better.
-          </p>
+        <div className="grid md:grid-cols-2 gap-16 items-center mb-24">
+          <div>
+            <h1 className="text-5xl md:text-6xl font-bold text-purple mb-6 leading-tight">
+              Meet our team of expert physiotherapists.
+            </h1>
+            <h2 className="text-sm font-semibold uppercase tracking-widest text-purple-light mb-4">Team Philosophy</h2>
+            <p className="text-lg text-purple/80 leading-relaxed mb-6">
+              We are dedicated to providing comprehensive, compassionate care. We believe in treating the whole person, not just the condition, empowering you to move better and live better through evidence-based practice.
+            </p>
+            <p className="text-lg text-purple/80 leading-relaxed">
+              Our team brings a wealth of experience across critical care, paediatrics, respiratory, and trauma rehabilitation.
+            </p>
+          </div>
+          <div className="relative h-[500px] rounded-3xl overflow-hidden shadow-xl">
+            <Image src="/images/clinic-interior.jpg" alt="Sintha Physiotherapy Clinic" fill className="object-cover" />
+          </div>
         </div>
 
-        {/* Team Grid - Text Only */}
-        <div className="grid gap-x-12 gap-y-16 md:grid-cols-2">
-          {TEAM.map((member) => (
-            <div key={member.name} className="border-t border-charcoal/20 pt-8">
-              <p className="text-xs uppercase tracking-[0.2em] text-terracotta mb-2">{member.role}</p>
-              <h3 className="font-serif text-4xl text-charcoal mb-4">{member.name}</h3>
-              <p className="text-charcoal/70 leading-relaxed">
-                {member.bio}
+        <div className="grid md:grid-cols-2 gap-12">
+          {/* Wezi */}
+          <div className="bg-white rounded-3xl overflow-hidden shadow-sm">
+            <div className="relative h-[400px]">
+              <Image src="/images/team-wezi.jpg" alt="Wezi Nyimba" fill className="object-cover" />
+            </div>
+            <div className="p-8">
+              <h3 className="text-3xl font-bold text-purple mb-2">Wezi Nyimba</h3>
+              <p className="text-sm font-semibold text-purple-light uppercase tracking-wider mb-4">Respiratory, Paediatrics, ICU Rehab</p>
+              <p className="text-purple/70 leading-relaxed">
+                Wezi brings a wealth of experience in advanced respiratory care, paediatric physiotherapy, and critical care rehabilitation. She is dedicated to helping patients regain their independence and breathe easier, utilizing evidence-based techniques tailored to each individual.
               </p>
             </div>
-          ))}
+          </div>
+
+          {/* Posheletso */}
+          <div className="bg-white rounded-3xl overflow-hidden shadow-sm">
+            <div className="relative h-[400px]">
+              <Image src="/images/team-posheletso.jpg" alt="Posheletso Kekana" fill className="object-cover" />
+            </div>
+            <div className="p-8">
+              <h3 className="text-3xl font-bold text-purple mb-2">Posheletso Kekana</h3>
+              <p className="text-sm font-semibold text-purple-light uppercase tracking-wider mb-4">Trauma, Critical Care, Paediatrics</p>
+              <p className="text-purple/70 leading-relaxed">
+                Posheletso specialises in trauma and critical care, guiding patients through their most vulnerable moments with compassionate, expert care. Her paediatric focus ensures that the youngest patients receive gentle, effective treatment for optimal development.
+              </p>
+            </div>
+          </div>
         </div>
 
       </div>
-    </main>
+    </div>
   );
 }

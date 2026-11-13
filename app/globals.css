@@ -2,14 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --cream: #F5F0EA;
-  --terracotta: #C4826A;
-  --sage: #8A9E8C;
-  --charcoal: #2A2724;
+body {
+  background-color: #F3EBF7;
+  color: #30133E;
 }
 
-body {
-  background-color: var(--cream);
-  color: var(--charcoal);
+/* The Breathing Lungs Animation */
+@keyframes breathe {
+  0%, 100% { transform: scale(1); opacity: 0.6; }
+  50% { transform: scale(1.08); opacity: 1; }
+}
+.animate-breathe {
+  animation: breathe 4s ease-in-out infinite;
+  transform-origin: center;
 }
