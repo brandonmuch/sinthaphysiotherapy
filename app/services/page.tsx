@@ -125,7 +125,7 @@ export default function ServicesPage() {
             <article
               id={service.id}
               key={service.id}
-              className="service-card flex h-full flex-col overflow-hidden rounded-[24px] border border-[#30133E]/[0.06] bg-[#F3EBF7] shadow-[0_12px_34px_-28px_rgba(48,19,62,0.55)]"
+              className="service-card flex h-full flex-col overflow-hidden rounded-[24px] border border-[#30133E]/[0.06] bg-[#EDE3F4] shadow-[0_12px_34px_-28px_rgba(48,19,62,0.55)]"
             >
               <div className={`relative ${'imageFrame' in service ? service.imageFrame : 'aspect-[4/5]'} overflow-hidden bg-[#E8D8F0]`}>
                 <Image
@@ -148,26 +148,26 @@ export default function ServicesPage() {
                     <p key={paragraph}>{paragraph}</p>
                   ))}
                 </div>
-                <div className="mt-auto pt-12">
+                <div className="mt-8">
                   <SpecularButton
                     className="self-start"
-                  size="sm"
-                  radius={999}
-                  tint="#DBC1E8"
-                  tintOpacity={0.12}
-                  textColor="#FFFFFF"
-                  lineColor="#DBC1E8"
-                  baseColor="#30133E"
-                  intensity={0.72}
-                  idleIntensity={0.14}
-                  shineSize={10}
-                  shineFade={34}
-                  thickness={1.1}
-                  glow={0.22}
-                  followMouse
-                  href="/contact"
-                >
-                  Ask a physio <span aria-hidden="true">↗</span>
+                    size="sm"
+                    radius={999}
+                    tint="#DBC1E8"
+                    tintOpacity={0.12}
+                    textColor="#FFFFFF"
+                    lineColor="#DBC1E8"
+                    baseColor="#30133E"
+                    intensity={0.72}
+                    idleIntensity={0.14}
+                    shineSize={10}
+                    shineFade={34}
+                    thickness={1.1}
+                    glow={0.22}
+                    followMouse
+                    href="/contact"
+                  >
+                    Ask a physio <span aria-hidden="true">↗</span>
                   </SpecularButton>
                 </div>
               </div>

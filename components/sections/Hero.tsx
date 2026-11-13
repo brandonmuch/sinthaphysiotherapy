@@ -12,7 +12,7 @@ export function Hero() {
   const router = useRouter();
 
   return (
-    <section className="relative isolate flex min-h-[100svh] items-center justify-center overflow-hidden bg-[#30133E] px-6 pb-20 pt-32 text-center text-white">
+    <section className="sintha-hero relative isolate flex min-h-[100svh] items-center justify-center overflow-hidden bg-[#30133E] px-6 pb-20 pt-32 text-center text-white">
       <div className="absolute inset-0 z-0" aria-hidden="true">
         <PatternWaves
           preset="silk"
