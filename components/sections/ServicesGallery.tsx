@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import CircularGallery from '@/components/ui/CircularGallery';
+import './ServicesGallery.css';
 
 type ServiceGalleryItem = {
   image: string;
