@@ -76,6 +76,7 @@ const SERVICES = [
     title: 'Postoperative recovery (all surgeries)',
     id: 'postoperative-recovery',
     image: '/uploads/patient-physio-session-a.jpg',
+    imageFrame: 'aspect-[3/2]',
     alt: 'A patient practising supported walking after illness or surgery',
     paragraphs: [
       'After surgery, early mobilisation and targeted physiotherapy reduce complications like blood clots, pneumonia, and prolonged immobility.',
@@ -126,7 +127,7 @@ export default function ServicesPage() {
               key={service.id}
               className="service-card flex h-full flex-col overflow-hidden rounded-[24px] border border-[#30133E]/[0.06] bg-[#F3EBF7] shadow-[0_12px_34px_-28px_rgba(48,19,62,0.55)]"
             >
-              <div className="relative aspect-[4/5] overflow-hidden bg-[#E8D8F0]">
+              <div className={`relative ${service.imageFrame ?? 'aspect-[4/5]'} overflow-hidden bg-[#E8D8F0]`}>
                 <Image
                   src={service.image}
                   alt={service.alt}
