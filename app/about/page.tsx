@@ -10,16 +10,6 @@ export default function AboutPage() {
       role: 'Trauma, Critical Care, Paediatrics',
       bio: 'Posheletso specialises in trauma and critical care, guiding patients through their most vulnerable moments with compassionate, expert care. Her paediatric focus ensures that the youngest patients receive gentle, effective treatment for optimal development.',
     },
-    {
-      name: 'Pumelela Noah',
-      role: 'Neuro Rehab, Trauma & ICU',
-      bio: 'Pumelela focuses on neurological rehabilitation and post-ICU recovery, helping patients restore function and adapt to new challenges with resilience and expert guidance.',
-    },
-    {
-      name: 'Keisha May',
-      role: 'Orthopaedics, Cardiothoracic Rehab',
-      bio: 'Keisha is passionate about orthopaedic and cardiothoracic rehabilitation, empowering patients to return to their active lifestyles through targeted, progressive therapy programs.',
-    },
   ];
 
   return (
