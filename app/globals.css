@@ -101,3 +101,29 @@ body {
     transition: none;
   }
 }
+
+
+.service-card {
+  transition: transform 180ms var(--ease-out);
+}
+
+.service-card-image {
+  transition: transform 500ms var(--ease-out);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .service-card:hover {
+    transform: translateY(-3px);
+  }
+
+  .service-card:hover .service-card-image {
+    transform: scale(1.035);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .service-card,
+  .service-card-image {
+    transition: none;
+  }
+}
