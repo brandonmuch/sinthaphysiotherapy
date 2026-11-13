@@ -151,23 +151,23 @@ export default function ServicesPage() {
                 <div className="mt-8">
                   <SpecularButton
                     className="self-start"
-                  size="sm"
-                  radius={999}
-                  tint="#DBC1E8"
-                  tintOpacity={0.12}
-                  textColor="#FFFFFF"
-                  lineColor="#DBC1E8"
-                  baseColor="#30133E"
-                  intensity={0.72}
-                  idleIntensity={0.14}
-                  shineSize={10}
-                  shineFade={34}
-                  thickness={1.1}
-                  glow={0.22}
-                  followMouse
-                  href="/contact"
-                >
-                  Ask a physio <span aria-hidden="true">↗</span>
+                    size="sm"
+                    radius={999}
+                    tint="#DBC1E8"
+                    tintOpacity={0.12}
+                    textColor="#FFFFFF"
+                    lineColor="#DBC1E8"
+                    baseColor="#30133E"
+                    intensity={0.72}
+                    idleIntensity={0.14}
+                    shineSize={10}
+                    shineFade={34}
+                    thickness={1.1}
+                    glow={0.22}
+                    followMouse
+                    href="/contact"
+                  >
+                    Ask a physio <span aria-hidden="true">↗</span>
                   </SpecularButton>
                 </div>
               </div>
