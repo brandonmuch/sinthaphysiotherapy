@@ -38,21 +38,21 @@ export function Footer() {
             <div className="mt-10">
               <SpecularButton
                 size="sm"
-              radius={999}
-              tint="#DBC1E8"
-              tintOpacity={0.14}
-              textColor="#FFFFFF"
-              lineColor="#DBC1E8"
-              baseColor="#3D2548"
-              intensity={0.78}
-              idleIntensity={0.16}
-              shineSize={10}
-              shineFade={34}
-              thickness={1.1}
-              glow={0.26}
-              followMouse
-              href="/contact"
-            >
+                radius={999}
+                tint="#DBC1E8"
+                tintOpacity={0.14}
+                textColor="#FFFFFF"
+                lineColor="#DBC1E8"
+                baseColor="#3D2548"
+                intensity={0.78}
+                idleIntensity={0.16}
+                shineSize={10}
+                shineFade={34}
+                thickness={1.1}
+                glow={0.26}
+                followMouse
+                href="/contact"
+              >
                 Booking information <span aria-hidden="true">↗</span>
               </SpecularButton>
             </div>
