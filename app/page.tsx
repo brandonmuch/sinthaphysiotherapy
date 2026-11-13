@@ -6,21 +6,21 @@ import { HomeServicesGallery } from '@/components/sections/HomeServicesGallery';
 const PILLARS = [
   {
     number: '1',
-    title: 'COMPREHENSIVE REHABILITATION',
+    title: 'Comprehensive rehabilitation',
     description: 'From bouncing back after surgery to navigating life post-stroke or managing neurological conditions, we’re with you every step of the way. Our personalised rehab plans are built to ease pain, restore movement, and boost strength, so you can feel confident in your body again.',
     image: '/images/u2428486467_Close-up_of_physiotherapy_tools_on_a_mat_or_woode_4cdd9653-899b-4c2e-8f1d-45ca.jpeg',
     alt: 'A close-up of physiotherapy tools on an exercise mat',
   },
   {
     number: '2',
-    title: 'SPECIALISED RESPIRATORY SUPPORT',
+    title: 'Specialised respiratory support',
     description: 'Struggling to catch your breath? With evidence-based respiratory physiotherapy, we help you breathe easier, manage chronic lung conditions, and recover from post-op or acute respiratory issues, one deep breath at a time.',
     image: '/images/u2428486467_Young_Coloured_South_African_woman_seated_calmly__1b852e40-efdd-48c9-9676-4899.jpeg',
     alt: 'A woman seated calmly in a quiet setting',
   },
   {
     number: '3',
-    title: 'HOLISTIC WELLNESS',
+    title: 'Holistic wellness',
     description: 'Physiotherapy isn’t just for when things go wrong — it’s also about helping life go right. Whether you’re managing the natural effects of ageing or bouncing back from general weakness, we’re here to help you move well, stay strong, and enjoy a better quality of life.',
     image: '/images/u2428486467_Middle-aged_Black_South_African_man_in_everyday_a_e9d82078-f7f4-4b7b-8b07-6d8b.jpeg',
     alt: 'A middle-aged man in a physiotherapy setting',
@@ -29,37 +29,37 @@ const PILLARS = [
 
 const SERVICES = [
   {
-    title: 'INPATIENT & OUTPATIENT PHYSIOTHERAPY',
+    title: 'Inpatient & outpatient physiotherapy',
     href: '/services',
     description: 'Personalised rehab plans for both hospital-based and outpatient clients — helping you recover from a wide range of physical conditions with expert, hands-on support.',
   },
   {
-    title: 'PAEDIATRIC PHYSIOTHERAPY & RESPIRATORY CARE',
+    title: 'Paediatric physiotherapy & respiratory care',
     href: '/services#paediatric-respiratory-support',
     description: 'Gentle, child-centred therapy focused on respiratory support because little lungs and growing bodies deserve specialised care.',
   },
   {
-    title: 'ICU & POST-HOSPITAL REHABILITATION',
+    title: 'ICU & post-hospital rehabilitation',
     href: '/services#advanced-respiratory-care',
     description: 'Recovering after a critical illness? We’re here to help. From breathing support to rebuilding strength, we guide your journey back to independence.',
   },
   {
-    title: 'POSTOPERATIVE RECOVERY',
+    title: 'Postoperative recovery',
     href: '/services#postoperative-recovery',
     description: 'Heal stronger, faster. Our targeted physiotherapy helps reduce complications, ease pain, and restore mobility after surgery, getting you back on your feet, safely.',
   },
   {
-    title: 'NEUROLOGICAL & VESTIBULAR REHABILITATION',
+    title: 'Neurological & vestibular rehabilitation',
     href: '/services#neurological-vestibular-rehabilitation',
     description: 'Support for stroke, Parkinson’s, balance issues, and more. Our customised rehab plans help retrain your brain and body to move with greater control and confidence.',
   },
   {
-    title: 'CHRONIC ILLNESS & FRAILTY MANAGEMENT',
+    title: 'Chronic illness & frailty management',
     href: '/services#renal-metabolic-care',
     description: 'Gentle, goal-based therapy for those living with long-term conditions or age-related challenges, helping you stay strong, steady, and independent.',
   },
   {
-    title: 'HOME VISITS',
+    title: 'Home visits',
     href: '/services#home-visits',
     description: 'Can’t come to us? We’ll come to you. Enjoy expert physiotherapy in the comfort of your home, perfect for ongoing care or mobility challenges.',
   },
@@ -108,19 +108,21 @@ export default function Home() {
 
           <div className="mt-14 grid gap-10 md:grid-cols-3 md:gap-8">
             {PILLARS.map((pillar) => (
-              <article key={pillar.number} className="group">
-                <div className="relative aspect-[5/4] overflow-hidden rounded-[1.35rem] bg-[#E9DDF0]">
+              <article key={pillar.number} className="home-pillar-card group overflow-hidden rounded-[1.5rem] border border-[#30133E]/[0.07] bg-[#F8F3FA]">
+                <div className="relative aspect-[5/4] overflow-hidden bg-[#E9DDF0]">
                   <Image
                     src={pillar.image}
                     alt={pillar.alt}
                     fill
                     sizes="(max-width: 768px) 100vw, 33vw"
-                    className="object-cover transition-transform duration-700 group-hover:scale-[1.035]"
+                    className="object-cover transition-transform duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] group-hover:scale-[1.04]"
                   />
                 </div>
-                <p className="mt-7 text-xs font-semibold tracking-[0.2em] text-[#8B6A9A]">{pillar.number.padStart(2, '0')}</p>
+                <div className="px-6 pb-7 pt-6 md:px-7">
+                <p className="text-xs font-semibold tracking-[0.12em] text-[#8B6A9A]">{pillar.number.padStart(2, '0')}</p>
                 <h3 className="mt-3 text-lg font-semibold tracking-[-0.02em] md:text-xl">{pillar.title}</h3>
                 <p className="copy-justified mt-4 text-sm leading-7 text-[#30133E]/75">{pillar.description}</p>
+                </div>
               </article>
             ))}
           </div>
@@ -157,7 +159,7 @@ export default function Home() {
               <Link
                 href={service.href}
                 key={service.title}
-                className="group grid gap-3 border-b border-[#30133E]/20 py-7 transition-colors hover:bg-white/45 sm:grid-cols-[48px_1fr_24px] sm:gap-5 sm:px-4"
+                className="home-service-link group grid gap-3 border-b border-[#30133E]/20 py-7 sm:grid-cols-[48px_1fr_24px] sm:gap-5 sm:px-4"
               >
                 <span className="pt-1 text-sm tabular-nums text-[#8B6A9A]">0{index + 1}</span>
                 <span>
@@ -191,10 +193,10 @@ export default function Home() {
       <section className="bg-[#30133E] px-6 py-20 text-white md:py-28">
         <div className="mx-auto flex max-w-7xl flex-col gap-10 md:flex-row md:items-end md:justify-between">
           <h2 className="max-w-4xl text-balance text-4xl font-semibold leading-[1.04] tracking-[-0.05em] md:text-6xl">
-            YOUR RECOVERY, YOUR PACE, OUR CARE
+            Your recovery, your pace, our care
           </h2>
           <Link href="/contact" className="inline-flex min-h-14 shrink-0 items-center justify-center rounded-full bg-[#DBC1E8] px-8 py-4 text-sm font-semibold text-[#30133E] transition hover:bg-white">
-            Contact Us Today <span aria-hidden="true" className="ml-3 text-lg">↗</span>
+            Contact us today <span aria-hidden="true" className="ml-3 text-lg">↗</span>
           </Link>
         </div>
       </section>
