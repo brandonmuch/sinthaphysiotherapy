@@ -99,7 +99,7 @@ export default function Home() {
               alt="A grandfather and grandson playing together on a couch"
               fill
               sizes="(max-width: 768px) 100vw, 44vw"
-              className="object-contain"
+              className="object-cover object-center"
             />
           </div>
           <div className="max-w-3xl">
