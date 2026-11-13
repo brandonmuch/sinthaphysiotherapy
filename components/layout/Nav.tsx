@@ -21,7 +21,7 @@ const ITEMS = [
       { label: 'Home', href: '/' },
       { label: 'About Sintha', href: '/about' },
       { label: 'All services', href: '/services' },
-      { label: 'Journal', href: '/blog' }
+      { label: 'Blog', href: '/blog' }
     ]
   },
   {
@@ -49,8 +49,8 @@ const NAV_STYLE = {
   '--cn-muted': 'rgba(48, 19, 62, 0.62)',
   '--cn-hover': 'rgba(48, 19, 62, 0.045)',
   '--cn-ring': 'rgba(139, 106, 154, 0.65)',
-  '--cn-tile': 'linear-gradient(180deg, #FFFFFF 0%, #F8F4FA 100%)',
-  '--cn-tile-rim': 'inset 0 0 0 1px rgba(48, 19, 62, 0.06), inset 0 1px 0 rgba(255,255,255,0.95), 0 4px 10px -5px rgba(48,19,62,0.14)',
+  '--cn-tile': 'linear-gradient(180deg, #F8F2FB 0%, #EEE3F3 100%)',
+  '--cn-tile-rim': 'inset 0 0 0 1px rgba(139, 106, 154, 0.2), inset 0 1px 0 rgba(255,255,255,0.96), 0 8px 18px -12px rgba(48,19,62,0.28)',
   '--cn-cta': 'linear-gradient(180deg, #4D2B5B 0%, #30133E 100%)',
   '--cn-cta-ink': '#FFFFFF',
   '--cn-cta-shadow': 'inset 0 1px 0 rgba(255,255,255,0.18), 0 6px 14px -8px rgba(48,19,62,0.38)',
