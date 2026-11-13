@@ -56,7 +56,7 @@ export default function BlogPage() {
                 <h2 className="mt-4 text-2xl font-semibold leading-tight tracking-[-0.03em] text-[#30133E] md:text-[1.7rem]">
                   {article.title}
                 </h2>
-                <p className="mt-4 flex-1 text-sm leading-7 text-[#30133E]/70">{article.description}</p>
+                <p className="copy-justified mt-4 flex-1 text-sm leading-7 text-[#30133E]/70">{article.description}</p>
                 <Link href={article.href} className="mt-8 inline-flex items-center gap-2 border-b border-[#30133E]/30 pb-2 text-sm font-semibold text-[#30133E] transition-colors hover:border-[#6B4B78] hover:text-[#6B4B78]">
                   {article.action} <span aria-hidden="true">↗</span>
                 </Link>
