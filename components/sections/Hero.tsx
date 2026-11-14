@@ -45,11 +45,11 @@ export function Hero() {
           <span className="mt-2 block font-semibold tracking-[-0.05em] text-white">Enhance Life.</span>
         </h1>
 
-        <h2 className="mx-auto mt-7 max-w-4xl text-balance text-[13px] font-medium tracking-[-0.01em] text-white sm:whitespace-nowrap sm:text-base md:text-lg">
+        <h2 className="mx-auto mt-7 max-w-4xl text-balance text-[15px] font-medium leading-snug tracking-[-0.01em] text-white sm:whitespace-nowrap sm:text-base md:text-lg">
           Specialised Physiotherapy for Children and Adults
         </h2>
 
-        <p className="mx-auto mt-4 max-w-4xl text-pretty text-xs leading-6 text-white sm:whitespace-nowrap sm:text-sm md:text-base">
+        <p className="mx-auto mt-4 max-w-4xl text-pretty text-sm leading-6 text-white sm:whitespace-nowrap sm:text-sm md:text-base">
           At Sintha Physiotherapy, we’re all about helping you feel good and move even better!
         </p>
 
