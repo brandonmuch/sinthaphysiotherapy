@@ -1,3 +1,4 @@
+import { InterfaceIcon } from '@/components/ui/InterfaceIcon';
 import Link from 'next/link';
 import SpecularButton from '@/components/ui/SpecularButton';
 import { FooterLogo } from '@/components/layout/FooterLogo';
@@ -53,7 +54,7 @@ export function Footer() {
                 followMouse
                 href="/contact"
               >
-                Booking information <span aria-hidden="true">↗</span>
+                Booking information <InterfaceIcon name="arrow-up-right" className="h-4 w-4" />
               </SpecularButton>
             </div>
           </div>
