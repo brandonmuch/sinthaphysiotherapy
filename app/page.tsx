@@ -1,3 +1,4 @@
+import { InterfaceIcon } from '@/components/ui/InterfaceIcon';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Hero } from '@/components/sections/Hero';
@@ -170,7 +171,7 @@ export default function Home() {
           </div>
           <div className="mt-12">
             <SpecularButton size="md" radius={999} tint="#DBC1E8" tintOpacity={0.12} textColor="#30133E" lineColor="#FFFFFF" baseColor="#F3EBF7" intensity={0.78} idleIntensity={0.2} shineSize={10} shineFade={34} thickness={1.1} glow={0.3} followMouse href="/about">
-              Who we are <span aria-hidden="true">↗</span>
+              Who we are <InterfaceIcon name="arrow-up-right" className="h-4 w-4" />
             </SpecularButton>
           </div>
         </div>
@@ -192,7 +193,7 @@ export default function Home() {
             </blockquote>
             <div className="mt-8">
               <SpecularButton size="md" radius={999} tint="#DBC1E8" tintOpacity={0.12} textColor="#FFFFFF" lineColor="#DBC1E8" baseColor="#30133E" intensity={0.72} idleIntensity={0.14} shineSize={10} shineFade={34} thickness={1.1} glow={0.22} followMouse href="/about">
-                Meet our team <span aria-hidden="true">↗</span>
+                Meet our team <InterfaceIcon name="arrow-up-right" className="h-4 w-4" />
               </SpecularButton>
             </div>
           </div>
@@ -221,7 +222,7 @@ export default function Home() {
               </p>
             </div>
             <SpecularButton size="md" radius={999} tint="#DBC1E8" tintOpacity={0.12} textColor="#FFFFFF" lineColor="#DBC1E8" baseColor="#30133E" intensity={0.72} idleIntensity={0.14} shineSize={10} shineFade={34} thickness={1.1} glow={0.22} followMouse href="/services">
-              View our services <span aria-hidden="true">↗</span>
+              View our services <InterfaceIcon name="arrow-up-right" className="h-4 w-4" />
             </SpecularButton>
           </div>
 
@@ -271,7 +272,7 @@ export default function Home() {
             Your recovery, your pace, our care
           </h2>
           <SpecularButton size="lg" radius={999} tint="#DBC1E8" tintOpacity={0.16} textColor="#FFFFFF" lineColor="#DBC1E8" baseColor="#3D2548" intensity={0.82} idleIntensity={0.18} shineSize={10} shineFade={34} thickness={1.1} glow={0.34} followMouse href="/contact">
-            Contact us today <span aria-hidden="true">↗</span>
+            Contact us today <InterfaceIcon name="arrow-up-right" className="h-4 w-4" />
           </SpecularButton>
         </div>
       </section>
