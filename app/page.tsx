@@ -243,7 +243,7 @@ export default function Home() {
                   <span className="block text-base font-semibold tracking-[-0.015em]">{service.title}</span>
                   <span className="copy-justified mt-3 block max-w-2xl text-sm leading-7 text-[#29262D]/75">{service.description}</span>
                 </span>
-                <span className="hidden text-xl text-[#6B4B78] transition-transform duration-200 ease-out group-hover:translate-x-1 sm:block">↗</span>
+                <span className="hidden text-xl text-[#6B4B78] transition-transform duration-200 ease-out group-hover:translate-x-1 sm:block"><InterfaceIcon name="arrow-up-right" className="h-5 w-5" /></span>
               </Link>
             ))}
           </div>
