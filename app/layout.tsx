@@ -7,6 +7,7 @@ import '@/components/ui/AccordionGallery.css';
 import { Nav } from '@/components/layout/Nav';
 import { Footer } from '@/components/layout/Footer';
 import SplashCursor from '@/components/ui/SplashCursor';
+import { CookieConsent } from '@/components/providers/CookieConsent';
 
 const openSans = localFont({
   src: [
@@ -56,6 +57,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Nav />
         <main id="main-content" tabIndex={-1}>{children}</main>
         <Footer />
+        <CookieConsent />
       </body>
     </html>
   );
