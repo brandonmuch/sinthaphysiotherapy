@@ -51,9 +51,6 @@ export default function ServicesGallery({ items }: { items: ServiceGalleryItem[]
       {active && (
         <div className="mt-5">
           <div className="mb-3 flex items-center justify-between gap-3 sm:justify-end sm:gap-3">
-            <span className="text-xs font-medium tabular-nums text-[#DBC1E8] sm:hidden">
-              {String(activeIndex + 1).padStart(2, '0')} / {String(items.length).padStart(2, '0')}
-            </span>
             <div className="flex items-center gap-2">
               <button
                 type="button"
@@ -79,9 +76,6 @@ export default function ServicesGallery({ items }: { items: ServiceGalleryItem[]
             aria-live="polite"
             aria-atomic="true"
           >
-            <p className="mb-3 hidden text-center text-xs font-medium tabular-nums text-[#6B4B78] sm:block">
-              {String(activeIndex + 1).padStart(2, '0')} / {String(items.length).padStart(2, '0')}
-            </p>
             <h3 className="mx-auto max-w-3xl text-center text-xl font-semibold leading-tight tracking-[-0.03em] text-[#30133E] sm:text-2xl md:text-3xl">
               {active.title}
             </h3>
