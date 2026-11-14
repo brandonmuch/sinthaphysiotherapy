@@ -2,6 +2,7 @@ import { InterfaceIcon } from '@/components/ui/InterfaceIcon';
 import Link from 'next/link';
 import SpecularButton from '@/components/ui/SpecularButton';
 import { FooterLogo } from '@/components/layout/FooterLogo';
+import { CookieSettingsLink } from '@/components/layout/CookieSettingsLink';
 
 export function Footer() {
   return (
@@ -65,7 +66,7 @@ export function Footer() {
           <p>Wezi Nyimba Physiotherapists Inc.</p>
           <Link href="/privacy-policy" className="transition-colors hover:text-[#DBC1E8]">Privacy policy</Link>
           <Link href="/privacy-policy#cookies" className="transition-colors hover:text-[#DBC1E8]">Cookie information</Link>
-          <a href="#cookie-settings" onClick={event => { event.preventDefault(); window.dispatchEvent(new Event('sintha:open-cookie-settings')); }} className="transition-colors hover:text-[#DBC1E8]">Cookie settings</a>
+          <CookieSettingsLink />
         </div>
       </div>
     </footer>
