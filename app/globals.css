@@ -590,3 +590,226 @@ main:focus { outline: none; }
     transition-duration: 0.01ms !important;
   }
 }
+
+
+/* Mobile layout guardrails and accessible site controls */
+@media (max-width: 640px) {
+  html,
+  body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: clip;
+  }
+
+  main {
+    min-width: 0;
+  }
+
+  .sintha-nav-bar {
+    min-height: 70px;
+    gap: 8px;
+    padding: 8px 10px 8px 14px;
+  }
+
+  .sintha-nav-logo img {
+    width: clamp(146px, 41vw, 170px);
+  }
+
+  .sintha-nav-actions .specular-button--sm {
+    min-height: 44px;
+    padding: 11px 16px;
+    font-size: 0.875rem;
+  }
+
+  .sintha-menu-topbar {
+    min-height: 76px;
+  }
+
+  .sintha-menu-logo {
+    max-width: min(68vw, 270px);
+  }
+
+  .sintha-menu-flow .flowing-menu__item {
+    min-height: 68px;
+  }
+
+  .sintha-menu-flow .flowing-menu__label {
+    font-size: clamp(1.8rem, 7.2vw, 2.5rem);
+    line-height: 1.08;
+  }
+
+  .sintha-menu-flow .flowing-menu__link {
+    padding-right: 8px;
+    padding-left: 8px;
+  }
+
+  .sintha-menu-bottom {
+    gap: 8px 14px;
+    padding-top: 12px;
+    font-size: 12px;
+  }
+
+  .sintha-card-glow,
+  .sintha-card-glow > .border-glow-inner {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .sintha-card-glow img {
+    display: block;
+    max-width: 100%;
+  }
+}
+
+.sintha-cookie-panel {
+  position: fixed;
+  z-index: 150;
+  right: max(16px, env(safe-area-inset-right));
+  bottom: max(16px, env(safe-area-inset-bottom));
+  left: max(16px, env(safe-area-inset-left));
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  width: min(760px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 22px;
+  border: 1px solid rgba(48, 19, 62, 0.12);
+  border-radius: 22px;
+  background: #FFFFFF;
+  color: #29262D;
+  box-shadow: 0 20px 70px -28px rgba(20, 8, 27, 0.42);
+}
+
+.sintha-cookie-copy {
+  min-width: 0;
+  max-width: 470px;
+}
+
+.sintha-cookie-copy h2 {
+  margin: 0;
+  color: #30133E;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.sintha-cookie-copy p {
+  margin: 8px 0 0;
+  color: #45404A;
+  font-size: 13px;
+  line-height: 1.65;
+}
+
+.sintha-cookie-copy a {
+  display: inline-block;
+  margin-top: 10px;
+  color: #6B4B78;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.sintha-cookie-actions {
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 174px;
+}
+
+.sintha-cookie-actions button {
+  min-height: 42px;
+  padding: 10px 14px;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.sintha-cookie-settings {
+  position: fixed;
+  z-index: 80;
+  right: max(14px, env(safe-area-inset-right));
+  bottom: max(14px, env(safe-area-inset-bottom));
+  min-height: 40px;
+  padding: 10px 14px;
+  font-size: 12px;
+  box-shadow: 0 8px 24px -14px rgba(20, 8, 27, 0.6);
+}
+
+.privacy-policy-copy {
+  max-width: 68ch;
+  color: #45404A;
+  font-size: 16px;
+  line-height: 1.85;
+}
+
+.privacy-policy-copy section + section {
+  margin-top: 2.25rem;
+}
+
+.privacy-policy-copy h2 {
+  margin-bottom: 0.55rem;
+  color: #30133E;
+  font-size: clamp(1.2rem, 4vw, 1.45rem);
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: -0.025em;
+}
+
+.privacy-policy-copy p + p {
+  margin-top: 0.9rem;
+}
+
+#cookies {
+  scroll-margin-top: 120px;
+}
+
+@media (max-width: 640px) {
+  .sintha-cookie-panel {
+    right: 10px;
+    bottom: max(10px, env(safe-area-inset-bottom));
+    left: 10px;
+    display: block;
+    width: auto;
+    padding: 18px;
+    border-radius: 18px;
+  }
+
+  .sintha-cookie-copy h2 {
+    font-size: 17px;
+  }
+
+  .sintha-cookie-copy p {
+    font-size: 12px;
+    line-height: 1.6;
+  }
+
+  .sintha-cookie-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin-top: 16px;
+    min-width: 0;
+  }
+
+  .sintha-cookie-actions button {
+    min-width: 0;
+    min-height: 44px;
+    padding: 10px 9px;
+    white-space: normal;
+  }
+
+  .sintha-cookie-settings {
+    right: 10px;
+    bottom: max(10px, env(safe-area-inset-bottom));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sintha-cookie-panel,
+  .sintha-cookie-settings {
+    transition: none;
+  }
+}
