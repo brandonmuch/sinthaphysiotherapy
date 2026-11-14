@@ -50,7 +50,7 @@ export default function ServicesGallery({ items }: { items: ServiceGalleryItem[]
 
       {active && (
         <div className="mt-5">
-          <div className="mb-3 flex items-center justify-between gap-3 sm:justify-end sm:gap-3">
+          <div className="mb-3 flex items-center justify-center gap-3 sm:justify-end sm:gap-3">
             <div className="flex items-center gap-2">
               <button
                 type="button"
