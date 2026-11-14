@@ -109,7 +109,7 @@ const GALLERY_ITEMS = SERVICES.map(service => ({
 }));
 export default function ServicesPage() {
   return (
-    <div className="bg-white pb-28 pt-32 text-[#29262D]">
+    <div className="bg-white pb-28 pt-48 text-[#29262D] sm:pt-32">
       <div className="mx-auto max-w-7xl px-6 md:px-10">
         <header className="max-w-4xl">
           <h1 className="text-5xl font-semibold leading-[1.05] tracking-[-0.05em] md:text-7xl">
