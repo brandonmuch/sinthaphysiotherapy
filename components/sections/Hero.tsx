@@ -1,7 +1,6 @@
 'use client';
 
 import { InterfaceIcon } from '@/components/ui/InterfaceIcon';
-import { InterfaceIcon } from '@/components/ui/InterfaceIcon';
 import { motion, useReducedMotion } from 'framer-motion';
 import { useRouter } from 'next/navigation';
 import SpecularButton from '@/components/ui/SpecularButton';
