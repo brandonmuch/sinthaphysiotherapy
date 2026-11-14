@@ -8,6 +8,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/about',
     '/services',
     '/contact',
+    '/privacy-policy',
     '/blog',
     '/blog/renal-metabolic-care',
     '/blog/strong-at-every-age',
