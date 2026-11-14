@@ -1,10 +1,11 @@
 'use client';
 import { CountUp } from '@/components/ui/CountUp';
+import { InterfaceIcon } from '@/components/ui/InterfaceIcon';
 
 const STATS = [
   { to: 500, suffix: '+', label: 'Patients Supported' },
   { to: 7, suffix: '', label: 'Specialisations' },
-  { to: 5, suffix: '★', label: 'Average Rating' },
+  { to: 5, suffix: '', label: 'Average Rating' },
   { to: 4, suffix: '', label: 'Years of Practice' },
 ];
 
@@ -15,7 +16,7 @@ export function StatsStrip() {
         {STATS.map((s) => (
           <div key={s.label} className="text-center">
             <p className="display text-6xl text-charcoal">
-              <CountUp to={s.to} suffix={s.suffix} />
+              <CountUp to={s.to} suffix={s.suffix} />{s.label === "Average Rating" && <InterfaceIcon name="star" className="ml-2 inline h-7 w-7 align-middle" />}
             </p>
             <p className="mt-3 text-xs tracking-[0.1em] text-charcoal/50">{s.label}</p>
           </div>
