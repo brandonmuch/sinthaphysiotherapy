@@ -813,3 +813,27 @@ main:focus { outline: none; }
     transition: none;
   }
 }
+
+
+/* Keep decorative card glows from extending the mobile page's scroll width. */
+@media (max-width: 640px) {
+  html,
+  body {
+    overscroll-behavior-x: none;
+  }
+
+  .border-glow-card {
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  .border-glow-card > .edge-light {
+    inset: 0;
+  }
+
+  .sintha-card-glow,
+  .sintha-card-glow > .border-glow-inner {
+    min-width: 0;
+    max-width: 100%;
+  }
+}
