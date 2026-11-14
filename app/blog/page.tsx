@@ -29,6 +29,7 @@ const ARTICLES = [
     subtitle: 'What Every Parent Should Know',
     category: 'Paediatric respiratory care',
     image: '/images/224639_153886ad0cdc4784891ee393e60f23d4~mv2.jpeg',
+    imageFit: 'contain',
     alt: 'Illustrated guide to signs of respiratory distress in infants',
     description: 'Understand respiratory syncytial virus (RSV) and the signs parents should know about in babies and young children.',
     href: '/blog/recognising-rsv',
@@ -98,7 +99,7 @@ export default function BlogPage() {
                   fill
                   unoptimized
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  className="blog-card-image object-cover object-center"
+                  className={`blog-card-image ${article.imageFit === 'contain' ? 'object-contain p-2' : 'object-cover object-center'}`}
                 />
               </ArticleLink>
               <div className="flex flex-1 flex-col p-7 md:p-8">
