@@ -200,13 +200,7 @@ export default function HomePage() {
       <section className="who-section">
         <div className="site-container who-section__layout">
           <div className="who-section__copy">
-            <p className="section-kicker" style={{ color: '#30133F' }}>
-              Who we are
-            </p>
             <h2>Let’s get you living life to the fullest — one step, stretch, and breath at a time.</h2>
-            <Link className="site-button site-button--light" href="/about">
-              Who we are
-            </Link>
           </div>
         </div>
       </section>
@@ -271,14 +265,7 @@ export default function HomePage() {
       <section className="home-cta">
         <div className="site-container home-cta__layout">
           <div>
-            <p className="section-kicker" style={{ color: '#DBC1E8' }}>
-              Personalised physiotherapy
-            </p>
             <h2>Breathe easier. Move stronger. Heal fully.</h2>
-            <p>
-              Our team is here to support your recovery with hands-on care and a plan shaped around
-              you.
-            </p>
           </div>
           <a className="site-button" href={WHATSAPP_LINK} target="_blank" rel="noreferrer">
             Contact us today
