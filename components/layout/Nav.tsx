@@ -1,5 +1,7 @@
 'use client';
 
+import { InterfaceIcon } from '@/components/ui/InterfaceIcon';
+import { InterfaceIcon } from '@/components/ui/InterfaceIcon';
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -65,7 +67,7 @@ export function Nav() {
               aria-expanded={open}
               aria-controls="sintha-fullscreen-menu"
             >
-              Menu <span aria-hidden="true">☰</span>
+              Menu <InterfaceIcon name="menu" className="h-5 w-5" />
             </SpecularButton>
 
             <SpecularButton
@@ -87,7 +89,7 @@ export function Nav() {
               href={BOOKING_LINK}
               external
             >
-              Book an assessment <span aria-hidden="true">↗</span>
+              Book an assessment <InterfaceIcon name="arrow-up-right" className="h-4 w-4" />
             </SpecularButton>
           </div>
         </div>
@@ -123,7 +125,7 @@ export function Nav() {
               proximity={160}
               onClick={() => setOpen(false)}
             >
-              Close <span aria-hidden="true">×</span>
+              Close <InterfaceIcon name="close" className="h-5 w-5" />
             </SpecularButton>
           </div>
 
