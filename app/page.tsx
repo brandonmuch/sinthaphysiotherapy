@@ -128,7 +128,7 @@ export default function HomePage() {
           <div className="home-hero__media" aria-label="Sintha Physiotherapy team and patient care">
             <div className="home-hero__image-main">
               <Image
-                src="/images/u2428486467_dark-skinned_Black_female_physioh"
+                src="/images/u2428486467_dark-skinned_Black_female_physiotherapist_wearing_129f260b-d7a4-4b95-afb1-2559.png"
                 alt="A physiotherapist ready to support a patient"
                 fill
                 priority
