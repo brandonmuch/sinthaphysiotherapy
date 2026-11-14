@@ -1050,6 +1050,27 @@ const CircularGallery = ({
     >
       <canvas ref={canvasRef} className={CLASSES.canvas} aria-hidden="true" />
       <div ref={labelsRef} className={CLASSES.labels} aria-hidden="true" />
+      <div className="circular-gallery-mobile" aria-label="Swipe through the gallery">
+        {list.map((item, index) => (
+          <button
+            key={`${item.image}-mobile-${index}`}
+            type="button"
+            className={`circular-gallery-mobile-card${index === active ? ' is-active' : ''}`}
+            aria-label={`Show ${item.text || item.alt || `image ${index + 1}`}, ${index + 1} of ${count}`}
+            aria-pressed={index === active}
+            onClick={() => {
+              setActive(index);
+              engineRef.current?.focus(index);
+              settingsRef.current.onActiveChange?.(index);
+            }}
+          >
+            <span className="circular-gallery-mobile-image">
+              <img src={item.image} alt={item.alt || item.text || ''} loading={index < 2 ? 'eager' : 'lazy'} style={{ objectPosition: item.position || 'center center' }} />
+            </span>
+            {showTitles && item.text && <span className="circular-gallery-mobile-title">{item.text}</span>}
+          </button>
+        ))}
+      </div>
       <div ref={captionRef} className={CLASSES.caption} aria-hidden={!open}>
         {current?.description && <p className={CLASSES.captionText}>{current.description}</p>}
       </div>
