@@ -36,7 +36,7 @@ body {
   margin: 0;
   background: var(--sintha-white);
   color: var(--sintha-black);
-  font-family: "Sintha DIN Next", var(--font-open-sans), Arial, sans-serif;
+  font-family: var(--font-open-sans), Arial, sans-serif;
   font-size: 17px;
   font-weight: 300;
   line-height: 1.55;
@@ -47,7 +47,7 @@ button,
 input,
 textarea,
 select {
-  font-family: "Sintha DIN Next", var(--font-open-sans), Arial, sans-serif;
+  font-family: var(--font-open-sans), Arial, sans-serif;
 }
 
 h1,
@@ -172,7 +172,7 @@ img {
   position: relative;
   z-index: 100;
   width: 100%;
-  background: var(--sintha-lilac);
+  background: var(--sintha-white);
 }
 
 .site-header__inner {
@@ -207,6 +207,7 @@ img {
 
 .site-nav a {
   position: relative;
+  font-family: "Sintha DIN Next", var(--font-open-sans), Arial, sans-serif;
   padding-block: 22px;
   color: var(--sintha-purple-ink);
   font-size: 16px;
@@ -514,42 +515,35 @@ img {
 .who-section {
   position: relative;
   overflow: hidden;
-  background: var(--sintha-purple);
-  padding-block: 84px;
+  background-color: #27212b;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.53), rgba(0, 0, 0, 0.53)), url("/images/224639_91e7f1d00cc249aab14266ca51cdbf90~mv2.jpeg");
+  background-position: center;
+  background-size: cover;
+  padding-block: 92px;
   color: var(--sintha-white);
 }
 
 .who-section__layout {
-  display: grid;
-  grid-template-columns: 1fr 0.9fr;
-  align-items: center;
-  gap: 58px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.who-section__copy {
+  max-width: 790px;
 }
 
 .who-section h2 {
-  max-width: 570px;
-  margin-bottom: 26px;
+  max-width: 790px;
+  margin: 0 auto 28px;
   color: var(--sintha-white);
   font-size: clamp(34px, 4.2vw, 54px);
 }
 
 .who-section p {
-  max-width: 550px;
   color: rgba(255, 255, 255, 0.9);
   font-size: 18px;
   line-height: 1.6;
-}
-
-.who-section__image {
-  position: relative;
-  height: 310px;
-  overflow: hidden;
-}
-
-.who-section__image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
 }
 
 .pillars-section {
@@ -676,9 +670,9 @@ img {
 }
 
 .home-cta {
-  background: var(--sintha-purple);
+  background: var(--sintha-white);
   padding-block: 82px;
-  color: var(--sintha-white);
+  color: var(--sintha-body);
 }
 
 .home-cta__layout {
@@ -691,14 +685,14 @@ img {
 .home-cta h2 {
   max-width: 690px;
   margin-bottom: 12px;
-  color: var(--sintha-white);
+  color: var(--sintha-purple);
   font-size: clamp(34px, 4.4vw, 54px);
 }
 
 .home-cta p {
   max-width: 640px;
   margin-bottom: 0;
-  color: rgba(255, 255, 255, 0.88);
+  color: var(--sintha-body);
   font-size: 18px;
 }
 
@@ -760,7 +754,7 @@ img {
 }
 
 .blog-invite {
-  background: var(--sintha-lilac);
+  background: var(--sintha-white);
   padding-block: 54px;
 }
 
@@ -849,8 +843,12 @@ img {
 }
 
 .services-closing {
-  background: var(--sintha-lilac);
+  background-color: #27212b;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.53), rgba(0, 0, 0, 0.53)), url("/images/224639_5b990c24f553474c837d37d995e1b759~mv2.jpeg");
+  background-position: center;
+  background-size: cover;
   padding-block: 64px;
+  color: var(--sintha-white);
 }
 
 .services-closing__layout {
@@ -862,12 +860,13 @@ img {
 
 .services-closing h2 {
   margin-bottom: 14px;
+  color: var(--sintha-white);
   font-size: clamp(30px, 4vw, 46px);
 }
 
 .services-closing p {
   margin-bottom: 0;
-  color: var(--sintha-body);
+  color: rgba(255, 255, 255, 0.9);
   font-size: 18px;
 }
 
@@ -928,7 +927,7 @@ img {
 }
 
 .affiliated-section {
-  background: var(--sintha-lilac);
+  background: var(--sintha-white);
   padding-block: 68px;
 }
 
@@ -944,7 +943,7 @@ img {
 }
 
 .affiliated-card {
-  background: rgba(255, 255, 255, 0.72);
+  background: var(--sintha-white);
   padding: 23px 22px;
 }
 
@@ -991,8 +990,11 @@ img {
 }
 
 .about-closing {
-  background: var(--sintha-purple);
-  padding-block: 64px;
+  background-color: #27212b;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.53), rgba(0, 0, 0, 0.53)), url("/images/224639_9602ead77c6b4ca6b5ac0f2959fb6635~mv2.jpeg");
+  background-position: center;
+  background-size: cover;
+  padding-block: 72px;
 }
 
 .about-closing h2 {
@@ -1034,7 +1036,7 @@ img {
 }
 
 .contact-form-section {
-  background: var(--sintha-pale);
+  background: var(--sintha-white);
   padding-block: 68px;
 }
 
@@ -1549,4 +1551,55 @@ button.site-button:not(.specular-button):hover {
   transform: none;
   border-color: var(--sintha-purple-ink);
   background: var(--sintha-purple-ink);
+}
+
+
+/* Use the actual Wix typefaces and retain the old footer breathing mark. */
+@font-face {
+  font-family: "Sintha DM Sans";
+  src: url("https://static.wixstatic.com/ufonts/fa213c_dd92a1847c624d908ae9ad2c30b9b722/woff2/file.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Sintha DIN Next";
+  src: url("https://static.parastorage.com/fonts/v2/eca8b0cd-45d8-43cf-aee7-ca462bc5497c/v1/din-next-w01-light.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@keyframes sintha-lungs-breathe {
+  0%, 100% { transform: scale(1, 1); }
+  50% { transform: scale(1.03, 1.04); }
+}
+
+.site-footer .sintha-footer-logo #sintha-lungs {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: sintha-lungs-breathe 4.8s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .site-footer .sintha-footer-logo #sintha-lungs {
+    animation: none;
+  }
+}
+
+.services-closing .services-closing__image {
+  display: none;
+}
+
+.about-closing h2 {
+  color: var(--sintha-white);
+}
+
+.blog-invite h2 {
+  color: var(--sintha-purple);
+}
+
+.home-cta .section-kicker {
+  color: var(--sintha-purple) !important;
 }
