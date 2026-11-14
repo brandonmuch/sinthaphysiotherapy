@@ -33,3 +33,11 @@
     transition: none;
   }
 }
+
+@media (max-width: 520px) {
+  .services-gallery button.services-gallery-arrow {
+    width: 42px;
+    height: 42px;
+    font-size: 0;
+  }
+}
