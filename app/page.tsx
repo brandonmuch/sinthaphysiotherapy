@@ -197,14 +197,13 @@ export default function Home() {
               </SpecularButton>
             </div>
           </div>
-          <div className="relative overflow-hidden rounded-[28px] bg-[#F3EBF7]">
+          <div className="relative aspect-[4/3] w-full min-w-0 overflow-hidden rounded-[28px] bg-[#F3EBF7] md:aspect-[3/2]">
             <Image
               src="/uploads/patient-meditating-outdoors.jpg"
               alt="A woman taking a peaceful moment outdoors among soft lilac flowers"
-              width={800}
-              height={533}
+              fill
               sizes="(max-width: 768px) 100vw, 52vw"
-              className="h-auto w-full object-cover"
+              className="object-cover object-center"
             />
           </div>
         </div>
