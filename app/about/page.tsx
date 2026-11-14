@@ -1,5 +1,4 @@
 import { InterfaceIcon } from '@/components/ui/InterfaceIcon';
-import { InterfaceIcon } from '@/components/ui/InterfaceIcon';
 import Image from 'next/image';
 import { FadeIn } from '@/components/ui/FadeIn';
 import SpecularButton from '@/components/ui/SpecularButton';
