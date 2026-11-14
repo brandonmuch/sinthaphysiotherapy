@@ -1050,7 +1050,22 @@ const CircularGallery = ({
     >
       <canvas ref={canvasRef} className={CLASSES.canvas} aria-hidden="true" />
       <div ref={labelsRef} className={CLASSES.labels} aria-hidden="true" />
-      <div className="circular-gallery-mobile" aria-label="Swipe through the gallery">
+      <div className="circular-gallery-mobile" aria-label="Swipe through the gallery" onScroll={event => {
+        const track = event.currentTarget;
+        const center = track.getBoundingClientRect().left + track.clientWidth / 2;
+        let nearest = 0;
+        let distance = Infinity;
+        Array.from(track.children).forEach((child, index) => {
+          const rect = child.getBoundingClientRect();
+          const nextDistance = Math.abs(rect.left + rect.width / 2 - center);
+          if (nextDistance < distance) { distance = nextDistance; nearest = index; }
+        });
+        if (nearest !== active) {
+          setActive(nearest);
+          engineRef.current?.focus(nearest);
+          settingsRef.current.onActiveChange?.(nearest);
+        }
+      }}>
         {list.map((item, index) => (
           <button
             key={`${item.image}-mobile-${index}`}
