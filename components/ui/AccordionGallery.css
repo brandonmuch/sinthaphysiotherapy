@@ -160,6 +160,31 @@
     font-size: 1rem;
     white-space: normal;
   }
+
+  /* Keep every service name visible on mobile, not only the expanded card. */
+  .accordion-gallery .ag-panel__label {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .accordion-gallery .ag-panel__bar,
+  .accordion-gallery .ag-panel__text {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .accordion-gallery .ag-panel__text {
+    display: block;
+    overflow: visible;
+    text-overflow: clip;
+    text-shadow: 0 2px 14px rgba(0, 0, 0, 0.7);
+  }
+
+  .accordion-gallery .ag-panel__label {
+    padding: 10px 12px;
+    border-radius: 12px;
+    background: linear-gradient(90deg, rgba(48, 19, 62, 0.82), rgba(48, 19, 62, 0.28));
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
