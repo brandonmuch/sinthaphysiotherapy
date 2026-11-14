@@ -821,6 +821,9 @@ const CircularGallery = ({
     };
 
     const onPointerDown = event => {
+      // The mobile track uses native horizontal scrolling. Do not start the
+      // desktop canvas drag gesture for touches that begin on its cards.
+      if (event.target.closest('.circular-gallery-mobile')) return;
       if (event.button !== 0 || event.target.closest('[data-gallery-close]')) return;
       const p = point(event);
       state.drag = {
