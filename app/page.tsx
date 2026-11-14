@@ -105,41 +105,21 @@ const WHATSAPP_LINK =
 export default function HomePage() {
   return (
     <div className="home-page">
-      <section className="home-hero">
+      <section className="home-hero home-hero--original">
         <div className="site-container home-hero__layout">
           <div className="home-hero__copy">
-            <h1>Empower movement. Enhance life.</h1>
-            <h2>Specialised physiotherapy for children and adults</h2>
-            <p>
-              At Sintha Physiotherapy, we’re all about helping you feel good and move even better.
-              We take a holistic, whole-person approach to your health, healing and well-being.
-            </p>
-            <div className="home-hero__actions">
-              <a className="site-button" href={WHATSAPP_LINK} target="_blank" rel="noreferrer">
-                Book an Assessment
-              </a>
-              <Link className="site-button site-button--outline" href="/services">
-                View our services
-              </Link>
-            </div>
+            <h1>Empower Movement. Enhance Life.</h1>
+            <h2>Specialised Physiotherapy for Children and Adults</h2>
+            <p>Specialised Physiotherapy for Children and Adults</p>
           </div>
-
-          <div className="home-hero__media" aria-label="Sintha Physiotherapy team and patient care">
+          <div className="home-hero__media" aria-hidden="true">
             <div className="home-hero__image-main">
               <Image
                 src="/images/u2428486467_dark-skinned_Black_female_physiotherapist_wearing_129f260b-d7a4-4b95-afb1-2559.png"
-                alt="A physiotherapist ready to support a patient"
+                alt=""
                 fill
                 priority
-                sizes="(max-width: 760px) 78vw, 38vw"
-              />
-            </div>
-            <div className="home-hero__image-small">
-              <Image
-                src="/uploads/patient-child-breathing.jpg"
-                alt="A child using a breathing device during physiotherapy"
-                fill
-                sizes="(max-width: 760px) 46vw, 18vw"
+                sizes="100vw"
               />
             </div>
           </div>
