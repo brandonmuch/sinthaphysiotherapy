@@ -108,7 +108,6 @@ export default function HomePage() {
       <section className="home-hero">
         <div className="site-container home-hero__layout">
           <div className="home-hero__copy">
-            <p className="section-kicker">Sintha Physiotherapy</p>
             <h1>Empower movement. Enhance life.</h1>
             <h2>Specialised physiotherapy for children and adults</h2>
             <p>
@@ -150,13 +149,13 @@ export default function HomePage() {
       <section className="home-intro">
         <div className="site-container home-intro__layout">
           <div className="home-intro__copy">
-            <p className="section-kicker">Care for the whole person</p>
-            <h2>Specialised care that looks beyond the condition</h2>
+            <h2>At Sintha Physiotherapy, we’re all about helping you feel good and move even better!</h2>
             <p>
+              We take a holistic, whole-person approach to your health, healing, and well-being.
               While we’re known for our expert care in respiratory physiotherapy, our services go
-              way beyond helping you breathe easier. Whether you’re bouncing back after surgery,
-              navigating life after a stroke, caring for a little one with health challenges or
-              adjusting to the natural changes that come with age, we’re here for you.
+              way beyond just helping you breathe easier. Whether you’re bouncing back after
+              surgery, navigating life after a stroke, caring for a little one with health
+              challenges, or adjusting to the natural changes that come with age, we’re here for you.
             </p>
             <p>
               From neurological to vestibular conditions, or simply feeling a bit weaker than
@@ -164,29 +163,32 @@ export default function HomePage() {
               way. With tailored physiotherapy plans designed just for you, we’ll help you move
               with more confidence, breathe with ease and get back to doing the things you love.
             </p>
+            <Link className="site-button" href="/about">
+              Who we are
+            </Link>
           </div>
 
           <div className="intro-collage" aria-label="Physiotherapy care for children and adults">
             <div className="intro-collage__large">
               <Image
-                src="/uploads/patient-paediatric-parent.jpg"
-                alt="A parent and child meeting with a healthcare professional"
+                src="/uploads/patient-elderly-recovery.jpg"
+                alt="A healthcare professional standing behind an elderly woman"
                 fill
                 sizes="(max-width: 760px) 90vw, 34vw"
               />
             </div>
             <div className="intro-collage__small">
               <Image
-                src="/uploads/patient-elderly-recovery.jpg"
-                alt="A physiotherapist supporting an older patient"
+                src="/uploads/patient-paediatric-parent.jpg"
+                alt="A woman holding a baby while talking to a healthcare professional"
                 fill
                 sizes="(max-width: 760px) 45vw, 17vw"
               />
             </div>
             <div className="intro-collage__small">
               <Image
-                src="/uploads/patient-grandfather-grandson.jpg"
-                alt="A grandfather and grandson spending time together"
+                src="/uploads/portrait-woman-a.jpg"
+                alt="A smiling woman"
                 fill
                 sizes="(max-width: 760px) 45vw, 17vw"
               />
@@ -211,14 +213,6 @@ export default function HomePage() {
 
       <section className="pillars-section">
         <div className="site-container">
-          <div className="pillars-section__heading">
-            <p className="section-kicker">Our approach</p>
-            <h2>Physiotherapy for everyday life</h2>
-            <p>
-              Let’s get you living life to the fullest, with care that supports movement, breathing
-              and well-being.
-            </p>
-          </div>
           <div className="pillar-grid">
             {PILLARS.map((pillar) => (
               <article className="pillar-card" key={pillar.number}>
@@ -247,8 +241,7 @@ export default function HomePage() {
         <div className="site-container">
           <div className="snapshot-section__top">
             <div>
-              <p className="section-kicker">Quick service snapshot</p>
-              <h2>Support through every stage of recovery</h2>
+              <h2>Quick service snapshot</h2>
             </div>
             <Link className="site-button site-button--outline" href="/services">
               View our services today
@@ -264,10 +257,6 @@ export default function HomePage() {
 
       <section className="home-services">
         <div className="site-container">
-          <div className="home-services__heading">
-            <p className="section-kicker">How we can help</p>
-            <h2>Physiotherapy tailored to your needs</h2>
-          </div>
           <div className="home-services__grid">
             {HOME_SERVICES.map((service) => (
               <article className="home-service" key={service.title}>
@@ -275,11 +264,6 @@ export default function HomePage() {
                 <p>{service.description}</p>
               </article>
             ))}
-          </div>
-          <div style={{ marginTop: 34 }}>
-            <Link className="site-button" href="/services">
-              Explore all services
-            </Link>
           </div>
         </div>
       </section>
@@ -296,7 +280,7 @@ export default function HomePage() {
               you.
             </p>
           </div>
-          <a className="site-button site-button--light" href={WHATSAPP_LINK} target="_blank" rel="noreferrer">
+          <a className="site-button" href={WHATSAPP_LINK} target="_blank" rel="noreferrer">
             Contact us today
           </a>
         </div>
@@ -305,11 +289,7 @@ export default function HomePage() {
       <section className="faq-section">
         <div className="site-container faq-section__layout">
           <div>
-            <p className="section-kicker">Questions and answers</p>
             <h2>Frequently asked questions</h2>
-            <p className="section-intro">
-              A few helpful details before your first appointment.
-            </p>
           </div>
           <div className="faq-list">
             {FAQS.map((item) => (
@@ -325,7 +305,6 @@ export default function HomePage() {
       <section className="blog-invite">
         <div className="site-container blog-invite__layout">
           <div>
-            <p className="section-kicker">Sintha Physiotherapy</p>
             <h2>Your recovery, your pace, our care.</h2>
           </div>
           <Link className="site-button" href="/blog">
