@@ -1,3 +1,5 @@
+import { InterfaceIcon } from '@/components/ui/InterfaceIcon';
+import { InterfaceIcon } from '@/components/ui/InterfaceIcon';
 import Image from 'next/image';
 import SpecularButton from '@/components/ui/SpecularButton';
 import SinthaCard from '@/components/ui/SinthaCard';
@@ -40,7 +42,7 @@ export default function ContactPage() {
                 href={WHATSAPP_LINK}
                 external
               >
-                WhatsApp us <span aria-hidden="true">↗</span>
+                WhatsApp us <InterfaceIcon name="arrow-up-right" className="h-4 w-4" />
               </SpecularButton>
               <SpecularButton
                 size="md"
@@ -111,7 +113,7 @@ export default function ContactPage() {
               href={WHATSAPP_LINK}
               external
             >
-              Start a WhatsApp chat <span aria-hidden="true">↗</span>
+              Start a WhatsApp chat <InterfaceIcon name="arrow-up-right" className="h-4 w-4" />
             </SpecularButton>
             </article>
           </SinthaCard>
@@ -150,7 +152,7 @@ export default function ContactPage() {
                 rel="noreferrer"
                 className="mt-6 inline-flex text-sm font-semibold text-[#30133E] underline decoration-[#8B6A9A]/50 underline-offset-4 hover:text-[#6B4B78]"
               >
-                Get directions ↗
+                Get directions <InterfaceIcon name="arrow-up-right" className="ml-1 inline h-4 w-4" />
               </a>
               </article>
             </SinthaCard>
@@ -208,7 +210,7 @@ export default function ContactPage() {
               href={WHATSAPP_LINK}
               external
             >
-              Book an assessment <span aria-hidden="true">↗</span>
+              Book an assessment <InterfaceIcon name="arrow-up-right" className="h-4 w-4" />
             </SpecularButton>
           </div>
         </section>
