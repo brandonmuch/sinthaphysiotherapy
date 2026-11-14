@@ -1,3 +1,4 @@
+import { InterfaceIcon } from '@/components/ui/InterfaceIcon';
 import Image from 'next/image';
 import { FadeIn } from '@/components/ui/FadeIn';
 import SpecularButton from '@/components/ui/SpecularButton';
@@ -173,7 +174,7 @@ export default function AboutPage() {
               href="https://wa.me/27670721908"
               external
             >
-              Contact us <span aria-hidden="true">↗</span>
+              Contact us <InterfaceIcon name="arrow-up-right" className="h-4 w-4" />
             </SpecularButton>
           </div>
         </section>

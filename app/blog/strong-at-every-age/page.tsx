@@ -1,3 +1,4 @@
+import { InterfaceIcon } from '@/components/ui/InterfaceIcon';
 import Link from 'next/link';
 import Image from 'next/image';
 import SpecularButton from '@/components/ui/SpecularButton';
@@ -12,7 +13,7 @@ export default function StrongAtEveryAgePage() {
     <article className="min-h-screen bg-white pb-24 pt-32 text-[#29262D]">
       <div className="mx-auto max-w-3xl px-6 md:px-10">
         <Link href="/blog" className="inline-flex items-center gap-2 text-sm font-semibold text-[#6B4B78] hover:underline">
-          <span aria-hidden="true">←</span> Back to blog
+          <InterfaceIcon name="arrow-left" className="h-4 w-4" /> Back to blog
         </Link>
 
         <p className="mt-10 text-xs font-semibold tracking-[0.08em] text-[#8B6A9A]">Geriatrics · 15 October 2025 · 2 min read</p>
@@ -81,7 +82,7 @@ export default function StrongAtEveryAgePage() {
             followMouse
             href="/contact"
           >
-            Book an assessment <span aria-hidden="true">↗</span>
+            Book an assessment <InterfaceIcon name="arrow-up-right" className="h-4 w-4" />
           </SpecularButton>
         </div>
       </div>

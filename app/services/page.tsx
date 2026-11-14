@@ -1,3 +1,4 @@
+import { InterfaceIcon } from '@/components/ui/InterfaceIcon';
 import Image from 'next/image';
 import SpecularButton from '@/components/ui/SpecularButton';
 import FluxLines from '@/components/ui/FluxLines';
@@ -183,7 +184,7 @@ Select a card or use the arrows to explore each service and its details.
             </p>
             <div className="mt-8">
               <SpecularButton size="md" radius={999} tint="#DBC1E8" tintOpacity={0.16} textColor="#FFFFFF" lineColor="#DBC1E8" baseColor="#30133E" intensity={0.82} idleIntensity={0.18} shineSize={10} shineFade={34} thickness={1.1} glow={0.3} followMouse href="/contact">
-                Book an assessment <span aria-hidden="true">↗</span>
+                Book an assessment <InterfaceIcon name="arrow-up-right" className="h-4 w-4" />
               </SpecularButton>
             </div>
           </div>

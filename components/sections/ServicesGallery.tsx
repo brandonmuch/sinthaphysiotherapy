@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import CircularGallery from '@/components/ui/CircularGallery';
+import { InterfaceIcon } from '@/components/ui/InterfaceIcon';
 import './ServicesGallery.css';
 
 type ServiceGalleryItem = {
@@ -48,14 +49,14 @@ export default function ServicesGallery({ items }: { items: ServiceGalleryItem[]
       </div>
 
       {active && (
-        <div className="mt-3 grid grid-cols-[40px_minmax(0,1fr)_40px] items-center gap-2 sm:grid-cols-[48px_minmax(0,1fr)_48px] sm:gap-5">
+        <div className="mt-3 grid grid-cols-[42px_minmax(0,1fr)_42px] items-center gap-2 sm:grid-cols-[48px_minmax(0,1fr)_48px] sm:gap-5">
           <button
             type="button"
             onClick={() => move(-1)}
             className="services-gallery-arrow"
             aria-label="Previous service"
           >
-            <span aria-hidden="true">←</span>
+            <InterfaceIcon name="chevron-left" className="h-5 w-5" />
           </button>
 
           <article
@@ -80,7 +81,7 @@ export default function ServicesGallery({ items }: { items: ServiceGalleryItem[]
             className="services-gallery-arrow"
             aria-label="Next service"
           >
-            <span aria-hidden="true">→</span>
+            <InterfaceIcon name="chevron-right" className="h-5 w-5" />
           </button>
         </div>
       )}

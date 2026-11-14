@@ -1,3 +1,4 @@
+import { InterfaceIcon } from '@/components/ui/InterfaceIcon';
 import Image from 'next/image';
 import Link from 'next/link';
 import SpecularButton from '@/components/ui/SpecularButton';
@@ -8,6 +9,7 @@ const ARTICLES = [
     title: 'Renal & Metabolic Care: Where Recovery Begins and Builds Into Strength',
     category: 'Renal and metabolic care',
     image: '/images/224639_4dc100e8d2e945a79919dc279d08b41a~mv2.jpeg',
+    imageFit: 'cover',
     alt: 'Existing Sintha Physiotherapy renal and metabolic care article image',
     description: 'Explore how physiotherapy supports recovery and strength alongside renal and metabolic care.',
     href: '/blog/renal-metabolic-care',
@@ -17,6 +19,7 @@ const ARTICLES = [
     title: 'Strong at Every Age: How Physiotherapy Helps Our Golden Crew',
     category: 'Geriatric physiotherapy',
     image: '/images/224639_f1933d0923ba40f6a7bffa90ac58da04~mv2.jpeg',
+    imageFit: 'cover',
     alt: 'Pink stethoscope adorned with yellow roses against a purple background',
     description: 'Growing older is a gift. More time for laughter, more stories to share, and more wisdom to pass on. But with age also come changes in our bodies, and sometimes those changes make life feel smaller than it should.',
     href: '/blog/strong-at-every-age',
@@ -27,6 +30,7 @@ const ARTICLES = [
     subtitle: 'What Every Parent Should Know',
     category: 'Paediatric respiratory care',
     image: '/images/224639_153886ad0cdc4784891ee393e60f23d4~mv2.jpeg',
+    imageFit: 'contain',
     alt: 'Illustrated guide to signs of respiratory distress in infants',
     description: 'Understand respiratory syncytial virus (RSV) and the signs parents should know about in babies and young children.',
     href: '/blog/recognising-rsv',
@@ -37,6 +41,7 @@ const ARTICLES = [
     subtitle: 'Breathing for Recovery with Sintha Physiotherapy',
     category: 'Respiratory physiotherapy',
     image: '/images/224639_5b990c24f553474c837d37d995e1b759~mv2.jpeg',
+    imageFit: 'cover',
     alt: 'Existing Sintha Physiotherapy Strong Women, Strong Lungs article image',
     description: 'Explore the role of breathing and physiotherapy in supporting recovery and lung health.',
     href: '/blog/strong-women-strong-lungs',
@@ -96,7 +101,7 @@ export default function BlogPage() {
                   fill
                   unoptimized
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  className="blog-card-image object-cover object-center"
+                  className={`blog-card-image ${article.imageFit === 'contain' ? 'object-contain p-2' : 'object-cover object-center'}`}
                 />
               </ArticleLink>
               <div className="flex flex-1 flex-col p-7 md:p-8">
@@ -113,7 +118,7 @@ export default function BlogPage() {
                   external={article.external}
                   className="mt-8 inline-flex items-center gap-2 border-b border-[#30133E]/30 pb-2 text-sm font-semibold text-[#30133E] transition-colors hover:border-[#6B4B78] hover:text-[#6B4B78]"
                 >
-                  Read article <span aria-hidden="true">↗</span>
+                  Read article <InterfaceIcon name="arrow-up-right" className="h-4 w-4" />
                 </ArticleLink>
               </div>
               </article>
@@ -127,7 +132,7 @@ export default function BlogPage() {
               Have a question about your recovery?
             </h2>
             <SpecularButton size="md" radius={999} tint="#DBC1E8" tintOpacity={0.16} textColor="#FFFFFF" lineColor="#DBC1E8" baseColor="#3D2548" intensity={0.82} idleIntensity={0.18} shineSize={10} shineFade={34} thickness={1.1} glow={0.34} followMouse href="/contact">
-              Speak to our team <span aria-hidden="true">↗</span>
+              Speak to our team <InterfaceIcon name="arrow-up-right" className="h-4 w-4" />
             </SpecularButton>
           </div>
         </div>
