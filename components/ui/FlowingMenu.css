@@ -211,3 +211,13 @@
   width: max-content;
   height: 100%;
 }
+
+@media (max-width: 640px) {
+  .sintha-menu-flow .flowing-menu__item {
+    min-height: 68px;
+  }
+
+  .sintha-menu-flow .flowing-menu__label {
+    font-size: clamp(1.8rem, 7.2vw, 2.5rem);
+  }
+}
