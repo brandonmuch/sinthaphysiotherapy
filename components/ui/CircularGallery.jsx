@@ -996,7 +996,10 @@ const CircularGallery = ({
     engineRef.current = {
       wake,
       open: index => openSlot(slotFor(index)),
-      focus: index => setSlot(slotFor(index), false),
+      focus: index => {
+        const slot = slotFor(index);
+        setSlot(slot, true);
+      },
       close
     };
 
@@ -1035,7 +1038,9 @@ const CircularGallery = ({
     const track = mobileTrackRef.current;
     const card = track?.children?.[controlledActiveIndex];
     if (card && track) {
-      const targetLeft = card.offsetLeft - (track.clientWidth - card.clientWidth) / 2;
+      const trackRect = track.getBoundingClientRect();
+      const cardRect = card.getBoundingClientRect();
+      const targetLeft = track.scrollLeft + cardRect.left - trackRect.left - (track.clientWidth - card.clientWidth) / 2;
       track.scrollTo({ left: targetLeft, behavior: 'smooth' });
     }
   }, [controlledActiveIndex]);

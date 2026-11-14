@@ -121,11 +121,11 @@ export default function ServicesPage() {
         </header>
 
         <SinthaCard
-          className="mt-8 -mx-6 md:-mx-10"
+          className="mx-auto mt-8 w-full min-w-0 max-w-7xl"
           backgroundColor="#30133E"
           borderRadius={28}
         >
-          <section className="relative isolate overflow-hidden rounded-[28px] bg-[#30133E] px-6 py-12 md:px-10 md:py-16">
+          <section className="relative isolate w-full min-w-0 overflow-hidden rounded-[28px] bg-[#30133E] px-5 py-10 sm:px-6 md:px-10 md:py-16">
             <div className="pointer-events-none absolute inset-0 z-0" aria-hidden="true">
               <FluxLines
                 colors={['#DBC1E8', '#8B6A9A', '#FFFFFF']}
@@ -147,7 +147,7 @@ export default function ServicesPage() {
               <div className="absolute inset-0 bg-[#30133E]/48" />
             </div>
 
-            <div className="relative z-10 mx-auto max-w-7xl">
+            <div className="relative z-10 mx-auto w-full min-w-0 max-w-7xl">
               <div className="mx-auto max-w-3xl text-center">
                 <h2 className="mt-4 text-3xl font-semibold leading-tight tracking-[-0.04em] text-white md:text-5xl">
                   Explore our services.

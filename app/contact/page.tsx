@@ -90,11 +90,11 @@ export default function ContactPage() {
           <SinthaCard className="h-full" backgroundColor="#F3EBF7">
             <article className="contact-card h-full rounded-[26px] border border-[#30133E]/10 bg-[#F3EBF7] p-8 md:p-10">
             <h2 className="text-3xl font-semibold tracking-[-0.035em] text-[#30133E]">Message us on WhatsApp.</h2>
-            <p className="copy-justified mt-4 max-w-lg text-base leading-7 text-[#29262D]/80">
+            <p className="mt-4 max-w-lg text-left text-base leading-7 text-[#29262D]/80">
               Send a message with a little about the type of physiotherapy support you are looking for.
             </p>
+            <div className="mt-9">
             <SpecularButton
-              className="mt-8"
               size="md"
               radius={999}
               tint="#DBC1E8"
@@ -114,6 +114,7 @@ export default function ContactPage() {
             >
               Start a WhatsApp chat <InterfaceIcon name="arrow-up-right" className="h-4 w-4" />
             </SpecularButton>
+            </div>
             </article>
           </SinthaCard>
 
