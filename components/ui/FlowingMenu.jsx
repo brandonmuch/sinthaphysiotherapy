@@ -1,6 +1,7 @@
 'use client';
 
 import { InterfaceIcon } from '@/components/ui/InterfaceIcon';
+import { InterfaceIcon } from '@/components/ui/InterfaceIcon';
 import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import './FlowingMenu.css';
