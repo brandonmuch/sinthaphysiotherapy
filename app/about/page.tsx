@@ -30,24 +30,24 @@ export default function AboutPage() {
     <div className="bg-white pb-28 pt-32 text-[#29262D]">
       <div className="mx-auto max-w-7xl px-6 md:px-10">
         <FadeIn>
-          <section className="grid items-center gap-10 overflow-hidden rounded-[32px] bg-[#F3EBF7] p-6 md:grid-cols-[0.95fr_1.05fr] md:gap-16 md:p-10">
-            <div>
-              <h1 className="max-w-2xl text-5xl font-semibold leading-[1.04] tracking-[-0.05em] text-[#30133E] md:text-7xl">
+          <section className="grid w-full min-w-0 grid-cols-1 items-center gap-8 overflow-hidden rounded-[32px] bg-[#F3EBF7] p-5 sm:p-6 md:grid-cols-[0.95fr_1.05fr] md:gap-16 md:p-10">
+            <div className="min-w-0 w-full">
+              <h1 className="max-w-2xl break-words text-[clamp(2.15rem,9vw,3rem)] font-semibold leading-[1.04] tracking-[-0.05em] text-[#30133E] md:text-7xl">
                 Meet our team of expert physiotherapists
               </h1>
-              <p className="copy-justified mt-6 max-w-xl text-[15px] leading-[1.75] text-[#29262D]/85 md:text-base">
+              <p className="mt-5 w-full max-w-xl break-words text-left text-[15px] leading-[1.75] text-[#29262D]/85 md:mt-6 md:text-base md:[text-align:justify]">
                 We are dedicated to providing comprehensive, compassionate care. We believe in treating the whole person, not just the condition, empowering you to move better and live better through evidence-based practice.
               </p>
             </div>
-            <SinthaCard className="h-full" backgroundColor="#F3EBF7" borderRadius={28}>
-              <div className="relative aspect-[3/2] overflow-hidden rounded-[28px] bg-[#F3EBF7]">
+            <SinthaCard className="h-full w-full min-w-0" backgroundColor="#F3EBF7" borderRadius={28}>
+              <div className="relative aspect-[4/3] w-full min-w-0 overflow-hidden rounded-[24px] bg-[#F3EBF7] sm:aspect-[3/2]">
                 <Image
                   src="/images/u2428486467_Young_Black_South_African_woman_in_activewear_wal_bb274feb-bb84-4439-ba94-fa2f.jpeg"
                   alt="A young woman in activewear at a physiotherapy clinic"
                   fill
                   priority
                   sizes="(max-width: 768px) 100vw, 50vw"
-                  className="object-cover object-[76%_center]"
+                  className="object-cover object-[70%_center]"
                 />
               </div>
             </SinthaCard>
