@@ -164,14 +164,13 @@ Select a card or use the arrows to explore each service and its details.
 
         <section className="mt-24 grid items-center gap-10 rounded-[28px] bg-[#F8F4FA] p-5 md:grid-cols-[0.95fr_1.05fr] md:gap-14 md:p-8">
           <SinthaCard className="h-full" backgroundColor="#FFFFFF" borderRadius={22}>
-            <div className="relative overflow-hidden rounded-[22px] bg-white">
+            <div className="relative aspect-[4/3] w-full min-w-0 overflow-hidden rounded-[22px] bg-white md:aspect-[3/2]">
               <Image
                 src="/uploads/patient-meditating-outdoors.jpg"
                 alt="A woman taking a peaceful moment outdoors among soft lilac flowers"
-                width={800}
-                height={533}
+                fill
                 sizes="(max-width: 768px) 100vw, 42vw"
-                className="h-auto w-full object-cover"
+                className="object-cover object-center"
               />
             </div>
           </SinthaCard>

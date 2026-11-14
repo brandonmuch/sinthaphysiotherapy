@@ -250,6 +250,7 @@ const CircularGallery = ({
   const fontRef = useRef(font);
   const [active, setActive] = useState(Number.isInteger(controlledActiveIndex) ? controlledActiveIndex : 0);
   const [open, setOpen] = useState(false);
+  const mobileTrackRef = useRef(null);
   const list = Array.isArray(items) && items.length ? items : DEFAULT_ITEMS;
   const settings = {
     items: list,
@@ -1028,7 +1029,15 @@ const CircularGallery = ({
   }, []);
 
   useEffect(() => {
-    if (Number.isInteger(controlledActiveIndex)) engineRef.current?.focus(controlledActiveIndex);
+    if (!Number.isInteger(controlledActiveIndex)) return;
+    setActive(controlledActiveIndex);
+    engineRef.current?.focus(controlledActiveIndex);
+    const track = mobileTrackRef.current;
+    const card = track?.children?.[controlledActiveIndex];
+    if (card && track) {
+      const targetLeft = card.offsetLeft - (track.clientWidth - card.clientWidth) / 2;
+      track.scrollTo({ left: targetLeft, behavior: 'smooth' });
+    }
   }, [controlledActiveIndex]);
 
   useEffect(() => {
@@ -1050,7 +1059,7 @@ const CircularGallery = ({
     >
       <canvas ref={canvasRef} className={CLASSES.canvas} aria-hidden="true" />
       <div ref={labelsRef} className={CLASSES.labels} aria-hidden="true" />
-      <div className="circular-gallery-mobile" aria-label="Swipe through the gallery" onScroll={event => {
+      <div ref={mobileTrackRef} className="circular-gallery-mobile" aria-label="Swipe through the gallery" onScroll={event => {
         const track = event.currentTarget;
         const center = track.getBoundingClientRect().left + track.clientWidth / 2;
         let nearest = 0;

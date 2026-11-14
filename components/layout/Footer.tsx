@@ -2,17 +2,18 @@ import { InterfaceIcon } from '@/components/ui/InterfaceIcon';
 import Link from 'next/link';
 import SpecularButton from '@/components/ui/SpecularButton';
 import { FooterLogo } from '@/components/layout/FooterLogo';
+import { CookieSettingsLink } from '@/components/layout/CookieSettingsLink';
 
 export function Footer() {
   return (
     <footer className="relative overflow-hidden bg-[#30133E] pb-10 pt-20 text-white">
       <div className="relative z-10 mx-auto max-w-7xl px-6 md:px-10">
         <div className="mb-14 grid gap-12 md:grid-cols-4">
-          <div className="md:col-span-2">
-            <Link href="/" className="relative mb-6 block w-[282px] max-w-full" aria-label="Sintha Physiotherapy home">
+          <div className="text-center md:col-span-2">
+            <Link href="/" className="relative mx-auto mb-6 block w-[282px] max-w-full" aria-label="Sintha Physiotherapy home">
               <FooterLogo />
             </Link>
-            <p className="max-w-sm text-sm leading-7 text-white">
+            <p className="mx-auto max-w-sm text-center text-sm leading-7 text-white">
               Personalised rehabilitation and specialised respiratory care for children and adults.
             </p>
           </div>
@@ -65,6 +66,7 @@ export function Footer() {
           <p>Wezi Nyimba Physiotherapists Inc.</p>
           <Link href="/privacy-policy" className="transition-colors hover:text-[#DBC1E8]">Privacy policy</Link>
           <Link href="/privacy-policy#cookies" className="transition-colors hover:text-[#DBC1E8]">Cookie information</Link>
+          <CookieSettingsLink />
         </div>
       </div>
     </footer>

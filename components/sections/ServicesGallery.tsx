@@ -75,17 +75,17 @@ export default function ServicesGallery({ items }: { items: ServiceGalleryItem[]
           </div>
 
           <article
-            className="min-w-0 w-full rounded-[22px] bg-[#F3EBF7] px-5 py-6 text-left text-[#29262D] sm:px-7 sm:py-8 md:px-10"
+            className="mx-auto w-full max-w-4xl min-w-0 rounded-[22px] bg-[#F3EBF7] px-5 py-6 text-left text-[#29262D] sm:px-7 sm:py-8 md:px-10"
             aria-live="polite"
             aria-atomic="true"
           >
             <p className="mb-3 hidden text-center text-xs font-medium tabular-nums text-[#6B4B78] sm:block">
               {String(activeIndex + 1).padStart(2, '0')} / {String(items.length).padStart(2, '0')}
             </p>
-            <h3 className="mx-auto max-w-3xl text-left text-xl font-semibold leading-tight tracking-[-0.03em] text-[#30133E] sm:text-center sm:text-2xl md:text-3xl">
+            <h3 className="mx-auto max-w-3xl text-center text-xl font-semibold leading-tight tracking-[-0.03em] text-[#30133E] sm:text-2xl md:text-3xl">
               {active.title}
             </h3>
-            <div className="mx-auto mt-4 max-w-3xl space-y-4 text-left text-[15px] leading-[1.75] text-[#29262D]/90 sm:text-[15px] md:text-base md:leading-7">
+            <div className="mx-auto mt-4 w-full max-w-3xl space-y-4 break-words text-left text-[15px] leading-[1.75] text-[#29262D]/90 sm:text-[15px] md:text-base md:leading-7">
               {active.paragraphs.map(paragraph => <p key={paragraph}>{paragraph}</p>)}
             </div>
           </article>
