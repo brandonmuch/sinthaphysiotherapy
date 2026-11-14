@@ -104,25 +104,15 @@ export default function AboutPage() {
 
       <section className="philosophy-section">
         <div className="site-container philosophy-section__layout">
-          <div>
-            <p className="section-kicker">Our approach</p>
+          <div className="philosophy-section__copy">
             <h2>Our team philosophy</h2>
             <p>
-              We believe in meeting each patient where they are, physically, emotionally and
-              functionally. Breathing is not just a mechanical act; it is deeply connected to how
-              we move, feel and heal. Our approach is holistic, hands-on and person-centred, with a
-              strong emphasis on early intervention, education and empowering patients to take an
-              active role in their recovery.
+              We believe in meeting each patient where they are, physically, emotionally, and
+              functionally. Breathing is not just a mechanical act; it’s deeply connected to how
+              we move, feel, and heal. Our approach is holistic, hands-on, and person-centred, with
+              a strong emphasis on early intervention, education, and empowering patients to take
+              an active role in their recovery.
             </p>
-          </div>
-          <div className="closing-image">
-            <Image
-              src="/uploads/patient-grandfather-grandson.jpg"
-              alt="A grandfather and grandson spending time together"
-              width={820}
-              height={560}
-              sizes="(max-width: 760px) 90vw, 44vw"
-            />
           </div>
         </div>
       </section>
