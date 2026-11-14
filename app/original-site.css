@@ -1859,3 +1859,34 @@ button.site-button:not(.specular-button):hover {
     padding: 20px;
   }
 }
+
+
+/* Keep the snapshot heading, CTA and bullet list aligned as one desktop composition. */
+@media (min-width: 761px) {
+  .site-header__booking {
+    border-radius: 999px;
+  }
+
+  .snapshot-section > .site-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    column-gap: 44px;
+  }
+
+  .snapshot-section__top {
+    display: block;
+    margin: 0;
+  }
+
+  .snapshot-section__top h2 {
+    margin-bottom: 16px;
+  }
+
+  .snapshot-list {
+    grid-column: 2;
+    grid-row: 1;
+    margin: 0;
+    padding-left: 22px;
+  }
+}
