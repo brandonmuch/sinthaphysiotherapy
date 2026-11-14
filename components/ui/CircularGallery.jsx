@@ -251,6 +251,8 @@ const CircularGallery = ({
   const [active, setActive] = useState(Number.isInteger(controlledActiveIndex) ? controlledActiveIndex : 0);
   const [open, setOpen] = useState(false);
   const mobileTrackRef = useRef(null);
+  const programmaticScrollRef = useRef(false);
+  const programmaticTimerRef = useRef(null);
   const list = Array.isArray(items) && items.length ? items : DEFAULT_ITEMS;
   const settings = {
     items: list,
@@ -1044,7 +1046,12 @@ const CircularGallery = ({
       const trackRect = track.getBoundingClientRect();
       const cardRect = card.getBoundingClientRect();
       const targetLeft = track.scrollLeft + cardRect.left - trackRect.left - (track.clientWidth - card.clientWidth) / 2;
+      programmaticScrollRef.current = true;
+      clearTimeout(programmaticTimerRef.current);
       track.scrollTo({ left: targetLeft, behavior: 'smooth' });
+      programmaticTimerRef.current = setTimeout(() => {
+        programmaticScrollRef.current = false;
+      }, 600);
     }
   }, [controlledActiveIndex]);
 
@@ -1068,6 +1075,7 @@ const CircularGallery = ({
       <canvas ref={canvasRef} className={CLASSES.canvas} aria-hidden="true" />
       <div ref={labelsRef} className={CLASSES.labels} aria-hidden="true" />
       <div ref={mobileTrackRef} className="circular-gallery-mobile" aria-label="Swipe through the gallery" onScroll={event => {
+        if (programmaticScrollRef.current) return;
         const track = event.currentTarget;
         const center = track.getBoundingClientRect().left + track.clientWidth / 2;
         let nearest = 0;
