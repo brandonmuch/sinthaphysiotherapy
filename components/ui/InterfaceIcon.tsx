@@ -7,7 +7,8 @@ type InterfaceIconName =
   | 'chevron-left'
   | 'chevron-right'
   | 'menu'
-  | 'close';
+  | 'close'
+  | 'star';
 
 type InterfaceIconProps = SVGProps<SVGSVGElement> & {
   name: InterfaceIconName;
@@ -48,6 +49,8 @@ export function InterfaceIcon({ name, className, ...props }: InterfaceIconProps)
         <path d="M20 12H5m7-7-7 7 7 7" />
       ) : name === 'chevron-left' ? (
         <path d="m15 5-7 7 7 7" />
+      ) : name === 'star' ? (
+        <path d="m12 3 2.7 5.4 6 .9-4.35 4.2 1.03 5.95L12 16.65l-5.38 2.8 1.03-5.95L3.3 9.3l6-.9L12 3z" />
       ) : (
         <path d="m9 5 7 7-7 7" />
       )}
