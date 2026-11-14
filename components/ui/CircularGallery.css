@@ -141,3 +141,102 @@
   scrollbar-width: thin;
   scrollbar-color: #8B6A9A transparent;
 }
+
+
+.circular-gallery-mobile {
+  display: none;
+}
+
+@media (max-width: 640px) {
+  .circular-gallery {
+    overflow: visible;
+    cursor: default;
+    touch-action: pan-x pan-y;
+  }
+
+  .circular-gallery-canvas,
+  .circular-gallery-labels,
+  .circular-gallery-caption,
+  .circular-gallery-close {
+    display: none !important;
+  }
+
+  .circular-gallery-mobile {
+    display: flex;
+    align-items: stretch;
+    gap: 14px;
+    width: 100%;
+    height: 100%;
+    padding: 8px 10vw 18px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: 10vw;
+    overscroll-behavior-x: contain;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .circular-gallery-mobile::-webkit-scrollbar {
+    display: none;
+  }
+
+  .circular-gallery-mobile-card {
+    display: flex;
+    flex: 0 0 80%;
+    flex-direction: column;
+    gap: 12px;
+    min-width: 0;
+    height: 100%;
+    padding: 0;
+    overflow: hidden;
+    border: 1px solid rgba(243, 235, 247, 0.28) !important;
+    border-radius: 20px !important;
+    background: rgba(243, 235, 247, 0.08) !important;
+    box-shadow: none !important;
+    color: #FFFFFF !important;
+    text-align: left;
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .circular-gallery-mobile-card.is-active {
+    border-color: rgba(219, 193, 232, 0.8) !important;
+    background: rgba(243, 235, 247, 0.14) !important;
+  }
+
+  .circular-gallery-mobile-image {
+    display: block;
+    flex: 1 1 auto;
+    min-height: 0;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 18px;
+    background: #24112e;
+  }
+
+  .circular-gallery-mobile-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .circular-gallery-mobile-title {
+    display: block;
+    flex: 0 0 auto;
+    min-height: 42px;
+    padding: 0 14px 12px;
+    color: #FFFFFF;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.35;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .circular-gallery-mobile {
+    scroll-behavior: auto;
+  }
+}
