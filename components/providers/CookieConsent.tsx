@@ -42,7 +42,7 @@ export function CookieConsent() {
     setOpen(false);
   };
 
-  if (!ready) return null;
+  if (!ready || !open) return null;
 
   return (
     <>
