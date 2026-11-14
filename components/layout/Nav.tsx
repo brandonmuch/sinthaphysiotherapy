@@ -1,164 +1,100 @@
 'use client';
 
-import { InterfaceIcon } from '@/components/ui/InterfaceIcon';
-import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import FlowingMenu from '@/components/ui/FlowingMenu';
-import SpecularButton from '@/components/ui/SpecularButton';
+import { useEffect, useState } from 'react';
 
-const MENU_ITEMS = [
-  { text: 'Home', link: '/', image: '/uploads/physio-tools-mat.jpg', marquee: 'Move with confidence' },
-  { text: 'About us', link: '/about', image: '/uploads/patient-grandfather-grandson.jpg', marquee: 'Care for the whole person' },
-  { text: 'Our services', link: '/services', image: '/uploads/patient-elderly-recovery.jpg', marquee: 'Support at every stage' },
-  { text: 'Blog', link: '/blog', image: '/images/224639_4dc100e8d2e945a79919dc279d08b41a~mv2.jpeg', marquee: 'Guidance and insights' },
-  { text: 'Contact', link: '/contact', image: '/uploads/physio-home-visit.jpg', marquee: 'Let’s take the next step' },
+const LINKS = [
+  { label: 'Home', href: '/' },
+  { label: 'Services', href: '/services' },
+  { label: 'About', href: '/about' },
+  { label: 'Contact', href: '/contact' },
+  { label: 'Blog', href: '/blog' },
 ];
 
 const BOOKING_LINK =
   'https://wa.me/27670721908?text=Hello%20Sintha%20Physiotherapy%2C%20I%20would%20like%20to%20book%20an%20assessment.';
 
 export function Nav() {
-  const [open, setOpen] = useState(false);
   const pathname = usePathname();
-  const activeIndex = Math.max(0, MENU_ITEMS.findIndex(item => item.link === pathname));
+  const [open, setOpen] = useState(false);
 
   useEffect(() => {
     if (!open) return;
-    const previous = document.body.style.overflow;
+
+    const previousOverflow = document.body.style.overflow;
     document.body.style.overflow = 'hidden';
+
     const closeOnEscape = (event: KeyboardEvent) => {
       if (event.key === 'Escape') setOpen(false);
     };
+
     window.addEventListener('keydown', closeOnEscape);
     return () => {
-      document.body.style.overflow = previous;
+      document.body.style.overflow = previousOverflow;
       window.removeEventListener('keydown', closeOnEscape);
     };
   }, [open]);
 
+  useEffect(() => {
+    setOpen(false);
+  }, [pathname]);
+
   return (
-    <>
-      <div className="sintha-nav-shell">
-        <div className="sintha-nav-bar">
-          <Link href="/" className="sintha-nav-logo" aria-label="Sintha Physiotherapy home">
-            <img src="/images/logo-long-dark.svg" alt="Sintha Physiotherapy" />
-          </Link>
+    <header className="site-header">
+      <div className="site-header__inner">
+        <Link href="/" className="site-header__logo" aria-label="Sintha Physiotherapy home">
+          <img src="/images/logo-long-dark.svg" alt="Sintha Physiotherapy" />
+        </Link>
 
-          <div className="sintha-nav-actions">
-            <SpecularButton
-              size="sm"
-              radius={999}
-              tint="#DBC1E8"
-              tintOpacity={0.12}
-              textColor="#FFFFFF"
-              lineColor="#DBC1E8"
-              baseColor="#30133E"
-              intensity={0.72}
-              idleIntensity={0.16}
-              shineSize={10}
-              shineFade={34}
-              thickness={1.1}
-              glow={0.24}
-              followMouse
-              proximity={150}
-              onClick={() => setOpen(true)}
-              aria-expanded={open}
-              aria-controls="sintha-fullscreen-menu"
+        <nav className="site-nav" aria-label="Main navigation">
+          {LINKS.map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              aria-current={pathname === item.href ? 'page' : undefined}
             >
-              Menu <InterfaceIcon name="menu" className="h-5 w-5" />
-            </SpecularButton>
+              {item.label}
+            </Link>
+          ))}
+        </nav>
 
-            <SpecularButton
-              size="sm"
-              radius={999}
-              tint="#DBC1E8"
-              tintOpacity={0.16}
-              textColor="#FFFFFF"
-              lineColor="#DBC1E8"
-              baseColor="#30133E"
-              intensity={0.82}
-              idleIntensity={0.18}
-              shineSize={10}
-              shineFade={34}
-              thickness={1.1}
-              glow={0.3}
-              followMouse
-              proximity={180}
-              href={BOOKING_LINK}
-              external
-            >
-              Book an assessment <InterfaceIcon name="arrow-up-right" className="h-4 w-4" />
-            </SpecularButton>
-          </div>
-        </div>
+        <a className="site-header__booking" href={BOOKING_LINK} target="_blank" rel="noreferrer">
+          Book an Assessment
+        </a>
+
+        <button
+          className="site-menu-toggle"
+          type="button"
+          aria-label={open ? 'Close menu' : 'Open menu'}
+          aria-expanded={open}
+          aria-controls="site-mobile-navigation"
+          onClick={() => setOpen((value) => !value)}
+        >
+          <span className="site-menu-toggle__lines" aria-hidden="true">
+            <span />
+            <span />
+            <span />
+          </span>
+        </button>
       </div>
 
       {open && (
-        <div
-          id="sintha-fullscreen-menu"
-          className="sintha-menu-overlay"
-          role="dialog"
-          aria-modal="true"
-          aria-label="Main navigation"
-        >
-          <div className="sintha-menu-topbar">
-            <Link href="/" onClick={() => setOpen(false)} className="sintha-menu-logo" aria-label="Sintha Physiotherapy home">
-              <img src="/images/logo-long-dark.svg" alt="Sintha Physiotherapy" />
-            </Link>
-            <SpecularButton
-              size="sm"
-              radius={999}
-              tint="#FFFFFF"
-              tintOpacity={0.08}
-              textColor="#FFFFFF"
-              lineColor="#DBC1E8"
-              baseColor="#30133E"
-              intensity={0.8}
-              idleIntensity={0.18}
-              shineSize={10}
-              shineFade={34}
-              thickness={1.1}
-              glow={0.28}
-              followMouse
-              proximity={160}
-              onClick={() => setOpen(false)}
+        <nav className="site-mobile-panel" id="site-mobile-navigation" aria-label="Mobile navigation">
+          {LINKS.map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              aria-current={pathname === item.href ? 'page' : undefined}
             >
-              Close <InterfaceIcon name="close" className="h-5 w-5" />
-            </SpecularButton>
-          </div>
-
-          <div className="sintha-menu-flow">
-            <FlowingMenu
-              items={MENU_ITEMS}
-              speed={60}
-              stretch={0.6}
-              magnet={0.25}
-              followCursor={0.4}
-              textColor="#FFFFFF"
-              bgColor="#30133E"
-              marqueeBgColor="#FFFFFF"
-              marqueeTextColor="#30133E"
-              borderColor="rgba(255,255,255,0.18)"
-              dimInactive
-              align="left"
-              showIndex={false}
-              showArrow
-              imageShape="rounded"
-              activeIndex={activeIndex}
-              onItemClick={() => setOpen(false)}
-              ariaLabel="Main navigation"
-              intro
-            />
-          </div>
-
-          <div className="sintha-menu-bottom">
-            <span>Sintha Physiotherapy</span>
-            <span>Fourways, Johannesburg</span>
-            <a href="tel:+27670721908">067 072 1908</a>
-          </div>
-        </div>
+              {item.label}
+            </Link>
+          ))}
+          <a className="site-mobile-panel__booking" href={BOOKING_LINK} target="_blank" rel="noreferrer">
+            Book an Assessment
+          </a>
+        </nav>
       )}
-    </>
+    </header>
   );
 }

@@ -1,194 +1,146 @@
-import { InterfaceIcon } from '@/components/ui/InterfaceIcon';
 import Image from 'next/image';
-import SpecularButton from '@/components/ui/SpecularButton';
-import FluxLines from '@/components/ui/FluxLines';
-import ServicesGallery from '@/components/sections/ServicesGallery';
-import SinthaCard from '@/components/ui/SinthaCard';
+import Link from 'next/link';
+
+const WHATSAPP_LINK =
+  'https://wa.me/27670721908?text=Hello%20Sintha%20Physiotherapy%2C%20I%20would%20like%20to%20ask%20about%20a%20physiotherapy%20service.';
 
 const SERVICES = [
   {
     title: 'Advanced respiratory care (ventilated patients)',
-    id: 'advanced-respiratory-care',
     image: '/uploads/patient-elderly-recovery.jpg',
-    alt: 'Respiratory care for an older patient',
+    alt: 'A physiotherapist supporting an older patient in hospital',
     paragraphs: [
       'This service is focused on patients who require or have recently been on mechanical ventilation.',
-      'Physiotherapists use airway clearance techniques to remove secretions from the lungs, improve lung expansion using breathing exercises or devices, and help wean patients off ventilators safely by gradually reintroducing active breathing efforts. These interventions help prevent secondary infections, reduce lung collapse, and speed up recovery while supporting better oxygen exchange.',
+      'Physiotherapists use airway clearance techniques to remove secretions from the lungs, improve lung expansion using breathing exercises or devices, and help wean patients off ventilators safely by gradually reintroducing active breathing efforts. These interventions help prevent secondary infections, reduce lung collapse and speed up recovery while supporting better oxygen exchange.',
     ],
   },
   {
     title: 'Reintroduction of active breathing for ventilator weaning',
-    id: 'ventilator-weaning',
-    image: '/uploads/patient-teen-treatment.jpg',
-    alt: 'A patient receiving respiratory support',
+    image: '/uploads/patient-mat-woman.jpg',
+    alt: 'A patient resting during physiotherapy treatment',
     paragraphs: [
-      'This specialised physiotherapy service focuses on safely and gradually reintroducing active breathing in patients who are preparing to come off mechanical ventilation. Through guided respiratory exercises, positioning techniques, and airway clearance strategies, we work to strengthen the respiratory muscles, improve lung function, and support independent breathing.',
+      'This specialised physiotherapy service focuses on safely and gradually reintroducing active breathing in patients who are preparing to come off mechanical ventilation. Through guided respiratory exercises, positioning techniques and airway clearance strategies, we work to strengthen the respiratory muscles, improve lung function and support independent breathing.',
     ],
   },
   {
     title: 'Cardiac & cardiovascular rehabilitation',
-    id: 'cardiac-cardiovascular-rehabilitation',
-    image: '/uploads/patient-balance-exercise.jpg',
-    alt: 'A patient working through a guided rehabilitation exercise',
+    image: '/uploads/portrait-man-a.jpg',
+    alt: 'A patient preparing for a rehabilitation session',
     paragraphs: [
-      'After a heart attack, surgery, or cardiovascular event, early movement is vital. Cardiac rehab includes gentle exercises to strengthen the heart, monitored activity programs, and breathing techniques.',
-      'This type of therapy lowers the risk of complications, promotes circulation, and gradually rebuilds the patient’s endurance. Education and support for long-term heart health are also included.',
+      'After a heart attack, surgery or cardiovascular event, early movement is vital. Cardiac rehab includes gentle exercises to strengthen the heart, monitored activity programmes and breathing techniques.',
+      'This type of therapy lowers the risk of complications, promotes circulation and gradually rebuilds the patient’s endurance. Education and support for long-term heart health are also included.',
     ],
   },
   {
     title: 'Paediatric respiratory support',
-    id: 'paediatric-respiratory-support',
-    image: '/images/service-paediatric.jpg',
-    alt: 'A child using a colourful respiratory breathing device',
+    image: '/uploads/patient-child-breathing.jpg',
+    alt: 'A child using a colourful breathing device during physiotherapy',
     paragraphs: [
-      'Children with conditions like asthma, cystic fibrosis, or post-surgical complications benefit from gentle but effective airway clearance and breathing retraining.',
-      'Therapy is child-friendly, often involving play-based activities, and aims to keep lungs clear, improve breathing patterns, and reduce hospital stays.',
+      'Children with conditions like asthma, cystic fibrosis or post-surgical complications benefit from gentle but effective airway clearance and breathing retraining.',
+      'Therapy is child-friendly, often involving play-based activities, and aims to keep lungs clear, improve breathing patterns and reduce hospital stays.',
     ],
   },
   {
     title: 'Home visits',
-    id: 'home-visits',
     image: '/uploads/physio-home-visit.jpg',
-    alt: 'A home physiotherapy visit',
+    alt: 'A physiotherapist assisting a patient at home',
     paragraphs: [
-      'Some patients require continued support at home due to mobility challenges, chronic illness, or post-hospital care. Home visits provide personalised physiotherapy in a familiar setting, ensuring consistency in rehab.',
+      'Some patients require continued support at home due to mobility challenges, chronic illness or post-hospital care. Home visits provide personalised physiotherapy in a familiar setting, ensuring consistency in rehab.',
       'Therapists bring the necessary equipment and tailor treatment to promote independence and confidence.',
     ],
   },
   {
     title: 'Neurological & vestibular rehabilitation',
-    id: 'neurological-vestibular-rehabilitation',
-    image: '/uploads/patient-walking-clinic.jpg',
-    alt: 'A patient practising walking during rehabilitation',
+    image: '/uploads/patient-balance-exercise.jpg',
+    alt: 'A patient working through a guided balance exercise',
     paragraphs: [
-      'For patients who’ve had strokes, brain injuries, or balance disorders, this therapy focuses on restoring movement and coordination.',
+      'For patients who’ve had strokes, brain injuries or balance disorders, this therapy focuses on restoring movement and coordination.',
       'Gait training helps people walk again, while balance therapy reduces fall risk. Vestibular rehab helps with dizziness or vertigo, and neuromuscular techniques support nerve recovery and functional independence.',
     ],
   },
   {
     title: 'Renal & metabolic care',
-    id: 'renal-metabolic-care',
-    image: '/images/u2428486467_realistic_image_of_a_plus-size_dark-skinned_India_3fb3a474-4aaf-4b02-bf3d-294e.jpeg',
-    alt: 'A patient portrait used to represent whole-person care',
+    image:
+      '/images/u2428486467_realistic_image_of_a_plus-size_dark-skinned_India_3fb3a474-4aaf-4b02-bf3d-294e.jpeg',
+    alt: 'A patient receiving support during a physiotherapy session',
     paragraphs: [
-      'For patients with kidney failure, diabetes, or complex metabolic disorders, physiotherapy can relieve fatigue, manage fluid retention, and improve strength.',
-      'These individuals often struggle with reduced mobility, so therapy focuses on light movement, improving energy levels, and preventing complications like pressure sores or muscle wasting.',
+      'For patients with kidney failure, diabetes or complex metabolic disorders, physiotherapy can relieve fatigue, manage fluid retention and improve strength.',
+      'These individuals often struggle with reduced mobility, so therapy focuses on light movement, improving energy levels and preventing complications like pressure sores or muscle wasting.',
     ],
   },
   {
     title: 'Postoperative recovery (all surgeries)',
-    id: 'postoperative-recovery',
-    image: '/uploads/patient-physio-session-a.jpg',
-    imageFrame: 'aspect-[3/2]',
-    alt: 'A patient practising supported walking after illness or surgery',
+    image: '/uploads/patient-walking-clinic.jpg',
+    alt: 'A patient walking in a physiotherapy clinic',
     paragraphs: [
-      'After surgery, early mobilisation and targeted physiotherapy reduce complications like blood clots, pneumonia, and prolonged immobility.',
-      'Therapy improves circulation, rebuilds strength, and supports a quicker and safer return to daily activities. Recovery plans are tailored to the type of surgery and the patient’s specific needs.',
+      'After surgery, early mobilisation and targeted physiotherapy reduce complications like blood clots, pneumonia and prolonged immobility.',
+      'Therapy improves circulation, rebuilds strength and supports a quicker and safer return to daily activities. Recovery plans are tailored to the type of surgery and the patient’s specific needs.',
     ],
   },
 ];
 
-
-const GALLERY_LABELS: Record<string, string> = {
-  'advanced-respiratory-care': 'Advanced respiratory care',
-  'ventilator-weaning': 'Ventilator weaning',
-  'cardiac-cardiovascular-rehabilitation': 'Cardiac rehabilitation',
-  'paediatric-respiratory-support': 'Paediatric respiratory support',
-  'home-visits': 'Home visits',
-  'neurological-vestibular-rehabilitation': 'Neurological & vestibular care',
-  'renal-metabolic-care': 'Renal & metabolic care',
-  'postoperative-recovery': 'Postoperative recovery',
-};
-
-const GALLERY_ITEMS = SERVICES.map(service => ({
-  image: service.image,
-  text: GALLERY_LABELS[service.id] ?? service.title,
-  title: service.title,
-  alt: service.alt,
-  paragraphs: service.paragraphs,
-}));
 export default function ServicesPage() {
   return (
-    <div className="bg-white pb-28 pt-48 text-[#29262D] sm:pt-32">
-      <div className="mx-auto max-w-7xl px-6 md:px-10">
-        <header className="max-w-4xl">
-          <h1 className="text-5xl font-semibold leading-[1.05] tracking-[-0.05em] md:text-7xl">
-            Our services
-          </h1>
-          <p className="copy-justified mt-7 max-w-3xl text-lg leading-8 text-[#29262D]/85">
-            We offer a comprehensive range of specialised physiotherapy services designed to meet your unique needs, from ICU to home visits.
-          </p>
-        </header>
+    <div className="services-page">
+      <section className="interior-hero">
+        <div className="site-container interior-hero__inner">
+          <p className="section-kicker">Physiotherapy that moves you forward.</p>
+          <h1>Our services</h1>
+        </div>
+      </section>
 
-        <SinthaCard
-          className="mx-auto mt-8 w-full min-w-0 max-w-7xl"
-          backgroundColor="#30133E"
-          borderRadius={28}
-        >
-          <section className="relative isolate w-full min-w-0 overflow-hidden rounded-[28px] bg-[#30133E] px-5 py-10 sm:px-6 md:px-10 md:py-16">
-            <div className="pointer-events-none absolute inset-0 z-0" aria-hidden="true">
-              <FluxLines
-                colors={['#DBC1E8', '#8B6A9A', '#FFFFFF']}
-                speed={0.32}
-                scale={1.55}
-                turbulence={0.9}
-                fluidity={0.1}
-                glow={1.1}
-                rimWidth={0.2}
-                lineWidth={1}
-                flowDirection="down"
-                opacity={0.52}
-                mouseInteraction
-                mouseStrength={0.32}
-                clickSwirl
-                className="absolute inset-0"
-                style={{ position: 'absolute', inset: 0 }}
-              />
-              <div className="absolute inset-0 bg-[#30133E]/48" />
-            </div>
+      <section className="services-section">
+        <div className="site-container">
+          <div className="service-grid">
+            {SERVICES.map((service) => (
+              <article className="service-card" key={service.title}>
+                <div className="service-card__image">
+                  <Image
+                    src={service.image}
+                    alt={service.alt}
+                    width={720}
+                    height={500}
+                    sizes="(max-width: 760px) 90vw, 23vw"
+                  />
+                </div>
+                <h2>{service.title}</h2>
+                {service.paragraphs.map((paragraph) => (
+                  <p key={paragraph}>{paragraph}</p>
+                ))}
+                <a className="service-card__link" href={WHATSAPP_LINK} target="_blank" rel="noreferrer">
+                  Ask a Physio
+                </a>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
 
-            <div className="relative z-10 mx-auto w-full min-w-0 max-w-7xl">
-              <div className="mx-auto max-w-3xl text-center">
-                <h2 className="mt-4 text-3xl font-semibold leading-tight tracking-[-0.04em] text-white md:text-5xl">
-                  Explore our services.
-                </h2>
-                <p className="mx-auto mt-3 max-w-2xl text-sm leading-7 text-white/90 md:text-base">
-Select a card or use the arrows to explore each service and its details.
-                </p>
-              </div>
-
-              <ServicesGallery items={GALLERY_ITEMS} />
-            </div>
-          </section>
-        </SinthaCard>
-
-        <section className="mt-24 grid items-center gap-10 rounded-[28px] bg-[#F8F4FA] p-5 md:grid-cols-[0.95fr_1.05fr] md:gap-14 md:p-8">
-          <SinthaCard className="h-full" backgroundColor="#FFFFFF" borderRadius={22}>
-            <div className="relative aspect-[4/3] w-full min-w-0 overflow-hidden rounded-[22px] bg-white md:aspect-[3/2]">
-              <Image
-                src="/uploads/patient-meditating-outdoors.jpg"
-                alt="A woman taking a peaceful moment outdoors among soft lilac flowers"
-                fill
-                sizes="(max-width: 768px) 100vw, 42vw"
-                className="object-cover object-center"
-              />
-            </div>
-          </SinthaCard>
-          <div className="px-2 py-5 md:px-4">
-            <h2 className="max-w-3xl text-3xl font-semibold leading-tight tracking-[-0.04em] text-[#30133E] md:text-5xl">
-              Physiotherapy that moves you forward.
-            </h2>
-            <p className="copy-justified mt-5 max-w-2xl text-base leading-8 text-[#29262D]/80">
-              Where recovery begins with a breath and ends in strength.
+      <section className="services-closing">
+        <div className="site-container services-closing__layout">
+          <div>
+            <p className="section-kicker">Care at every stage</p>
+            <h2>Where recovery begins with a breath and ends in strength.</h2>
+            <p>
+              Speak with our team about the right support for you or someone in your care.
             </p>
-            <div className="mt-8">
-              <SpecularButton size="md" radius={999} tint="#DBC1E8" tintOpacity={0.16} textColor="#FFFFFF" lineColor="#DBC1E8" baseColor="#30133E" intensity={0.82} idleIntensity={0.18} shineSize={10} shineFade={34} thickness={1.1} glow={0.3} followMouse href="/contact">
-                Book an assessment <InterfaceIcon name="arrow-up-right" className="h-4 w-4" />
-              </SpecularButton>
+            <div style={{ marginTop: 24 }}>
+              <Link className="site-button" href="/contact">
+                Contact us
+              </Link>
             </div>
           </div>
-        </section>
-      </div>
+          <div className="services-closing__image">
+            <Image
+              src="/uploads/patient-meditating-outdoors.jpg"
+              alt="A woman taking a quiet moment outdoors"
+              width={760}
+              height={520}
+              sizes="(max-width: 760px) 90vw, 35vw"
+            />
+          </div>
+        </div>
+      </section>
     </div>
   );
 }

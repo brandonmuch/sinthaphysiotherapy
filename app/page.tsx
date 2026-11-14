@@ -1,277 +1,302 @@
-import { InterfaceIcon } from '@/components/ui/InterfaceIcon';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Hero } from '@/components/sections/Hero';
-import { HomeServicesGallery } from '@/components/sections/HomeServicesGallery';
-import SpecularButton from '@/components/ui/SpecularButton';
-import SinthaCard from '@/components/ui/SinthaCard';
-import FluxLines from '@/components/ui/FluxLines';
 
 const PILLARS = [
   {
     number: '1',
     title: 'Comprehensive rehabilitation',
-    description: 'From bouncing back after surgery to navigating life post-stroke or managing neurological conditions, we’re with you every step of the way. Our personalised rehab plans are built to ease pain, restore movement, and boost strength, so you can feel confident in your body again.',
-    image: '/images/u2428486467_Close-up_of_physiotherapy_tools_on_a_mat_or_woode_4cdd9653-899b-4c2e-8f1d-45ca.jpeg',
-    alt: 'A close-up of physiotherapy tools on an exercise mat',
+    description:
+      'From bouncing back after surgery to navigating life post-stroke or managing neurological conditions, we’re with you every step of the way. Our personalised rehab plans are built to ease pain, restore movement and boost strength, so you can feel confident in your body again.',
+    image:
+      '/images/u2428486467_Close-up_of_physiotherapy_tools_on_a_mat_or_woode_4cdd9653-899b-4c2e-8f1d-45ca.jpeg',
+    alt: 'Physiotherapy tools arranged on an exercise mat',
   },
   {
     number: '2',
     title: 'Specialised respiratory support',
-    description: 'Struggling to catch your breath? With evidence-based respiratory physiotherapy, we help you breathe easier, manage chronic lung conditions, and recover from post-op or acute respiratory issues, one deep breath at a time.',
-    image: '/images/u2428486467_Young_Coloured_South_African_woman_seated_calmly__1b852e40-efdd-48c9-9676-4899.jpeg',
+    description:
+      'Struggling to catch your breath? With evidence-based respiratory physiotherapy, we help you breathe easier, manage chronic lung conditions and recover from post-operative or acute respiratory issues, one deep breath at a time.',
+    image:
+      '/images/u2428486467_Young_Coloured_South_African_woman_seated_calmly__1b852e40-efdd-48c9-9676-4899.jpeg',
     alt: 'A woman seated calmly in a quiet setting',
   },
   {
     number: '3',
     title: 'Holistic wellness',
-    description: 'Physiotherapy isn’t just for when things go wrong — it’s also about helping life go right. Whether you’re managing the natural effects of ageing or bouncing back from general weakness, we’re here to help you move well, stay strong, and enjoy a better quality of life.',
-    image: '/images/u2428486467_Middle-aged_Black_South_African_man_in_everyday_a_e9d82078-f7f4-4b7b-8b07-6d8b.jpeg',
+    description:
+      'Physiotherapy isn’t just for when things go wrong. It’s also about helping life go right. Whether you’re managing the natural effects of ageing or bouncing back from general weakness, we’re here to help you move well, stay strong and enjoy a better quality of life.',
+    image:
+      '/images/u2428486467_Middle-aged_Black_South_African_man_in_everyday_a_e9d82078-f7f4-4b7b-8b07-6d8b.jpeg',
     alt: 'A middle-aged man in a physiotherapy setting',
   },
 ];
 
-const SERVICES = [
+const HOME_SERVICES = [
   {
     title: 'Inpatient & outpatient physiotherapy',
-    href: '/services',
-    description: 'Personalised rehab plans for both hospital-based and outpatient clients — helping you recover from a wide range of physical conditions with expert, hands-on support.',
+    description:
+      'Personalised rehab plans for both hospital-based and outpatient clients, helping you recover from a wide range of physical conditions with expert, hands-on support.',
   },
   {
     title: 'Paediatric physiotherapy & respiratory care',
-    href: '/services#paediatric-respiratory-support',
-    description: 'Gentle, child-centred therapy focused on respiratory support because little lungs and growing bodies deserve specialised care.',
+    description:
+      'Gentle, child-centred therapy focused on respiratory support because little lungs and growing bodies deserve specialised care.',
   },
   {
     title: 'ICU & post-hospital rehabilitation',
-    href: '/services#advanced-respiratory-care',
-    description: 'Recovering after a critical illness? We’re here to help. From breathing support to rebuilding strength, we guide your journey back to independence.',
+    description:
+      'Recovering after a critical illness? We’re here to help. From breathing support to rebuilding strength, we guide your journey back to independence.',
   },
   {
     title: 'Postoperative recovery',
-    href: '/services#postoperative-recovery',
-    description: 'Heal stronger, faster. Our targeted physiotherapy helps reduce complications, ease pain, and restore mobility after surgery, getting you back on your feet, safely.',
+    description:
+      'Heal stronger and safer. Our targeted physiotherapy helps reduce complications, ease pain and restore mobility after surgery, getting you back on your feet.',
   },
   {
     title: 'Neurological & vestibular rehabilitation',
-    href: '/services#neurological-vestibular-rehabilitation',
-    description: 'Support for stroke, Parkinson’s, balance issues, and more. Our customised rehab plans help retrain your brain and body to move with greater control and confidence.',
+    description:
+      'Support for stroke, Parkinson’s, balance issues and more. Our customised rehab plans help retrain your brain and body to move with greater control and confidence.',
   },
   {
     title: 'Chronic illness & frailty management',
-    href: '/services#renal-metabolic-care',
-    description: 'Gentle, goal-based therapy for those living with long-term conditions or age-related challenges, helping you stay strong, steady, and independent.',
+    description:
+      'Gentle, goal-based therapy for those living with long-term conditions or age-related challenges, helping you stay strong, steady and independent.',
   },
   {
     title: 'Home visits',
-    href: '/services#home-visits',
-    description: 'Can’t come to us? We’ll come to you. Enjoy expert physiotherapy in the comfort of your home, perfect for ongoing care or mobility challenges.',
+    description:
+      'Can’t come to us? We’ll come to you. Enjoy expert physiotherapy in the comfort of your home, perfect for ongoing care or mobility challenges.',
   },
+];
+
+const SNAPSHOT = [
+  'Inpatient & outpatient care',
+  'Paediatric respiratory therapy',
+  'ICU and post-ICU rehabilitation',
+  'Postoperative recovery',
+  'Home visits',
 ];
 
 const FAQS = [
   {
     question: 'Do I need a referral to see a physiotherapist?',
-    answer: 'No referral is needed. Physiotherapists are first-line practitioners. You can book directly, or we also accept referrals from GPs and specialists.',
+    answer:
+      'No referral is needed. Physiotherapists are first-line practitioners. You can book directly, or we also accept referrals from GPs and specialists.',
   },
   {
     question: 'How many sessions will I need?',
-    answer: 'It depends on your condition. A tailored plan will be created after assessment.',
+    answer:
+      'It depends on your condition. A tailored plan will be created after your assessment.',
   },
   {
     question: 'Do you charge medical aid rates?',
-    answer: 'Yes. In-hospital: We will bill your medical aid directly. In-room: Pay via EFT/cash, claim back with our statement.',
+    answer:
+      'Yes. For in-hospital treatment, we bill your medical aid directly. For in-room treatment, payment is made by EFT or cash and you can claim back with our statement.',
   },
   {
     question: 'How can I book an appointment?',
-    answer: 'Send us a WhatsApp message or call the practice. Our team will speak with you directly to arrange an appointment and explain the next steps.',
+    answer: 'You can book via WhatsApp, phone call or our online booking form.',
   },
 ];
 
-export default function Home() {
-  return (
-    <div className="bg-white text-[#29262D]">
-      <Hero />
+const WHATSAPP_LINK =
+  'https://wa.me/27670721908?text=Hello%20Sintha%20Physiotherapy%2C%20I%20would%20like%20to%20book%20an%20assessment.';
 
-      <section className="bg-white px-6 py-16 md:py-24">
-        <div className="mx-auto grid max-w-7xl items-center gap-10 md:grid-cols-[0.9fr_1.1fr] md:gap-16">
-          <SinthaCard className="h-full" backgroundColor="#F3EBF7" borderRadius={28}>
-            <div className="relative aspect-[3/2] overflow-hidden rounded-[28px] bg-[#F3EBF7]">
+export default function HomePage() {
+  return (
+    <div className="home-page">
+      <section className="home-hero">
+        <div className="site-container home-hero__layout">
+          <div className="home-hero__copy">
+            <h1>Empower movement. Enhance life.</h1>
+            <h2>Specialised physiotherapy for children and adults</h2>
+            <p>
+              At Sintha Physiotherapy, we’re all about helping you feel good and move even better.
+              We take a holistic, whole-person approach to your health, healing and well-being.
+            </p>
+            <div className="home-hero__actions">
+              <a className="site-button" href={WHATSAPP_LINK} target="_blank" rel="noreferrer">
+                Book an Assessment
+              </a>
+              <Link className="site-button site-button--outline" href="/services">
+                View our services
+              </Link>
+            </div>
+          </div>
+
+          <div className="home-hero__media" aria-label="Sintha Physiotherapy team and patient care">
+            <div className="home-hero__image-main">
               <Image
-                src="/uploads/patient-grandfather-grandson.jpg"
-                alt="A grandfather and grandson playing together on a couch"
+                src="/images/u2428486467_dark-skinned_Black_female_physiotherapist_wearing_129f260b-d7a4-4b95-afb1-2559.png"
+                alt="A physiotherapist ready to support a patient"
                 fill
-                sizes="(max-width: 768px) 100vw, 44vw"
-                className="object-cover object-center"
+                priority
+                sizes="(max-width: 760px) 78vw, 38vw"
               />
             </div>
-          </SinthaCard>
-          <div className="max-w-3xl">
-            <h2 className="mb-4 text-3xl font-semibold leading-tight tracking-[-0.04em] text-[#30133E] md:text-4xl">Our approach</h2>
-            <div className="copy-justified max-w-xl space-y-4 text-[15px] leading-[1.75] text-[#29262D]/85 md:text-base">
-              <p>
-                We take a holistic, whole-person approach to your health, healing, and well-being. While we’re known for our expert care in respiratory physiotherapy, our services go way beyond just helping you breathe easier.
-              </p>
-              <p>
-                Whether you’re bouncing back after surgery, navigating life after a stroke, caring for a little one with health challenges, or adjusting to the natural changes that come with age, we’re here for you. From neurological to vestibular conditions, or simply feeling a bit weaker than usual, our experienced team is ready to support and empower you every step of the way. With tailored physiotherapy plans designed just for you, we’ll help you move with more confidence, breathe with ease, and get back to doing the things you love.
-              </p>
+            <div className="home-hero__image-small">
+              <Image
+                src="/uploads/patient-child-breathing.jpg"
+                alt="A child using a breathing device during physiotherapy"
+                fill
+                sizes="(max-width: 760px) 46vw, 18vw"
+              />
             </div>
           </div>
         </div>
       </section>
 
-      <section className="relative isolate overflow-hidden bg-[#30133E] px-6 py-20 md:py-28">
-        <div className="pointer-events-none absolute inset-0 z-0" aria-hidden="true">
-          <FluxLines
-            colors={['#DBC1E8', '#8B6A9A', '#FFFFFF']}
-            speed={0.34}
-            scale={1.55}
-            turbulence={0.9}
-            fluidity={0.1}
-            glow={2}
-            rimWidth={0.2}
-            lineWidth={1}
-            flowDirection="down"
-            opacity={0.7}
-            mouseInteraction
-            mouseStrength={0.38}
-            clickSwirl
-            className="absolute inset-0"
-            style={{ position: 'absolute', inset: 0 }}
-          />
-          <div className="absolute inset-0 bg-[#30133E]/42" />
-          <div className="absolute inset-x-0 top-0 h-36 bg-gradient-to-b from-[#30133E]/65 to-transparent" />
-          <div className="absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-[#30133E]/65 to-transparent" />
+      <section className="home-intro">
+        <div className="site-container home-intro__layout">
+          <div className="home-intro__copy">
+            <h2>At Sintha Physiotherapy, we’re all about helping you feel good and move even better!</h2>
+            <p>
+              We take a holistic, whole-person approach to your health, healing, and well-being.
+              While we’re known for our expert care in respiratory physiotherapy, our services go
+              way beyond just helping you breathe easier. Whether you’re bouncing back after
+              surgery, navigating life after a stroke, caring for a little one with health
+              challenges, or adjusting to the natural changes that come with age, we’re here for you.
+            </p>
+            <p>
+              From neurological to vestibular conditions, or simply feeling a bit weaker than
+              usual, our experienced team is ready to support and empower you every step of the
+              way. With tailored physiotherapy plans designed just for you, we’ll help you move
+              with more confidence, breathe with ease and get back to doing the things you love.
+            </p>
+            <Link className="site-button" href="/about">
+              Who we are
+            </Link>
+          </div>
+
+          <div className="intro-collage" aria-label="Physiotherapy care for children and adults">
+            <div className="intro-collage__large">
+              <Image
+                src="/uploads/patient-elderly-recovery.jpg"
+                alt="A healthcare professional standing behind an elderly woman"
+                fill
+                sizes="(max-width: 760px) 90vw, 34vw"
+              />
+            </div>
+            <div className="intro-collage__small">
+              <Image
+                src="/uploads/patient-paediatric-parent.jpg"
+                alt="A woman holding a baby while talking to a healthcare professional"
+                fill
+                sizes="(max-width: 760px) 45vw, 17vw"
+              />
+            </div>
+            <div className="intro-collage__small">
+              <Image
+                src="/uploads/portrait-woman-a.jpg"
+                alt="A smiling woman"
+                fill
+                sizes="(max-width: 760px) 45vw, 17vw"
+              />
+            </div>
+          </div>
         </div>
-        <div className="relative z-10 mx-auto max-w-7xl">
-          <h2 className="max-w-5xl text-balance text-4xl font-semibold leading-[1.06] tracking-[-0.045em] text-white md:text-6xl">
-            Let’s get you living life to the fullest — one step, stretch, and breath at a time.
-          </h2>
-          <div className="mt-14 grid gap-7 md:grid-cols-3 md:gap-6">
+      </section>
+
+      <section className="who-section">
+        <div className="site-container who-section__layout">
+          <div className="who-section__copy">
+            <h2>Let’s get you living life to the fullest — one step, stretch, and breath at a time.</h2>
+          </div>
+        </div>
+      </section>
+
+      <section className="pillars-section">
+        <div className="site-container">
+          <div className="pillar-grid">
             {PILLARS.map((pillar) => (
-              <SinthaCard key={pillar.number} className="h-full" backgroundColor="#F3EBF7">
-                <article className="home-pillar-card group flex h-full flex-col overflow-hidden rounded-[28px] bg-[#F3EBF7] shadow-[0_18px_54px_-32px_rgba(12,5,18,0.7)]">
-                <div className="relative aspect-square overflow-hidden bg-[#E9DDF0]">
+              <article className="pillar-card" key={pillar.number}>
+                <div className="pillar-card__image">
                   <Image
                     src={pillar.image}
                     alt={pillar.alt}
-                    fill
-                    sizes="(max-width: 768px) 100vw, 33vw"
-                    className={`home-pillar-image object-cover ${pillar.number === '2' ? 'object-[center_24%]' : 'object-center'}`}
+                    width={720}
+                    height={500}
+                    sizes="(max-width: 760px) 90vw, 30vw"
                   />
                 </div>
-                <div className="flex flex-1 flex-col px-6 pb-7 pt-6 md:px-7">
-                  <h3 className="mt-3 text-xl font-semibold tracking-[-0.02em] text-[#30133E]">{pillar.title}</h3>
-                  <p className="copy-justified mt-4 flex-1 text-sm leading-7 text-[#29262D]/85">{pillar.description}</p>
+                <div className="pillar-card__copy">
+                  <h3>
+                    {pillar.number}. {pillar.title}
+                  </h3>
+                  <p>{pillar.description}</p>
                 </div>
-                </article>
-              </SinthaCard>
+              </article>
             ))}
-          </div>
-          <div className="mt-12">
-            <SpecularButton size="md" radius={999} tint="#DBC1E8" tintOpacity={0.12} textColor="#30133E" lineColor="#FFFFFF" baseColor="#F3EBF7" intensity={0.78} idleIntensity={0.2} shineSize={10} shineFade={34} thickness={1.1} glow={0.3} followMouse href="/about">
-              Who we are <InterfaceIcon name="arrow-up-right" className="h-4 w-4" />
-            </SpecularButton>
           </div>
         </div>
       </section>
 
-      <section className="bg-white px-6 py-16 md:py-24">
-        <div className="mx-auto grid max-w-7xl items-center gap-10 md:grid-cols-[1fr_1.05fr] md:gap-16">
+      <section className="snapshot-section">
+        <div className="site-container">
+          <div className="snapshot-section__top">
+            <div>
+              <h2>Quick service snapshot</h2>
+            </div>
+            <Link className="site-button site-button--outline" href="/services">
+              View our services today
+            </Link>
+          </div>
+          <ul className="snapshot-list">
+            {SNAPSHOT.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      <section className="home-services">
+        <div className="site-container">
+          <div className="home-services__grid">
+            {HOME_SERVICES.map((service) => (
+              <article className="home-service" key={service.title}>
+                <h3>{service.title}</h3>
+                <p>{service.description}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="home-cta">
+        <div className="site-container home-cta__layout">
           <div>
-            <h2 className="max-w-2xl text-4xl font-semibold leading-[1.08] tracking-[-0.04em] text-[#30133E] md:text-5xl">
-              Care that sees the whole person.
-            </h2>
-            <p className="copy-justified mt-5 max-w-xl text-[15px] leading-[1.75] text-[#29262D]/85 md:text-base">
-              We believe in meeting each patient where they are, physically, emotionally, and functionally. Our approach is holistic, hands-on, and person-centred.
-            </p>
-            <blockquote className="mt-8 border-l-2 border-[#8B6A9A] pl-6">
-              <p className="text-2xl font-semibold leading-snug tracking-[-0.025em] text-[#30133E] md:text-3xl">
-                “Compassion in every breath, care in every movement.”
-              </p>
-            </blockquote>
-            <div className="mt-8">
-              <SpecularButton size="md" radius={999} tint="#DBC1E8" tintOpacity={0.12} textColor="#FFFFFF" lineColor="#DBC1E8" baseColor="#30133E" intensity={0.72} idleIntensity={0.14} shineSize={10} shineFade={34} thickness={1.1} glow={0.22} followMouse href="/about">
-                Meet our team <InterfaceIcon name="arrow-up-right" className="h-4 w-4" />
-              </SpecularButton>
-            </div>
+            <h2>Breathe easier. Move stronger. Heal fully.</h2>
           </div>
-          <div className="relative aspect-[4/3] w-full min-w-0 overflow-hidden rounded-[28px] bg-[#F3EBF7] md:aspect-[3/2]">
-            <Image
-              src="/uploads/patient-meditating-outdoors.jpg"
-              alt="A woman taking a peaceful moment outdoors among soft lilac flowers"
-              fill
-              sizes="(max-width: 768px) 100vw, 52vw"
-              className="object-cover object-center"
-            />
-          </div>
+          <a className="site-button" href={WHATSAPP_LINK} target="_blank" rel="noreferrer">
+            Contact us today
+          </a>
         </div>
       </section>
 
-      <section className="bg-white px-6 py-20 md:py-28">
-        <div className="mx-auto max-w-7xl">
-          <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
-            <div className="max-w-3xl">
-              <h2 className="text-4xl font-semibold leading-[1.06] tracking-[-0.045em] md:text-5xl">
-                Our Services
-              </h2>
-              <p className="copy-justified mt-6 text-base leading-8 text-[#29262D]/75 md:text-lg">
-                Our services support children and adults through hospital-based care, recovery, rehabilitation and ongoing support at home.
-              </p>
-            </div>
-            <SpecularButton size="md" radius={999} tint="#DBC1E8" tintOpacity={0.12} textColor="#FFFFFF" lineColor="#DBC1E8" baseColor="#30133E" intensity={0.72} idleIntensity={0.14} shineSize={10} shineFade={34} thickness={1.1} glow={0.22} followMouse href="/services">
-              View our services <InterfaceIcon name="arrow-up-right" className="h-4 w-4" />
-            </SpecularButton>
+      <section className="faq-section">
+        <div className="site-container faq-section__layout">
+          <div>
+            <h2>Frequently asked questions</h2>
           </div>
-
-          <div className="mt-12">
-            <HomeServicesGallery />
-          </div>
-
-          <div className="mt-16 grid gap-x-12 border-t border-[#30133E]/20 md:grid-cols-2">
-            {SERVICES.map((service, index) => (
-              <Link
-                href={service.href}
-                key={service.title}
-                className="home-service-link group grid gap-3 border-b border-[#30133E]/20 py-7 sm:grid-cols-[48px_1fr_24px] sm:gap-5 sm:px-4"
-              >
-                <span className="pt-1 text-sm tabular-nums text-[#6B4B78]">0{index + 1}</span>
-                <span>
-                  <span className="block text-base font-semibold tracking-[-0.015em]">{service.title}</span>
-                  <span className="copy-justified mt-3 block max-w-2xl text-sm leading-7 text-[#29262D]/75">{service.description}</span>
-                </span>
-                <span className="hidden text-xl text-[#6B4B78] transition-transform duration-200 ease-out group-hover:translate-x-1 sm:block"><InterfaceIcon name="arrow-up-right" className="h-5 w-5" /></span>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-[#F3EBF7] px-6 py-20 md:py-28">
-        <div className="mx-auto max-w-7xl">
-          <h2 className="text-4xl font-semibold tracking-[-0.04em] md:text-5xl">Frequently asked questions</h2>
-          <div className="mt-10 border-t border-[#30133E]/20">
-            {FAQS.map((faq, index) => (
-              <details key={faq.question} className="group border-b border-[#30133E]/20 py-6">
-                <summary className="flex cursor-pointer list-none items-center justify-between gap-6 text-lg font-semibold tracking-[-0.02em] marker:hidden">
-                  <span>{faq.question}</span>
-                  <span className="text-2xl font-light text-[#6B4B78] transition-transform group-open:rotate-45">+</span>
-                </summary>
-                <p className="copy-justified max-w-3xl pt-5 pr-8 text-base leading-8 text-[#29262D]/75">{faq.answer}</p>
+          <div className="faq-list">
+            {FAQS.map((item) => (
+              <details key={item.question}>
+                <summary>{item.question}</summary>
+                <p>{item.answer}</p>
               </details>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="bg-[#30133E] px-6 py-20 text-white md:py-28">
-        <div className="mx-auto flex max-w-7xl flex-col gap-10 md:flex-row md:items-end md:justify-between">
-          <h2 className="max-w-4xl text-balance text-4xl font-semibold leading-[1.04] tracking-[-0.05em] text-white md:text-6xl">
-            Your recovery, your pace, our care
-          </h2>
-          <SpecularButton size="lg" radius={999} tint="#DBC1E8" tintOpacity={0.16} textColor="#FFFFFF" lineColor="#DBC1E8" baseColor="#3D2548" intensity={0.82} idleIntensity={0.18} shineSize={10} shineFade={34} thickness={1.1} glow={0.34} followMouse href="/contact">
-            Contact us today <InterfaceIcon name="arrow-up-right" className="h-4 w-4" />
-          </SpecularButton>
+      <section className="blog-invite">
+        <div className="site-container blog-invite__layout">
+          <div>
+            <h2>Your recovery, your pace, our care.</h2>
+          </div>
+          <Link className="site-button" href="/blog">
+            View our blog
+          </Link>
         </div>
       </section>
     </div>
