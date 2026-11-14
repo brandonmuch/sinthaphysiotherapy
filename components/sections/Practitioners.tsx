@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { InterfaceIcon } from '@/components/ui/InterfaceIcon';
 
 const PRACTITIONERS = [
   { name: 'Wezi Nyimba', role: 'Respiratory, Paediatrics, ICU Rehab' },
@@ -39,7 +40,7 @@ export function Practitioners() {
                 <p className="text-sm text-charcoal/60 mt-2">{p.role}</p>
               </div>
               <span className="text-2xl text-charcoal/30 group-hover:text-terracotta group-hover:translate-x-2 transition-all">
-                →
+                <InterfaceIcon name="arrow-right" className="h-5 w-5" />
               </span>
             </div>
           ))}
