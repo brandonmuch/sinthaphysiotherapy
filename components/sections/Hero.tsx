@@ -1,5 +1,7 @@
 'use client';
 
+import { InterfaceIcon } from '@/components/ui/InterfaceIcon';
+import { InterfaceIcon } from '@/components/ui/InterfaceIcon';
 import { motion, useReducedMotion } from 'framer-motion';
 import { useRouter } from 'next/navigation';
 import SpecularButton from '@/components/ui/SpecularButton';
@@ -72,7 +74,7 @@ export function Hero() {
             proximity={220}
             onClick={() => window.open(BOOKING_LINK, '_blank', 'noopener,noreferrer')}
           >
-            Book an assessment <span aria-hidden="true">↗</span>
+            Book an assessment <InterfaceIcon name="arrow-up-right" className="h-4 w-4" />
           </SpecularButton>
           <SpecularButton
             size="lg"
@@ -92,7 +94,7 @@ export function Hero() {
             proximity={180}
             onClick={() => router.push('/services')}
           >
-            Explore services <span aria-hidden="true">↗</span>
+            Explore services <InterfaceIcon name="arrow-up-right" className="h-4 w-4" />
           </SpecularButton>
         </div>
       </motion.div>
