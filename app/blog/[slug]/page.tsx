@@ -1,3 +1,4 @@
+import { InterfaceIcon } from '@/components/ui/InterfaceIcon';
 import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
@@ -137,7 +138,7 @@ export default async function BlogArticlePage({
           href="/blog"
           className="inline-flex items-center gap-2 text-sm font-semibold text-[#6B4B78] transition-colors hover:text-[#30133E]"
         >
-          <span aria-hidden="true">←</span> Back to blog
+          <InterfaceIcon name="arrow-left" className="h-4 w-4" /> Back to blog
         </Link>
 
         <header className="mt-10">
@@ -199,7 +200,7 @@ export default async function BlogArticlePage({
             followMouse
             href="/contact"
           >
-            Speak to our team <span aria-hidden="true">↗</span>
+            Speak to our team <InterfaceIcon name="arrow-up-right" className="h-4 w-4" />
           </SpecularButton>
         </div>
       </div>
