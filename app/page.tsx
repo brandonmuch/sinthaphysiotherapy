@@ -157,7 +157,7 @@ export default function Home() {
                     alt={pillar.alt}
                     fill
                     sizes="(max-width: 768px) 100vw, 33vw"
-                    className="home-pillar-image object-cover object-center"
+                    className={`home-pillar-image object-cover ${pillar.number === '2' ? 'object-[center_24%]' : 'object-center'}`}
                   />
                 </div>
                 <div className="flex flex-1 flex-col px-6 pb-7 pt-6 md:px-7">
