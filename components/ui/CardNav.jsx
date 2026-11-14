@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useId, useLayoutEffect, useRef, useState } from 'react';
+import { InterfaceIcon } from '@/components/ui/InterfaceIcon';
 import './CardNav.css';
 
 const THEMES = {
@@ -495,8 +496,8 @@ const CardNav = ({
                         },
                         <>
                           <span className={ARROW} aria-hidden="true">
-                            <span className={`${ARROW_OUT} card-nav__arrow-glyph`} aria-hidden="true">↗</span>
-                            <span className={`${ARROW_IN} card-nav__arrow-glyph`} aria-hidden="true">↗</span>
+                            <span className={`${ARROW_OUT} card-nav__arrow-glyph`}><InterfaceIcon name="arrow-up-right" /></span>
+                            <span className={`${ARROW_IN} card-nav__arrow-glyph`}><InterfaceIcon name="arrow-up-right" /></span>
                           </span>
                           {link.label}
                         </>
