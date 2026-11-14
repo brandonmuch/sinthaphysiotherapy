@@ -1,5 +1,7 @@
 'use client';
 
+import { InterfaceIcon } from '@/components/ui/InterfaceIcon';
+import { InterfaceIcon } from '@/components/ui/InterfaceIcon';
 import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import './FlowingMenu.css';
@@ -567,7 +569,7 @@ function FlowingMenu({
                 {item.meta ? <span className={META}>{item.meta}</span> : null}
                 {showArrow ? (
                   <span className={ARROW}>
-                    <span aria-hidden="true">↗</span>
+                    <InterfaceIcon name="arrow-up-right" className="h-4 w-4" />
                   </span>
                 ) : null}
               </span>
