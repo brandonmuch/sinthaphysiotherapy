@@ -161,7 +161,6 @@ export default function Home() {
                   />
                 </div>
                 <div className="flex flex-1 flex-col px-6 pb-7 pt-6 md:px-7">
-                  <p className="text-xs font-semibold tracking-[0.12em] text-[#6B4B78]">{pillar.number.padStart(2, '0')}</p>
                   <h3 className="mt-3 text-xl font-semibold tracking-[-0.02em] text-[#30133E]">{pillar.title}</h3>
                   <p className="copy-justified mt-4 flex-1 text-sm leading-7 text-[#29262D]/85">{pillar.description}</p>
                 </div>
