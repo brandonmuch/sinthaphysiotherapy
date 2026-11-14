@@ -1,3 +1,4 @@
+import { InterfaceIcon } from '@/components/ui/InterfaceIcon';
 import Image from 'next/image';
 import Link from 'next/link';
 import SpecularButton from '@/components/ui/SpecularButton';
@@ -113,7 +114,7 @@ export default function BlogPage() {
                   external={article.external}
                   className="mt-8 inline-flex items-center gap-2 border-b border-[#30133E]/30 pb-2 text-sm font-semibold text-[#30133E] transition-colors hover:border-[#6B4B78] hover:text-[#6B4B78]"
                 >
-                  Read article <span aria-hidden="true">↗</span>
+                  Read article <InterfaceIcon name="arrow-up-right" className="h-4 w-4" />
                 </ArticleLink>
               </div>
               </article>
@@ -127,7 +128,7 @@ export default function BlogPage() {
               Have a question about your recovery?
             </h2>
             <SpecularButton size="md" radius={999} tint="#DBC1E8" tintOpacity={0.16} textColor="#FFFFFF" lineColor="#DBC1E8" baseColor="#3D2548" intensity={0.82} idleIntensity={0.18} shineSize={10} shineFade={34} thickness={1.1} glow={0.34} followMouse href="/contact">
-              Speak to our team <span aria-hidden="true">↗</span>
+              Speak to our team <InterfaceIcon name="arrow-up-right" className="h-4 w-4" />
             </SpecularButton>
           </div>
         </div>
