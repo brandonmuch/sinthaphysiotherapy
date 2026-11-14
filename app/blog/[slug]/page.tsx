@@ -132,7 +132,7 @@ export default async function BlogArticlePage({
 
   return (
     <article className="min-h-screen bg-white pb-24 pt-32 text-[#29262D] md:pt-40">
-      <div className="mx-auto max-w-4xl px-6 md:px-10">
+      <div className="mx-auto max-w-3xl px-6 md:px-10">
         <Link
           href="/blog"
           className="inline-flex items-center gap-2 text-sm font-semibold text-[#6B4B78] transition-colors hover:text-[#30133E]"
@@ -152,7 +152,7 @@ export default async function BlogArticlePage({
               {article.subtitle}
             </p>
           )}
-          <p className="mt-6 max-w-3xl text-lg leading-8 text-[#29262D]/85">
+          <p className="mt-6 max-w-[68ch] text-[17px] leading-[1.85] text-[#29262D]/85 md:text-lg">
             {article.intro}
           </p>
         </header>
@@ -168,15 +168,15 @@ export default async function BlogArticlePage({
           />
         </figure>
 
-        <section className="prose prose-lg copy-justified mt-12 max-w-none prose-headings:font-semibold prose-headings:tracking-tight prose-headings:text-[#30133E] prose-p:leading-8 prose-p:text-[#29262D]/85 prose-li:leading-8 prose-li:text-[#29262D]/85 prose-strong:text-[#30133E] prose-blockquote:border-[#8B6A9A] prose-blockquote:text-[#30133E]">
+        <section className="blog-article-copy mt-12">
           {article.content}
         </section>
 
         <aside className="mt-12 rounded-[28px] bg-[#F3EBF7] p-7 md:p-10">
-          <p className="text-base leading-8 text-[#29262D]/85">
+          <p className="text-[15px] leading-7 text-[#29262D]/85">
             Every person’s experience is different. If this topic raises questions about your own health or recovery, speak with a healthcare professional who understands your medical history.
           </p>
-          <p className="mt-4 text-base leading-8 text-[#29262D]/85">
+          <p className="mt-4 text-[15px] leading-7 text-[#29262D]/85">
             The Sintha team can help you explore whether physiotherapy support is appropriate for your needs and what a personalised plan may involve.
           </p>
         </aside>
