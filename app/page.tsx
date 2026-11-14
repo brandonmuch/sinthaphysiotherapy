@@ -197,26 +197,14 @@ export default function HomePage() {
 
       <section className="who-section">
         <div className="site-container who-section__layout">
-          <div>
-            <p className="section-kicker" style={{ color: '#DBC1E8' }}>
+          <div className="who-section__copy">
+            <p className="section-kicker" style={{ color: '#30133F' }}>
               Who we are
             </p>
-            <h2>Let’s get you living life to the fullest.</h2>
-            <p>
-              One step, stretch and breath at a time. Our approach is personal, practical and
-              centred on helping every patient take the next step with confidence.
-            </p>
+            <h2>Let’s get you living life to the fullest — one step, stretch, and breath at a time.</h2>
             <Link className="site-button site-button--light" href="/about">
               Who we are
             </Link>
-          </div>
-          <div className="who-section__image">
-            <Image
-              src="/uploads/patient-grandfather-grandson.jpg"
-              alt="A grandfather and grandson sharing time together"
-              fill
-              sizes="(max-width: 760px) 90vw, 40vw"
-            />
           </div>
         </div>
       </section>
