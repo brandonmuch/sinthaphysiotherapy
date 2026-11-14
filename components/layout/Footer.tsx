@@ -1,3 +1,5 @@
+import { InterfaceIcon } from '@/components/ui/InterfaceIcon';
+import { InterfaceIcon } from '@/components/ui/InterfaceIcon';
 import Link from 'next/link';
 import SpecularButton from '@/components/ui/SpecularButton';
 import { FooterLogo } from '@/components/layout/FooterLogo';
@@ -53,7 +55,7 @@ export function Footer() {
                 followMouse
                 href="/contact"
               >
-                Booking information <span aria-hidden="true">↗</span>
+                Booking information <InterfaceIcon name="arrow-up-right" className="h-4 w-4" />
               </SpecularButton>
             </div>
           </div>
@@ -62,6 +64,8 @@ export function Footer() {
         <div className="flex flex-col gap-3 border-t border-white/15 pt-7 text-xs text-white md:flex-row md:items-center md:justify-between">
           <p>© {new Date().getFullYear()} Sintha Physiotherapy. All rights reserved.</p>
           <p>Wezi Nyimba Physiotherapists Inc.</p>
+          <Link href="/privacy-policy" className="transition-colors hover:text-[#DBC1E8]">Privacy policy</Link>
+          <Link href="/privacy-policy#cookies" className="transition-colors hover:text-[#DBC1E8]">Cookie information</Link>
         </div>
       </div>
     </footer>
