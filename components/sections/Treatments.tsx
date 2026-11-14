@@ -1,5 +1,6 @@
 'use client';
 import { useEffect, useRef } from 'react';
+import { InterfaceIcon } from '@/components/ui/InterfaceIcon';
 import { SpotlightCard } from '@/components/ui/SpotlightCard';
 import { SplitText } from '@/components/ui/SplitText';
 import { gsap } from '@/lib/gsap';
@@ -72,7 +73,7 @@ export function Treatments() {
                 </div>
                 <div className="mt-8 flex items-center justify-between">
                   <span className="text-xs tracking-[0.1em] text-cream/40">Learn more</span>
-                  <span className="text-2xl">→</span>
+                  <InterfaceIcon name="arrow-right" className="h-5 w-5" />
                 </div>
               </div>
             </SpotlightCard>
