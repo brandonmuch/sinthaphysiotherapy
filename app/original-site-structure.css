@@ -922,3 +922,25 @@ button.contact-form__submit.site-button {
     border-radius: var(--sintha-radius-pill);
   }
 }
+
+
+/* Match the rounded lilac treatment tiles visible on the original Home page. */
+.pillar-card {
+  background: var(--sintha-lilac);
+}
+
+.pillar-card__image {
+  border-radius: var(--sintha-radius-card) var(--sintha-radius-card) 0 0;
+}
+
+.pillar-card__copy {
+  background: var(--sintha-lilac);
+  padding: 18px 18px 22px;
+}
+
+.home-service {
+  min-height: 190px;
+  border-radius: var(--sintha-radius-card);
+  background: var(--sintha-lilac);
+  padding: 20px 18px;
+}
