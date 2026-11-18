@@ -1,23 +1,39 @@
-import Image from 'next/image';
-
 const PRACTITIONERS = [
   {
     name: 'Wezi Nyimba',
     qualifications: ['BSc Physiotherapy (UCT)', 'MSc Physiotherapy Candidate (Wits)'],
     specialties: 'Respiratory, Paediatrics, ICU Rehab, Geriatrics',
-    biography:
-      'Meet Wezi, a powerhouse of calm in the chaos of coughs, wheezes and tricky recoveries. With over 8 years of experience, she brings expert care to both little lungs and older chests, specialising in complex respiratory conditions like RSV, pneumonia and asthma. From tiny tots in paediatric ICU to frail seniors needing a gentler touch, Wezi is all about restoring breath, mobility and quality of life. Her secret? A holistic, heart-centred approach that treats the person, not just the condition.',
-    image: '/images/team-wezi.jpg',
-    alt: 'Wezi Nyimba, physiotherapist at Sintha Physiotherapy',
+    biography: [
+      'Meet Wezi, a powerhouse of calm in the chaos of coughs, wheezes, and tricky recoveries. With over 8 years of experience, she brings expert care to both little lungs and older chests, specialising in complex respiratory conditions like RSV, pneumonia, and asthma.',
+      'From tiny tots in paediatric ICU to frail seniors needing a gentler touch, Wezi is all about restoring breath, mobility, and quality of life. Her secret? A holistic, heart-centred approach that treats the person, not just the condition.',
+    ],
   },
   {
     name: 'Posheletso Kekana',
     qualifications: ['BSc Physiotherapy (UP)', 'MSc Physiotherapy Candidate (Wits)'],
     specialties: 'Trauma and Critical Care, Post Trauma Rehab, Paediatrics',
-    biography:
-      'A passionate physio and movement motivator! With a degree from the University of Pretoria and 8 years of hands-on experience in trauma and critical care, for both little ones and grown-ups, Posheletso brings calm, confidence and care to every session. She is all about personalised treatment plans that get people moving better and feeling stronger. Now, she is expanding her focus into musculoskeletal rehab, home-based care and preventative treatments, helping people live their best lives right where they are. She also possesses advanced skills in dry needling and kinesiology taping.',
-    image: '/images/team-posheletso.jpg',
-    alt: 'Posheletso Kekana, physiotherapist at Sintha Physiotherapy',
+    biography: [
+      'A passionate physio and movement motivator! With a degree from the University of Pretoria and 8 years of hands-on experience in trauma and critical care, for both little ones and grown-ups, Posheletso brings calm, confidence, and care to every session. She is all about personalised treatment plans that get people moving better and feeling stronger.',
+      'Now, she is expanding her focus into musculoskeletal rehab, home-based care, and preventative treatments, helping people live their best lives, right where they are. She also possesses advanced skills in dry needling and kinesiology taping.',
+    ],
+  },
+  {
+    name: 'Pumelela Noah',
+    qualifications: ['BSc Physiotherapy (UCT)'],
+    specialties: 'Neuro Rehab, Trauma and ICU Rehab',
+    biography: [
+      'Where expertise meets heart! With a solid background in human anatomy, biomechanics, and rehab techniques, Pumelela brings a rare blend of clinical know-how and genuine care to every patient she treats. Whether it’s complex neurological cases, trauma recovery, or age-related conditions, she has seen it all and handled it with confidence and compassion.',
+      'She’s not just skilled, she’s a great listener too, working closely with patients to create personalised plans that actually work. Her passion? Helping people get back to doing what they love and living life to the fullest.',
+    ],
+  },
+  {
+    name: 'Keisha May',
+    qualifications: ['BSc Physiotherapy (Wits)', 'MSc Public Health Candidate (Wits)'],
+    specialties: 'Orthopaedics, Cardiothoracic Rehab',
+    biography: [
+      'Keisha is your go-to for all things movement and recovery, with nearly 9 years of clinical know-how and a passion for helping people feel strong and capable again. Whether she’s easing post-op pain, guiding someone through a cardiac rehab journey, or helping manage long-term aches and niggles, Keisha blends hands-on therapy, education, and science-backed movement to get results.',
+      'She’s big on empowering her patients, because recovery is a team sport, and she’s right there cheering you on every step of the way.',
+    ],
   },
 ];
 
@@ -45,27 +61,18 @@ const AFFILIATED_PROFESSIONALS = [
 export default function AboutPage() {
   return (
     <div className="about-page">
-      <section className="interior-hero">
-        <div className="site-container interior-hero__inner">
-          <p className="section-kicker">Meet our team of expert physiotherapists</p>
-          <h1>About us</h1>
+      <section className="about-hero">
+        <div className="site-container about-hero__inner">
+          <h1>About Us</h1>
+          <p>Meet our team of expert physiotherapists</p>
         </div>
       </section>
 
       <section className="team-section">
-        <div className="site-container">
+        <div className="site-container site-container--wide">
           <div className="team-grid">
             {PRACTITIONERS.map((practitioner) => (
               <article className="team-card" key={practitioner.name}>
-                <div className="team-card__image">
-                  <Image
-                    src={practitioner.image}
-                    alt={practitioner.alt}
-                    width={640}
-                    height={820}
-                    sizes="(max-width: 760px) 90vw, 28vw"
-                  />
-                </div>
                 <div className="team-card__copy">
                   <h2>{practitioner.name}</h2>
                   <div className="team-card__qualifications">
@@ -76,7 +83,9 @@ export default function AboutPage() {
                   <p className="team-card__specialties">
                     <strong>Specialties:</strong> {practitioner.specialties}
                   </p>
-                  <p>{practitioner.biography}</p>
+                  {practitioner.biography.map((paragraph) => (
+                    <p key={paragraph}>{paragraph}</p>
+                  ))}
                 </div>
               </article>
             ))}
@@ -85,8 +94,10 @@ export default function AboutPage() {
       </section>
 
       <section className="affiliated-section">
-        <div className="site-container">
-          <h2>Affiliated professionals</h2>
+        <div className="site-container affiliated-section__layout">
+          <div className="affiliated-section__heading">
+            <h2>Affiliated Professionals</h2>
+          </div>
           <div className="affiliated-grid">
             {AFFILIATED_PROFESSIONALS.map((professional) => (
               <article className="affiliated-card" key={professional.name}>
@@ -104,16 +115,14 @@ export default function AboutPage() {
 
       <section className="philosophy-section">
         <div className="site-container philosophy-section__layout">
-          <div className="philosophy-section__copy">
-            <h2>Our team philosophy</h2>
-            <p>
-              We believe in meeting each patient where they are, physically, emotionally, and
-              functionally. Breathing is not just a mechanical act; it’s deeply connected to how
-              we move, feel, and heal. Our approach is holistic, hands-on, and person-centred, with
-              a strong emphasis on early intervention, education, and empowering patients to take
-              an active role in their recovery.
-            </p>
-          </div>
+          <h2>Our team philosophy</h2>
+          <p>
+            We believe in meeting each patient where they are, physically, emotionally, and
+            functionally. Breathing is not just a mechanical act; it’s deeply connected to how we
+            move, feel, and heal. Our approach is holistic, hands-on, and person-centred, with a
+            strong emphasis on early intervention, education, and empowering patients to take an
+            active role in their recovery.
+          </p>
         </div>
       </section>
 
