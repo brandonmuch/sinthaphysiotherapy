@@ -17,24 +17,6 @@ const PRACTITIONERS = [
       'Now, she is expanding her focus into musculoskeletal rehab, home-based care, and preventative treatments, helping people live their best lives, right where they are. She also possesses advanced skills in dry needling and kinesiology taping.',
     ],
   },
-  {
-    name: 'Pumelela Noah',
-    qualifications: ['BSc Physiotherapy (UCT)'],
-    specialties: 'Neuro Rehab, Trauma and ICU Rehab',
-    biography: [
-      'Where expertise meets heart! With a solid background in human anatomy, biomechanics, and rehab techniques, Pumelela brings a rare blend of clinical know-how and genuine care to every patient she treats. Whether it’s complex neurological cases, trauma recovery, or age-related conditions, she has seen it all and handled it with confidence and compassion.',
-      'She’s not just skilled, she’s a great listener too, working closely with patients to create personalised plans that actually work. Her passion? Helping people get back to doing what they love and living life to the fullest.',
-    ],
-  },
-  {
-    name: 'Keisha May',
-    qualifications: ['BSc Physiotherapy (Wits)', 'MSc Public Health Candidate (Wits)'],
-    specialties: 'Orthopaedics, Cardiothoracic Rehab',
-    biography: [
-      'Keisha is your go-to for all things movement and recovery, with nearly 9 years of clinical know-how and a passion for helping people feel strong and capable again. Whether she’s easing post-op pain, guiding someone through a cardiac rehab journey, or helping manage long-term aches and niggles, Keisha blends hands-on therapy, education, and science-backed movement to get results.',
-      'She’s big on empowering her patients, because recovery is a team sport, and she’s right there cheering you on every step of the way.',
-    ],
-  },
 ];
 
 const AFFILIATED_PROFESSIONALS = [

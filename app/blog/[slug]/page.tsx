@@ -43,6 +43,40 @@ const ARTICLES = [
     ),
   },
   {
+    slug: 'strong-at-every-age',
+    title: 'Strong at Every Age: How Physiotherapy Helps Our Golden Crew',
+    category: 'Geriatrics',
+    date: '15 October 2025',
+    readTime: '2 min read',
+    image: '/images/224639_4dc100e8d2e945a79919dc279d08b41a~mv2.jpeg',
+    alt: 'Pink stethoscope adorned with vibrant yellow roses against a purple background',
+    intro: 'Growing older is a gift. More time for laughter, more stories to share, and more wisdom to pass on. But with age also come changes in our bodies, and sometimes those changes make life feel smaller than it should.',
+    content: (
+      <>
+        <p>Here’s a fact that might surprise you: after the age of 65, 1 in 3 older adults experience a fall each year. Falls are the leading cause of injury in older people, and many never regain their full independence afterwards. Scary? Yes. But here’s the good news: physiotherapy can reduce fall risk by up to 40%. That’s nearly half!</p>
+        <h2>How Physiotherapy Can Help</h2>
+        <p>At Sintha Physio, we believe our gogos, oupas, moms, and dads deserve to live fully, not fearfully. Physiotherapy for older adults focuses on:</p>
+        <ul>
+          <li><strong>Strength and balance training:</strong> Building muscle and confidence, one steady step at a time</li>
+          <li><strong>Mobility and flexibility:</strong> Helping stiff joints loosen up so everyday tasks feel easier</li>
+          <li><strong>Pain management:</strong> Gentle movement can ease arthritis and chronic pain</li>
+          <li><strong>Confidence:</strong> Because feeling steady on your feet isn’t just physical, it’s emotional too</li>
+        </ul>
+        <h2>Small Tips with Big Impact</h2>
+        <ol>
+          <li>Keep moving. Even short daily walks make a difference</li>
+          <li>Practise sit-to-stand from a chair to strengthen legs</li>
+          <li>Stay hydrated, as it improves energy and joint health</li>
+          <li>Make the home fall-safe: remove loose rugs and keep pathways clear</li>
+        </ol>
+        <h2>Why It Matters</h2>
+        <p>Physio doesn’t just add years to life; it adds life to years. Imagine your loved one confidently playing with the grandkids, enjoying a stroll in the garden, or dancing at a family wedding. That’s what strong movement brings: joy, freedom, and independence.</p>
+        <p>At Sintha Physio, we’re here with warm hands, kind hearts, and proven skills to walk this journey with you and your loved ones.</p>
+        <p>Remember: it’s never too late to start moving, healing, and thriving, because strength has no age limit.</p>
+      </>
+    ),
+  },
+  {
     slug: 'recognising-rsv',
     title: 'Recognising RSV',
     subtitle: 'What Every Parent Should Know',
@@ -136,16 +170,16 @@ export default async function BlogArticlePage({
       <div className="mx-auto max-w-3xl px-6 md:px-10">
         <Link
           href="/blog"
-          className="inline-flex items-center gap-2 text-sm font-semibold text-[#6B4B78] transition-colors hover:text-[#30133E]"
+          className="inline-flex items-center gap-2 text-sm font-medium text-[#6B4B78] transition-colors hover:text-[#30133E]"
         >
           <InterfaceIcon name="arrow-left" className="h-4 w-4" /> Back to blog
         </Link>
 
         <header className="mt-10">
-          <p className="text-xs font-semibold text-[#6B4B78]">
+          <p className="text-xs font-medium text-[#6B4B78]">
             {article.category} <span aria-hidden="true">·</span> {article.date} <span aria-hidden="true">·</span> {article.readTime}
           </p>
-          <h1 className="mt-5 text-balance text-4xl font-semibold leading-[1.08] tracking-[-0.045em] text-[#30133E] md:text-6xl">
+          <h1 className="mt-5 text-balance text-4xl font-medium leading-[1.08] tracking-[-0.045em] text-[#30133E] md:text-6xl">
             {article.title}
           </h1>
           {article.subtitle && (
