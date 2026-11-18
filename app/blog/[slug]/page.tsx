@@ -170,16 +170,16 @@ export default async function BlogArticlePage({
       <div className="mx-auto max-w-3xl px-6 md:px-10">
         <Link
           href="/blog"
-          className="inline-flex items-center gap-2 text-sm font-semibold text-[#6B4B78] transition-colors hover:text-[#30133E]"
+          className="inline-flex items-center gap-2 text-sm font-medium text-[#6B4B78] transition-colors hover:text-[#30133E]"
         >
           <InterfaceIcon name="arrow-left" className="h-4 w-4" /> Back to blog
         </Link>
 
         <header className="mt-10">
-          <p className="text-xs font-semibold text-[#6B4B78]">
+          <p className="text-xs font-medium text-[#6B4B78]">
             {article.category} <span aria-hidden="true">·</span> {article.date} <span aria-hidden="true">·</span> {article.readTime}
           </p>
-          <h1 className="mt-5 text-balance text-4xl font-semibold leading-[1.08] tracking-[-0.045em] text-[#30133E] md:text-6xl">
+          <h1 className="mt-5 text-balance text-4xl font-medium leading-[1.08] tracking-[-0.045em] text-[#30133E] md:text-6xl">
             {article.title}
           </h1>
           {article.subtitle && (
