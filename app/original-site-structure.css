@@ -861,3 +861,64 @@ button.contact-form__submit.site-button {
     transition: none;
   }
 }
+
+
+/* Restore the rounded details visible throughout the original Wix design. */
+:root {
+  --sintha-radius-card: 20px;
+  --sintha-radius-panel: 22px;
+  --sintha-radius-media: 16px;
+  --sintha-radius-pill: 999px;
+}
+
+/* The original booking and primary action buttons use a full pill shape. */
+.site-button,
+.site-header__booking,
+.site-menu-toggle,
+.site-mobile-panel__booking {
+  border-radius: var(--sintha-radius-pill);
+}
+
+/* Keep the home page's image collage and content cards in the same visual family. */
+.home-hero__image-main,
+.home-hero__image-small,
+.intro-collage > div,
+.pillar-card,
+.pillar-card__image,
+.home-service,
+.blog-card,
+.blog-card__image,
+.service-card,
+.service-card__image {
+  overflow: hidden;
+  border-radius: var(--sintha-radius-card);
+}
+
+/* Rounded surfaces used on the About, Services and Contact page compositions. */
+.team-card,
+.affiliated-section__heading,
+.service-pair__image,
+.service-pair__content,
+.contact-info-card,
+.contact-form,
+.contact-image__portrait,
+.contact-image__reception {
+  border-radius: var(--sintha-radius-card);
+}
+
+.contact-info-card,
+.affiliated-section__heading {
+  border-radius: var(--sintha-radius-panel);
+}
+
+/* Form controls stay subtly rounded, as in the original contact form. */
+.contact-form input,
+.contact-form textarea {
+  border-radius: 4px;
+}
+
+@media (max-width: 760px) {
+  .site-menu-toggle {
+    border-radius: var(--sintha-radius-pill);
+  }
+}
