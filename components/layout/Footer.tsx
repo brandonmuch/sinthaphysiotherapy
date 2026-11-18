@@ -71,6 +71,7 @@ export function Footer() {
             ))}
           </nav>
         </div>
+        <p className="site-footer__copyright">©2025 Sintha Physiotherapy</p>
       </div>
 
       <div className="site-footer__brand-band">
