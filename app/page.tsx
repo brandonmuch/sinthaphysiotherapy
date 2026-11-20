@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import { BlurText } from '@/components/ui/BlurText';
 
 const PILLARS = [
   {
@@ -106,22 +107,28 @@ export default function HomePage() {
   return (
     <div className="home-page">
       <section className="home-hero home-hero--original">
+        <Image
+          className="home-hero__background"
+          src="/images/u2428486467_dark-skinned_Black_female_physiotherapist_wearing_129f260b-d7a4-4b95-afb1-2559.png"
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          aria-hidden="true"
+        />
+        <div className="home-hero__overlay" aria-hidden="true" />
         <div className="site-container home-hero__layout">
           <div className="home-hero__copy">
-            <h1>Empower Movement. Enhance Life.</h1>
-            <h2>Specialised Physiotherapy for Children and Adults</h2>
-            <p>Specialised Physiotherapy for Children and Adults</p>
-          </div>
-          <div className="home-hero__media" aria-hidden="true">
-            <div className="home-hero__image-main">
-              <Image
-                src="/images/u2428486467_dark-skinned_Black_female_physiotherapist_wearing_129f260b-d7a4-4b95-afb1-2559.png"
-                alt=""
-                fill
-                priority
-                sizes="100vw"
-              />
-            </div>
+            <p className="home-hero__eyebrow">Sintha Physiotherapy</p>
+            <h1>
+              <BlurText text="Empower Movement. Enhance Life." delay={95} />
+            </h1>
+            <h2>
+              <BlurText text="Specialised Physiotherapy for Children and Adults" delay={45} direction="bottom" />
+            </h2>
+            <p className="home-hero__tagline">
+              Personalised care to help you breathe easier, move with confidence and enjoy life.
+            </p>
           </div>
         </div>
       </section>
