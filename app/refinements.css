@@ -113,14 +113,15 @@ button.contact-form__submit.site-button {
   margin-top: auto;
 }
 
-/* Preserve whole image content where cards previously cut off faces or key details. */
+/* Fill the original card image frames and keep portrait faces in the crop. */
 .pillar-card__image {
+  position: relative;
   background: var(--sintha-pale);
 }
 .pillar-card__image img {
-  object-fit: contain;
+  object-fit: cover;
   object-position: center;
-  background: var(--sintha-pale);
+  background: transparent;
 }
 .service-pair__image {
   display: flex;
@@ -441,4 +442,23 @@ button.contact-form__submit.site-button {
   height: 100%;
   object-fit: cover;
   object-position: center 48%;
+}
+
+/* The mobile menu control uses a simple, solid icon, never the global button gradient. */
+.site-header .site-menu-toggle,
+.site-header .site-menu-toggle:hover,
+.site-header .site-menu-toggle:active {
+  border: 1px solid rgba(48, 19, 63, 0.45) !important;
+  border-radius: 2px !important;
+  background: transparent !important;
+  background-image: none !important;
+  box-shadow: none !important;
+  color: var(--sintha-purple) !important;
+  filter: none !important;
+  transform: none !important;
+}
+
+.site-header .site-menu-toggle__lines span {
+  background: var(--sintha-purple) !important;
+  background-image: none !important;
 }
