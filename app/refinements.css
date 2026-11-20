@@ -653,3 +653,9 @@ button.contact-form__submit.site-button {
   height: 18px;
   flex: 0 0 18px;
 }
+
+/* Give navigation labels one subtle step more weight without making them bold. */
+.site-nav a,
+.site-mobile-panel a {
+  font-weight: 500;
+}
