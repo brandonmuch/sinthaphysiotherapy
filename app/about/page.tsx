@@ -1,5 +1,5 @@
-import Image from 'next/image';
 import { BlurText } from '@/components/ui/BlurText';
+import { ParallaxImage } from '@/components/ui/ParallaxImage';
 
 const PRACTITIONERS = [
   {
@@ -18,24 +18,6 @@ const PRACTITIONERS = [
     biography: [
       'A passionate physio and movement motivator! With a degree from the University of Pretoria and 8 years of hands-on experience in trauma and critical care, for both little ones and grown-ups, Posheletso brings calm, confidence, and care to every session. She is all about personalised treatment plans that get people moving better and feeling stronger.',
       'Now, she is expanding her focus into musculoskeletal rehab, home-based care, and preventative treatments, helping people live their best lives, right where they are. She also possesses advanced skills in dry needling and kinesiology taping.',
-    ],
-  },
-  {
-    name: 'Pumelela Noah',
-    qualifications: ['BSc Physiotherapy (UCT)'],
-    specialties: 'Neuro Rehab, Trauma and ICU Rehab',
-    biography: [
-      'Where expertise meets heart. With a solid background in human anatomy, biomechanics and rehabilitation techniques, Pumelela brings clinical know-how and genuine care to every patient she treats.',
-      'She works with neurological cases, trauma recovery and age-related conditions, creating personalised plans to help people return to the activities they enjoy and live life to the fullest.',
-    ],
-  },
-  {
-    name: 'Keisha May',
-    qualifications: ['BSc Physiotherapy (Wits)', 'MSc Public Health Candidate (Wits)'],
-    specialties: 'Orthopaedics, Cardiothoracic Rehab',
-    biography: [
-      'Keisha brings nearly nine years of clinical experience and a passion for helping people feel strong and capable again.',
-      'From easing post-operative pain to guiding cardiac rehabilitation and supporting people with long-term aches, she blends hands-on therapy, education and science-backed movement.',
     ],
   },
 ];
@@ -129,18 +111,14 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="about-life-image" aria-label="Everyday moments that matter">
-        <div className="site-container">
-          <Image
-            src="/uploads/patient-grandfather-grandson.jpg"
-            alt="A grandfather and grandson playing together on a couch"
-            width={1440}
-            height={960}
-            sizes="(max-width: 760px) 100vw, 90vw"
-          />
-        </div>
-      </section>
       <section className="about-closing">
+        <ParallaxImage
+          className="about-closing__parallax"
+          src="/images/224639_9602ead77c6b4ca6b5ac0f2959fb6635~mv2.jpeg"
+          alt=""
+          strength={52}
+          objectPosition="center 45%"
+        />
         <div className="site-container">
           <h2>Compassion in every breath, care in every movement.</h2>
         </div>
