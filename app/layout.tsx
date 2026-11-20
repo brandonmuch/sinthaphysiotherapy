@@ -6,6 +6,7 @@ import './original-site-structure.css';
 import './refinements.css';
 import { Nav } from '@/components/layout/Nav';
 import { Footer } from '@/components/layout/Footer';
+import { BreathingMotion } from '@/components/ui/BreathingMotion';
 
 const openSans = localFont({
   src: [
@@ -39,6 +40,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={openSans.variable}>
       <body className="antialiased">
+        <BreathingMotion />
         <a className="skip-link" href="#main-content">
           Skip to content
         </a>
