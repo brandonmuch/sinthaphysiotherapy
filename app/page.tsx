@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { BlurText } from '@/components/ui/BlurText';
+import { ParallaxImage } from '@/components/ui/ParallaxImage';
 
 const PILLARS = [
   {
@@ -107,14 +108,13 @@ export default function HomePage() {
   return (
     <div className="home-page">
       <section className="home-hero home-hero--original">
-        <Image
+        <ParallaxImage
           className="home-hero__background"
           src="/images/u2428486467_dark-skinned_Black_female_physiotherapist_wearing_129f260b-d7a4-4b95-afb1-2559.png"
           alt=""
-          fill
           priority
-          sizes="100vw"
-          aria-hidden="true"
+          strength={72}
+          objectPosition="center 38%"
         />
         <div className="home-hero__overlay" aria-hidden="true" />
         <div className="site-container home-hero__layout">
@@ -185,6 +185,13 @@ export default function HomePage() {
       </section>
 
       <section className="who-section">
+        <ParallaxImage
+          className="who-section__parallax"
+          src="/images/224639_91e7f1d00cc249aab14266ca51cdbf90~mv2.jpeg"
+          alt=""
+          strength={54}
+          objectPosition="center"
+        />
         <div className="site-container who-section__layout">
           <div className="who-section__copy">
             <h2>Let’s get you living life to the fullest — one step, stretch, and breath at a time.</h2>
