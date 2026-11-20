@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { BlurText } from '@/components/ui/BlurText';
 import { ParallaxImage } from '@/components/ui/ParallaxImage';
+import PatternWaves from '@/components/ui/PatternWaves';
 
 const PILLARS = [
   {
@@ -18,7 +19,7 @@ const PILLARS = [
     number: '2',
     title: 'Specialised respiratory support',
     description:
-      'Struggling to catch your breath? With evidence-based respiratory physiotherapy, we help you breathe easier, manage chronic lung conditions and recover from post-operative or acute respiratory issues, one deep breath at a time.',
+      'Struggling to catch your breath? With evidence-based respiratory physiotherapy, we help you breathe easier, manage chronic lung conditions and recover from post-op or acute respiratory issues, one deep breath at a time.',
     image:
       '/images/u2428486467_Young_Coloured_South_African_woman_seated_calmly__1b852e40-efdd-48c9-9676-4899.jpeg',
     position: 'center 12%',
@@ -122,16 +123,12 @@ export default function HomePage() {
         <div className="home-hero__overlay" aria-hidden="true" />
         <div className="site-container home-hero__layout">
           <div className="home-hero__copy">
-            <p className="home-hero__eyebrow">Sintha Physiotherapy</p>
             <h1>
               <BlurText text="Empower Movement. Enhance Life." delay={95} />
             </h1>
             <h2>
               <BlurText text="Specialised Physiotherapy for Children and Adults" delay={45} direction="bottom" />
             </h2>
-            <p className="home-hero__tagline">
-              Personalised care to help you breathe easier, move with confidence and enjoy life.
-            </p>
           </div>
         </div>
       </section>
@@ -203,7 +200,27 @@ export default function HomePage() {
       </section>
 
       <section className="pillars-section">
-        <div className="site-container">
+        <PatternWaves
+          className="pillars-section__pattern"
+          color="#8B6A9A"
+          backgroundColor="#DBC1E8"
+          pattern="line"
+          wave="silk"
+          spacing={14}
+          markSize={0.38}
+          depth={0.45}
+          light={24}
+          shine={0.35}
+          contrast={1.05}
+          speed={0.12}
+          scale={1}
+          direction={20}
+          opacity={0.26}
+          fade="none"
+          interactive={false}
+          intro={false}
+        />
+        <div className="site-container pillars-section__content">
           <div className="pillar-grid">
             {PILLARS.map((pillar) => (
               <article className="pillar-card" key={pillar.number}>
