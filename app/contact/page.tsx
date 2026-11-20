@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import { BlurText } from '@/components/ui/BlurText';
+import { ParallaxImage } from '@/components/ui/ParallaxImage';
 
 export default function ContactPage() {
   return (
@@ -94,13 +95,13 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <section className="contact-location-band" aria-label="Sintha Physiotherapy reception">
-        <Image
+      <section className="contact-location-band" aria-label="Sintha Physiotherapy">
+        <ParallaxImage
+          className="contact-location-band__parallax"
           src="/images/224639_bfef82a022b94247bd1bc81fcd55f488~mv2.jpeg"
-          alt="Reception area"
-          width={1920}
-          height={760}
-          sizes="100vw"
+          alt=""
+          strength={48}
+          objectPosition="center"
         />
       </section>
     </div>
