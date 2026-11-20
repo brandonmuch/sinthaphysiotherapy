@@ -633,3 +633,18 @@ button.contact-form__submit.site-button {
   background: var(--sintha-purple) !important;
   background-image: none !important;
 }
+
+/* Brand-shaped social icons in the footer, sized consistently inside their circles. */
+.site-footer__social-links a {
+  width: 38px;
+  min-width: 38px;
+  height: 38px;
+  min-height: 38px;
+  padding: 0;
+}
+.site-footer__social-links a svg {
+  display: block;
+  width: 18px;
+  height: 18px;
+  flex: 0 0 18px;
+}
