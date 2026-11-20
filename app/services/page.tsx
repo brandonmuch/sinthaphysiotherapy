@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { ParallaxImage } from '@/components/ui/ParallaxImage';
 import { BlurText } from '@/components/ui/BlurText';
 
 const WHATSAPP_LINK =
@@ -124,6 +125,13 @@ export default function ServicesPage() {
       </section>
 
       <section className="services-closing">
+        <ParallaxImage
+          className="services-closing__parallax"
+          src="/images/224639_5b990c24f553474c837d37d995e1b759~mv2.jpeg"
+          alt=""
+          strength={52}
+          objectPosition="center"
+        />
         <div className="site-container services-closing__layout">
           <h2>Where recovery begins with a breath and ends in strength.</h2>
         </div>
