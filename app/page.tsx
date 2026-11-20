@@ -117,7 +117,7 @@ export default function HomePage() {
           src="/images/u2428486467_dark-skinned_Black_female_physiotherapist_wearing_129f260b-d7a4-4b95-afb1-2559.png"
           alt=""
           priority
-          strength={72}
+          strength={88}
           objectPosition="center 38%"
         />
         <div className="home-hero__overlay" aria-hidden="true" />
@@ -189,7 +189,7 @@ export default function HomePage() {
           className="who-section__parallax"
           src="/images/224639_91e7f1d00cc249aab14266ca51cdbf90~mv2.jpeg"
           alt=""
-          strength={54}
+          strength={76}
           objectPosition="center"
         />
         <div className="site-container who-section__layout">
