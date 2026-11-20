@@ -21,7 +21,7 @@ export function ParallaxImage({
   className = '',
   imageClassName = '',
   objectPosition = 'center',
-  strength = 58,
+  strength = 76,
   priority = false,
   sizes = '100vw',
 }: ParallaxImageProps) {
@@ -32,6 +32,7 @@ export function ParallaxImage({
     offset: ['start end', 'end start'],
   });
   const y = useTransform(scrollYProgress, [0, 1], [-strength, strength]);
+  const scale = useTransform(scrollYProgress, [0, 1], [1.04, 1.105]);
 
   return (
     <div
@@ -41,7 +42,7 @@ export function ParallaxImage({
     >
       <motion.div
         className="parallax-media__inner"
-        style={{ y: reduceMotion ? 0 : y }}
+        style={{ y: reduceMotion ? 0 : y, scale: reduceMotion ? 1 : scale }}
       >
         <Image
           src={src}
