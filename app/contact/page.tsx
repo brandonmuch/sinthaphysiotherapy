@@ -100,7 +100,7 @@ export default function ContactPage() {
           className="contact-location-band__parallax"
           src="/images/224639_bfef82a022b94247bd1bc81fcd55f488~mv2.jpeg"
           alt=""
-          strength={48}
+          strength={76}
           objectPosition="center"
         />
       </section>
