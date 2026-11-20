@@ -88,7 +88,7 @@ export default function ServicesPage() {
           className="services-hero__parallax"
           src="/images/u2428486467_Young_Black_South_African_woman_in_activewear_wal_bb274feb-bb84-4439-ba94-fa2f.jpeg"
           alt=""
-          strength={58}
+          strength={88}
           objectPosition="center 45%"
         />
         <div className="site-container services-hero__inner">
@@ -136,7 +136,7 @@ export default function ServicesPage() {
           className="services-closing__parallax"
           src="/images/224639_5b990c24f553474c837d37d995e1b759~mv2.jpeg"
           alt=""
-          strength={52}
+          strength={82}
           objectPosition="center"
         />
         <div className="site-container services-closing__layout">
