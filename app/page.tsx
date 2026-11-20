@@ -11,6 +11,7 @@ const PILLARS = [
       'From bouncing back after surgery to navigating life post-stroke or managing neurological conditions, we’re with you every step of the way. Our personalised rehab plans are built to ease pain, restore movement and boost strength, so you can feel confident in your body again.',
     image:
       '/images/u2428486467_Close-up_of_physiotherapy_tools_on_a_mat_or_woode_4cdd9653-899b-4c2e-8f1d-45ca.jpeg',
+    position: 'center center',
     alt: 'Physiotherapy tools arranged on an exercise mat',
   },
   {
@@ -20,6 +21,7 @@ const PILLARS = [
       'Struggling to catch your breath? With evidence-based respiratory physiotherapy, we help you breathe easier, manage chronic lung conditions and recover from post-operative or acute respiratory issues, one deep breath at a time.',
     image:
       '/images/u2428486467_Young_Coloured_South_African_woman_seated_calmly__1b852e40-efdd-48c9-9676-4899.jpeg',
+    position: 'center 12%',
     alt: 'A woman seated calmly in a quiet setting',
   },
   {
@@ -29,6 +31,7 @@ const PILLARS = [
       'Physiotherapy isn’t just for when things go wrong. It’s also about helping life go right. Whether you’re managing the natural effects of ageing or bouncing back from general weakness, we’re here to help you move well, stay strong and enjoy a better quality of life.',
     image:
       '/images/u2428486467_Middle-aged_Black_South_African_man_in_everyday_a_e9d82078-f7f4-4b7b-8b07-6d8b.jpeg',
+    position: 'center 12%',
     alt: 'A middle-aged man in a physiotherapy setting',
   },
 ];
@@ -211,6 +214,7 @@ export default function HomePage() {
                     width={720}
                     height={500}
                     sizes="(max-width: 760px) 90vw, 30vw"
+                    style={{ objectPosition: pillar.position }}
                   />
                 </div>
                 <div className="pillar-card__copy">
