@@ -376,3 +376,62 @@ button.contact-form__submit.site-button {
     will-change: auto;
   }
 }
+
+
+/* Services page's photographic header, now driven by the shared scroll parallax. */
+.services-hero {
+  position: relative;
+  isolation: isolate;
+  background-color: #332b32;
+  background-image: none !important;
+}
+.services-hero > .services-hero__parallax {
+  z-index: 0;
+}
+.services-hero::before {
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  display: block;
+  background: linear-gradient(
+    90deg,
+    rgba(17, 13, 18, .70) 0%,
+    rgba(17, 13, 18, .28) 58%,
+    rgba(17, 13, 18, .06) 100%
+  );
+  content: "";
+  pointer-events: none;
+}
+.services-hero__inner {
+  position: relative;
+  z-index: 2;
+}
+
+/* The original About page's grandfather-and-grandson image remains full bleed. */
+.about-life-image {
+  position: relative;
+  height: clamp(300px, 45vw, 560px);
+  padding: 0 !important;
+  overflow: hidden;
+  isolation: isolate;
+  background: #332b32;
+}
+.about-life-image > .about-life-image__parallax {
+  z-index: 0;
+}
+.about-life-image__parallax .parallax-media__image {
+  object-position: center 48%;
+}
+
+@media (max-width: 760px) {
+  .about-life-image {
+    height: 340px;
+  }
+  .services-hero::before {
+    background: linear-gradient(
+      90deg,
+      rgba(17, 13, 18, .68) 0%,
+      rgba(17, 13, 18, .3) 100%
+    );
+  }
+}
