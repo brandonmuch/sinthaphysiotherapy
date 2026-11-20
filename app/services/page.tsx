@@ -86,7 +86,7 @@ export default function ServicesPage() {
       <section className="services-hero">
         <ParallaxImage
           className="services-hero__parallax"
-          src="/images/u2428486467_Young_Black_South_African_woman_in_activewear_wal_bb274feb-b84-4439-ba94-fa2f.jpeg"
+          src="/images/u2428486467_Young_Black_South_African_woman_in_activewear_wal_bb274feb-bb84-4439-ba94-fa2f.jpeg"
           alt=""
           strength={58}
           objectPosition="center 45%"
