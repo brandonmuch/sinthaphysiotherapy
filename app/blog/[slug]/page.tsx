@@ -48,8 +48,8 @@ const ARTICLES = [
     category: 'Geriatrics',
     date: '15 October 2025',
     readTime: '2 min read',
-    image: '/images/224639_4dc100e8d2e945a79919dc279d08b41a~mv2.jpeg',
-    alt: 'Pink stethoscope adorned with vibrant yellow roses against a purple background',
+    image: '/images/224639_f1933d0923ba40f6a7bffa90ac58da04~mv2.jpeg',
+    alt: 'A pink stethoscope with yellow roses on a purple background',
     intro: 'Growing older is a gift. More time for laughter, more stories to share, and more wisdom to pass on. But with age also come changes in our bodies, and sometimes those changes make life feel smaller than it should.',
     content: (
       <>
