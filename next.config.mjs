@@ -1,5 +1,29 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  async redirects() {
+    return [
+      {
+        source: '/post/renal-metabolic-care-where-recovery-begins-and-builds-into-strength',
+        destination: '/blog/renal-metabolic-care',
+        permanent: true,
+      },
+      {
+        source: '/post/strong-at-every-age-how-physiotherapy-helps-our-golden-crew',
+        destination: '/blog/strong-at-every-age',
+        permanent: true,
+      },
+      {
+        source: '/post/recognising-rsv',
+        destination: '/blog/recognising-rsv',
+        permanent: true,
+      },
+      {
+        source: '/post/strong-women-strong-lungs',
+        destination: '/blog/strong-women-strong-lungs',
+        permanent: true,
+      },
+    ];
+  },
   async headers() {
     return [
       {
