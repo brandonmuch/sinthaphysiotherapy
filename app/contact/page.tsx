@@ -84,7 +84,7 @@ export default function ContactPage() {
           <div className="contact-image">
             <div className="contact-image__portrait">
               <Image
-                src="/images/Confident%20Portrait.jpeg"
+                src="/images/Confident%2520Portrait.jpeg"
                 alt="A confident healthcare professional"
                 width={720}
                 height={920}
