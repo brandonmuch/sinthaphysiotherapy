@@ -111,15 +111,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="about-life-image" aria-label="Everyday moments that matter">
-        <ParallaxImage
-          className="about-life-image__parallax"
-          src="/uploads/patient-grandfather-grandson.jpg"
-          alt=""
-          strength={48}
-          objectPosition="center"
-        />
-      </section>
       <section className="about-closing">
         <ParallaxImage
           className="about-closing__parallax"
