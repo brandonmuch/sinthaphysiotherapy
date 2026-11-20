@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { BlurText } from '@/components/ui/BlurText';
 
 const WHATSAPP_LINK =
   'https://wa.me/27670721908?text=Hello%20Sintha%20Physiotherapy%2C%20I%20would%20like%20to%20ask%20about%20a%20physiotherapy%20service.';
@@ -83,7 +84,7 @@ export default function ServicesPage() {
     <div className="services-page">
       <section className="services-hero">
         <div className="site-container services-hero__inner">
-          <h1>Our Services</h1>
+          <h1><BlurText text="Our Services" delay={70} /></h1>
           <p>Physiotherapy that moves you forward.</p>
         </div>
       </section>
