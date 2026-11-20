@@ -1,13 +1,30 @@
 import Image from 'next/image';
+import { BlurText } from '@/components/ui/BlurText';
 
 export default function ContactPage() {
   return (
     <div className="contact-page">
       <section className="contact-details-section">
         <div className="site-container contact-details-grid">
-          <div className="contact-details-spacer" aria-hidden="true" />
+          <div className="contact-map">
+            <iframe
+              title="Map to Sintha Physiotherapy at Life Fourways Hospital"
+              src="https://maps.google.com/maps?q=Life%20Fourways%20Hospital%20Suite%20C28B%20Fourways%20Johannesburg%20South%20Africa&output=embed"
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              allowFullScreen
+            />
+            <a
+              className="contact-map__link"
+              href="https://www.google.com/maps/search/?api=1&query=Life+Fourways+Hospital+Suite+C28B+Fourways+Johannesburg+South+Africa"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Open in Google Maps <span aria-hidden="true">↗</span>
+            </a>
+          </div>
           <div className="contact-info-card">
-            <h1>Sintha Physiotherapy</h1>
+            <h1><BlurText text="Sintha Physiotherapy" delay={65} /></h1>
             <p>
               <strong>Address</strong>
               <br />
@@ -39,7 +56,7 @@ export default function ContactPage() {
             method="post"
             encType="text/plain"
           >
-            <h2>Contact us</h2>
+            <h2><BlurText text="Contact us" delay={65} /></h2>
             <div className="contact-form__fields">
               <label>
                 <span>First name</span>
