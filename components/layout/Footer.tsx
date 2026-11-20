@@ -48,7 +48,11 @@ export function Footer() {
                     rel="noreferrer"
                     aria-label="Instagram"
                   >
-                    ig
+                    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" aria-hidden="true">
+                      <rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" strokeWidth="1.8" />
+                      <circle cx="12" cy="12" r="4.2" stroke="currentColor" strokeWidth="1.8" />
+                      <circle cx="17.6" cy="6.5" r="1.15" fill="currentColor" />
+                    </svg>
                   </a>
                   <a
                     href="https://www.facebook.com/profile.php?id=61578639355974"
@@ -56,7 +60,9 @@ export function Footer() {
                     rel="noreferrer"
                     aria-label="Facebook"
                   >
-                    f
+                    <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true">
+                      <path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073c0 6.019 4.388 11.02 10.125 11.888v-8.41H7.078v-3.478h3.047V9.422c0-3.021 1.792-4.693 4.533-4.693 1.312 0 2.686.236 2.686.236v2.953h-1.513c-1.49 0-1.955.93-1.955 1.886v2.269h3.328l-.532 3.478h-2.796v8.41C19.612 23.093 24 18.092 24 12.073Z" />
+                    </svg>
                   </a>
                 </div>
               </div>
