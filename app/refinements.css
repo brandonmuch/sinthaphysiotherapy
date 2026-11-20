@@ -1,0 +1,280 @@
+/* Site refinements: image framing, navigation scale, spacing and original-site details. */
+
+/* Home cover: keep the original approved care photograph as a full-bleed image layer. */
+.home-hero--original {
+  position: relative;
+  min-height: clamp(470px, 54vw, 650px);
+  isolation: isolate;
+  overflow: hidden;
+  padding: 0;
+}
+.home-hero--original::before {
+  display: none !important;
+  content: none !important;
+}
+.home-hero__background {
+  position: absolute !important;
+  z-index: 0;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 38%;
+}
+.home-hero__overlay {
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(24, 13, 31, .78) 0%, rgba(24, 13, 31, .48) 48%, rgba(24, 13, 31, .14) 100%),
+    linear-gradient(0deg, rgba(24, 13, 31, .34), transparent 42%);
+  pointer-events: none;
+}
+.home-hero--original .home-hero__layout {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  min-height: inherit;
+  align-items: center;
+  padding-block: clamp(74px, 9vw, 118px);
+}
+.home-hero--original .home-hero__copy {
+  display: flex;
+  width: min(100%, 840px);
+  min-height: 0;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 0;
+}
+.home-hero__eyebrow {
+  margin: 0 0 22px;
+  color: rgba(255, 255, 255, .84) !important;
+  font-size: 11px !important;
+  font-weight: 600;
+  letter-spacing: .18em;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+.home-hero--original .home-hero__copy h1 {
+  max-width: 850px;
+  margin: 0;
+  color: #fff;
+  font-size: clamp(46px, 6.4vw, 82px);
+  font-weight: 600;
+  line-height: 1.02;
+  letter-spacing: -.045em;
+}
+.home-hero--original .home-hero__copy h2 {
+  display: block;
+  max-width: 730px;
+  margin: 24px 0 0;
+  color: #fff;
+  font-size: clamp(19px, 2.2vw, 27px);
+  font-weight: 500;
+  line-height: 1.35;
+  letter-spacing: -.02em;
+}
+.home-hero--original .home-hero__copy p.home-hero__tagline {
+  position: static;
+  max-width: 570px;
+  margin: 17px 0 0;
+  color: rgba(255, 255, 255, .86);
+  font-size: clamp(14px, 1.25vw, 17px);
+  line-height: 1.7;
+}
+
+/* Slightly more presence for the primary wordmark, without changing the artwork. */
+.site-header__logo {
+  width: 222px;
+  flex: 0 0 auto;
+}
+.site-header__logo img {
+  width: 100%;
+  height: auto;
+}
+
+/* Create breathing room between supporting copy and its action. */
+.site-button {
+  margin-top: 17px;
+  line-height: 1.35;
+}
+.snapshot-section__top .site-button,
+.home-cta__layout .site-button,
+.site-header .site-button,
+.site-footer .site-button {
+  margin-top: 0;
+}
+.contact-form__submit,
+button.contact-form__submit.site-button {
+  margin-top: 16px;
+}
+.service-pair__content .service-card__link {
+  margin-top: auto;
+}
+
+/* Preserve whole image content where cards previously cut off faces or key details. */
+.pillar-card__image {
+  background: var(--sintha-pale);
+}
+.pillar-card__image img {
+  object-fit: contain;
+  object-position: center;
+  background: var(--sintha-pale);
+}
+.service-pair__image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--sintha-pale);
+}
+.service-pair__image img {
+  object-fit: contain;
+  object-position: center;
+  padding: 7px;
+  background: var(--sintha-pale);
+}
+.blog-card__image {
+  background: #f3ebf7;
+}
+.blog-card__image img {
+  object-fit: contain;
+  object-position: center;
+  padding: 5px;
+  background: #f3ebf7;
+}
+.intro-collage__large img {
+  object-position: center 25%;
+}
+.intro-collage__small img {
+  object-position: center 24%;
+}
+.contact-image__portrait img {
+  object-fit: cover;
+  object-position: center 22%;
+}
+
+/* The original contact layout used this left column for its location map. */
+.contact-map {
+  position: relative;
+  display: flex;
+  min-width: 0;
+  min-height: 380px;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid rgba(48, 19, 62, .12);
+  border-radius: 22px;
+  background: #f3ebf7;
+}
+.contact-map iframe {
+  display: block;
+  flex: 1 1 auto;
+  width: 100%;
+  min-height: 330px;
+  border: 0;
+}
+.contact-map__link {
+  display: flex;
+  min-height: 46px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 17px;
+  background: #f3ebf7;
+  color: #30133e;
+  font-size: 12px;
+  font-weight: 600;
+  text-decoration: none;
+}
+.contact-map__link:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* Restored feature image from the original About page. */
+.about-life-image {
+  padding: 14px 0 68px;
+  background: #fff;
+}
+.about-life-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+  object-fit: contain;
+}
+
+/* Respect smaller viewports while keeping the logo readable. */
+@media (max-width: 900px) {
+  .site-header__logo {
+    width: 205px;
+  }
+}
+@media (max-width: 760px) {
+  .home-hero--original {
+    min-height: 520px;
+  }
+  .home-hero__background {
+    object-position: 54% 34%;
+  }
+  .home-hero__overlay {
+    background:
+      linear-gradient(90deg, rgba(24, 13, 31, .74), rgba(24, 13, 31, .28)),
+      linear-gradient(0deg, rgba(24, 13, 31, .34), transparent 50%);
+  }
+  .home-hero--original .home-hero__layout {
+    display: flex;
+    min-height: inherit;
+    align-items: center;
+    padding-block: 92px 74px;
+  }
+  .home-hero--original .home-hero__copy {
+    min-height: 0;
+    justify-content: center;
+    padding-top: 0;
+  }
+  .home-hero--original .home-hero__copy h1 {
+    font-size: clamp(42px, 10vw, 60px);
+    line-height: 1.03;
+  }
+  .home-hero--original .home-hero__copy h2 {
+    display: block;
+    margin-top: 20px;
+    font-size: clamp(18px, 4.5vw, 22px);
+  }
+  .home-hero--original .home-hero__copy p.home-hero__tagline {
+    position: static;
+    margin-top: 14px;
+    font-size: 14px;
+  }
+  .site-header__logo {
+    width: clamp(168px, 42vw, 184px);
+  }
+  .contact-details-spacer {
+    display: block !important;
+    width: 100%;
+  }
+  .contact-map {
+    width: 100%;
+    min-height: 285px;
+  }
+  .contact-map iframe {
+    min-height: 238px;
+  }
+  .contact-info-card {
+    width: 100%;
+    margin-inline: 0;
+  }
+  .about-life-image {
+    padding: 8px 0 48px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-hero__background,
+  .blog-card__image img,
+  .pillar-card__image img,
+  .service-pair__image img {
+    transition: none !important;
+  }
+}
