@@ -926,7 +926,7 @@ button.contact-form__submit.site-button {
 
 /* Match the rounded lilac treatment tiles visible on the original Home page. */
 .pillar-card {
-  background: var(--sintha-lilac);
+  background: var(--sintha-white);
 }
 
 .pillar-card__image {
@@ -934,8 +934,8 @@ button.contact-form__submit.site-button {
 }
 
 .pillar-card__copy {
-  background: var(--sintha-lilac);
-  padding: 18px 18px 22px;
+  background: var(--sintha-white);
+  padding: 22px 22px 26px;
 }
 
 .home-service {
