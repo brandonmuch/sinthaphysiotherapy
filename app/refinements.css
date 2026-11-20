@@ -635,6 +635,11 @@ button.contact-form__submit.site-button {
 }
 
 /* Brand-shaped social icons in the footer, sized consistently inside their circles. */
+.site-footer__social-links {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
 .site-footer__social-links a {
   width: 38px;
   min-width: 38px;
