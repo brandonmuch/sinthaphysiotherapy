@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import { BlurText } from '@/components/ui/BlurText';
 
 const ARTICLES = [
   {
@@ -50,7 +51,7 @@ export default function BlogPage() {
       <div className="site-container">
         <div className="blog-page__heading">
           <p className="section-kicker">Sintha Physiotherapy</p>
-          <h1>All posts</h1>
+          <h1><BlurText text="All posts" delay={70} /></h1>
         </div>
 
         <nav className="blog-categories" aria-label="Blog categories">
