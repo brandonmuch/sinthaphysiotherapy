@@ -116,7 +116,7 @@ export default function AboutPage() {
           className="about-closing__parallax"
           src="/images/224639_9602ead77c6b4ca6b5ac0f2959fb6635~mv2.jpeg"
           alt=""
-          strength={52}
+          strength={82}
           objectPosition="center 45%"
         />
         <div className="site-container">
