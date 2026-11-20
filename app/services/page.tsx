@@ -84,6 +84,13 @@ export default function ServicesPage() {
   return (
     <div className="services-page">
       <section className="services-hero">
+        <ParallaxImage
+          className="services-hero__parallax"
+          src="/images/u2428486467_Young_Black_South_African_woman_in_activewear_wal_bb274feb-b84-4439-ba94-fa2f.jpeg"
+          alt=""
+          strength={58}
+          objectPosition="center 45%"
+        />
         <div className="site-container services-hero__inner">
           <h1><BlurText text="Our Services" delay={70} /></h1>
           <p>Physiotherapy that moves you forward.</p>
