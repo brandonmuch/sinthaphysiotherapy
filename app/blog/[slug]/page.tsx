@@ -3,6 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import SpecularButton from '@/components/ui/SpecularButton';
+import { BlurText } from '@/components/ui/BlurText';
 
 const ARTICLES = [
   {
@@ -180,7 +181,7 @@ export default async function BlogArticlePage({
             {article.category} <span aria-hidden="true">·</span> {article.date} <span aria-hidden="true">·</span> {article.readTime}
           </p>
           <h1 className="mt-5 text-balance text-4xl font-medium leading-[1.08] tracking-[-0.045em] text-[#30133E] md:text-6xl">
-            {article.title}
+            <BlurText text={article.title} delay={35} />
           </h1>
           {article.subtitle && (
             <p className="mt-3 text-lg font-medium text-[#6B4B78] md:text-xl">
