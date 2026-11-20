@@ -278,3 +278,101 @@ button.contact-form__submit.site-button {
     transition: none !important;
   }
 }
+
+
+/* Shared scroll-linked parallax image layer used by full-width photo sections. */
+.parallax-media {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  display: block;
+  overflow: hidden;
+  pointer-events: none;
+}
+.parallax-media__inner {
+  position: absolute;
+  inset: -13% 0;
+  width: 100%;
+  height: 126%;
+  will-change: transform;
+}
+.parallax-media__image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Hero keeps its strong focal framing as the image moves more slowly than scroll. */
+.home-hero__background {
+  position: absolute !important;
+  z-index: 0;
+  inset: 0;
+  overflow: hidden;
+}
+.home-hero__background .parallax-media__image {
+  object-position: center 38%;
+}
+
+/* These sections used fixed CSS background photos. Render the same existing
+   assets as scroll-linked layers so parallax works consistently on desktop/mobile. */
+.who-section,
+.services-closing,
+.about-closing {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background-color: #27212b;
+  background-image: none !important;
+}
+.who-section > .parallax-media,
+.services-closing > .parallax-media,
+.about-closing > .parallax-media {
+  z-index: 0;
+}
+.who-section::before,
+.services-closing::before,
+.about-closing::before {
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  display: block;
+  background: rgba(20, 12, 27, .52);
+  content: "";
+  pointer-events: none;
+}
+.who-section > .site-container,
+.services-closing > .site-container,
+.about-closing > .site-container {
+  position: relative;
+  z-index: 2;
+}
+
+/* Contact image band shares the same parallax crop without changing its height. */
+.contact-location-band > .parallax-media {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+.contact-location-band__parallax .parallax-media__image {
+  object-position: center;
+}
+
+@media (max-width: 760px) {
+  .parallax-media__inner {
+    inset: -8% 0;
+    height: 116%;
+  }
+  .who-section::before,
+  .services-closing::before,
+  .about-closing::before {
+    background: rgba(20, 12, 27, .58);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .parallax-media__inner {
+    transform: none !important;
+    will-change: auto;
+  }
+}
